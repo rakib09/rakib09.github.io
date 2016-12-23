@@ -19,11 +19,11 @@ viewsourceroot: https://github.com/rakib09/rakib09.github.io/
 newsourceroot: https://github.com/rakib09/
 #########################################
 # for duoshuo.com commenting system, uncomment following line if you do not want to include duoshuo.com. 
-#duoshuo_shortname: lixizhi
-#duoshuo_url: "http://lixizhi.github.io"
+#duoshuo_shortname: Rakib
+#duoshuo_url: "https://rakib09.github.io"
 # disqus.com commenting system. please note that it is exclusive with duoshuo.com
-disqus_shortname: lixizhi
-disqus_url: "http://lixizhi.github.io"
+disqus_shortname: https-rakib09-github-io
+disqus_url: "https://rakib09.github.io"
 #########################################
 
 # Build settings
