@@ -1,5 +1,6 @@
 ---
 layout: post
+title: Java
 comments: true
 categories: npl
 ---

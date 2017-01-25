@@ -5,9 +5,24 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Dec 2016 06:07:33 +0600</pubDate>
-    <lastBuildDate>Sat, 24 Dec 2016 06:07:33 +0600</lastBuildDate>
+    <pubDate>Mon, 23 Jan 2017 15:15:59 +0600</pubDate>
+    <lastBuildDate>Mon, 23 Jan 2017 15:15:59 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Java</title>
+        <description>&lt;h2 id=&quot;empty-java-template&quot;&gt;Empty java template&lt;/h2&gt;
+
+&lt;p&gt;Empty post template&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2016/12/26/empty-template/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/26/empty-template/</guid>
+        
+        
+        <category>java</category>
+        
+      </item>
     
       <item>
         <title>Empty Template</title>
@@ -25,7 +40,7 @@
       </item>
     
       <item>
-        <title>Empty Template</title>
+        <title>Java</title>
         <description>&lt;h2 id=&quot;empty-npl-tutorial-template&quot;&gt;Empty npl tutorial template&lt;/h2&gt;
 
 &lt;p&gt;Empty post template&lt;/p&gt;
@@ -51,6 +66,84 @@
         
         
         <category>diary</category>
+        
+      </item>
+    
+      <item>
+        <title>Aws Hosting Server Install Mysql</title>
+        <description>&lt;h2 id=&quot;how-to-install-mysql-on-an-amazon-ec2-server-instance&quot;&gt;How to install MySQL on an Amazon EC2 Server Instance?&lt;/h2&gt;
+&lt;p&gt;Being a newbie to server administration especially with Linux, I found myself looking all over the internet on how to install a mysql server instance! Here is what worked for me on the Amazon EC2 instance:&lt;/p&gt;
+
+&lt;h2 id=&quot;to-install-a-mysql-server&quot;&gt;To install a MySQL Server&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First step is to of course ssh into the EC2 instance&lt;/li&gt;
+  &lt;li&gt;Then, at a command prompt, use the following command to install MySQL Server:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo yum install mysql-server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;When you are prompted, type ‘y’.&lt;/p&gt;
+
+&lt;h2 id=&quot;to-start-the-installed-mysql-server&quot;&gt;To start the installed MySQL Server&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Start mysql, and configure it to start up automatically on reboot.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo chkconfig mysqld on
+
+sudo service mysqld start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;You would see a response like the following.&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Starting mysqld
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;configuring-newly-installed-mysql-server&quot;&gt;Configuring newly installed MySQL Server&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;To update the password of root user do the following:&lt;/p&gt;
+
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;         mysqladmin -u root password &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;your_new_pwd]
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;To create a database do the following:&lt;/p&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;         mysqladmin -u root -p create &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;your_new_db]
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;When you are prompted for a password, type [your_new_pwd]. Well that’s it. There rest of the MySQL functionality is as usual. For more details on other functionalities please use the MySQL website.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;using-mysql-externally&quot;&gt;Using MySQL Externally&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;If you need to access MySQL from another server, then you need to execute these following additional steps.
+First off, create a MySQL user who can connect from any type of host using the following SQL:
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'localhost'&lt;/span&gt;
+
+GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'localhost'&lt;/span&gt;
+
+CREATE USER &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; IDENTIFIED BY &lt;span class=&quot;s1&quot;&gt;'[your_pwd]'&lt;/span&gt;
+
+GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; WITH GRANT OPTION
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Next, from the AWS Management Console find the Security Group that you assigned to your instance during set-up and add ‘MySQL’ to the group. You can also manually add port 3306. Save and whoala ready to go!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Source: http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2015/12/28/aws-hosting-server-install-mysql/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/28/aws-hosting-server-install-mysql/</guid>
+        
+        
+        <category>aws</category>
         
       </item>
     
