@@ -28,22 +28,22 @@ sudo chkconfig mysqld on
 sudo service mysqld start
 ```
 You would see a response like the following.
-```sh
+
 Starting mysqld
-```
+
 
 ## Configuring newly installed MySQL Server
 1. To update the password of root user do the following:
 
-    ```sh
             mysqladmin -u root password [your_new_pwd]
-    ```
 
 2. To create a database do the following:
-    ```sh
             mysqladmin -u root -p create [your_new_db]
-    ```
 When you are prompted for a password, type [your_new_pwd]. Well that's it. There rest of the MySQL functionality is as usual. For more details on other functionalities please use the MySQL website.
+
+
+mysql -u root -p
+
 
 ## Using MySQL Externally
  1. If you need to access MySQL from another server, then you need to execute these following additional steps.
@@ -56,6 +56,7 @@ First off, create a MySQL user who can connect from any type of host using the f
     CREATE USER 'theuser'@'%' IDENTIFIED BY '[your_pwd]'
 
     GRANT ALL PRIVILEGES ON *.* TO 'theuser'@'%' WITH GRANT OPTION
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' identified by “yourpasswordhere”;
     ```
 
 

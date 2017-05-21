@@ -5,6 +5,6 @@ comments: true
 categories: java
 ---
 
-## Empty java template
+## Collection Framework
 
 Empty post template
