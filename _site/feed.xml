@@ -5,15 +5,15 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 May 2017 17:10:30 +0600</pubDate>
-    <lastBuildDate>Tue, 30 May 2017 17:10:30 +0600</lastBuildDate>
+    <pubDate>Tue, 30 May 2017 18:02:35 +0600</pubDate>
+    <lastBuildDate>Tue, 30 May 2017 18:02:35 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>Learning Markdown For Your Site</title>
         <description>&lt;p&gt;Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.&lt;/p&gt;
 
-&lt;p&gt;###What you will learn:&lt;/p&gt;
+&lt;h3 id=&quot;what-you-will-learn&quot;&gt;What you will learn:&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;How the Markdown format makes styled collaborative editing easy&lt;/li&gt;
   &lt;li&gt;How Markdown differs from traditional formatting approaches&lt;/li&gt;
@@ -22,7 +22,7 @@
   &lt;li&gt;How to apply GitHub’s unique Markdown extensions&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;###What is Markdown?&lt;/p&gt;
+&lt;h3 id=&quot;what-is-markdown&quot;&gt;What is Markdown?&lt;/h3&gt;
 
 &lt;p&gt;Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like # or *.&lt;/p&gt;
 
@@ -36,7 +36,7 @@
 
 &lt;p&gt;For more information, see “Writing on GitHub” in the GitHub Help.&lt;/p&gt;
 
-&lt;p&gt;###Examples&lt;/p&gt;
+&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;/h3&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -67,15 +67,34 @@
       &lt;td&gt;### Heading 3&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Link](http://a.com) &lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Link](http://a.com)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;a href=&quot;http://a.com&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![Image](http://url/a.png) &lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![Image](http://url/a.png)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;img src=&quot;http://url/a.png&quot; alt=&quot;Image&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; Blockquote&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&amp;gt; Blockquote&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;* List&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;* List&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Horizontal Rule&lt;/td&gt;
+      &lt;td&gt;Horizontal Rule&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;—&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+
+&lt;h3 id=&quot;important-link&quot;&gt;Important Link&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Jan 2017 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2017/01/01/learning-markdown-for-your-site/</link>
@@ -133,7 +152,7 @@
         <guid isPermaLink="true">http://localhost:4000/2016/12/26/empty-template/</guid>
         
         
-        <category>java</category>
+        <category>Java</category>
         
       </item>
     

@@ -2,7 +2,7 @@
 layout: post
 title: "Java"
 comments: true
-categories: java
+categories: Java
 ---
 
 ## Collection Framework
