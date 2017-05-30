@@ -64,4 +64,4 @@ First off, create a MySQL user who can connect from any type of host using the f
  2. Next, from the AWS Management Console find the Security Group that you assigned to your instance during set-up and add 'MySQL' to the group. You can also manually add port 3306. Save and whoala ready to go!
 
 
-Source: http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html
+Source: [Link](http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html)

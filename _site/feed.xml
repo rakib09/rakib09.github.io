@@ -5,9 +5,124 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 21 May 2017 18:03:31 +0600</pubDate>
-    <lastBuildDate>Sun, 21 May 2017 18:03:31 +0600</lastBuildDate>
+    <pubDate>Tue, 30 May 2017 14:56:25 +0600</pubDate>
+    <lastBuildDate>Tue, 30 May 2017 14:56:25 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Learning Markdown For Your Site</title>
+        <description>&lt;p&gt;Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.&lt;/p&gt;
+
+&lt;p&gt;###What you will learn:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;How the Markdown format makes styled collaborative editing easy&lt;/li&gt;
+  &lt;li&gt;How Markdown differs from traditional formatting approaches&lt;/li&gt;
+  &lt;li&gt;How to use Markdown to format text&lt;/li&gt;
+  &lt;li&gt;How to leverage GitHub’s automatic Markdown rendering&lt;/li&gt;
+  &lt;li&gt;How to apply GitHub’s unique Markdown extensions&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;###What is Markdown?&lt;/p&gt;
+
+&lt;p&gt;Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like # or *.&lt;/p&gt;
+
+&lt;p&gt;You can use Markdown most places around GitHub:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gists&lt;/li&gt;
+  &lt;li&gt;Comments in Issues and Pull Requests&lt;/li&gt;
+  &lt;li&gt;Files with the .md or .markdown extension&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For more information, see “Writing on GitHub” in the GitHub Help.&lt;/p&gt;
+
+&lt;p&gt;###Examples&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Type&lt;/th&gt;
+      &lt;th&gt;… to Get&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*Italic*&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;**Bold**&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;# Heading 1&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;# Heading 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;## Heading 2&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;## Heading 2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;### Heading 3&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;### Heading 3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Link](http://a.com) &lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;http://a.com&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![Image](http://url/a.png) &lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;img src=&quot;http://url/a.png&quot; alt=&quot;Image&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2017/01/01/learning-markdown-for-your-site/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/01/learning-markdown-for-your-site/</guid>
+        
+        
+        <category>Markdown</category>
+        
+      </item>
+    
+      <item>
+        <title>Starting Project With Machine Learning</title>
+        <description>&lt;h2 id=&quot;machine-learing&quot;&gt;Machine Learing&lt;/h2&gt;
+&lt;p&gt;Machine learning is a type of artificial intelligence (AI) that provides computers with the ability to learn without being explicitly programmed. Machine learning focuses on the development of computer programs that can change when exposed to new data.&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;A computer program is said to learn from experience E with respect to some task T and some performance measure P,
+ if its performance on T, as measured by P, improves with experience E.” 
+ -- Tom Mitchell, Carnegie Mellon University 
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;So if you want your program to predict, for example, traffic patterns at a busy intersection (task T), you can run it through a machine learning algorithm with data about past traffic patterns (experience E) and, if it has successfully “learned”, it will then do better at predicting future traffic patterns (performance measure P).&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ML solves problems that cannot be solved by numerical means alone. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To break down the definition for easier understanding I should mention some factors that we should know as follows:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Method means technique or way to do&lt;/li&gt;
+  &lt;li&gt;Data means set of information&lt;/li&gt;
+  &lt;li&gt;Existing data means data already we have for any task.&lt;/li&gt;
+  &lt;li&gt;Algorithm - Step by step set of operations/command to be performed&lt;/li&gt;
+  &lt;li&gt;Automatically – Something is done or gained without working again.&lt;/li&gt;
+  &lt;li&gt;Model - Data schema that learn from data iteratively&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 28 Dec 2016 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2016/12/28/starting-project-with-machine-learning/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/28/starting-project-with-machine-learning/</guid>
+        
+        
+        <category>Machine</category>
+        
+        <category>Learning</category>
+        
+      </item>
     
       <item>
         <title>Java</title>
@@ -21,51 +136,6 @@
         
         
         <category>java</category>
-        
-      </item>
-    
-      <item>
-        <title>Empty Template</title>
-        <description>&lt;h2 id=&quot;empty-diary-template&quot;&gt;Empty diary template&lt;/h2&gt;
-
-&lt;p&gt;Empty post template&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2015/12/28/empty-template/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
-        
-        
-        <category>paracraft</category>
-        
-      </item>
-    
-      <item>
-        <title>Java</title>
-        <description>&lt;h2 id=&quot;empty-npl-tutorial-template&quot;&gt;Empty npl tutorial template&lt;/h2&gt;
-
-&lt;p&gt;Empty post template&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2015/12/28/empty-template/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
-        
-        
-        <category>npl</category>
-        
-      </item>
-    
-      <item>
-        <title>Empty Template</title>
-        <description>&lt;h2 id=&quot;empty-diary-template&quot;&gt;Empty diary template&lt;/h2&gt;
-
-&lt;p&gt;Empty post template&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2015/12/28/empty-template/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
-        
-        
-        <category>diary</category>
         
       </item>
     
@@ -136,14 +206,59 @@ GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span 
   &lt;li&gt;Next, from the AWS Management Console find the Security Group that you assigned to your instance during set-up and add ‘MySQL’ to the group. You can also manually add port 3306. Save and whoala ready to go!&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Source: http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html&lt;/p&gt;
+&lt;p&gt;Source: &lt;a href=&quot;http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2015/12/28/aws-hosting-server-install-mysql/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/28/aws-hosting-server-install-mysql/</guid>
+        <pubDate>Thu, 28 Apr 2016 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2016/04/28/aws-hosting-server-install-mysql/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/04/28/aws-hosting-server-install-mysql/</guid>
         
         
         <category>aws</category>
+        
+      </item>
+    
+      <item>
+        <title>Empty Template</title>
+        <description>&lt;h2 id=&quot;empty-diary-template&quot;&gt;Empty diary template&lt;/h2&gt;
+
+&lt;p&gt;Empty post template&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2015/12/28/empty-template/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
+        
+        
+        <category>paracraft</category>
+        
+      </item>
+    
+      <item>
+        <title>Java</title>
+        <description>&lt;h2 id=&quot;empty-npl-tutorial-template&quot;&gt;Empty npl tutorial template&lt;/h2&gt;
+
+&lt;p&gt;Empty post template&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2015/12/28/empty-template/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
+        
+        
+        <category>npl</category>
+        
+      </item>
+    
+      <item>
+        <title>Empty Template</title>
+        <description>&lt;h2 id=&quot;empty-diary-template&quot;&gt;Empty diary template&lt;/h2&gt;
+
+&lt;p&gt;Empty post template&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Dec 2015 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2015/12/28/empty-template/</link>
+        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
+        
+        
+        <category>diary</category>
         
       </item>
     

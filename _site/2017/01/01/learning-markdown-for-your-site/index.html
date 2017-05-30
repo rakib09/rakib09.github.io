@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Aws Hosting Server Install Mysql</title>
-	<meta name="description" content="How to install MySQL on an Amazon EC2 Server Instance?Being a newbie to server administration especially with Linux, I found myself looking all over the inte...">
+	<title>Learning Markdown For Your Site</title>
+	<meta name="description" content="Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.">
 	
-	<link rel="canonical" href="http://localhost:4000/2015/12/28/aws-hosting-server-install-mysql/">
+	<link rel="canonical" href="http://localhost:4000/2017/01/01/learning-markdown-for-your-site/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib's Personal Website" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -72,7 +72,7 @@
             
               <li>
             
-            <a href="/about/"><span class="glyphicon "></span> About</a></li>
+            <a href="/about-me/"><span class="glyphicon "></span> About Me</a></li>
           
         
           
@@ -93,77 +93,76 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>Aws Hosting Server Install Mysql</h1>
-        <p>Dec 28, 2015</p>
+        <h1>Learning Markdown For Your Site</h1>
+        <p>Jan 1, 2017</p>
       </header>
       <hr>
       <article>
-        <h2 id="how-to-install-mysql-on-an-amazon-ec2-server-instance">How to install MySQL on an Amazon EC2 Server Instance?</h2>
-<p>Being a newbie to server administration especially with Linux, I found myself looking all over the internet on how to install a mysql server instance! Here is what worked for me on the Amazon EC2 instance:</p>
+        <p>Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.</p>
 
-<h2 id="to-install-a-mysql-server">To install a MySQL Server</h2>
-
+<p>###What you will learn:</p>
 <ol>
-  <li>First step is to of course ssh into the EC2 instance</li>
-  <li>Then, at a command prompt, use the following command to install MySQL Server:</li>
+  <li>How the Markdown format makes styled collaborative editing easy</li>
+  <li>How Markdown differs from traditional formatting approaches</li>
+  <li>How to use Markdown to format text</li>
+  <li>How to leverage GitHub’s automatic Markdown rendering</li>
+  <li>How to apply GitHub’s unique Markdown extensions</li>
 </ol>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo yum install mysql-server
-</code></pre>
-</div>
-<p>When you are prompted, type ‘y’.</p>
+<p>###What is Markdown?</p>
 
-<h2 id="to-start-the-installed-mysql-server">To start the installed MySQL Server</h2>
-<ol>
-  <li>Start mysql, and configure it to start up automatically on reboot.</li>
-</ol>
+<p>Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like # or *.</p>
 
-<div class="language-sh highlighter-rouge"><pre class="highlight"><code>sudo chkconfig mysqld on
+<p>You can use Markdown most places around GitHub:</p>
 
-sudo service mysqld start
-</code></pre>
-</div>
-<p>You would see a response like the following.</p>
+<ul>
+  <li>Gists</li>
+  <li>Comments in Issues and Pull Requests</li>
+  <li>Files with the .md or .markdown extension</li>
+</ul>
 
-<p>Starting mysqld</p>
+<p>For more information, see “Writing on GitHub” in the GitHub Help.</p>
 
-<h2 id="configuring-newly-installed-mysql-server">Configuring newly installed MySQL Server</h2>
-<ol>
-  <li>
-    <p>To update the password of root user do the following:</p>
+<p>###Examples</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>     mysqladmin -u root password [your_new_pwd]
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>To create a database do the following:
-         mysqladmin -u root -p create [your_new_db]
-When you are prompted for a password, type [your_new_pwd]. Well that’s it. There rest of the MySQL functionality is as usual. For more details on other functionalities please use the MySQL website.</p>
-  </li>
-</ol>
-
-<p>mysql -u root -p</p>
-
-<h2 id="using-mysql-externally">Using MySQL Externally</h2>
-<ol>
-  <li>If you need to access MySQL from another server, then you need to execute these following additional steps.
-First off, create a MySQL user who can connect from any type of host using the following SQL:
-    <div class="language-sh highlighter-rouge"><pre class="highlight"><code>GRANT ALL PRIVILEGES ON <span class="k">*</span>.<span class="k">*</span> TO <span class="s1">'theuser'</span>@<span class="s1">'localhost'</span>
-
-GRANT ALL PRIVILEGES ON <span class="k">*</span>.<span class="k">*</span> TO <span class="s1">'theuser'</span>@<span class="s1">'localhost'</span>
-
-CREATE USER <span class="s1">'theuser'</span>@<span class="s1">'%'</span> IDENTIFIED BY <span class="s1">'[your_pwd]'</span>
-
-GRANT ALL PRIVILEGES ON <span class="k">*</span>.<span class="k">*</span> TO <span class="s1">'theuser'</span>@<span class="s1">'%'</span> WITH GRANT OPTION
-GRANT ALL PRIVILEGES ON <span class="k">*</span>.<span class="k">*</span> TO <span class="s1">'root'</span>@<span class="s1">'%'</span> identified by “yourpasswordhere”;
-</code></pre>
-    </div>
-  </li>
-  <li>Next, from the AWS Management Console find the Security Group that you assigned to your instance during set-up and add ‘MySQL’ to the group. You can also manually add port 3306. Save and whoala ready to go!</li>
-</ol>
-
-<p>Source: http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html</p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>… to Get</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">*Italic*</code></td>
+      <td><em>Italic</em></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">**Bold**</code></td>
+      <td><strong>Bold</strong></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge"># Heading 1</code></td>
+      <td># Heading 1</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">## Heading 2</code></td>
+      <td>## Heading 2</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">### Heading 3</code></td>
+      <td>### Heading 3</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">[Link](http://a.com) </code></td>
+      <td><a href="http://a.com">Link</a></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">![Image](http://url/a.png) </code></td>
+      <td><img src="http://url/a.png" alt="Image" /></td>
+    </tr>
+  </tbody>
+</table>
 
       </article>
       <hr>
@@ -189,8 +188,8 @@ GRANT ALL PRIVILEGES ON <span class="k">*</span>.<span class="k">*</span> TO <sp
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2015/12/28/aws-hosting-server-install-mysql/"; 
-			this.page.identifier = "/2015/12/28/aws-hosting-server-install-mysql"; 
+			this.page.url = "https://rakib09.github.io/2017/01/01/learning-markdown-for-your-site/"; 
+			this.page.identifier = "/2017/01/01/learning-markdown-for-your-site"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -242,7 +241,7 @@ GRANT ALL PRIVILEGES ON <span class="k">*</span>.<span class="k">*</span> TO <sp
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/aws/2015-12-28-aws-hosting-server-install-mysql.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/Markdown/2017-01-01-learning-markdown-for-your-site.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>
