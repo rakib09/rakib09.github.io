@@ -30,3 +30,11 @@ I am mainly fully focused on Java (Spring, Grails). I generally prefer Ractive.j
 
 So i have been working as a full stack web developer and also working on some special critical problem like machine learning and also want challenges to work any type complex work.
 
+#### Conact Me
+
+[Linkedin](https://www.linkedin.com/in/rakibhasan6/)
+
+[Facebook](https://www.facebook.com/rakib.hasan.ruet)
+
+
+
