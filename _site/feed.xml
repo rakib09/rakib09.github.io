@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 May 2017 18:02:35 +0600</pubDate>
-    <lastBuildDate>Tue, 30 May 2017 18:02:35 +0600</lastBuildDate>
+    <pubDate>Tue, 30 May 2017 18:11:23 +0600</pubDate>
+    <lastBuildDate>Tue, 30 May 2017 18:11:23 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -55,18 +55,6 @@
       &lt;td&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;# Heading 1&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;# Heading 1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;## Heading 2&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;## Heading 2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;### Heading 3&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;### Heading 3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
       &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Link](http://a.com)&lt;/code&gt;&lt;/td&gt;
       &lt;td&gt;&lt;a href=&quot;http://a.com&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;
     &lt;/tr&gt;
@@ -93,8 +81,39 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;h3 id=&quot;important-link&quot;&gt;Important Link&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis&quot;&gt;Markdown Cheatsheet&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Headers&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h1 id=&quot;h1&quot;&gt;H1&lt;/h1&gt;
+&lt;h2 id=&quot;h2&quot;&gt;H2&lt;/h2&gt;
+&lt;h3 id=&quot;h3&quot;&gt;H3&lt;/h3&gt;
+&lt;h4 id=&quot;h4&quot;&gt;H4&lt;/h4&gt;
+&lt;h5 id=&quot;h5&quot;&gt;H5&lt;/h5&gt;
+&lt;h6 id=&quot;h6&quot;&gt;H6&lt;/h6&gt;
+
+&lt;h4 id=&quot;images&quot;&gt;Images&lt;/h4&gt;
+
+&lt;p&gt;Here’s our logo (hover to see the title text):&lt;/p&gt;
+
+&lt;p&gt;Inline-style:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png &quot;Logo Title Text 1&quot;)
+
+Reference-style: 
+![alt text][logo]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&quot; alt=&quot;alt text&quot; title=&quot;Logo Title Text 1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reference-link&quot;&gt;Reference Link&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis&quot;&gt;Markdown Cheatsheet&lt;/a&gt;, 
+&lt;a href=&quot;https://help.ghost.org/hc/en-us/articles/224410728-Markdown-Guide&quot;&gt;Markdown Guide&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Jan 2017 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2017/01/01/learning-markdown-for-your-site/</link>

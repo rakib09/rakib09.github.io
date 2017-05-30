@@ -32,9 +32,6 @@ For more information, see “Writing on GitHub” in the GitHub Help.
 | ------ | ------ |
 | `*Italic*` | *Italic* |
 | `**Bold**` | **Bold** |
-| `# Heading 1` | # Heading 1 |
-| `## Heading 2` | ## Heading 2 |
-| `### Heading 3` | ### Heading 3 |
 |`[Link](http://a.com)` | [Link](http://a.com) |
 | `![Image](http://url/a.png)` | ![Image](http://url/a.png) |
 | `> Blockquote` | > Blockquote |
@@ -42,6 +39,38 @@ For more information, see “Writing on GitHub” in the GitHub Help.
 |Horizontal Rule | Horizontal Rule |
 | `---` | --- |
 
+Headers
 
-### Important Link
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis)
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+#### Images
+
+Here's our logo (hover to see the title text):
+
+Inline-style: 
+```
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+Reference-style: 
+![alt text][logo]
+```
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
+
+### Reference Link
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis), 
+[Markdown Guide](https://help.ghost.org/hc/en-us/articles/224410728-Markdown-Guide)
