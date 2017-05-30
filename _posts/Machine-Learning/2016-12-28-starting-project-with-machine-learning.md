@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-categories: Machine Learning
+categories: Machine-Learning
 ---
 
 
