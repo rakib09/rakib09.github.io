@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 May 2017 22:46:53 +0600</pubDate>
-    <lastBuildDate>Tue, 30 May 2017 22:46:53 +0600</lastBuildDate>
+    <pubDate>Sat, 10 Jun 2017 10:42:30 +0600</pubDate>
+    <lastBuildDate>Sat, 10 Jun 2017 10:42:30 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -172,6 +172,33 @@ Reference-style:
         
         
         <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Google Play Service on Genymotion</title>
+        <description>&lt;h2 id=&quot;google-play-service-on-genymotion&quot;&gt;Google Play Service on Genymotion&lt;/h2&gt;
+
+&lt;p&gt;For intellectual property reasons, Google Play Services are not included by default in Genymotion virtual devices. However, if you really need them, you can use the packages provided by OpenGapps. Simply follow these steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Visit &lt;a href=&quot;http://www.opengapps.org&quot;&gt;opengapps.org&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Select x86 as platform&lt;/li&gt;
+  &lt;li&gt;Choose the Android version corresponding to your virtual device&lt;/li&gt;
+  &lt;li&gt;Select nano as variant&lt;/li&gt;
+  &lt;li&gt;Download the zip file&lt;/li&gt;
+  &lt;li&gt;Drag &amp;amp; Drop the zip installer in new Genymotion virtual device (2.7.2 and above only)&lt;/li&gt;
+  &lt;li&gt;Follow the pop-up instructions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please note Genymobile Inc. and Genymotion assume no liability whatsoever resulting from the download, install and use of Google Play Services within your virtual devices. You are solely responsible for the use and assume all liability related thereto. Moreover, we disclaim any warranties of any kind for a particular purpose regarding the compatibility of the OpenGapps packages with any version of Genymotion&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2016/12/26/google-play-service-on-genymotion/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/26/google-play-service-on-genymotion/</guid>
+        
+        
+        <category>android</category>
         
       </item>
     
