@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Jun 2017 10:42:30 +0600</pubDate>
-    <lastBuildDate>Sat, 10 Jun 2017 10:42:30 +0600</lastBuildDate>
+    <pubDate>Sun, 11 Jun 2017 09:47:38 +0600</pubDate>
+    <lastBuildDate>Sun, 11 Jun 2017 09:47:38 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -172,6 +172,24 @@ Reference-style:
         
         
         <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello World in Go Language Command Line</title>
+        <description>&lt;h2 id=&quot;go-language&quot;&gt;Go Language&lt;/h2&gt;
+
+&lt;p&gt;Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
+
+&lt;p&gt;Our canonical Git repository is located at &lt;a href=&quot;https://go.googlesource.com/go&quot;&gt;Go-Lang&lt;/a&gt;. There is a mirror of the repository at &lt;a href=&quot;https://github.com/golang/go&quot;&gt;GO&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2016/12/26/hello-world-in-go-language-command-line/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/26/hello-world-in-go-language-command-line/</guid>
+        
+        
+        <category>go_lang</category>
         
       </item>
     
