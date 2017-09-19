@@ -21,3 +21,25 @@ Jekyll is a simple, blog-aware, static site generator. It takes a template direc
 3. Check if Jekyll installed properly: 
 
 ```jekyll -v```
+4. To start a new project named my_blog, just run:
+   
+   ```jekyll new my_blog```
+   
+4. run jekyll project -
+```
+bundle exec jekyll serve
+```
+or
+```
+jekyll serve
+```
+
+## Exception
+if any problem like 
+```
+Could not find public_suffix-2.0.4 in any of the sources (Bundler::GemNotFound)
+```
+for version miss matching just update the gem-
+```
+bundle update
+```

@@ -2,7 +2,7 @@
 layout: post
 title: "Hello World in Go Language Command Line"
 comments: true
-categories: go_lang
+categories: Go-lang
 ---
 
 ## Go Language

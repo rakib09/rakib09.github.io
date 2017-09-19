@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-categories: sementicui
+categories: sementic-ui
 ---
 
 

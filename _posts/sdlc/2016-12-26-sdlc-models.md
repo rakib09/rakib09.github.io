@@ -2,7 +2,7 @@
 layout: post
 title: "Software Development Life Cycle-Model"
 comments: true
-categories: sdlc
+categories: SDLC
 ---
 
 ## Waterfall Model - Design

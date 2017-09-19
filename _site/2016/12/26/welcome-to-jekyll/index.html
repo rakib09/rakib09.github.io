@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>hello jekyll!</title>
-	<meta name="description" content="You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...">
+	<title>Jekyll</title>
+	<meta name="description" content="JekyllJekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a co...">
 	
-	<link rel="canonical" href="http://localhost:4000/2015/02/10/welcome-to-jekyll/">
+	<link rel="canonical" href="http://localhost:4000/2016/12/26/welcome-to-jekyll/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -79,8 +79,6 @@
         
           
         
-          
-        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -93,27 +91,62 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>hello jekyll!</h1>
-        <p>Feb 10, 2015</p>
+        <h1>Jekyll</h1>
+        <p>Dec 26, 2016</p>
       </header>
       <hr>
       <article>
-        <p>You’ll find this post in your <code class="highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+        <h2 id="jekyll">Jekyll</h2>
+<p>Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.</p>
 
-<p>To add new posts, simply add a file in the <code class="highlighter-rouge">_posts</code> directory that follows the convention <code class="highlighter-rouge">YYYY-MM-DD-name-of-post.ext</code> and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.</p>
+<p>##Installation via RubyInstallerPermalink</p>
 
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p><a href="https://rubyinstaller.org/">RubyInstaller</a> is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=&gt; prints 'Hi, Tom' to STDOUT.
+<ol>
+  <li>
+    <p>Download and Install a package manager version from <a href="https://rubyinstaller.org/downloads/">RubyInstaller Downloads</a>.</p>
+
+    <p>If problem to download MSYS2, can download manually from <a href="https://sourceforge.net/projects/msys2/files/Base/x86_64/msys2-x86_64-20161025.exe/download">MSYS2</a> &amp; install it.</p>
+  </li>
+  <li>
+    <p>Install Jekyll and Bundler via a command prompt window:</p>
+  </li>
+</ol>
+
+<p><code class="highlighter-rouge">gem install jekyll bundler</code></p>
+<ol>
+  <li>Check if Jekyll installed properly:</li>
+</ol>
+
+<p><code class="highlighter-rouge">jekyll -v</code></p>
+<ol>
+  <li>
+    <p>To start a new project named my_blog, just run:</p>
+
+    <p><code class="highlighter-rouge">jekyll new my_blog</code></p>
+  </li>
+  <li>
+    <p>run jekyll project -</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre>
+    </div>
+    <p>or</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>jekyll serve
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="exception">Exception</h2>
+<p>if any problem like</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Could not find public_suffix-2.0.4 in any of the sources (Bundler::GemNotFound)
 </code></pre>
 </div>
-
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
-
+<p>for version miss matching just update the gem-</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle update
+</code></pre>
+</div>
 
       </article>
       <hr>
@@ -139,8 +172,8 @@ print_hi('Tom')
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2015/02/10/welcome-to-jekyll/"; 
-			this.page.identifier = "/2015/02/10/welcome-to-jekyll"; 
+			this.page.url = "https://rakib09.github.io/2016/12/26/welcome-to-jekyll/"; 
+			this.page.identifier = "/2016/12/26/welcome-to-jekyll"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -192,7 +225,7 @@ print_hi('Tom')
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/2016-01-01-welcome-to-jekyll.markdown">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/jekyll/2016-12-26-welcome-to-jekyll.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>

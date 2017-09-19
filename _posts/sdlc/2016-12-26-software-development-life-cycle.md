@@ -2,7 +2,7 @@
 layout: post
 title: "Software Development Life Cycle"
 comments: true
-categories: sdlc
+categories: SDLC
 ---
 
 ## Software Development Life Cycle

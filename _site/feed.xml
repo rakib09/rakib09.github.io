@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Jul 2017 13:13:47 +0600</pubDate>
-    <lastBuildDate>Wed, 19 Jul 2017 13:13:47 +0600</lastBuildDate>
+    <pubDate>Tue, 19 Sep 2017 10:25:48 +0600</pubDate>
+    <lastBuildDate>Tue, 19 Sep 2017 10:25:48 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -186,6 +186,122 @@ return false;
       </item>
     
       <item>
+        <title>Some Types Of Request Response Params In Spring</title>
+        <description>&lt;h2 id=&quot;requestresponse-paramters-in-spring-method&quot;&gt;Request/Response paramters in spring method&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;HttpSession&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;@PathVariable&lt;/strong&gt; annotated parameters for access to URI template variables.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@RequestMapping(value=&quot;/owners/{ownerId}&quot;, method=RequestMethod.GET)
+public String findOwner(@PathVariable String ownerId, Model model) {
+Owner owner = ownerService.findOwner(ownerId);  
+model.addAttribute(&quot;owner&quot;, owner);  
+return &quot;displayOwner&quot;; 
+}
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;@RequestHeader&lt;/strong&gt; annotated parameters for access to specific Servlet request HTTP headers.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;@RequestBody&lt;/strong&gt; annotated parameters for access to the HTTP request body.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@RequestMapping(value = &quot;/something&quot;, method = RequestMethod.PUT)
+public void handle(@RequestBody String body, Writer writer) throws IOException {
+writer.write(body);
+}
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;@RequestPart&lt;/strong&gt; annotated parameters for access to the content of a “multipart/form-data” request part.
+```
+@RequestMapping(value=”/someUrl”, method = RequestMethod.POST)
+public String onSubmit(@RequestPart(“meta-data”) MetaData metadata,
+                     @RequestPart(“file-data”) MultipartFile file) {
+  // …&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+* **HttpEntity&amp;lt;?&amp;gt;** parameters for access to the Servlet request HTTP headers and contents.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;@RequestMapping(“/something”)
+public ResponseEntity&lt;String&gt; handle(HttpEntity&amp;lt;byte[]&amp;gt; requestEntity) throws UnsupportedEncodingException {
+  String requestHeader = requestEntity.getHeaders().getFirst(&quot;MyRequestHeader&quot;));
+  byte[] requestBody = requestEntity.getBody();
+  // do something with request header and body&lt;/String&gt;&lt;/p&gt;
+
+&lt;p&gt;HttpHeaders responseHeaders = new HttpHeaders();
+  responseHeaders.set(“MyResponseHeader”, “MyValue”);
+  return new ResponseEntity&lt;String&gt;(&quot;Hello World&quot;, responseHeaders, HttpStatus.CREATED);
+}
+```&lt;/String&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 Apr 2017 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2017/04/28/some-types-of-request-response-params-in-spring/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/28/some-types-of-request-response-params-in-spring/</guid>
+        
+        
+        <category>spring</category>
+        
+      </item>
+    
+      <item>
+        <title>Spring Boot Application Live Reload Hot Swap With Intellij Idea</title>
+        <description>&lt;h2 id=&quot;spring-boot-application-live-reload-hot-swap-with-intellij-idea&quot;&gt;Spring Boot Application Live Reload (Hot Swap) With Intellij IDEA&lt;/h2&gt;
+&lt;p&gt;While developing Spring Boot Applications using Intellij IDEA, it was so annoying to restart the Spring Boot app after each and every change. Spring Boot provides live reload (hot swap) of application out of the box using the following dependency.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;spring-boot-devtools&amp;lt;/artifactId&amp;gt;
+    &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;But it didn’t live reload the application/container, and the hot deployment didn’t work for changes. Further researching found that following changes needed to be done in order the hot deployment to be worked correctly.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Open the Settings –&amp;gt; Build-Execution-Deployment –&amp;gt; Compiler&lt;/p&gt;
+
+    &lt;p&gt;and enable the Make Project Automatically.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Then press ctrl+shift+A and search for the registry. In the registry, make the following configuration enabled.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compiler.automake.allow.when.app.running
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Reload Static content (html, css, js)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Add this configuration to your Spring Boot Maven Plugin:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;configuration&amp;gt;
+    &amp;lt;addResources&amp;gt;true&amp;lt;/addResources&amp;gt;
+&amp;lt;/configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Restart the IDE.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That’s it! Now the hot deployment works, and you don’t have to restart manually after each and every change.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 Apr 2017 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2017/04/28/Spring-Boot-Application-Live-Reload-Hot-Swap-With-Intellij-IDEA/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/28/Spring-Boot-Application-Live-Reload-Hot-Swap-With-Intellij-IDEA/</guid>
+        
+        
+        <category>spring</category>
+        
+      </item>
+    
+      <item>
         <title>Sementic Ui Calender Set Date Backend Frontend</title>
         <description>&lt;h2 id=&quot;sementic-ui-calender&quot;&gt;Sementic UI Calender&lt;/h2&gt;
 &lt;p&gt;Calendar module for Semantic UI. See &lt;a href=&quot;https://jsbin.com/ruqakehefa/&quot;&gt;https://jsbin.com/ruqakehefa/&lt;/a&gt; for example usage.
@@ -288,7 +404,7 @@ $(&quot;#date&quot;).calendar({
         <guid isPermaLink="true">http://localhost:4000/2017/04/28/sementic-ui-calender-set-date-backend-frontend/</guid>
         
         
-        <category>sementicui</category>
+        <category>sementic-ui</category>
         
       </item>
     
@@ -476,7 +592,7 @@ Reference-style:
         <guid isPermaLink="true">http://localhost:4000/2016/12/26/software-development-life-cycle/</guid>
         
         
-        <category>sdlc</category>
+        <category>SDLC</category>
         
       </item>
     
@@ -494,7 +610,70 @@ Reference-style:
         <guid isPermaLink="true">http://localhost:4000/2016/12/26/sdlc-models/</guid>
         
         
-        <category>sdlc</category>
+        <category>SDLC</category>
+        
+      </item>
+    
+      <item>
+        <title>Jekyll</title>
+        <description>&lt;h2 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h2&gt;
+&lt;p&gt;Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.&lt;/p&gt;
+
+&lt;p&gt;##Installation via RubyInstallerPermalink&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;RubyInstaller&lt;/a&gt; is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download and Install a package manager version from &lt;a href=&quot;https://rubyinstaller.org/downloads/&quot;&gt;RubyInstaller Downloads&lt;/a&gt;.&lt;/p&gt;
+
+    &lt;p&gt;If problem to download MSYS2, can download manually from &lt;a href=&quot;https://sourceforge.net/projects/msys2/files/Base/x86_64/msys2-x86_64-20161025.exe/download&quot;&gt;MSYS2&lt;/a&gt; &amp;amp; install it.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Install Jekyll and Bundler via a command prompt window:&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll bundler&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Check if Jekyll installed properly:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll -v&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;To start a new project named my_blog, just run:&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new my_blog&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;run jekyll project -&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;or&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;exception&quot;&gt;Exception&lt;/h2&gt;
+&lt;p&gt;if any problem like&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Could not find public_suffix-2.0.4 in any of the sources (Bundler::GemNotFound)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;for version miss matching just update the gem-&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2016/12/26/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/26/welcome-to-jekyll/</guid>
+        
+        
+        <category>jekyll</category>
         
       </item>
     
@@ -510,129 +689,6 @@ Reference-style:
         
         
         <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Hello World in Go Language Command Line</title>
-        <description>&lt;h2 id=&quot;go-language&quot;&gt;Go Language&lt;/h2&gt;
-
-&lt;p&gt;Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
-
-&lt;p&gt;Our canonical Git repository is located at &lt;a href=&quot;https://go.googlesource.com/go&quot;&gt;Go-Lang&lt;/a&gt;. There is a mirror of the repository at &lt;a href=&quot;https://github.com/golang/go&quot;&gt;GO&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2016/12/26/hello-world-in-go-language-command-line/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/26/hello-world-in-go-language-command-line/</guid>
-        
-        
-        <category>go_lang</category>
-        
-      </item>
-    
-      <item>
-        <title>Google Play Service on Genymotion</title>
-        <description>&lt;h2 id=&quot;google-play-service-on-genymotion&quot;&gt;Google Play Service on Genymotion&lt;/h2&gt;
-
-&lt;p&gt;For intellectual property reasons, Google Play Services are not included by default in Genymotion virtual devices. However, if you really need them, you can use the packages provided by OpenGapps. Simply follow these steps:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Visit &lt;a href=&quot;http://www.opengapps.org&quot;&gt;opengapps.org&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Select x86 as platform&lt;/li&gt;
-  &lt;li&gt;Choose the Android version corresponding to your virtual device&lt;/li&gt;
-  &lt;li&gt;Select nano as variant&lt;/li&gt;
-  &lt;li&gt;Download the zip file&lt;/li&gt;
-  &lt;li&gt;Drag &amp;amp; Drop the zip installer in new Genymotion virtual device (2.7.2 and above only)&lt;/li&gt;
-  &lt;li&gt;Follow the pop-up instructions&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Please note Genymobile Inc. and Genymotion assume no liability whatsoever resulting from the download, install and use of Google Play Services within your virtual devices. You are solely responsible for the use and assume all liability related thereto. Moreover, we disclaim any warranties of any kind for a particular purpose regarding the compatibility of the OpenGapps packages with any version of Genymotion&lt;/p&gt;
-</description>
-        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2016/12/26/google-play-service-on-genymotion/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/26/google-play-service-on-genymotion/</guid>
-        
-        
-        <category>android</category>
-        
-      </item>
-    
-      <item>
-        <title>Aws Hosting Server Install Mysql</title>
-        <description>&lt;h2 id=&quot;how-to-install-mysql-on-an-amazon-ec2-server-instance&quot;&gt;How to install MySQL on an Amazon EC2 Server Instance?&lt;/h2&gt;
-&lt;p&gt;Being a newbie to server administration especially with Linux, I found myself looking all over the internet on how to install a mysql server instance! Here is what worked for me on the Amazon EC2 instance:&lt;/p&gt;
-
-&lt;h2 id=&quot;to-install-a-mysql-server&quot;&gt;To install a MySQL Server&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;First step is to of course ssh into the EC2 instance&lt;/li&gt;
-  &lt;li&gt;Then, at a command prompt, use the following command to install MySQL Server:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo yum install mysql-server
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;When you are prompted, type ‘y’.&lt;/p&gt;
-
-&lt;h2 id=&quot;to-start-the-installed-mysql-server&quot;&gt;To start the installed MySQL Server&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Start mysql, and configure it to start up automatically on reboot.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo chkconfig mysqld on
-
-sudo service mysqld start
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;You would see a response like the following.&lt;/p&gt;
-
-&lt;p&gt;Starting mysqld&lt;/p&gt;
-
-&lt;h2 id=&quot;configuring-newly-installed-mysql-server&quot;&gt;Configuring newly installed MySQL Server&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;To update the password of root user do the following:&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     mysqladmin -u root password [your_new_pwd]
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To create a database do the following:
-         mysqladmin -u root -p create [your_new_db]
-When you are prompted for a password, type [your_new_pwd]. Well that’s it. There rest of the MySQL functionality is as usual. For more details on other functionalities please use the MySQL website.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;mysql -u root -p&lt;/p&gt;
-
-&lt;h2 id=&quot;using-mysql-externally&quot;&gt;Using MySQL Externally&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;If you need to access MySQL from another server, then you need to execute these following additional steps.
-First off, create a MySQL user who can connect from any type of host using the following SQL:
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'localhost'&lt;/span&gt;
-
-GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'localhost'&lt;/span&gt;
-
-CREATE USER &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; IDENTIFIED BY &lt;span class=&quot;s1&quot;&gt;'[your_pwd]'&lt;/span&gt;
-
-GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'theuser'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; WITH GRANT OPTION
-GRANT ALL PRIVILEGES ON &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; TO &lt;span class=&quot;s1&quot;&gt;'root'&lt;/span&gt;@&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; identified by “yourpasswordhere”;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Next, from the AWS Management Console find the Security Group that you assigned to your instance during set-up and add ‘MySQL’ to the group. You can also manually add port 3306. Save and whoala ready to go!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Source: &lt;a href=&quot;http://text-analytics101.rxnlp.com/2013/11/how-to-install-mysql-on-amazon-ec2.html&quot;&gt;Link&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 28 Apr 2016 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2016/04/28/aws-hosting-server-install-mysql/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/04/28/aws-hosting-server-install-mysql/</guid>
-        
-        
-        <category>aws</category>
         
       </item>
     
