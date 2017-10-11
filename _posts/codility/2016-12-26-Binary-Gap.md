@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Codility"
+title: "BinaryGap"
 comments: true
 categories: Codility
 ---
