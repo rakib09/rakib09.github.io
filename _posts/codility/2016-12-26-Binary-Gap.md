@@ -27,3 +27,25 @@ expected worst-case time complexity is O(log(N));
 expected worst-case space complexity is O(1).
 
 Solution:
+
+``` 
+ int solution(int N) {
+        String binaryStr = Integer.toBinaryString(N);
+        int i = binaryStr.length() -1;
+        while (binaryStr.charAt(i) == '0') {
+            i--;
+        }
+        int gap = 0;
+        int count = 0;
+        while ( i >= 0 ) {
+            if(binaryStr.charAt(i) == '1') {
+                gap = Math.max(gap, count);
+                count = 0;
+            } else {
+                count++;
+            }
+            i--;
+        }
+        return gap;
+    }
+```
