@@ -19,4 +19,4 @@ categories: data-structure
    Ans. Two queues are needed. One queue is used for actual storing of data and another for storing priorities.
 
    
-       
+
