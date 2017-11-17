@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Sep 2017 10:25:48 +0600</pubDate>
-    <lastBuildDate>Tue, 19 Sep 2017 10:25:48 +0600</lastBuildDate>
+    <pubDate>Sat, 18 Nov 2017 00:47:50 +0600</pubDate>
+    <lastBuildDate>Sat, 18 Nov 2017 00:47:50 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -602,7 +602,7 @@ Reference-style:
 
 &lt;p&gt;Waterfall approach was first SDLC Model to be used widely in Software Engineering to ensure success of the project. In “The Waterfall” approach, the whole process of software development is divided into separate phases. In this Waterfall model, typically, the outcome of one phase acts as the input for the next phase sequentially.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;static/img/sdlc_waterfall_model.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/sdlc_waterfall_model.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
@@ -678,14 +678,305 @@ Reference-style:
       </item>
     
       <item>
-        <title>Java</title>
-        <description>&lt;h2 id=&quot;collection-framework&quot;&gt;Collection Framework&lt;/h2&gt;
+        <title>Exception Handling</title>
+        <description>&lt;h2 id=&quot;exception-handling&quot;&gt;Exception Handling&lt;/h2&gt;
 
-&lt;p&gt;Empty post template&lt;/p&gt;
+&lt;p&gt;Hierarchy of Java Exception classes&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Throwable
+    &lt;ul&gt;
+      &lt;li&gt;Exception
+        &lt;ul&gt;
+          &lt;li&gt;IOException&lt;/li&gt;
+          &lt;li&gt;SQLException&lt;/li&gt;
+          &lt;li&gt;ClassNotFoundException&lt;/li&gt;
+          &lt;li&gt;RuntimeException
+            &lt;ul&gt;
+              &lt;li&gt;ArithmeticException&lt;/li&gt;
+              &lt;li&gt;NullPointerException&lt;/li&gt;
+              &lt;li&gt;NumberFormateException&lt;/li&gt;
+              &lt;li&gt;IndexOutOfBoundException
+                &lt;ul&gt;
+                  &lt;li&gt;ArrayIndexOutOfBoundException&lt;/li&gt;
+                  &lt;li&gt;StringIndexOutOfBoundException&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Error
+        &lt;ul&gt;
+          &lt;li&gt;StackOverFlowError&lt;/li&gt;
+          &lt;li&gt;VirtualMachineError&lt;/li&gt;
+          &lt;li&gt;OutOfMemoryError&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Type of Exception&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Checked Exception
+ -Those type of exception extends Throwable except RuntimeException &amp;amp; are checked at compile time. Example: IOException, SQLException&lt;/li&gt;
+  &lt;li&gt;Unchecked Exception
+    &lt;ul&gt;
+      &lt;li&gt;Those type of Exception which are not checked at runtime. Example: ArithmeticException, NullPointerException, NumberFormateException&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Error
+    &lt;ul&gt;
+      &lt;li&gt;Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Common scenarios where exceptions may occur&lt;/p&gt;
+
+&lt;p&gt;There are given some scenarios where unchecked exceptions can occur. They are as follows:
+1) Scenario where ArithmeticException occurs&lt;/p&gt;
+
+&lt;p&gt;If we divide any number by zero, there occurs an ArithmeticException.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int a=50/0;//ArithmeticException  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;2) Scenario where NullPointerException occurs&lt;/p&gt;
+
+&lt;p&gt;If we have null value in any variable, performing any operation by the variable occurs an NullPointerException.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String s=null;  
+System.out.println(s.length());//NullPointerException  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;3) Scenario where NumberFormatException occurs&lt;/p&gt;
+
+&lt;p&gt;The wrong formatting of any value, may occur NumberFormatException. Suppose I have a string variable that have characters, converting this variable into digit will occur NumberFormatException.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String s=&quot;abc&quot;;  
+int i=Integer.parseInt(s);//NumberFormatException  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;4) Scenario where ArrayIndexOutOfBoundsException occurs&lt;/p&gt;
+
+&lt;p&gt;If you are inserting any value in the wrong index, it would result ArrayIndexOutOfBoundsException as shown below:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int a[]=new int[5];  
+a[10]=50; //ArrayIndexOutOfBoundsException  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;java-exception-handling-keywords&quot;&gt;Java Exception Handling Keywords&lt;/h3&gt;
+
+&lt;p&gt;There are 5 keywords used in java exception handling.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;try
+catch
+finally
+throw
+throws
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h6 id=&quot;the-jvm-firstly-checks-whether-the-exception-is-handled-or-not-if-exception-is-not-handled-jvm-provides-a-default-exception-handler-that-performs-the-following-tasks&quot;&gt;The JVM firstly checks whether the exception is handled or not. If exception is not handled, JVM provides a default exception handler that performs the following tasks:&lt;/h6&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Prints out exception description.&lt;/li&gt;
+  &lt;li&gt;Prints the stack trace (Hierarchy of methods where the exception occurred).&lt;/li&gt;
+  &lt;li&gt;Causes the program to terminate.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;but-if-exception-is-handled-by-the-application-programmer-normal-flow-of-the-application-is-maintained-ie-rest-of-the-code-is-executed&quot;&gt;But if exception is handled by the application programmer, normal flow of the application is maintained i.e. rest of the code is executed.&lt;/h6&gt;
+
+&lt;h4 id=&quot;java-finally-block&quot;&gt;Java finally block&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Java finally block is a block that is used to execute important code such as closing connection, stream etc.&lt;/li&gt;
+  &lt;li&gt;Java finally block is always executed whether exception is handled or not.&lt;/li&gt;
+  &lt;li&gt;Java finally block is&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;for-each-try-block-there-can-be-zero-or-more-catch-blocks-but-only-one-finally-block&quot;&gt;For each try block there can be zero or more catch blocks, but only one finally block.&lt;/h4&gt;
+
+&lt;h2 id=&quot;java-exception-propagation&quot;&gt;Java Exception propagation&lt;/h2&gt;
+&lt;p&gt;An exception is first thrown from the top of the stack and if it is not caught, it drops down the call stack to the previous method,If not caught there, the exception again drops down to the previous method, and so on until they are caught or until they reach the very bottom of the call stack.This is called exception propagation.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class TestExceptionPropagation1{  
+         void m(){  
+           int data=50/0;  
+         }  
+         void n(){  
+           m();  
+         }  
+         void p(){  
+          try{  
+           n();  
+          }catch(Exception e){System.out.println(&quot;exception handled&quot;);}  
+         }  
+         public static void main(String args[]){  
+          TestExceptionPropagation1 obj=new TestExceptionPropagation1();  
+          obj.p();  
+          System.out.println(&quot;normal flow...&quot;);  
+         }  
+       }  
+       
+       Output:exception handled
+              normal flow... 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;by-default-unchecked-exceptions-are-forwarded-in-calling-chain-propagated&quot;&gt;By default Unchecked Exceptions are forwarded in calling chain (propagated).&lt;/h4&gt;
+&lt;h4 id=&quot;by-default-checked-exceptions-are-not-forwarded-in-calling-chain-propagated&quot;&gt;By default, Checked Exceptions are not forwarded in calling chain (propagated).&lt;/h4&gt;
+
+&lt;p&gt;Program which describes that checked exceptions are not propagated&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    class TestExceptionPropagation2{  
+      void m(){  
+        throw new java.io.IOException(&quot;device error&quot;);//checked exception  
+      }  
+      void n(){  
+        m();  
+      }  
+      void p(){  
+       try{  
+        n();  
+       }catch(Exception e){System.out.println(&quot;exception handeled&quot;);}  
+      }  
+      public static void main(String args[]){  
+       TestExceptionPropagation2 obj=new TestExceptionPropagation2();  
+       obj.p();  
+       System.out.println(&quot;normal flow&quot;);  
+      }  
+    }  
+    
+    Output:Compile Time Error
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;ava throws keyword&lt;/p&gt;
+
+&lt;p&gt;The Java throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception so it is better for the programmer to provide the exception handling code so that normal flow can be maintained.&lt;/p&gt;
+
+&lt;p&gt;Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers fault that he is not performing check up before the code being used.
+Syntax of java throws&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;return_type method_name() throws exception_class_name{  
+//method code  
+}  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Which exception should be declared&lt;/p&gt;
+
+&lt;p&gt;Ans) checked exception only, because:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;unchecked Exception: under your control so correct your code.
+error: beyond your control e.g. you are unable to do anything if there occurs VirtualMachineError or StackOverflowError.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;difference-between-throw-and-throws-in-java&quot;&gt;Difference between throw and throws in Java&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;throw&lt;/th&gt;
+      &lt;th&gt;throws&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1)&lt;/td&gt;
+      &lt;td&gt;Java throw keyword is used to explicitly throw an exception.&lt;/td&gt;
+      &lt;td&gt;Java throws keyword is used to declare an exception.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2)&lt;/td&gt;
+      &lt;td&gt;Checked exception cannot be propagated using throw only.&lt;/td&gt;
+      &lt;td&gt;Checked exception can be propagated with throws.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3)&lt;/td&gt;
+      &lt;td&gt;Throw is followed by an instance.&lt;/td&gt;
+      &lt;td&gt;Throws is followed by class.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4)&lt;/td&gt;
+      &lt;td&gt;Throw is used within the method.&lt;/td&gt;
+      &lt;td&gt;Throws is used with the method signature.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5)&lt;/td&gt;
+      &lt;td&gt;You cannot throw multiple exceptions.&lt;/td&gt;
+      &lt;td&gt;You can declare multiple exceptions e.g. public void method()throws IOException,SQLException.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Difference between final, finally and finalize&lt;/p&gt;
+
+&lt;p&gt;There are many differences between final, finally and finalize. A list of differences between final, finally and finalize are given below:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;final&lt;/th&gt;
+      &lt;th&gt;finally&lt;/th&gt;
+      &lt;th&gt;finalize&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1)&lt;/td&gt;
+      &lt;td&gt;Final is used to apply restrictions on class, method and variable.&lt;/td&gt;
+      &lt;td&gt;Final class can’t be inherited, final method can’t be overridden and final variable value can’t be changed.&lt;/td&gt;
+      &lt;td&gt;Finally is used to place important code, it will be executed whether exception is handled or not.	Finalize is used to perform clean up processing just before object is garbage collected.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2)&lt;/td&gt;
+      &lt;td&gt;Final is a keyword.&lt;/td&gt;
+      &lt;td&gt;Finally is a block.&lt;/td&gt;
+      &lt;td&gt;Finalize is a method.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Java throw example&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void m(){  
+throw new ArithmeticException(&quot;sorry&quot;);  
+}  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Java throws example&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void m()throws ArithmeticException{  
+//method code  
+}  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Java throw and throws example&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void m()throws ArithmeticException{  
+throw new ArithmeticException(&quot;sorry&quot;);  
+}  
+
+
+    }}  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 </description>
         <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2016/12/26/empty-template/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/26/empty-template/</guid>
+        <link>http://localhost:4000/2016/12/26/java-Exception-Handling/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/26/java-Exception-Handling/</guid>
         
         
         <category>Java</category>

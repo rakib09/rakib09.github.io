@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exception Handling</title>
+	<meta name="description" content="Exception Handling">
+	
+	<link rel="canonical" href="http://localhost:4000/2016/12/26/java-Exception-Handling/">
+	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
+	
+	<!-- <link rel="stylesheet" href="/css/main.css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+	<script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
+	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+    -->
+    
+	<script type="text/javascript" src="/static/js/index.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Rakib Hasan's Blog</a>
+      <p class="navbar-text"></p>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        
+          <li>
+        
+        <a href="/">Home</a></li>
+
+        
+          
+            
+              <li>
+            
+            <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
+          
+        
+          
+            
+              <li>
+            
+            <a href="/about-me/"><span class="glyphicon "></span> About Me</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+
+    <div id="main" class="container main">
+      <div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>Exception Handling</h1>
+        <p>Dec 26, 2016</p>
+      </header>
+      <hr>
+      <article>
+        <h2 id="exception-handling">Exception Handling</h2>
+
+<p>Hierarchy of Java Exception classes</p>
+<ul>
+  <li>Throwable
+    <ul>
+      <li>Exception
+        <ul>
+          <li>IOException</li>
+          <li>SQLException</li>
+          <li>ClassNotFoundException</li>
+          <li>RuntimeException
+            <ul>
+              <li>ArithmeticException</li>
+              <li>NullPointerException</li>
+              <li>NumberFormateException</li>
+              <li>IndexOutOfBoundException
+                <ul>
+                  <li>ArrayIndexOutOfBoundException</li>
+                  <li>StringIndexOutOfBoundException</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Error
+        <ul>
+          <li>StackOverFlowError</li>
+          <li>VirtualMachineError</li>
+          <li>OutOfMemoryError</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Type of Exception</p>
+<ol>
+  <li>Checked Exception
+ -Those type of exception extends Throwable except RuntimeException &amp; are checked at compile time. Example: IOException, SQLException</li>
+  <li>Unchecked Exception
+    <ul>
+      <li>Those type of Exception which are not checked at runtime. Example: ArithmeticException, NullPointerException, NumberFormateException</li>
+    </ul>
+  </li>
+  <li>Error
+    <ul>
+      <li>Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Common scenarios where exceptions may occur</p>
+
+<p>There are given some scenarios where unchecked exceptions can occur. They are as follows:
+1) Scenario where ArithmeticException occurs</p>
+
+<p>If we divide any number by zero, there occurs an ArithmeticException.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int a=50/0;//ArithmeticException  
+</code></pre>
+</div>
+
+<p>2) Scenario where NullPointerException occurs</p>
+
+<p>If we have null value in any variable, performing any operation by the variable occurs an NullPointerException.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>String s=null;  
+System.out.println(s.length());//NullPointerException  
+</code></pre>
+</div>
+
+<p>3) Scenario where NumberFormatException occurs</p>
+
+<p>The wrong formatting of any value, may occur NumberFormatException. Suppose I have a string variable that have characters, converting this variable into digit will occur NumberFormatException.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>String s="abc";  
+int i=Integer.parseInt(s);//NumberFormatException  
+</code></pre>
+</div>
+
+<p>4) Scenario where ArrayIndexOutOfBoundsException occurs</p>
+
+<p>If you are inserting any value in the wrong index, it would result ArrayIndexOutOfBoundsException as shown below:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>int a[]=new int[5];  
+a[10]=50; //ArrayIndexOutOfBoundsException  
+</code></pre>
+</div>
+
+<h3 id="java-exception-handling-keywords">Java Exception Handling Keywords</h3>
+
+<p>There are 5 keywords used in java exception handling.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>try
+catch
+finally
+throw
+throws
+</code></pre>
+</div>
+
+<h6 id="the-jvm-firstly-checks-whether-the-exception-is-handled-or-not-if-exception-is-not-handled-jvm-provides-a-default-exception-handler-that-performs-the-following-tasks">The JVM firstly checks whether the exception is handled or not. If exception is not handled, JVM provides a default exception handler that performs the following tasks:</h6>
+
+<ul>
+  <li>Prints out exception description.</li>
+  <li>Prints the stack trace (Hierarchy of methods where the exception occurred).</li>
+  <li>Causes the program to terminate.</li>
+</ul>
+
+<h6 id="but-if-exception-is-handled-by-the-application-programmer-normal-flow-of-the-application-is-maintained-ie-rest-of-the-code-is-executed">But if exception is handled by the application programmer, normal flow of the application is maintained i.e. rest of the code is executed.</h6>
+
+<h4 id="java-finally-block">Java finally block</h4>
+<ul>
+  <li>Java finally block is a block that is used to execute important code such as closing connection, stream etc.</li>
+  <li>Java finally block is always executed whether exception is handled or not.</li>
+  <li>Java finally block is</li>
+</ul>
+
+<h4 id="for-each-try-block-there-can-be-zero-or-more-catch-blocks-but-only-one-finally-block">For each try block there can be zero or more catch blocks, but only one finally block.</h4>
+
+<h2 id="java-exception-propagation">Java Exception propagation</h2>
+<p>An exception is first thrown from the top of the stack and if it is not caught, it drops down the call stack to the previous method,If not caught there, the exception again drops down to the previous method, and so on until they are caught or until they reach the very bottom of the call stack.This is called exception propagation.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class TestExceptionPropagation1{  
+         void m(){  
+           int data=50/0;  
+         }  
+         void n(){  
+           m();  
+         }  
+         void p(){  
+          try{  
+           n();  
+          }catch(Exception e){System.out.println("exception handled");}  
+         }  
+         public static void main(String args[]){  
+          TestExceptionPropagation1 obj=new TestExceptionPropagation1();  
+          obj.p();  
+          System.out.println("normal flow...");  
+         }  
+       }  
+       
+       Output:exception handled
+              normal flow... 
+</code></pre>
+</div>
+
+<h4 id="by-default-unchecked-exceptions-are-forwarded-in-calling-chain-propagated">By default Unchecked Exceptions are forwarded in calling chain (propagated).</h4>
+<h4 id="by-default-checked-exceptions-are-not-forwarded-in-calling-chain-propagated">By default, Checked Exceptions are not forwarded in calling chain (propagated).</h4>
+
+<p>Program which describes that checked exceptions are not propagated</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    class TestExceptionPropagation2{  
+      void m(){  
+        throw new java.io.IOException("device error");//checked exception  
+      }  
+      void n(){  
+        m();  
+      }  
+      void p(){  
+       try{  
+        n();  
+       }catch(Exception e){System.out.println("exception handeled");}  
+      }  
+      public static void main(String args[]){  
+       TestExceptionPropagation2 obj=new TestExceptionPropagation2();  
+       obj.p();  
+       System.out.println("normal flow");  
+      }  
+    }  
+    
+    Output:Compile Time Error
+</code></pre>
+</div>
+
+<p>ava throws keyword</p>
+
+<p>The Java throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception so it is better for the programmer to provide the exception handling code so that normal flow can be maintained.</p>
+
+<p>Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers fault that he is not performing check up before the code being used.
+Syntax of java throws</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>return_type method_name() throws exception_class_name{  
+//method code  
+}  
+</code></pre>
+</div>
+
+<p>Which exception should be declared</p>
+
+<p>Ans) checked exception only, because:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>unchecked Exception: under your control so correct your code.
+error: beyond your control e.g. you are unable to do anything if there occurs VirtualMachineError or StackOverflowError.
+</code></pre>
+</div>
+
+<h3 id="difference-between-throw-and-throws-in-java">Difference between throw and throws in Java</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>throw</th>
+      <th>throws</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1)</td>
+      <td>Java throw keyword is used to explicitly throw an exception.</td>
+      <td>Java throws keyword is used to declare an exception.</td>
+    </tr>
+    <tr>
+      <td>2)</td>
+      <td>Checked exception cannot be propagated using throw only.</td>
+      <td>Checked exception can be propagated with throws.</td>
+    </tr>
+    <tr>
+      <td>3)</td>
+      <td>Throw is followed by an instance.</td>
+      <td>Throws is followed by class.</td>
+    </tr>
+    <tr>
+      <td>4)</td>
+      <td>Throw is used within the method.</td>
+      <td>Throws is used with the method signature.</td>
+    </tr>
+    <tr>
+      <td>5)</td>
+      <td>You cannot throw multiple exceptions.</td>
+      <td>You can declare multiple exceptions e.g. public void method()throws IOException,SQLException.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Difference between final, finally and finalize</p>
+
+<p>There are many differences between final, finally and finalize. A list of differences between final, finally and finalize are given below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>final</th>
+      <th>finally</th>
+      <th>finalize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1)</td>
+      <td>Final is used to apply restrictions on class, method and variable.</td>
+      <td>Final class can’t be inherited, final method can’t be overridden and final variable value can’t be changed.</td>
+      <td>Finally is used to place important code, it will be executed whether exception is handled or not.	Finalize is used to perform clean up processing just before object is garbage collected.</td>
+    </tr>
+    <tr>
+      <td>2)</td>
+      <td>Final is a keyword.</td>
+      <td>Finally is a block.</td>
+      <td>Finalize is a method.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Java throw example</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>void m(){  
+throw new ArithmeticException("sorry");  
+}  
+</code></pre>
+</div>
+
+<p>Java throws example</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>void m()throws ArithmeticException{  
+//method code  
+}  
+</code></pre>
+</div>
+
+<p>Java throw and throws example</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>void m()throws ArithmeticException{  
+throw new ArithmeticException("sorry");  
+}  
+
+
+    }}  
+</code></pre>
+</div>
+
+
+      </article>
+      <hr>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="Share to Sina Weibo"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="Share to WeChat"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="Share to Douban"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="Copy Share URL"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js'];
+        </script>
+    </div>
+	
+    <!-- duoshuo.com javascript include code. -->    
+    
+    <!-- disqus.com javascript include code. -->
+	
+    <div class="post-area post comment">
+        <div id="disqus_thread"></div>
+    </div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "https://rakib09.github.io/2016/12/26/java-Exception-Handling/"; 
+			this.page.identifier = "/2016/12/26/java-Exception-Handling"; 
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//https-rakib09-github-io.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	
+    
+  </div>
+  
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    
+    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
+      <a href="javascript:;">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
+    </div>
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="mailto:rakib_hasan6@yahoo.com"><span class="glyphicon glyphicon-envelope"></span> rakib_hasan6@yahoo.com</a>
+        <span class="point"> · </span>
+        
+          <a href="https://github.com/rakib09">
+            <span class="icon">
+              <svg viewBox="0 0 16 16">
+                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            Github
+            <!-- <span>rakib09</span> -->
+          </a>
+          
+          <span class="point"> · </span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/java/2016-12-26-java-Exception-Handling.md">View source</a></span>
+          <span class="point"> · </span>
+          <span><a class="newpost" href="javascript:;">New post</a></span>
+		  <span class="point"> · </span>
+          <span><a href="/feed.xml">RSS</a></span>
+          <span class="point"> · </span>
+          <span>&copy; 2015 LiXizhi</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script type="text/javascript">
+    function OnClickNewPost()
+    {
+        var title = prompt("Please enter title of your post");
+        if (title!=null){
+            title = title.replace(" ", "-");
+            var currentdate = new Date();
+            var urlNewPage = "https://github.com/rakib09/?filename=_posts/" 
+                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
+                
+            var defaultText =  [
+                '---',
+                'layout: post',
+                'comments: true',
+                'categories: diary',
+                '---',
+                '## Title',
+                'text'
+                ].join('\n');
+            urlNewPage += "&value=" + encodeURIComponent(defaultText);
+            window.open(urlNewPage);
+        }
+    }
+    
+    $(function() {
+      // CreateNewPostLinks
+      $('.newpost').each(function(){
+          $(this).click(OnClickNewPost);
+      });
+    });
+</script>
+  
+  </body>
+</html>

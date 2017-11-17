@@ -10,6 +10,8 @@ permalink: /about-me/
 
 ## About Rakib Hasan
 
+![](../static/img/rakib.png){:.rounded-image}
+
 About 3 years of extensive hands on experience of Software development.
 An experienced team lead and team player with excellent communication and interpersonal skills who has the ability to work independently under pressure.
 
