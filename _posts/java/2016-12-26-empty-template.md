@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Java"
+title: "Collection Framework"
 comments: true
 categories: Java
 ---

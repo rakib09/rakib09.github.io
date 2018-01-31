@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Collection Framework</title>
-	<meta name="description" content="Collection Framework">
+	<title>Git Vs SVN</title>
+	<meta name="description" content="Git vs SVN  Git is a distributed VCS; SVN is a non-distributed VCS.  Git has a centralized server and repository; SVN does not have a centralized server or r...">
 	
-	<link rel="canonical" href="http://localhost:4000/2016/12/26/empty-template/">
+	<link rel="canonical" href="http://localhost:4000/2016/09/26/git-vs-svn/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -92,14 +92,26 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>Collection Framework</h1>
-        <p>Dec 26, 2016</p>
+        <h1>Git Vs SVN</h1>
+        <p>Sep 26, 2016</p>
       </header>
       <hr>
       <article>
-        <h2 id="collection-framework">Collection Framework</h2>
+        <h2 id="git-vs-svn">Git vs SVN</h2>
+<ol>
+  <li>Git is a distributed VCS; SVN is a non-distributed VCS.</li>
+  <li>Git has a centralized server and repository; SVN does not have a centralized server or repository.</li>
+  <li>The content in Git is stored as metadata; SVN stores files of content.</li>
+  <li>Git branches are easier to work with than SVN branches.</li>
+  <li>Git has better content protection than SVN.</li>
+  <li>Git is distributed under GNU, and its maintenance overseen by Junio Hamano; Apache Subversion, or SVN, is distributed under the open source license.</li>
+</ol>
 
-<p>Empty post template</p>
+<p>The key difference is that it is decentralized. Imagine you are a developer on the road, you develop on your laptop and you want to have source control so that you can go back 3 hours.</p>
+
+<p>With Subversion, you have a Problem: The SVN Repository may be in a location you can’t reach (in your company, and you don’t have internet at the moment), you cannot commit. If you want to make a copy of your code, you have to literally copy/paste it.</p>
+
+<p>With Git, you do not have this problem. Your local copy is a repository, and you can commit to it and get all benefits of source control. When you regain connectivity to the main repository, you can commit against it.</p>
 
       </article>
       <hr>
@@ -125,8 +137,8 @@
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2016/12/26/empty-template/"; 
-			this.page.identifier = "/2016/12/26/empty-template"; 
+			this.page.url = "https://rakib09.github.io/2016/09/26/git-vs-svn/"; 
+			this.page.identifier = "/2016/09/26/git-vs-svn"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -178,7 +190,7 @@
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/java/2016-12-26-empty-template.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/git/2016-09-26-git-vs-svn.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>

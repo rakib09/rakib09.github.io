@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Collection Framework</title>
-	<meta name="description" content="Collection Framework">
+	<title>AngularJS - $pristine, $dirty, $valid, $invalid</title>
+	<meta name="description" content="Today we will go through the AngularJS Forms validations. Forms are important part of any application. They help us to collect information from user so that ...">
 	
-	<link rel="canonical" href="http://localhost:4000/2016/12/26/empty-template/">
+	<link rel="canonical" href="http://localhost:4000/2017/12/26/AngularJS-$pristine-$dirty-$valid-$invalid/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -92,14 +92,60 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>Collection Framework</h1>
-        <p>Dec 26, 2016</p>
+        <h1>AngularJS - $pristine, $dirty, $valid, $invalid</h1>
+        <p>Dec 26, 2017</p>
       </header>
       <hr>
       <article>
-        <h2 id="collection-framework">Collection Framework</h2>
+        <p>Today we will go through the AngularJS Forms validations. Forms are important part of any application. They help us to collect information from user so that it can be processed for corresponding activity. We need to validate form so that only the valid values are put in the form. For that we use JavaScript or any other JavaScript library like jQuery.</p>
 
-<p>Empty post template</p>
+<p>Angular also provides some help in this context. We can validate a form and see that the required validations work correctly. It provides different objects to the form. They are very helpful while validating forms:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$pristine: It will be TRUE, if the user has not interacted with the form yet
+$dirty: It will be TRUE, if the user has already interacted with the form.
+$valid: It will be TRUE, if all containing form and controls are valid
+$invalid: It will be TRUE, if at least one containing form and control is invalid.
+$error: Is an object hash, containing references to all invalid controls or forms, where: 
+    keys are validation tokens (error names)
+    values are arrays of controls or forms that are invalid with given error.
+</code></pre>
+</div>
+
+<p>There are some built in validation tokens, that can help in validating form:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>email
+max
+maxlength
+min
+minlength
+number
+pattern
+required
+url
+</code></pre>
+</div>
+
+<p>In accordance with these AngularJS also provides corresponding CSS classes for them. We can use them for validation purpose.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ng-pristine
+ng-dirty
+ng-valid
+ng-invalid
+</code></pre>
+</div>
+
+<p>Lets see how we can use them. Usage:
+In Form: myForm.$dirty
+For Field: myForm.firldName.$dirty
+In CSS:
+.ng-dirty{
+ background-color: yellow;
+}</p>
+
+<p>This is little bit information about the AngularJS form validation.
+Use #ngvinod to discuss on Twitter about this.</p>
+
+<p>http://www.ng-vinod.com/2014/07/angularjs-pristine-dirty-valid-invalid.html</p>
 
       </article>
       <hr>
@@ -125,8 +171,8 @@
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2016/12/26/empty-template/"; 
-			this.page.identifier = "/2016/12/26/empty-template"; 
+			this.page.url = "https://rakib09.github.io/2017/12/26/AngularJS-$pristine-$dirty-$valid-$invalid/"; 
+			this.page.identifier = "/2017/12/26/AngularJS-$pristine-$dirty-$valid-$invalid"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -178,7 +224,7 @@
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/java/2016-12-26-empty-template.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/angularjs/2017-12-26-AngularJS-$pristine-$dirty-$valid-$invalid.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>
