@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Feb 2018 01:56:13 +0600</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 01:56:13 +0600</lastBuildDate>
+    <pubDate>Thu, 01 Feb 2018 02:22:56 +0600</pubDate>
+    <lastBuildDate>Thu, 01 Feb 2018 02:22:56 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -28,6 +28,56 @@
 &lt;p&gt;The answer is to take advantage of Polymorphism. If you use interface than in future if the new implementation is shipped then you are not required to change your program. For example, any program written using List will work as expected whether you pass a LinkedList, Vector or ArrayList, because they all implements List interface, they obey the contract exposed by List interface.&lt;/p&gt;
 
 &lt;p&gt;The only difference comes in performance, which is actually on of the driver for change. In short, if you program using interface, tomorrow if a better implementation of your interface is available then you can switch to that without making nay further change on the client side (part of the program which uses that interface).&lt;/p&gt;
+
+&lt;h4 id=&quot;arraylist-vs-linklist&quot;&gt;ArrayList vs LinkList&lt;/h4&gt;
+
+&lt;p&gt;Performance  :  Performance of ArrayList and LinkedList depends on the type of operation&lt;/p&gt;
+
+&lt;p&gt;a. get(int index) or search operation :  ArrayList get(int index) operation runs in constant time i.e O(1)  while LinkedList get(int index) operation run time is O(n) .&lt;/p&gt;
+
+&lt;p&gt;b. insert() or add(Object) operation :  Insertions in LinkedList are generally fast as compare to ArrayList.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt;ArrayList&lt;/th&gt;
+      &lt;th&gt;LinkedList&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Implementation&lt;/td&gt;
+      &lt;td&gt;Resizable Array&lt;/td&gt;
+      &lt;td&gt;Douby-LinkedList&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ReverseIterator&lt;/td&gt;
+      &lt;td&gt;No&lt;/td&gt;
+      &lt;td&gt;Yes , descendingIterator()&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Initial Capacity&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Constructs empty list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;get(int) operation&lt;/td&gt;
+      &lt;td&gt;Fast&lt;/td&gt;
+      &lt;td&gt;Slow in comparision&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;add(int) operation&lt;/td&gt;
+      &lt;td&gt;Slow in comparision&lt;/td&gt;
+      &lt;td&gt;Fast&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Memory Overhead&lt;/td&gt;
+      &lt;td&gt;No&lt;/td&gt;
+      &lt;td&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </description>
         <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2018/02/01/collection-framwork/</link>
