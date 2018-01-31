@@ -5,9 +5,38 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Feb 2018 01:20:51 +0600</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 01:20:51 +0600</lastBuildDate>
+    <pubDate>Thu, 01 Feb 2018 01:56:13 +0600</pubDate>
+    <lastBuildDate>Thu, 01 Feb 2018 01:56:13 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Collection Framework</title>
+        <description>&lt;h2 id=&quot;collection-framework&quot;&gt;Collection Framework&lt;/h2&gt;
+
+&lt;h4 id=&quot;list-vs-arraylist&quot;&gt;List vs ArrayList&lt;/h4&gt;
+&lt;p&gt;List is in interface while ArrayList is a class.&lt;/p&gt;
+
+&lt;h5 id=&quot;why-store-arraylist-object-on-list-variable&quot;&gt;Why store ArrayList object on List variable?&lt;/h5&gt;
+&lt;p&gt;You might have seen something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;Movie&amp;gt; listOfMovies = new ArrayList&amp;lt;Movie&amp;gt;()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;here we are using a List as a type of variable to store an object of ArrayList class, created using new() operator.&lt;/p&gt;
+
+&lt;p&gt;The answer is to take advantage of Polymorphism. If you use interface than in future if the new implementation is shipped then you are not required to change your program. For example, any program written using List will work as expected whether you pass a LinkedList, Vector or ArrayList, because they all implements List interface, they obey the contract exposed by List interface.&lt;/p&gt;
+
+&lt;p&gt;The only difference comes in performance, which is actually on of the driver for change. In short, if you program using interface, tomorrow if a better implementation of your interface is available then you can switch to that without making nay further change on the client side (part of the program which uses that interface).&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/01/collection-framwork/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/01/collection-framwork/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
     
       <item>
         <title>Spring Introduction</title>
@@ -666,24 +695,6 @@ Reference-style:
         <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2016/12/26/software-development-life-cycle/</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/26/software-development-life-cycle/</guid>
-        
-        
-        <category>SDLC</category>
-        
-      </item>
-    
-      <item>
-        <title>Software Development Life Cycle-Model</title>
-        <description>&lt;h2 id=&quot;waterfall-model---design&quot;&gt;Waterfall Model - Design&lt;/h2&gt;
-
-&lt;p&gt;Waterfall approach was first SDLC Model to be used widely in Software Engineering to ensure success of the project. In “The Waterfall” approach, the whole process of software development is divided into separate phases. In this Waterfall model, typically, the outcome of one phase acts as the input for the next phase sequentially.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/sdlc_waterfall_model.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 26 Dec 2016 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2016/12/26/sdlc-models/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/26/sdlc-models/</guid>
         
         
         <category>SDLC</category>
