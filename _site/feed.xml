@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Feb 2018 02:51:48 +0600</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 02:51:48 +0600</lastBuildDate>
+    <pubDate>Thu, 01 Feb 2018 03:43:38 +0600</pubDate>
+    <lastBuildDate>Thu, 01 Feb 2018 03:43:38 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -22,12 +22,26 @@ whereas .equals() method for content comparision.&lt;/p&gt;
 String s2 = new String(&quot;rakib&quot;);
 System.out.println(s1==s2);         // false
 System.out.println(s1.equals(s2));  // true
+
+StringBuffer sf1 = new StringBuffer(&quot;rakib&quot;);
+StringBuffer sf2 = new StringBuffer(&quot;rakib&quot;);
+System.out.println(sf1 == sf2);     // false
+System.out.println(s1 == sf2);     // CE: incomparable types: java.lang.String and java.lang.StringBuffer
+System.out.println(s1.equals(sf2));     // false
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;ol&gt;
   &lt;li&gt;.euals() method present in object class also meant for reference comparision only based on our requirement we can override for content comparision.&lt;/li&gt;
   &lt;li&gt;In String class, all wrapper class and all collection classes .equals() method is overriden for content comparision.&lt;/li&gt;
+  &lt;li&gt;If r1 == r2 is true then r1.equals(r2) is always true.&lt;/li&gt;
+  &lt;li&gt;If two objects are not equal by == operator then we can’t conclude anything about .equals method. It may return true or false. 
+ ie. if r1 == r2 is false then r1.equals(r2) may return true or false&lt;/li&gt;
+  &lt;li&gt;If r1.equals(r2) is true then r1 == r2 may true or false&lt;/li&gt;
+  &lt;li&gt;if r1.equals(r2) is false then r1 == r2 is always&lt;/li&gt;
+  &lt;li&gt;Either parent to child or Child to parent are same type&lt;/li&gt;
+  &lt;li&gt;r == null &amp;amp;&amp;amp; r.equals(null) return false&lt;/li&gt;
 &lt;/ol&gt;
 
 </description>
