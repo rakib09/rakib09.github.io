@@ -273,3 +273,6 @@ protected Object readResolve() {
 ```
 
 After this you will notice that hashCode of both the instances are same in test program.
+
+
+Source: [**JournalDev**](https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples?utm_source=website&utm_medium=sidebar&utm_campaign=DesignPattern-Sidebar-Widget)
