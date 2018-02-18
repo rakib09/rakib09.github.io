@@ -154,4 +154,10 @@ Notice the private inner static class that contains the instance of the singleto
 This is the most widely used approach for Singleton class as it doesn’t require synchronization. I am using this approach in many of my projects and it’s easy to understand and implement also.
 
 
+#### Advantage of Singleton design pattern
+Saves memory because object is not created at each request. Only single instance is reused again and again.
+#### Usage of Singleton design pattern
+Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.
+
+
 Source: [**JournalDev**](https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples?utm_source=website&utm_medium=sidebar&utm_campaign=DesignPattern-Sidebar-Widget)
