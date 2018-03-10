@@ -28,7 +28,7 @@ For more information, see “Writing on GitHub” in the GitHub Help.
 
 ### Examples
 
-|Type | … to Get |
+|Type | to Get |
 | ------ | ------ |
 | `*Italic*` | *Italic* |
 | `**Bold**` | **Bold** |

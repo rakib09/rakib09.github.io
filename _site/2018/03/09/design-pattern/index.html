@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Rest Api</title>
-	<meta name="description" content="Use RESTful service URLs">
+	<title>Design Pattern</title>
+	<meta name="description" content="Design PatternA design pattern is a well described solution to a common software problem.">
 	
-	<link rel="canonical" href="http://localhost:4000/2016/04/28/rest-api/">
+	<link rel="canonical" href="http://localhost:4000/2018/03/09/design-pattern/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -92,244 +92,30 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>Rest Api</h1>
-        <p>Apr 28, 2016</p>
+        <h1>Design Pattern</h1>
+        <p>Mar 9, 2018</p>
       </header>
       <hr>
       <article>
-        <h3 id="use-restful-service-urls">Use RESTful service URLs</h3>
-
-<p>Under REST principles, a URL identifies a resource. The following URL design patterns are considered REST best practices:</p>
-
-<ul>
-  <li>URLs should include nouns, not verbs.</li>
-  <li>Use plural nouns only for consistency (no singular nouns).</li>
-  <li>Use HTTP methods (HTTP/1.1) to operate on these resources:</li>
-  <li>Use HTTP response status codes to represent the outcome of operations on resources.</li>
-</ul>
-
-<h3 id="versioning">Versioning</h3>
-
-<p>Example of an API URL that contains a version number:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /v1/path/to/resource HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="should">Should</h5>
-<p>If an API URL does not contain a version number (anonymous version), then it should be understood that it always refers to the latest version.</p>
-
-<h3 id="formats">Formats</h3>
-<p>Allow users to request formats like JSON or XML, for example:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>http://example.gov/api/v1/magazines.json
-http://example.gov/api/v1/magazines.xml
-</code></pre>
-</div>
-<h5 id="recommended">Recommended</h5>
-<p>Avoid URL designs deeper than resource/identifier/resource.</p>
-
-<p>The three patterns of payload format encoding most frequently found in the wild are:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP headers (e.g. Content-Type: and Accept:)
-GET parameters (e.g. &amp;format=json)
-resource label (e.g. /foo.json)
-</code></pre>
-</div>
-
-<h3 id="good-restful-url-examples">Good RESTful URL examples</h3>
-
-<h5 id="list-of-magazines">List of magazines:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /api/v1/magazines.json HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="filtering-and-sorting-are-server-side-operations-on-resources">Filtering and sorting are server-side operations on resources:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /api/v1/magazines.json?year=2011&amp;sort=desc HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="a-single-magazine-in-json-format">A single magazine in JSON format:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /api/v1/magazines/1234.json HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="all-articles-in-or-belonging-to-this-magazine">All articles in (or belonging to) this magazine:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /api/v1/magazines/1234/articles.json HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="all-articles-in-this-magazine-in-xml-format">All articles in this magazine in XML format:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /api/v1/magazines/1234/articles.xml HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="specify-query-parameters-in-a-comma-separated-list">Specify query parameters in a comma separated list:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /api/v1/magazines/1234.json?fields=title,subtitle,date HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="add-a-new-article-to-a-particular-magazine">Add a new article to a particular magazine:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /api/v1/magazines/1234/articles.json HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h3 id="bad-restful-url-examples">Bad RESTful URL examples</h3>
-
-<h5 id="non-plural-noun">Non-plural noun:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /magazine HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /magazine/1234 HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="verb-in-url">Verb in URL:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /magazine/1234/create HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h5 id="filter-outside-of-query-string">Filter outside of query string:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /magazines/2011/desc HTTP/1.1
-Host: www.example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<h3 id="use-versions">Use versions</h3>
-
-<h5 id="never-release-an-api-without-a-version-number">Never release an API without a version number.</h5>
-
-<p>Versions should be integers, not decimal numbers, prefixed with ‘v’. For example:</p>
-
-<p>Good: v1, v2, v3</p>
-
-<p>Bad: v-1.1, v1.2, 1.3</p>
-
-<p>Maintain APIs at least one version back.</p>
-
-<h3 id="use-http-methods-and-status-codes">Use HTTP methods and status codes</h3>
-
-<p>Meaningful status codes helps consumers utilise your API.</p>
-
-<h5 id="get-magazines">GET /magazines</h5>
-<p>List all magazines contained within the /magazines resource</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /magazines HTTP/1.1
-Host: example.gov.au
-Accept: application/json, text/javascript
-</code></pre>
-</div>
-
-<p>A response of “200 OK” indicating that the request has succeeded.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
-Vary: Accept
-Content-Type: text/javascript
-
-{...}
-</code></pre>
-</div>
-
-<h5 id="status-codes">Status Codes:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>200 OK – no error
-404 Not Found – the “magazines” resource does not exist
-</code></pre>
-</div>
-
-<h5 id="post-magazines">POST /magazines</h5>
-
-<p>Create new magazine within the /magazines resource</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>POST /magazines HTTP/1.1
-Host: example.gov.au
-Accept: application/json, text/javascript
-
-{...}
-</code></pre>
-</div>
-
-<p>A response of “201 Created” indicates that the request has been fulfilled.</p>
-
-<p>The URI of the new resource is provided in the response</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 201 Created
-Vary: Accept
-Content-Type: text/javascript
-
-{ "id": "1234" }
-</code></pre>
-</div>
-
-<h3 id="batching-results">Batching results</h3>
-
-<p>If no limit is specified, return results with a default limit.</p>
-
-<h5 id="to-get-records-51-through-75-do-this">To get records 51 through 75 do this:</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>GET /magazines?limit=25&amp;offset=50 HTTP/1.1
-Host: example.gov.au
-Accept: application/json, text/javascript
-
-offset=50 means, ‘skip the first 50 records’
-
-limit=25 means, ‘return a maximum of 25 records’
-</code></pre>
-</div>
-
-<p>Information about record limits and total available count should also be included in the response. Example:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>HTTP/1.1 200 OK
-Vary: Accept
-Content-Type: text/javascript
-
-{
-  "metadata": {
-    "resultset": {
-      "count": 227,
-      "offset": 25,
-      "limit": 25
-    }
-  },
-  "results": [...]
-</code></pre>
-</div>
-
-<p><a href="http://apiguide.readthedocs.io/en/latest/build_and_publish/index.html">Source Link</a></p>
-
+        <h2 id="design-pattern">Design Pattern</h2>
+<p>A design pattern is a well described solution to a common software problem.</p>
+
+<h5 id="advantage-of-design-pattern">Advantage of design pattern:</h5>
+<ol>
+  <li>They are reusable in multiple projects.</li>
+  <li>They provide the solutions that help to define the system architecture.</li>
+  <li>They capture the software engineering experiences.</li>
+  <li>They provide transparency to the design of an application.</li>
+  <li>They are well-proved and testified solutions since they have been built upon the knowledge and experience of expert software developers.</li>
+  <li>Design patterns don?t guarantee an absolute solution to a problem. They provide clarity to the system architecture and the possibility of building a better system.</li>
+</ol>
+
+<h5 id="when-should-we-use-the-design-patterns">When should we use the design patterns?</h5>
+<p>We must use the design patterns during the analysis and requirement phase of SDLC(Software Development Life Cycle).</p>
+
+<p>Design patterns ease the analysis and requirement phase of SDLC by providing information based on prior hands-on experiences.</p>
+
+<p>Source: <a href="https://www.tutorialspoint.com/design_pattern/facade_pattern.htm">tutorialspoint</a></p>
 
       </article>
       <hr>
@@ -355,8 +141,8 @@ Content-Type: text/javascript
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2016/04/28/rest-api/"; 
-			this.page.identifier = "/2016/04/28/rest-api"; 
+			this.page.url = "https://rakib09.github.io/2018/03/09/design-pattern/"; 
+			this.page.identifier = "/2018/03/09/design-pattern"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -408,7 +194,7 @@ Content-Type: text/javascript
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/rest-api/2016-04-28-rest-api.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/java/2018-03-09-design-pattern.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>

@@ -5,9 +5,406 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 01 Feb 2018 03:43:38 +0600</pubDate>
-    <lastBuildDate>Thu, 01 Feb 2018 03:43:38 +0600</lastBuildDate>
+    <pubDate>Fri, 09 Mar 2018 15:46:05 +0600</pubDate>
+    <lastBuildDate>Fri, 09 Mar 2018 15:46:05 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Design Pattern</title>
+        <description>&lt;h2 id=&quot;design-pattern&quot;&gt;Design Pattern&lt;/h2&gt;
+&lt;p&gt;A design pattern is a well described solution to a common software problem.&lt;/p&gt;
+
+&lt;h5 id=&quot;advantage-of-design-pattern&quot;&gt;Advantage of design pattern:&lt;/h5&gt;
+&lt;ol&gt;
+  &lt;li&gt;They are reusable in multiple projects.&lt;/li&gt;
+  &lt;li&gt;They provide the solutions that help to define the system architecture.&lt;/li&gt;
+  &lt;li&gt;They capture the software engineering experiences.&lt;/li&gt;
+  &lt;li&gt;They provide transparency to the design of an application.&lt;/li&gt;
+  &lt;li&gt;They are well-proved and testified solutions since they have been built upon the knowledge and experience of expert software developers.&lt;/li&gt;
+  &lt;li&gt;Design patterns don?t guarantee an absolute solution to a problem. They provide clarity to the system architecture and the possibility of building a better system.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&quot;when-should-we-use-the-design-patterns&quot;&gt;When should we use the design patterns?&lt;/h5&gt;
+&lt;p&gt;We must use the design patterns during the analysis and requirement phase of SDLC(Software Development Life Cycle).&lt;/p&gt;
+
+&lt;p&gt;Design patterns ease the analysis and requirement phase of SDLC by providing information based on prior hands-on experiences.&lt;/p&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.tutorialspoint.com/design_pattern/facade_pattern.htm&quot;&gt;tutorialspoint&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 09 Mar 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/03/09/design-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/03/09/design-pattern/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>SDKMAN</title>
+        <description>&lt;h2 id=&quot;sdkman&quot;&gt;SDKMAN&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;GIT&lt;/li&gt;
+  &lt;li&gt;JAVA&lt;/li&gt;
+  &lt;li&gt;http://sdkman.io/&lt;/li&gt;
+  &lt;li&gt;Multi-platform-&amp;gt; Powershell CLI version&lt;/li&gt;
+  &lt;li&gt;Open powershell from windows pc then type
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [Environment]::GetEnvironmentVariable(&quot;PSModulePath&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Then get the following&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  C:\Users\rakib\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Then Type&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; New-Item C:\Users\rakib\OneDrive\Documents\WindowsPowerShell\Modules -ItemType Directory
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Then Type&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   cd C:\Users\rakib\OneDrive\Documents\WindowsPowerShell\Modules
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then clone by&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   git clone https://github.com/flofreud/posh-gvm.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then Type&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;New-Item -path $profile -type file -force
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Close power shell &amp;amp; open in administrator mode &amp;amp; Then Type&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Install-Module posh-gvm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then type&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set-ExecutionPolicy RemoteSigned
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Wed, 14 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/14/sdkman/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/14/sdkman/</guid>
+        
+        
+        <category>spring</category>
+        
+      </item>
+    
+      <item>
+        <title>DRY</title>
+        <description>&lt;h2 id=&quot;dry-dont-repeat-yourself&quot;&gt;DRY (Don’t Repeat Yourself)&lt;/h2&gt;
+
+&lt;h5 id=&quot;in-wikipedia&quot;&gt;In Wikipedia&lt;/h5&gt;
+&lt;p&gt;DRY- A Principle of software development, aimed at reducing repetition of information of all kinds.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 14 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/14/dry/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/14/dry/</guid>
+        
+        
+        <category>spring</category>
+        
+      </item>
+    
+      <item>
+        <title>Singleton Pattern</title>
+        <description>&lt;h2 id=&quot;singleton-pattern&quot;&gt;Singleton Pattern&lt;/h2&gt;
+&lt;p&gt;Java Singleton Design Pattern Best Practices with Examples
+Java Singleton Pattern is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category. From the definition, it seems to be a very simple design pattern but when it comes to implementation, it comes with a lot of implementation concerns. The implementation of Java Singleton pattern has always been a controversial topic among developers. Here we will learn about Singleton design pattern principles, different ways to implement Singleton design pattern and some of the best practices for its usage.&lt;/p&gt;
+&lt;h4 id=&quot;java-singleton&quot;&gt;Java Singleton&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine.&lt;/li&gt;
+  &lt;li&gt;The singleton class must provide a global access point to get the instance of the class.&lt;/li&gt;
+  &lt;li&gt;Singleton pattern is used for logging, drivers objects, caching and thread pool.&lt;/li&gt;
+  &lt;li&gt;Singleton design pattern is also used in other design patterns like Abstract Factory, Builder, Prototype, Facade etc.&lt;/li&gt;
+  &lt;li&gt;Singleton design pattern is used in core java classes also, for example java.lang.Runtime, java.awt.Desktop.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;java-singleton-pattern&quot;&gt;Java Singleton Pattern&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Eager initialization&lt;/li&gt;
+  &lt;li&gt;Static block initialization&lt;/li&gt;
+  &lt;li&gt;Lazy Initialization&lt;/li&gt;
+  &lt;li&gt;Thread Safe Singleton&lt;/li&gt;
+  &lt;li&gt;Bill Pugh Singleton Implementation&lt;/li&gt;
+  &lt;li&gt;Using Reflection to destroy Singleton Pattern&lt;/li&gt;
+  &lt;li&gt;Enum Singleton&lt;/li&gt;
+  &lt;li&gt;Serialization and Singleton&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;eager-initialization&quot;&gt;Eager initialization&lt;/h4&gt;
+&lt;p&gt;In eager initialization, the instance of Singleton Class is created at the time of class loading, this is the easiest method to create a singleton class but it has a drawback that instance is created even though client application might not be using it.
+Here is the implementation of static initialization singleton class.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
+
+public class EagerInitializedSingleton {
+    
+    private static final EagerInitializedSingleton instance = new EagerInitializedSingleton();
+    
+    //private constructor to avoid client applications to use constructor
+    private EagerInitializedSingleton(){}
+
+    public static EagerInitializedSingleton getInstance(){
+        return instance;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If your singleton class is not using a lot of resources, this is the approach to use. But in most of the scenarios, Singleton classes are created for resources such as File System, Database connections etc and we should avoid the instantiation until unless client calls the getInstance method. Also, this method doesn’t provide any options for exception handling.&lt;/p&gt;
+&lt;h4 id=&quot;static-block-initialization&quot;&gt;Static block initialization&lt;/h4&gt;
+&lt;p&gt;Static block initialization implementation is similar to eager initialization, except that instance of class is created in the static block that provides option for exception handling.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
+
+public class StaticBlockSingleton {
+
+    private static StaticBlockSingleton instance;
+    
+    private StaticBlockSingleton(){}
+    
+    //static block initialization for exception handling
+    static{
+        try{
+            instance = new StaticBlockSingleton();
+        }catch(Exception e){
+            throw new RuntimeException(&quot;Exception occured in creating singleton instance&quot;);
+        }
+    }
+    
+    public static StaticBlockSingleton getInstance(){
+        return instance;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Both eager initialization and static block initialization creates the instance even before it’s being used and that is not the best practice to use. So in further sections, we will learn how to create Singleton class that supports lazy initialization.&lt;/p&gt;
+
+&lt;h4 id=&quot;lazy-initialization&quot;&gt;Lazy Initialization&lt;/h4&gt;
+&lt;p&gt;Lazy initialization method to implement Singleton pattern creates the instance in the global access method. Here is the sample code for creating Singleton class with this approach.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
+
+public class LazyInitializedSingleton {
+
+    private static LazyInitializedSingleton instance;
+    
+    private LazyInitializedSingleton(){}
+    
+    public static LazyInitializedSingleton getInstance(){
+        if(instance == null){
+            instance = new LazyInitializedSingleton();
+        }
+        return instance;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The above implementation works fine incase of single threaded environment but when it comes to multithreaded systems, it can cause issues if multiple threads are inside the if loop at the same time. It will destroy the singleton pattern and both threads will get the different instances of singleton class. In next section, we will see different ways to create a thread-safe singleton class.&lt;/p&gt;
+&lt;h4 id=&quot;thread-safe-singleton&quot;&gt;Thread Safe Singleton&lt;/h4&gt;
+&lt;p&gt;The easier way to create a thread-safe singleton class is to make the global access method synchronized, so that only one thread can execute this method at a time. General implementation of this approach is like the below class.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
+
+public class ThreadSafeSingleton {
+
+    private static ThreadSafeSingleton instance;
+    
+    private ThreadSafeSingleton(){}
+    
+    public static synchronized ThreadSafeSingleton getInstance(){
+        if(instance == null){
+            instance = new ThreadSafeSingleton();
+        }
+        return instance;
+    }
+    
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Above implementation works fine and provides thread-safety but it reduces the performance because of cost associated with the synchronized method, although we need it only for the first few threads who might create the separate instances (Read: Java Synchronization). To avoid this extra overhead every time, double checked locking principle is used. In this approach, the synchronized block is used inside the if condition with an additional check to ensure that only one instance of singleton class is created.
+Below code snippet provides the double checked locking implementation.
+public static ThreadSafeSingleton getInstanceUsingDoubleLocking(){
+    if(instance == null){
+        synchronized (ThreadSafeSingleton.class) {
+            if(instance == null){
+                instance = new ThreadSafeSingleton();
+            }
+        }
+    }
+    return instance;
+}&lt;/p&gt;
+
+&lt;h4 id=&quot;bill-pugh-singleton-implementation&quot;&gt;Bill Pugh Singleton Implementation&lt;/h4&gt;
+&lt;p&gt;Prior to Java 5, java memory model had a lot of issues and above approaches used to fail in certain scenarios where too many threads try to get the instance of the Singleton class simultaneously. So Bill Pugh came up with a different approach to create the Singleton class using a inner static helper class. The Bill Pugh Singleton implementation goes like this;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
+
+public class BillPughSingleton {
+
+    private BillPughSingleton(){}
+    
+    private static class SingletonHelper{
+        private static final BillPughSingleton INSTANCE = new BillPughSingleton();
+    }
+    
+    public static BillPughSingleton getInstance(){
+        return SingletonHelper.INSTANCE;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Notice the private inner static class that contains the instance of the singleton class. When the singleton class is loaded, SingletonHelper class is not loaded into memory and only when someone calls the getInstance method, this class gets loaded and creates the Singleton class instance.
+This is the most widely used approach for Singleton class as it doesn’t require synchronization. I am using this approach in many of my projects and it’s easy to understand and implement also.&lt;/p&gt;
+
+&lt;h4 id=&quot;advantage-of-singleton-design-pattern&quot;&gt;Advantage of Singleton design pattern&lt;/h4&gt;
+&lt;p&gt;Saves memory because object is not created at each request. Only single instance is reused again and again.&lt;/p&gt;
+&lt;h4 id=&quot;usage-of-singleton-design-pattern&quot;&gt;Usage of Singleton design pattern&lt;/h4&gt;
+&lt;p&gt;Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.&lt;/p&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples?utm_source=website&amp;amp;utm_medium=sidebar&amp;amp;utm_campaign=DesignPattern-Sidebar-Widget&quot;&gt;&lt;strong&gt;JournalDev&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/01/singleton-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/01/singleton-pattern/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Facade Pattern</title>
+        <description>&lt;h2 id=&quot;facade-pattern&quot;&gt;Facade Pattern&lt;/h2&gt;
+&lt;p&gt;Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system. This type of design pattern comes under structural pattern as this pattern adds an interface to existing system to hide its complexities.&lt;/p&gt;
+
+&lt;p&gt;This pattern involves a single class which provides simplified methods required by client and delegates calls to methods of existing system classes.&lt;/p&gt;
+
+&lt;h4 id=&quot;implementation&quot;&gt;Implementation&lt;/h4&gt;
+&lt;p&gt;We are going to create a Shape interface and concrete classes implementing the Shape interface. A facade class ShapeMaker is defined as a next step.&lt;/p&gt;
+
+&lt;p&gt;ShapeMaker class uses the concrete classes to delegate user calls to these classes. FacadePatternDemo, our demo class, will use ShapeMaker class to show the results.&lt;/p&gt;
+
+&lt;p&gt;Facade Pattern UML Diagram
+&lt;img src=&quot;../../static/img/facade_pattern.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;step-1-create-an-interface&quot;&gt;Step 1 Create an interface.&lt;/h5&gt;
+
+&lt;p&gt;Shape.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public interface Shape {
+   void draw();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;step-2-create-concrete-classes-implementing-the-same-interface&quot;&gt;Step 2 Create concrete classes implementing the same interface.&lt;/h5&gt;
+
+&lt;p&gt;Rectangle.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Rectangle implements Shape {
+
+   @Override
+   public void draw() {
+      System.out.println(&quot;Rectangle::draw()&quot;);
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Square.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Square implements Shape {
+
+   @Override
+   public void draw() {
+      System.out.println(&quot;Square::draw()&quot;);
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Circle.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Circle implements Shape {
+
+   @Override
+   public void draw() {
+      System.out.println(&quot;Circle::draw()&quot;);
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;step-3-create-a-facade-class&quot;&gt;Step 3 Create a facade class.&lt;/h5&gt;
+
+&lt;p&gt;ShapeMaker.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class ShapeMaker {
+   private Shape circle;
+   private Shape rectangle;
+   private Shape square;
+
+   public ShapeMaker() {
+      circle = new Circle();
+      rectangle = new Rectangle();
+      square = new Square();
+   }
+
+   public void drawCircle(){
+      circle.draw();
+   }
+   public void drawRectangle(){
+      rectangle.draw();
+   }
+   public void drawSquare(){
+      square.draw();
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;step-4-use-the-facade-to-draw-various-types-of-shapes&quot;&gt;Step 4 Use the facade to draw various types of shapes.&lt;/h5&gt;
+
+&lt;p&gt;FacadePatternDemo.java&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class FacadePatternDemo {
+   public static void main(String[] args) {
+      ShapeMaker shapeMaker = new ShapeMaker();
+
+      shapeMaker.drawCircle();
+      shapeMaker.drawRectangle();
+      shapeMaker.drawSquare();		
+   }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;step-5-verify-the-output&quot;&gt;Step 5 Verify the output.&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Circle::draw()
+Rectangle::draw()
+Square::draw()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.tutorialspoint.com/design_pattern/facade_pattern.htm&quot;&gt;tutorialspoint&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/01/facade-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/01/facade-pattern/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
     
       <item>
         <title>Difference</title>
@@ -382,380 +779,6 @@ return false;
         
         
         <category>aws</category>
-        
-      </item>
-    
-      <item>
-        <title>Some Types Of Request Response Params In Spring</title>
-        <description>&lt;h2 id=&quot;requestresponse-paramters-in-spring-method&quot;&gt;Request/Response paramters in spring method&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;HttpSession&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;@PathVariable&lt;/strong&gt; annotated parameters for access to URI template variables.
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@RequestMapping(value=&quot;/owners/{ownerId}&quot;, method=RequestMethod.GET)
-public String findOwner(@PathVariable String ownerId, Model model) {
-Owner owner = ownerService.findOwner(ownerId);  
-model.addAttribute(&quot;owner&quot;, owner);  
-return &quot;displayOwner&quot;; 
-}
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;@RequestHeader&lt;/strong&gt; annotated parameters for access to specific Servlet request HTTP headers.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;@RequestBody&lt;/strong&gt; annotated parameters for access to the HTTP request body.
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@RequestMapping(value = &quot;/something&quot;, method = RequestMethod.PUT)
-public void handle(@RequestBody String body, Writer writer) throws IOException {
-writer.write(body);
-}
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;@RequestPart&lt;/strong&gt; annotated parameters for access to the content of a “multipart/form-data” request part.
-```
-@RequestMapping(value=”/someUrl”, method = RequestMethod.POST)
-public String onSubmit(@RequestPart(“meta-data”) MetaData metadata,
-                     @RequestPart(“file-data”) MultipartFile file) {
-  // …&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-* **HttpEntity&amp;lt;?&amp;gt;** parameters for access to the Servlet request HTTP headers and contents.
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;@RequestMapping(“/something”)
-public ResponseEntity&lt;String&gt; handle(HttpEntity&amp;lt;byte[]&amp;gt; requestEntity) throws UnsupportedEncodingException {
-  String requestHeader = requestEntity.getHeaders().getFirst(&quot;MyRequestHeader&quot;));
-  byte[] requestBody = requestEntity.getBody();
-  // do something with request header and body&lt;/String&gt;&lt;/p&gt;
-
-&lt;p&gt;HttpHeaders responseHeaders = new HttpHeaders();
-  responseHeaders.set(“MyResponseHeader”, “MyValue”);
-  return new ResponseEntity&lt;String&gt;(&quot;Hello World&quot;, responseHeaders, HttpStatus.CREATED);
-}
-```&lt;/String&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 28 Apr 2017 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2017/04/28/some-types-of-request-response-params-in-spring/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/28/some-types-of-request-response-params-in-spring/</guid>
-        
-        
-        <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>Spring Boot Application Live Reload Hot Swap With Intellij Idea</title>
-        <description>&lt;h2 id=&quot;spring-boot-application-live-reload-hot-swap-with-intellij-idea&quot;&gt;Spring Boot Application Live Reload (Hot Swap) With Intellij IDEA&lt;/h2&gt;
-&lt;p&gt;While developing Spring Boot Applications using Intellij IDEA, it was so annoying to restart the Spring Boot app after each and every change. Spring Boot provides live reload (hot swap) of application out of the box using the following dependency.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dependency&amp;gt;
-    &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;
-    &amp;lt;artifactId&amp;gt;spring-boot-devtools&amp;lt;/artifactId&amp;gt;
-    &amp;lt;optional&amp;gt;true&amp;lt;/optional&amp;gt;
-&amp;lt;/dependency&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;But it didn’t live reload the application/container, and the hot deployment didn’t work for changes. Further researching found that following changes needed to be done in order the hot deployment to be worked correctly.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Open the Settings –&amp;gt; Build-Execution-Deployment –&amp;gt; Compiler&lt;/p&gt;
-
-    &lt;p&gt;and enable the Make Project Automatically.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Then press ctrl+shift+A and search for the registry. In the registry, make the following configuration enabled.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compiler.automake.allow.when.app.running
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Reload Static content (html, css, js)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Add this configuration to your Spring Boot Maven Plugin:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;configuration&amp;gt;
-    &amp;lt;addResources&amp;gt;true&amp;lt;/addResources&amp;gt;
-&amp;lt;/configuration&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Restart the IDE.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;That’s it! Now the hot deployment works, and you don’t have to restart manually after each and every change.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 28 Apr 2017 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2017/04/28/Spring-Boot-Application-Live-Reload-Hot-Swap-With-Intellij-IDEA/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/28/Spring-Boot-Application-Live-Reload-Hot-Swap-With-Intellij-IDEA/</guid>
-        
-        
-        <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>Sementic Ui Calender Set Date Backend Frontend</title>
-        <description>&lt;h2 id=&quot;sementic-ui-calender&quot;&gt;Sementic UI Calender&lt;/h2&gt;
-&lt;p&gt;Calendar module for Semantic UI. See &lt;a href=&quot;https://jsbin.com/ruqakehefa/&quot;&gt;https://jsbin.com/ruqakehefa/&lt;/a&gt; for example usage.
-&lt;a href=&quot;https://github.com/mdehoog/Semantic-UI-Calendar&quot;&gt;Github Link&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;Install using bower:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bower install --save semantic-ui-calendar&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Install using npm:&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm install --save semantic-ui-calendar&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Include javascript and css in html:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &amp;lt;script type=&quot;text/javascript&quot; src=&quot;/bower_components/semantic-ui-calendar/dist/calendar.min.js&quot;&amp;gt;&amp;lt;/script&amp;gt;
-   &amp;lt;link rel=&quot;stylesheet&quot; href=&quot;/bower_components/semantic-ui-calendar/dist/calendar.min.css&quot; /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;basic-html&quot;&gt;Basic HTML&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;ui calendar&quot; id=&quot;date&quot;&amp;gt;
-    &amp;lt;div class=&quot;ui input left icon&quot;&amp;gt;
-        &amp;lt;i class=&quot;calendar icon&quot;&amp;gt;&amp;lt;/i&amp;gt;
-        &amp;lt;input name=&quot;date&quot; type=&quot;text&quot;&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h2 id=&quot;javascript-calling&quot;&gt;Javascript Calling&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(&quot;#date&quot;).calendar({
-    type: 'date',
-    parser: app.dateParser,
-    parseFormat: 'dd/MM/yyyy',
-    formatter: app.dateFormatter,
-    minDate: $(&quot;#date&quot;).data('min-date') ? kendo.parseDate($(&quot;#date&quot;).data('min-date'), 'dd/MM/yyyy') : null,
-    maxDate: $(&quot;#date&quot;).data('max-date') ? kendo.parseDate($(&quot;#date&quot;).data('max-date'), 'dd/MM/yyyy') : null,
-});
-var app = {
-    dateParser: {
-        date: function (txtDate, settings) {
-            if (!txtDate) return null;
-            if (settings.parseFormat) {
-                return kendo.parseDate(txtDate, settings.parseFormat);
-            } else {
-                return kendo.parseDate(txtDate, &quot;dd/MM/yyyy&quot;);
-            }
-        }
-    }
-};
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;trigger-angular-value-on-change-calender&quot;&gt;Trigger angular value on change Calender&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;ui calendar&quot; id=&quot;date&quot;&amp;gt;
-    &amp;lt;div class=&quot;ui input left icon&quot;&amp;gt;
-        &amp;lt;i class=&quot;calendar icon&quot;&amp;gt;&amp;lt;/i&amp;gt;
-        &amp;lt;input name=&quot;date&quot; type=&quot;text&quot; ng-model=&quot;angularController.element&quot;&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-
-$(&quot;#date&quot;).calendar({
-    type: 'date',
-    parser: app.dateParser,
-    parseFormat: 'dd/MM/yyyy',
-    formatter: app.dateFormatter,
-    minDate: $(&quot;#date&quot;).data('min-date') ? kendo.parseDate($(&quot;#date&quot;).data('min-date'), 'dd/MM/yyyy') : null,
-    maxDate: $(&quot;#dateOfCheque&quot;).data('max-date') ? kendo.parseDate($(&quot;#date&quot;).data('max-date'), 'dd/MM/yyyy') : null,
-    onChange: function (date, text, mode) {
-    var $scope = angular.element($(&quot;#date&quot;)).scope();
-    $scope.$apply(function() {
-        $scope.angularController.element = text;
-    });
-    }
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;changed-value-from-javascript&quot;&gt;Changed value from Javascript&lt;/h3&gt;
-&lt;p&gt;calendar(‘set date’, Javascript native Date object)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; $('#date').calendar('set date', new Date());
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;initialized-backend-date-to-calender&quot;&gt;Initialized Backend Date to Calender&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;ui calendar&quot; id=&quot;date&quot;&amp;gt;
-    &amp;lt;div class=&quot;ui input left icon&quot;&amp;gt;
-        &amp;lt;i class=&quot;calendar icon&quot;&amp;gt;&amp;lt;/i&amp;gt;
-        &amp;lt;input name=&quot;date&quot; type=&quot;text&quot; value=&quot;${g.formatDate(date: new Date(), format: 'dd/MM/yyyy')}&quot;&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 28 Apr 2017 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2017/04/28/sementic-ui-calender-set-date-backend-frontend/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/04/28/sementic-ui-calender-set-date-backend-frontend/</guid>
-        
-        
-        <category>sementic-ui</category>
-        
-      </item>
-    
-      <item>
-        <title>Learning Markdown For Your Site</title>
-        <description>&lt;p&gt;Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-you-will-learn&quot;&gt;What you will learn:&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;How the Markdown format makes styled collaborative editing easy&lt;/li&gt;
-  &lt;li&gt;How Markdown differs from traditional formatting approaches&lt;/li&gt;
-  &lt;li&gt;How to use Markdown to format text&lt;/li&gt;
-  &lt;li&gt;How to leverage GitHub’s automatic Markdown rendering&lt;/li&gt;
-  &lt;li&gt;How to apply GitHub’s unique Markdown extensions&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;what-is-markdown&quot;&gt;What is Markdown?&lt;/h3&gt;
-
-&lt;p&gt;Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like # or *.&lt;/p&gt;
-
-&lt;p&gt;You can use Markdown most places around GitHub:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Gists&lt;/li&gt;
-  &lt;li&gt;Comments in Issues and Pull Requests&lt;/li&gt;
-  &lt;li&gt;Files with the .md or .markdown extension&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;For more information, see “Writing on GitHub” in the GitHub Help.&lt;/p&gt;
-
-&lt;h3 id=&quot;examples&quot;&gt;Examples&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Type&lt;/th&gt;
-      &lt;th&gt;… to Get&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*Italic*&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;em&gt;Italic&lt;/em&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;**Bold**&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Bold&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;[Link](http://a.com)&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://a.com&quot;&gt;Link&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;![Image](http://url/a.png)&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;img src=&quot;http://url/a.png&quot; alt=&quot;Image&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt; Blockquote&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&amp;gt; Blockquote&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;* List&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;* List&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Horizontal Rule&lt;/td&gt;
-      &lt;td&gt;Horizontal Rule&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;---&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;—&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Headers&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h1 id=&quot;h1&quot;&gt;H1&lt;/h1&gt;
-&lt;h2 id=&quot;h2&quot;&gt;H2&lt;/h2&gt;
-&lt;h3 id=&quot;h3&quot;&gt;H3&lt;/h3&gt;
-&lt;h4 id=&quot;h4&quot;&gt;H4&lt;/h4&gt;
-&lt;h5 id=&quot;h5&quot;&gt;H5&lt;/h5&gt;
-&lt;h6 id=&quot;h6&quot;&gt;H6&lt;/h6&gt;
-
-&lt;h4 id=&quot;images&quot;&gt;Images&lt;/h4&gt;
-
-&lt;p&gt;Here’s our logo (hover to see the title text):&lt;/p&gt;
-
-&lt;p&gt;Inline-style:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png &quot;Logo Title Text 1&quot;)
-
-Reference-style: 
-![alt text][logo]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png&quot; alt=&quot;alt text&quot; title=&quot;Logo Title Text 1&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;reference-link&quot;&gt;Reference Link&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis&quot;&gt;Markdown Cheatsheet&lt;/a&gt;, 
-&lt;a href=&quot;https://help.ghost.org/hc/en-us/articles/224410728-Markdown-Guide&quot;&gt;Markdown Guide&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Jan 2017 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2017/01/01/learning-markdown-for-your-site/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/01/learning-markdown-for-your-site/</guid>
-        
-        
-        <category>Markdown</category>
-        
-      </item>
-    
-      <item>
-        <title>Starting Project With Machine Learning</title>
-        <description>&lt;h2 id=&quot;machine-learing&quot;&gt;Machine Learing&lt;/h2&gt;
-&lt;p&gt;Machine learning is a type of artificial intelligence (AI) that provides computers with the ability to learn without being explicitly programmed. Machine learning focuses on the development of computer programs that can change when exposed to new data.&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s2&quot;&gt;&quot;A computer program is said to learn from experience E with respect to some task T and some performance measure P,
- if its performance on T, as measured by P, improves with experience E.” 
- -- Tom Mitchell, Carnegie Mellon University 
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So if you want your program to predict, for example, traffic patterns at a busy intersection (task T), you can run it through a machine learning algorithm with data about past traffic patterns (experience E) and, if it has successfully “learned”, it will then do better at predicting future traffic patterns (performance measure P).&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ML solves problems that cannot be solved by numerical means alone. 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;To break down the definition for easier understanding I should mention some factors that we should know as follows:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Method means technique or way to do&lt;/li&gt;
-  &lt;li&gt;Data means set of information&lt;/li&gt;
-  &lt;li&gt;Existing data means data already we have for any task.&lt;/li&gt;
-  &lt;li&gt;Algorithm - Step by step set of operations/command to be performed&lt;/li&gt;
-  &lt;li&gt;Automatically – Something is done or gained without working again.&lt;/li&gt;
-  &lt;li&gt;Model - Data schema that learn from data iteratively&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Wed, 28 Dec 2016 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2016/12/28/starting-project-with-machine-learning/</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/28/starting-project-with-machine-learning/</guid>
-        
-        
-        <category>Machine-Learning</category>
         
       </item>
     
