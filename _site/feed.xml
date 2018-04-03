@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Mar 2018 15:46:05 +0600</pubDate>
-    <lastBuildDate>Fri, 09 Mar 2018 15:46:05 +0600</lastBuildDate>
+    <pubDate>Wed, 28 Mar 2018 11:31:31 +0600</pubDate>
+    <lastBuildDate>Wed, 28 Mar 2018 11:31:31 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -20,16 +20,50 @@
   &lt;li&gt;They provide the solutions that help to define the system architecture.&lt;/li&gt;
   &lt;li&gt;They capture the software engineering experiences.&lt;/li&gt;
   &lt;li&gt;They provide transparency to the design of an application.&lt;/li&gt;
-  &lt;li&gt;They are well-proved and testified solutions since they have been built upon the knowledge and experience of expert software developers.&lt;/li&gt;
-  &lt;li&gt;Design patterns don?t guarantee an absolute solution to a problem. They provide clarity to the system architecture and the possibility of building a better system.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h5 id=&quot;when-should-we-use-the-design-patterns&quot;&gt;When should we use the design patterns?&lt;/h5&gt;
 &lt;p&gt;We must use the design patterns during the analysis and requirement phase of SDLC(Software Development Life Cycle).&lt;/p&gt;
 
-&lt;p&gt;Design patterns ease the analysis and requirement phase of SDLC by providing information based on prior hands-on experiences.&lt;/p&gt;
+&lt;p&gt;Creational Design Patterns&lt;/p&gt;
 
-&lt;p&gt;Source: &lt;a href=&quot;https://www.tutorialspoint.com/design_pattern/facade_pattern.htm&quot;&gt;tutorialspoint&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Singleton Pattern&lt;/li&gt;
+  &lt;li&gt;Factory Pattern&lt;/li&gt;
+  &lt;li&gt;Abstract Factory Pattern&lt;/li&gt;
+  &lt;li&gt;Builder Pattern
+5.Prototype Pattern&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Structural Design Patterns&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Adapter Pattern&lt;/li&gt;
+  &lt;li&gt;Composite Pattern&lt;/li&gt;
+  &lt;li&gt;Proxy Pattern&lt;/li&gt;
+  &lt;li&gt;Flyweight Pattern&lt;/li&gt;
+  &lt;li&gt;Facade Pattern&lt;/li&gt;
+  &lt;li&gt;Bridge Pattern&lt;/li&gt;
+  &lt;li&gt;Decorator Pattern&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Behavioral Design Patterns&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Template Method Pattern&lt;/li&gt;
+  &lt;li&gt;Mediator Pattern&lt;/li&gt;
+  &lt;li&gt;Chain of Responsibility Pattern&lt;/li&gt;
+  &lt;li&gt;Observer Pattern&lt;/li&gt;
+  &lt;li&gt;Strategy Pattern&lt;/li&gt;
+  &lt;li&gt;Command Pattern&lt;/li&gt;
+  &lt;li&gt;State Pattern&lt;/li&gt;
+  &lt;li&gt;Visitor Pattern&lt;/li&gt;
+  &lt;li&gt;Interpreter Pattern&lt;/li&gt;
+  &lt;li&gt;Iterator Pattern&lt;/li&gt;
+  &lt;li&gt;Memento Pattern&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.javatpoint.com/design-patterns-in-java&quot;&gt;Java Point&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 09 Mar 2018 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2018/03/09/design-pattern/</link>
@@ -114,11 +148,25 @@
       </item>
     
       <item>
+        <title>Java-Stream</title>
+        <description>&lt;h2 id=&quot;stream&quot;&gt;Stream&lt;/h2&gt;
+
+&lt;h5 id=&quot;in-wikipedia&quot;&gt;In Wikipedia&lt;/h5&gt;
+&lt;p&gt;DRY- A Principle of software development, aimed at reducing repetition of information of all kinds.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 14 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/14/stream/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/14/stream/</guid>
+        
+        
+        <category>java89</category>
+        
+      </item>
+    
+      <item>
         <title>Singleton Pattern</title>
         <description>&lt;h2 id=&quot;singleton-pattern&quot;&gt;Singleton Pattern&lt;/h2&gt;
-&lt;p&gt;Java Singleton Design Pattern Best Practices with Examples
-Java Singleton Pattern is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category. From the definition, it seems to be a very simple design pattern but when it comes to implementation, it comes with a lot of implementation concerns. The implementation of Java Singleton pattern has always been a controversial topic among developers. Here we will learn about Singleton design pattern principles, different ways to implement Singleton design pattern and some of the best practices for its usage.&lt;/p&gt;
-&lt;h4 id=&quot;java-singleton&quot;&gt;Java Singleton&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine.&lt;/li&gt;
   &lt;li&gt;The singleton class must provide a global access point to get the instance of the class.&lt;/li&gt;
@@ -127,17 +175,26 @@ Java Singleton Pattern is one of the Gangs of Four Design patterns and comes in 
   &lt;li&gt;Singleton design pattern is used in core java classes also, for example java.lang.Runtime, java.awt.Desktop.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&quot;java-singleton-pattern&quot;&gt;Java Singleton Pattern&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;Eager initialization&lt;/li&gt;
-  &lt;li&gt;Static block initialization&lt;/li&gt;
-  &lt;li&gt;Lazy Initialization&lt;/li&gt;
-  &lt;li&gt;Thread Safe Singleton&lt;/li&gt;
-  &lt;li&gt;Bill Pugh Singleton Implementation&lt;/li&gt;
-  &lt;li&gt;Using Reflection to destroy Singleton Pattern&lt;/li&gt;
-  &lt;li&gt;Enum Singleton&lt;/li&gt;
-  &lt;li&gt;Serialization and Singleton&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id=&quot;java-singleton-pattern-implementation&quot;&gt;Java Singleton Pattern Implementation&lt;/h4&gt;
+&lt;p&gt;To implement Singleton pattern, we have different approaches but all of them have following common concepts.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Private constructor to restrict instantiation of the class from other classes.&lt;/li&gt;
+  &lt;li&gt;Private static variable of the same class that is the only instance of the class.&lt;/li&gt;
+  &lt;li&gt;Public static method that returns the instance of the class, this is the global access point for outer world to get the instance of the singleton class.
+    &lt;h5 id=&quot;different-approaches-of-singleton-pattern-implementation&quot;&gt;Different approaches of Singleton pattern implementation&lt;/h5&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Eager initialization&lt;/li&gt;
+      &lt;li&gt;Static block initialization&lt;/li&gt;
+      &lt;li&gt;Lazy Initialization&lt;/li&gt;
+      &lt;li&gt;Thread Safe Singleton&lt;/li&gt;
+      &lt;li&gt;Bill Pugh Singleton Implementation&lt;/li&gt;
+      &lt;li&gt;Using Reflection to destroy Singleton Pattern&lt;/li&gt;
+      &lt;li&gt;Enum Singleton&lt;/li&gt;
+      &lt;li&gt;Serialization and Singleton&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;eager-initialization&quot;&gt;Eager initialization&lt;/h4&gt;
 &lt;p&gt;In eager initialization, the instance of Singleton Class is created at the time of class loading, this is the easiest method to create a singleton class but it has a drawback that instance is created even though client application might not be using it.
@@ -531,6 +588,68 @@ System.out.println(s1.equals(sf2));     // false
       </item>
     
       <item>
+        <title>Pictures</title>
+        <description>&lt;p&gt;##HELPFUL ROUNDUP FOR STOCK PHOTO NEEDS&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;WOCinTech Chat – An amazing collection of beautiful, high-res photos of women of color in tech&lt;/li&gt;
+  &lt;li&gt;Pixabay   – Over 900,000 free images and videos for you to use&lt;/li&gt;
+  &lt;li&gt;Pexels  – All free images, all available for personal and commercial use&lt;/li&gt;
+  &lt;li&gt;Unsplash – Browse and search the latest high-resolution photos&lt;/li&gt;
+  &lt;li&gt;Stocksnap.io  – Hundreds of high-res photos are added weekly!&lt;/li&gt;
+  &lt;li&gt;Gratysography – All images are photographed by Ryan McGuire, and free of copyright restrictions&lt;/li&gt;
+  &lt;li&gt;Foter – 335 million stock photos to choose from and a handy WordPress plugin&lt;/li&gt;
+  &lt;li&gt;FreeimagesRed – Search their inventory of high-quality stock photos across a variety of categories&lt;/li&gt;
+  &lt;li&gt;Cupcake – Free original images by photographer Jonas Nilsson Lee to use however you like&lt;/li&gt;
+  &lt;li&gt;Death to Stock – Sign up to get free, high-res photos sent directly to your inbox&lt;/li&gt;
+  &lt;li&gt;DesignerPics – Free high-res photos for personal and commercial use by photographer, web designer, and developer, Jeshu John&lt;/li&gt;
+  &lt;li&gt;Foodiesfeed – The ultimate hub for beautiful food stock photos&lt;/li&gt;
+  &lt;li&gt;Iso Republic – Specializes in free stock photos for creatives&lt;/li&gt;
+  &lt;li&gt;Magdeleine – Hand picked, high-res photos just for you. The website also highlights a new photographer and photo every day&lt;/li&gt;
+  &lt;li&gt;Moveast – Beautiful photos of João Pacheco’s travel adventures, free to use&lt;/li&gt;
+  &lt;li&gt;Stokpic – High-resolution photos for commercial use&lt;/li&gt;
+  &lt;li&gt;Travel coffee book –  Browse and submit your own beautiful travel photos for personal and commercial use&lt;/li&gt;
+  &lt;li&gt;Stockvault – Over 50,000 photos, vectors, illustrations, and textures&lt;/li&gt;
+  &lt;li&gt;Startup stock photos – Images for startups and businesses&lt;/li&gt;
+  &lt;li&gt;Splitshire – Free photos, images, and videos for commercial use&lt;/li&gt;
+  &lt;li&gt;Splashbase – Discover high-res photos and videos&lt;/li&gt;
+  &lt;li&gt;Snapwire Snaps – Search, submit, and subscribe to receive 7 free beautiful photos every 7 days&lt;/li&gt;
+  &lt;li&gt;RGB Stock – Search over 100,000 photos and all are 100% free&lt;/li&gt;
+  &lt;li&gt;Publicdomainarchive – Look for 100% free stock photos uploaded every single week&lt;/li&gt;
+  &lt;li&gt;Skitterphoto – All photos available to download, edit, and to use however you wish&lt;/li&gt;
+  &lt;li&gt;Re:splashed – 1,100+ free high-res photos for web and design projects&lt;/li&gt;
+  &lt;li&gt;Raumrot – 1,450 free curated stock photos for personal and commercial use&lt;/li&gt;
+  &lt;li&gt;Picography – Free images and collections by the folks at Hidden Depth&lt;/li&gt;
+  &lt;li&gt;Pickupimage  – Register to download, modify, and distribute this huge collection of free photos&lt;/li&gt;
+  &lt;li&gt;Pickjumbo – Super high-quality photos collected by photographer and designer Viktor Hanacek&lt;/li&gt;
+  &lt;li&gt;Morguefile – Free images for creatives, by creatives&lt;/li&gt;
+  &lt;li&gt;MMT – Free photos for commercial use and new photos every week&lt;/li&gt;
+  &lt;li&gt;Kaboompics – Free pictures for personal or business projects&lt;/li&gt;
+  &lt;li&gt;Free Nature Stock – Large collection of free nature photos, with new pictures added every day&lt;/li&gt;
+  &lt;li&gt;Barn images – Original free stock photos by Latvian photographers Igor Trepeshchenok and Roman Drits&lt;/li&gt;
+  &lt;li&gt;Jeshoots – Browse this collection of free photos and mockups&lt;/li&gt;
+  &lt;li&gt;BucketListly Photos  – Common collection of 5,000+ free travel photos&lt;/li&gt;
+  &lt;li&gt;Photo Collections – Discover high-resolution photos in seven collections&lt;/li&gt;
+  &lt;li&gt;Tookapic – Browse over 64,000 free, non-staged stock photos&lt;/li&gt;
+  &lt;li&gt;NegativeSpace – Search by keyword, color, or browse categories and collections&lt;/li&gt;
+  &lt;li&gt;Epicantus– Free, original stock photos for blogs, landing pages, and designs by UX designer Daria&lt;/li&gt;
+  &lt;li&gt;Libresho – More than 1,500 high-quality photos available for personal and commercial use&lt;/li&gt;
+  &lt;li&gt;New Old Stock – Don’t forget the oldies—here’s a collection of vintage photos from public archives&lt;/li&gt;
+  &lt;li&gt;Jay Mantri – Browse and subscribe to receive free stock photos by photographer Jay Mantri&lt;/li&gt;
+  &lt;li&gt;Burst – A collection of free stock photos for entrepreneurs by our friends at Shopify&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;https://www.upwork.com/hiring/design/45-completely-free-photo-resources/&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/02/01/pictures/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/02/01/pictures/</guid>
+        
+        
+        <category>important</category>
+        
+      </item>
+    
+      <item>
         <title>Spring Introduction</title>
         <description>&lt;h2 id=&quot;spring-introduction&quot;&gt;Spring Introduction&lt;/h2&gt;
 
@@ -542,243 +661,6 @@ System.out.println(s1.equals(sf2));     // false
         
         
         <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>AngularJS - $pristine, $dirty, $valid, $invalid</title>
-        <description>&lt;p&gt;Today we will go through the AngularJS Forms validations. Forms are important part of any application. They help us to collect information from user so that it can be processed for corresponding activity. We need to validate form so that only the valid values are put in the form. For that we use JavaScript or any other JavaScript library like jQuery.&lt;/p&gt;
-
-&lt;p&gt;Angular also provides some help in this context. We can validate a form and see that the required validations work correctly. It provides different objects to the form. They are very helpful while validating forms:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$pristine: It will be TRUE, if the user has not interacted with the form yet
-$dirty: It will be TRUE, if the user has already interacted with the form.
-$valid: It will be TRUE, if all containing form and controls are valid
-$invalid: It will be TRUE, if at least one containing form and control is invalid.
-$error: Is an object hash, containing references to all invalid controls or forms, where: 
-    keys are validation tokens (error names)
-    values are arrays of controls or forms that are invalid with given error.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;There are some built in validation tokens, that can help in validating form:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;email
-max
-maxlength
-min
-minlength
-number
-pattern
-required
-url
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;In accordance with these AngularJS also provides corresponding CSS classes for them. We can use them for validation purpose.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ng-pristine
-ng-dirty
-ng-valid
-ng-invalid
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Lets see how we can use them. Usage:
-In Form: myForm.$dirty
-For Field: myForm.firldName.$dirty
-In CSS:
-.ng-dirty{
- background-color: yellow;
-}&lt;/p&gt;
-
-&lt;p&gt;This is little bit information about the AngularJS form validation.
-Use #ngvinod to discuss on Twitter about this.&lt;/p&gt;
-
-&lt;p&gt;http://www.ng-vinod.com/2014/07/angularjs-pristine-dirty-valid-invalid.html&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Dec 2017 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2017/12/26/AngularJS-$pristine-$dirty-$valid-$invalid/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/12/26/AngularJS-$pristine-$dirty-$valid-$invalid/</guid>
-        
-        
-        <category>android</category>
-        
-      </item>
-    
-      <item>
-        <title>Amazon S3 Direct File Upload From Client Browser Private Key Disclosure</title>
-        <description>&lt;h2 id=&quot;amazon-s3-direct-file-upload-from-client-browser---private-key-disclosure&quot;&gt;Amazon S3 direct file upload from client browser - private key disclosure&lt;/h2&gt;
-&lt;p&gt;Create an Amazon S3 bucket and configure CORS
-CORS needs to be configured on the Amazon S3 bucket to be accessed directly from JavaScript in the browser.
-Navigate to the Amazon S3 console.
-Choose an existing bucket or create a new bucket if desired. Note the bucket name and bucket region for later use in the application.&lt;/p&gt;
-
-&lt;p&gt;Click the Properties tab, open the Permissions section, and click Edit CORS Configuration.&lt;/p&gt;
-
-&lt;p&gt;Copy the below XML into the text box and click Save.&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;CORSConfiguration&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://s3.amazonaws.com/doc/2006-03-01&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;CORSRule&amp;gt;&lt;/span&gt;
-
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;AllowedOrigin&amp;gt;&lt;/span&gt;*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AllowedOrigin&amp;gt;&lt;/span&gt;
-
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;AllowedMethod&amp;gt;&lt;/span&gt;GET&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AllowedMethod&amp;gt;&lt;/span&gt;
-
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;AllowedMethod&amp;gt;&lt;/span&gt;PUT&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AllowedMethod&amp;gt;&lt;/span&gt;
-
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;AllowedMethod&amp;gt;&lt;/span&gt;POST&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AllowedMethod&amp;gt;&lt;/span&gt;
-
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;AllowedMethod&amp;gt;&lt;/span&gt;DELETE&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AllowedMethod&amp;gt;&lt;/span&gt;
-
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;AllowedHeader&amp;gt;&lt;/span&gt;*&lt;span class=&quot;nt&quot;&gt;&amp;lt;/AllowedHeader&amp;gt;&lt;/span&gt;
-
-   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/CORSRule&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/CORSConfiguration&amp;gt;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;You can upload files on AWS S3 using a server side solution, but in case of larger files it is advisable to use a client side solution. You can probably use JavaScript file upload feature of AWS S3. This is simple three step feature as described below:&lt;/p&gt;
-
-&lt;p&gt;Step 1 : In the head section of your page include javascript sdk and specify your keys like this:&lt;/p&gt;
-
-&lt;script src=&quot;https://sdk.amazonaws.com/js/aws-sdk-2.1.24.min.js&quot;&gt;&lt;/script&gt;
-
-&lt;script type=&quot;text/javascript&quot;&gt;
-    AWS.config.update({
-        accessKeyId : 'ACCESS_KEY',
-        secretAccessKey : 'SECRET_KEY'
-    });
-    AWS.config.region = 'AWS_REGION';
-&lt;/script&gt;
-
-&lt;p&gt;Step 2 : Now create a simple html form with a file input.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;form id=&quot;fileUploadForm&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&amp;gt;
-&amp;lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; value=&quot;dataFile&quot; required=&quot;&quot;&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Step 3 : Now upload your input file to S3&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$(&quot;#fileUploadForm&quot;).submit(function() {
-var bucket = new AWS.S3({params: {Bucket: 'BUCKET_NAME'}});
-var fileChooser = document.getElementById('file');
-var file = fileChooser.files[0];
-if (file) {
-var params = {Key: 'FILE_NAME', ContentType: file.type, Body: file};
-bucket.upload(params).on('httpUploadProgress', function(evt) {
-console.log(&quot;Uploaded :: &quot; + parseInt((evt.loaded * 100) / evt.total)+'%');
-}).send(function(err, data) {
-alert(&quot;File uploaded successfully.&quot;);
-});
-}
-return false;
-});
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;To upload the file successfully, you need to enable CORS configuration on S3.&lt;/p&gt;
-
-&lt;p&gt;Generally, it is not advisable to display your keys directly on page, so you can use Amazon Cognito or web identity federation feature.&lt;/p&gt;
-
-&lt;p&gt;Using Cognito service&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;AWS S3 File Upload&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file-chooser&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;upload-button&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Upload to S3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;results&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;region&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ap-south-1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1. Enter your region&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;credentials&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;CognitoIdentityCredentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;IdentityPoolId&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ap-south-1:79a1d229-dd96-4c05-a7de-ef9d58976122'&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2. Enter your identity pool&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-    &lt;span class=&quot;nx&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;credentials&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bucketName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'test-marcom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// Enter your bucket name&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bucket&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AWS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;S3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;Bucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bucketName&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fileChooser&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'file-chooser'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;button&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'upload-button'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'results'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'click'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;fileChooser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;files&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-
-            &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;objKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'testing/'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;Key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;objKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;ContentType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;Body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;ACL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'public-read'&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-
-            &lt;span class=&quot;nx&quot;&gt;bucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;putObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ERROR: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;listObjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Nothing to upload.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;listObjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prefix&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'testing'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;bucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listObjects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;Prefix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;prefix&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ERROR: '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;objKeys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Contents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                    &lt;span class=&quot;nx&quot;&gt;objKeys&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;br&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-                &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;results&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;innerHTML&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;objKeys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Thu, 01 Jun 2017 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2017/06/01/amazon-s3-direct-file-upload-from-client-browser-private-key-disclosure/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/06/01/amazon-s3-direct-file-upload-from-client-browser-private-key-disclosure/</guid>
-        
-        
-        <category>aws</category>
         
       </item>
     

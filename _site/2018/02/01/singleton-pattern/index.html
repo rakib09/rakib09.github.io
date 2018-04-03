@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Singleton Pattern</title>
-	<meta name="description" content="Singleton PatternJava Singleton Design Pattern Best Practices with ExamplesJava Singleton Pattern is one of the Gangs of Four Design patterns and comes in th...">
+	<meta name="description" content="Singleton Pattern  Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machin...">
 	
 	<link rel="canonical" href="http://localhost:4000/2018/02/01/singleton-pattern/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
@@ -98,9 +98,6 @@
       <hr>
       <article>
         <h2 id="singleton-pattern">Singleton Pattern</h2>
-<p>Java Singleton Design Pattern Best Practices with Examples
-Java Singleton Pattern is one of the Gangs of Four Design patterns and comes in the Creational Design Pattern category. From the definition, it seems to be a very simple design pattern but when it comes to implementation, it comes with a lot of implementation concerns. The implementation of Java Singleton pattern has always been a controversial topic among developers. Here we will learn about Singleton design pattern principles, different ways to implement Singleton design pattern and some of the best practices for its usage.</p>
-<h4 id="java-singleton">Java Singleton</h4>
 <ul>
   <li>Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine.</li>
   <li>The singleton class must provide a global access point to get the instance of the class.</li>
@@ -109,17 +106,26 @@ Java Singleton Pattern is one of the Gangs of Four Design patterns and comes in 
   <li>Singleton design pattern is used in core java classes also, for example java.lang.Runtime, java.awt.Desktop.</li>
 </ul>
 
-<h4 id="java-singleton-pattern">Java Singleton Pattern</h4>
-<ol>
-  <li>Eager initialization</li>
-  <li>Static block initialization</li>
-  <li>Lazy Initialization</li>
-  <li>Thread Safe Singleton</li>
-  <li>Bill Pugh Singleton Implementation</li>
-  <li>Using Reflection to destroy Singleton Pattern</li>
-  <li>Enum Singleton</li>
-  <li>Serialization and Singleton</li>
-</ol>
+<h4 id="java-singleton-pattern-implementation">Java Singleton Pattern Implementation</h4>
+<p>To implement Singleton pattern, we have different approaches but all of them have following common concepts.</p>
+
+<ul>
+  <li>Private constructor to restrict instantiation of the class from other classes.</li>
+  <li>Private static variable of the same class that is the only instance of the class.</li>
+  <li>Public static method that returns the instance of the class, this is the global access point for outer world to get the instance of the singleton class.
+    <h5 id="different-approaches-of-singleton-pattern-implementation">Different approaches of Singleton pattern implementation</h5>
+    <ol>
+      <li>Eager initialization</li>
+      <li>Static block initialization</li>
+      <li>Lazy Initialization</li>
+      <li>Thread Safe Singleton</li>
+      <li>Bill Pugh Singleton Implementation</li>
+      <li>Using Reflection to destroy Singleton Pattern</li>
+      <li>Enum Singleton</li>
+      <li>Serialization and Singleton</li>
+    </ol>
+  </li>
+</ul>
 
 <h4 id="eager-initialization">Eager initialization</h4>
 <p>In eager initialization, the instance of Singleton Class is created at the time of class loading, this is the easiest method to create a singleton class but it has a drawback that instance is created even though client application might not be using it.
