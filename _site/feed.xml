@@ -5,9 +5,240 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Apr 2018 14:24:13 +0600</pubDate>
-    <lastBuildDate>Wed, 04 Apr 2018 14:24:13 +0600</lastBuildDate>
+    <pubDate>Mon, 28 May 2018 02:30:51 +0600</pubDate>
+    <lastBuildDate>Mon, 28 May 2018 02:30:51 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Important command for windows</title>
+        <description>&lt;h2 id=&quot;important-command-for-windows&quot;&gt;Important command for windows&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Java Patha variable&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for %i in (java.exe) do @echo.   %~$PATH:i
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Tomcat run as service&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;service.bat install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 22 May 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/05/22/important-command-for-windows/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/22/important-command-for-windows/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Deploy Java War in Linux Server</title>
+        <description>&lt;h2 id=&quot;deploy-java-war-in-linux-server&quot;&gt;Deploy Java War in Linux Server&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First, update the package index.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get update
+or
+sudo yum update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Oracle JDK 8
+This is the latest stable version of Java at time of writing, and the recommended version to install. You can do so using the following command:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install oracle-java8-installer
+or
+sudo yum install oracle-java8-installer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /usr
+sudo -s (for root access)
+mkdir rakib
+chmod -R 777 rakib/
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Uninstall java
+sudo yum remove jdk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Run the following command to find out process associated with yum command:
+# ps aux | grep -i yum
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 22 May 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/05/22/deploy-war-in-linux/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/22/deploy-war-in-linux/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Node in Windows operating System</title>
+        <description>&lt;h2 id=&quot;install-node-in-windows&quot;&gt;Install node in windows&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Download the Windows installer from the &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodes.js® web site&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Run the installer (the .msi file you downloaded in the previous step.)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;../../../../static/img/installer.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Restart your computer. You won’t be able to run Node.js® until you restart your computer.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;test-it&quot;&gt;Test it!&lt;/h2&gt;
+
+&lt;p&gt;Make sure you have Node and NPM installed by running simple commands to see what version of each is installed and to run a simple test program:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test Node. To see if Node is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type node -v. This should print a version number, so you’ll see something like this v0.10.35.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test NPM. To see if NPM is installed, type npm -v in Terminal. This should print NPM’s version number so you’ll see something like this 1.4.28&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create a test file and run it. A simple way to test that node.js works is to create a JavaScript file: name it hello.js, and just add the code console.log(‘Node is installed!’);. To run the code simply open your command line program, navigate to the folder where you save the file and type node hello.js. This will start Node and run the code in the hello.js file. You should see the output Node is installed!.&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;../../../../static/img/verify.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;how-to-update-node-and-npm&quot;&gt;How to Update Node and NPM&lt;/h2&gt;
+
+&lt;p&gt;This is the new best way to upgrade npm on Windows.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run PowerShell as Administrator&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+npm install -g npm-windows-upgrade
+npm-windows-upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Note: Do not run npm i -g npm. Instead use npm-windows-upgrade to update npm going forward. Also if you run the NodeJS installer, it will replace the node version.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Upgrades npm in-place, where node installed it.&lt;/li&gt;
+  &lt;li&gt;Easy updating, update to the latest by running npm-windows-upgrade -p -v latest.&lt;/li&gt;
+  &lt;li&gt;Does not modify the default path.&lt;/li&gt;
+  &lt;li&gt;Does not change the default global package location.&lt;/li&gt;
+  &lt;li&gt;Allows easy upgrades and downgrades.&lt;/li&gt;
+  &lt;li&gt;Officially recommended by the NPM team.&lt;/li&gt;
+  &lt;li&gt;A list of versions matched between NPM and NODE (https://nodejs.org/en/download/releases/) - but you will need to download NODE INSTALLER and run that to update node (https://nodejs.org/en/)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 18 Apr 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/04/18/node-in-windwos/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/18/node-in-windwos/</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
+    
+      <item>
+        <title>install angular cli</title>
+        <description>&lt;h2 id=&quot;install-angular-cli&quot;&gt;install angular cli&lt;/h2&gt;
+
+&lt;h4 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Node&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;###Command in cmd (Windows)&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g @angular/cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;update-ng-in-existing-project&quot;&gt;update ng in existing project&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save-dev @angular/cli@latest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 18 Apr 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/04/18/install-angular-cli-windwos/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/18/install-angular-cli-windwos/</guid>
+        
+        
+        <category>node</category>
+        
+      </item>
+    
+      <item>
+        <title>Interview Question</title>
+        <description>&lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;get column difference of two table by a single sql?&lt;/li&gt;
+  &lt;li&gt;get total table number of a database by a single sql?&lt;/li&gt;
+  &lt;li&gt;Different between group by &amp;amp; where? is it write at same query? group by having implement? why needed ths?&lt;/li&gt;
+  &lt;li&gt;Store Procedure: insert, update, rollback is on same store procedure. is it possible?&lt;/li&gt;
+  &lt;li&gt;JOIN types &amp;amp; implementation?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;angular&quot;&gt;Angular&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;difference between Angular vs Angular Js, Angular 1 vs angular 2, angular 2 vs angular 4&lt;/li&gt;
+  &lt;li&gt;what is Component in angular 4?&lt;/li&gt;
+  &lt;li&gt;rootscope in angular 1?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;java-collection-framework&quot;&gt;Java Collection Framework&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;How work HashMap?&lt;/li&gt;
+  &lt;li&gt;Vector vs enum?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;oop&quot;&gt;OOP&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;interface vs abstract class&lt;/li&gt;
+  &lt;li&gt;must override in which case?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;spring&quot;&gt;Spring&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;what is Response params &amp;amp; its work?&lt;/li&gt;
+  &lt;li&gt;is Vector thread safe?&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Wed, 11 Apr 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/04/11/interview-question/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/04/11/interview-question/</guid>
+        
+        
+        <category>interview</category>
+        
+      </item>
     
       <item>
         <title>Design Pattern</title>
@@ -335,332 +566,6 @@ This is the most widely used approach for Singleton class as it doesn’t requir
         
         
         <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Facade Pattern</title>
-        <description>&lt;h2 id=&quot;facade-pattern&quot;&gt;Facade Pattern&lt;/h2&gt;
-&lt;p&gt;Facade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system. This type of design pattern comes under structural pattern as this pattern adds an interface to existing system to hide its complexities.&lt;/p&gt;
-
-&lt;p&gt;This pattern involves a single class which provides simplified methods required by client and delegates calls to methods of existing system classes.&lt;/p&gt;
-
-&lt;h4 id=&quot;implementation&quot;&gt;Implementation&lt;/h4&gt;
-&lt;p&gt;We are going to create a Shape interface and concrete classes implementing the Shape interface. A facade class ShapeMaker is defined as a next step.&lt;/p&gt;
-
-&lt;p&gt;ShapeMaker class uses the concrete classes to delegate user calls to these classes. FacadePatternDemo, our demo class, will use ShapeMaker class to show the results.&lt;/p&gt;
-
-&lt;p&gt;Facade Pattern UML Diagram
-&lt;img src=&quot;../../static/img/facade_pattern.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h5 id=&quot;step-1-create-an-interface&quot;&gt;Step 1 Create an interface.&lt;/h5&gt;
-
-&lt;p&gt;Shape.java&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public interface Shape {
-   void draw();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;step-2-create-concrete-classes-implementing-the-same-interface&quot;&gt;Step 2 Create concrete classes implementing the same interface.&lt;/h5&gt;
-
-&lt;p&gt;Rectangle.java&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Rectangle implements Shape {
-
-   @Override
-   public void draw() {
-      System.out.println(&quot;Rectangle::draw()&quot;);
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Square.java&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Square implements Shape {
-
-   @Override
-   public void draw() {
-      System.out.println(&quot;Square::draw()&quot;);
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Circle.java&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Circle implements Shape {
-
-   @Override
-   public void draw() {
-      System.out.println(&quot;Circle::draw()&quot;);
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;step-3-create-a-facade-class&quot;&gt;Step 3 Create a facade class.&lt;/h5&gt;
-
-&lt;p&gt;ShapeMaker.java&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class ShapeMaker {
-   private Shape circle;
-   private Shape rectangle;
-   private Shape square;
-
-   public ShapeMaker() {
-      circle = new Circle();
-      rectangle = new Rectangle();
-      square = new Square();
-   }
-
-   public void drawCircle(){
-      circle.draw();
-   }
-   public void drawRectangle(){
-      rectangle.draw();
-   }
-   public void drawSquare(){
-      square.draw();
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;step-4-use-the-facade-to-draw-various-types-of-shapes&quot;&gt;Step 4 Use the facade to draw various types of shapes.&lt;/h5&gt;
-
-&lt;p&gt;FacadePatternDemo.java&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class FacadePatternDemo {
-   public static void main(String[] args) {
-      ShapeMaker shapeMaker = new ShapeMaker();
-
-      shapeMaker.drawCircle();
-      shapeMaker.drawRectangle();
-      shapeMaker.drawSquare();		
-   }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;step-5-verify-the-output&quot;&gt;Step 5 Verify the output.&lt;/h5&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Circle::draw()
-Rectangle::draw()
-Square::draw()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Source: &lt;a href=&quot;https://www.tutorialspoint.com/design_pattern/facade_pattern.htm&quot;&gt;tutorialspoint&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/01/facade-pattern/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/01/facade-pattern/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Difference</title>
-        <description>&lt;h2 id=&quot;difference&quot;&gt;Difference&lt;/h2&gt;
-&lt;h3 id=&quot;equals-vs-&quot;&gt;equals vs ‘==’&lt;/h3&gt;
-
-&lt;p&gt;In General We use == operator for reference or memory location comparision 
-whereas .equals() method for content comparision.&lt;/p&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;String s1 = new String(&quot;rakib&quot;);
-String s2 = new String(&quot;rakib&quot;);
-System.out.println(s1==s2);         // false
-System.out.println(s1.equals(s2));  // true
-
-StringBuffer sf1 = new StringBuffer(&quot;rakib&quot;);
-StringBuffer sf2 = new StringBuffer(&quot;rakib&quot;);
-System.out.println(sf1 == sf2);     // false
-System.out.println(s1 == sf2);     // CE: incomparable types: java.lang.String and java.lang.StringBuffer
-System.out.println(s1.equals(sf2));     // false
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;.euals() method present in object class also meant for reference comparision only based on our requirement we can override for content comparision.&lt;/li&gt;
-  &lt;li&gt;In String class, all wrapper class and all collection classes .equals() method is overriden for content comparision.&lt;/li&gt;
-  &lt;li&gt;If r1 == r2 is true then r1.equals(r2) is always true.&lt;/li&gt;
-  &lt;li&gt;If two objects are not equal by == operator then we can’t conclude anything about .equals method. It may return true or false. 
- ie. if r1 == r2 is false then r1.equals(r2) may return true or false&lt;/li&gt;
-  &lt;li&gt;If r1.equals(r2) is true then r1 == r2 may true or false&lt;/li&gt;
-  &lt;li&gt;if r1.equals(r2) is false then r1 == r2 is always&lt;/li&gt;
-  &lt;li&gt;Either parent to child or Child to parent are same type&lt;/li&gt;
-  &lt;li&gt;r == null &amp;amp;&amp;amp; r.equals(null) return false&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/01/deffierence/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/01/deffierence/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Collection Framework</title>
-        <description>&lt;h2 id=&quot;collection-framework&quot;&gt;Collection Framework&lt;/h2&gt;
-
-&lt;h4 id=&quot;list-vs-arraylist&quot;&gt;List vs ArrayList&lt;/h4&gt;
-&lt;p&gt;List is in interface while ArrayList is a class.&lt;/p&gt;
-
-&lt;h5 id=&quot;why-store-arraylist-object-on-list-variable&quot;&gt;Why store ArrayList object on List variable?&lt;/h5&gt;
-&lt;p&gt;You might have seen something like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;Movie&amp;gt; listOfMovies = new ArrayList&amp;lt;Movie&amp;gt;()
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;here we are using a List as a type of variable to store an object of ArrayList class, created using new() operator.&lt;/p&gt;
-
-&lt;p&gt;The answer is to take advantage of Polymorphism. If you use interface than in future if the new implementation is shipped then you are not required to change your program. For example, any program written using List will work as expected whether you pass a LinkedList, Vector or ArrayList, because they all implements List interface, they obey the contract exposed by List interface.&lt;/p&gt;
-
-&lt;p&gt;The only difference comes in performance, which is actually on of the driver for change. In short, if you program using interface, tomorrow if a better implementation of your interface is available then you can switch to that without making nay further change on the client side (part of the program which uses that interface).&lt;/p&gt;
-
-&lt;h4 id=&quot;arraylist-vs-linklist&quot;&gt;ArrayList vs LinkList&lt;/h4&gt;
-
-&lt;p&gt;Performance  :  Performance of ArrayList and LinkedList depends on the type of operation&lt;/p&gt;
-
-&lt;p&gt;a. get(int index) or search operation :  ArrayList get(int index) operation runs in constant time i.e O(1)  while LinkedList get(int index) operation run time is O(n) .&lt;/p&gt;
-
-&lt;p&gt;b. insert() or add(Object) operation :  Insertions in LinkedList are generally fast as compare to ArrayList.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt;ArrayList&lt;/th&gt;
-      &lt;th&gt;LinkedList&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Implementation&lt;/td&gt;
-      &lt;td&gt;Resizable Array&lt;/td&gt;
-      &lt;td&gt;Douby-LinkedList&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ReverseIterator&lt;/td&gt;
-      &lt;td&gt;No&lt;/td&gt;
-      &lt;td&gt;Yes , descendingIterator()&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Initial Capacity&lt;/td&gt;
-      &lt;td&gt;10&lt;/td&gt;
-      &lt;td&gt;Constructs empty list&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;get(int) operation&lt;/td&gt;
-      &lt;td&gt;Fast&lt;/td&gt;
-      &lt;td&gt;Slow in comparision&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;add(int) operation&lt;/td&gt;
-      &lt;td&gt;Slow in comparision&lt;/td&gt;
-      &lt;td&gt;Fast&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Memory Overhead&lt;/td&gt;
-      &lt;td&gt;No&lt;/td&gt;
-      &lt;td&gt;Yes&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/01/collection-framwork/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/01/collection-framwork/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Pictures</title>
-        <description>&lt;p&gt;##HELPFUL ROUNDUP FOR STOCK PHOTO NEEDS&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;WOCinTech Chat – An amazing collection of beautiful, high-res photos of women of color in tech&lt;/li&gt;
-  &lt;li&gt;Pixabay   – Over 900,000 free images and videos for you to use&lt;/li&gt;
-  &lt;li&gt;Pexels  – All free images, all available for personal and commercial use&lt;/li&gt;
-  &lt;li&gt;Unsplash – Browse and search the latest high-resolution photos&lt;/li&gt;
-  &lt;li&gt;Stocksnap.io  – Hundreds of high-res photos are added weekly!&lt;/li&gt;
-  &lt;li&gt;Gratysography – All images are photographed by Ryan McGuire, and free of copyright restrictions&lt;/li&gt;
-  &lt;li&gt;Foter – 335 million stock photos to choose from and a handy WordPress plugin&lt;/li&gt;
-  &lt;li&gt;FreeimagesRed – Search their inventory of high-quality stock photos across a variety of categories&lt;/li&gt;
-  &lt;li&gt;Cupcake – Free original images by photographer Jonas Nilsson Lee to use however you like&lt;/li&gt;
-  &lt;li&gt;Death to Stock – Sign up to get free, high-res photos sent directly to your inbox&lt;/li&gt;
-  &lt;li&gt;DesignerPics – Free high-res photos for personal and commercial use by photographer, web designer, and developer, Jeshu John&lt;/li&gt;
-  &lt;li&gt;Foodiesfeed – The ultimate hub for beautiful food stock photos&lt;/li&gt;
-  &lt;li&gt;Iso Republic – Specializes in free stock photos for creatives&lt;/li&gt;
-  &lt;li&gt;Magdeleine – Hand picked, high-res photos just for you. The website also highlights a new photographer and photo every day&lt;/li&gt;
-  &lt;li&gt;Moveast – Beautiful photos of João Pacheco’s travel adventures, free to use&lt;/li&gt;
-  &lt;li&gt;Stokpic – High-resolution photos for commercial use&lt;/li&gt;
-  &lt;li&gt;Travel coffee book –  Browse and submit your own beautiful travel photos for personal and commercial use&lt;/li&gt;
-  &lt;li&gt;Stockvault – Over 50,000 photos, vectors, illustrations, and textures&lt;/li&gt;
-  &lt;li&gt;Startup stock photos – Images for startups and businesses&lt;/li&gt;
-  &lt;li&gt;Splitshire – Free photos, images, and videos for commercial use&lt;/li&gt;
-  &lt;li&gt;Splashbase – Discover high-res photos and videos&lt;/li&gt;
-  &lt;li&gt;Snapwire Snaps – Search, submit, and subscribe to receive 7 free beautiful photos every 7 days&lt;/li&gt;
-  &lt;li&gt;RGB Stock – Search over 100,000 photos and all are 100% free&lt;/li&gt;
-  &lt;li&gt;Publicdomainarchive – Look for 100% free stock photos uploaded every single week&lt;/li&gt;
-  &lt;li&gt;Skitterphoto – All photos available to download, edit, and to use however you wish&lt;/li&gt;
-  &lt;li&gt;Re:splashed – 1,100+ free high-res photos for web and design projects&lt;/li&gt;
-  &lt;li&gt;Raumrot – 1,450 free curated stock photos for personal and commercial use&lt;/li&gt;
-  &lt;li&gt;Picography – Free images and collections by the folks at Hidden Depth&lt;/li&gt;
-  &lt;li&gt;Pickupimage  – Register to download, modify, and distribute this huge collection of free photos&lt;/li&gt;
-  &lt;li&gt;Pickjumbo – Super high-quality photos collected by photographer and designer Viktor Hanacek&lt;/li&gt;
-  &lt;li&gt;Morguefile – Free images for creatives, by creatives&lt;/li&gt;
-  &lt;li&gt;MMT – Free photos for commercial use and new photos every week&lt;/li&gt;
-  &lt;li&gt;Kaboompics – Free pictures for personal or business projects&lt;/li&gt;
-  &lt;li&gt;Free Nature Stock – Large collection of free nature photos, with new pictures added every day&lt;/li&gt;
-  &lt;li&gt;Barn images – Original free stock photos by Latvian photographers Igor Trepeshchenok and Roman Drits&lt;/li&gt;
-  &lt;li&gt;Jeshoots – Browse this collection of free photos and mockups&lt;/li&gt;
-  &lt;li&gt;BucketListly Photos  – Common collection of 5,000+ free travel photos&lt;/li&gt;
-  &lt;li&gt;Photo Collections – Discover high-resolution photos in seven collections&lt;/li&gt;
-  &lt;li&gt;Tookapic – Browse over 64,000 free, non-staged stock photos&lt;/li&gt;
-  &lt;li&gt;NegativeSpace – Search by keyword, color, or browse categories and collections&lt;/li&gt;
-  &lt;li&gt;Epicantus– Free, original stock photos for blogs, landing pages, and designs by UX designer Daria&lt;/li&gt;
-  &lt;li&gt;Libresho – More than 1,500 high-quality photos available for personal and commercial use&lt;/li&gt;
-  &lt;li&gt;New Old Stock – Don’t forget the oldies—here’s a collection of vintage photos from public archives&lt;/li&gt;
-  &lt;li&gt;Jay Mantri – Browse and subscribe to receive free stock photos by photographer Jay Mantri&lt;/li&gt;
-  &lt;li&gt;Burst – A collection of free stock photos for entrepreneurs by our friends at Shopify&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;https://www.upwork.com/hiring/design/45-completely-free-photo-resources/&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/01/pictures/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/01/pictures/</guid>
-        
-        
-        <category>important</category>
-        
-      </item>
-    
-      <item>
-        <title>Spring Introduction</title>
-        <description>&lt;h2 id=&quot;spring-introduction&quot;&gt;Spring Introduction&lt;/h2&gt;
-
-&lt;p&gt;Spring developer name: Rod Jhonson &amp;amp; initial organization name is spring.org &amp;amp; now is pivotal. Springs initial name is interface 21.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 31 Jan 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/01/31/spring-introduction/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/01/31/spring-introduction/</guid>
-        
-        
-        <category>spring</category>
         
       </item>
     

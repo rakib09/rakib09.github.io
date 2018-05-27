@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Study Topics</title>
-	<meta name="description" content="  Git  ">
+	<title>Node in Windows operating System</title>
+	<meta name="description" content="Install node in windows  Download the Windows installer from the Nodes.js® web site.  Run the installer (the .msi file you downloaded in the previous step.) ...">
 	
-	<link rel="canonical" href="http://localhost:4000/2016/09/26/Study_topics/">
+	<link rel="canonical" href="http://localhost:4000/2018/04/18/node-in-windwos/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -103,35 +103,66 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>Study Topics</h1>
-        <p>Sep 26, 2016</p>
+        <h1>Node in Windows operating System</h1>
+        <p>Apr 18, 2018</p>
       </header>
       <hr>
       <article>
-        <ol>
-  <li>Git</li>
-  <li></li>
+        <h2 id="install-node-in-windows">Install node in windows</h2>
+<ol>
+  <li>Download the Windows installer from the <a href="https://nodejs.org/en/">Nodes.js® web site</a>.</li>
+  <li>Run the installer (the .msi file you downloaded in the previous step.)</li>
+  <li>
+    <p>Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).</p>
+
+    <p><img src="../../../../static/img/installer.png" alt="Image" /></p>
+  </li>
+  <li>Restart your computer. You won’t be able to run Node.js® until you restart your computer.</li>
 </ol>
 
-<p>Java</p>
+<h2 id="test-it">Test it!</h2>
+
+<p>Make sure you have Node and NPM installed by running simple commands to see what version of each is installed and to run a simple test program:</p>
+
 <ol>
-  <li><a href="https://www.journaldev.com/1325/composition-in-java-example?utm_source=website&amp;utm_medium=sidebar&amp;utm_campaign=Core-Java-Sidebar-Widget">Composition in Java</a></li>
-  <li><a href="https://www.journaldev.com/977/logger-in-java-logging-example">Logger in Java</a></li>
-  <li><a href="https://www.journaldev.com/11713/spring-amqp-rabbitmq-example?utm_source=website&amp;utm_medium=sidebar&amp;utm_campaign=Spring-Sidebar-Widget">Spring AMQP RabbitMQ</a></li>
-  <li><a href="https://www.journaldev.com/3793/hibernate-tutorial?utm_source=website&amp;utm_medium=sidebar&amp;utm_campaign=RecommendedTutorials-Sidebar-Widget">Hibernate</a></li>
-  <li><a href="https://www.journaldev.com/1005/autoboxing-java">Autoboxing</a></li>
-  <li><a href="https://www.journaldev.com/1016/java-thread-example?utm_source=website&amp;utm_medium=sidebar&amp;utm_campaign=Core-Java-Sidebar-Widget">Java Thread</a></li>
+  <li>
+    <p>Test Node. To see if Node is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type node -v. This should print a version number, so you’ll see something like this v0.10.35.</p>
+  </li>
+  <li>
+    <p>Test NPM. To see if NPM is installed, type npm -v in Terminal. This should print NPM’s version number so you’ll see something like this 1.4.28</p>
+  </li>
+  <li>
+    <p>Create a test file and run it. A simple way to test that node.js works is to create a JavaScript file: name it hello.js, and just add the code console.log(‘Node is installed!’);. To run the code simply open your command line program, navigate to the folder where you save the file and type node hello.js. This will start Node and run the code in the hello.js file. You should see the output Node is installed!.</p>
+
+    <p><img src="../../../../static/img/verify.png" alt="Image" /></p>
+  </li>
 </ol>
 
-<p>OCJP</p>
+<h2 id="how-to-update-node-and-npm">How to Update Node and NPM</h2>
+
+<p>This is the new best way to upgrade npm on Windows.</p>
+
 <ol>
-  <li><a href="https://www.javatpoint.com/scjp-quiz">Quize</a></li>
+  <li>Run PowerShell as Administrator</li>
 </ol>
 
-<p>Topics:</p>
-<ol>
-  <li></li>
-</ol>
+<div class="highlighter-rouge"><pre class="highlight"><code>Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
+npm install -g npm-windows-upgrade
+npm-windows-upgrade
+</code></pre>
+</div>
+
+<p>Note: Do not run npm i -g npm. Instead use npm-windows-upgrade to update npm going forward. Also if you run the NodeJS installer, it will replace the node version.</p>
+
+<ul>
+  <li>Upgrades npm in-place, where node installed it.</li>
+  <li>Easy updating, update to the latest by running npm-windows-upgrade -p -v latest.</li>
+  <li>Does not modify the default path.</li>
+  <li>Does not change the default global package location.</li>
+  <li>Allows easy upgrades and downgrades.</li>
+  <li>Officially recommended by the NPM team.</li>
+  <li>A list of versions matched between NPM and NODE (https://nodejs.org/en/download/releases/) - but you will need to download NODE INSTALLER and run that to update node (https://nodejs.org/en/)</li>
+</ul>
 
       </article>
       <hr>
@@ -157,8 +188,8 @@
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2016/09/26/Study_topics/"; 
-			this.page.identifier = "/2016/09/26/Study_topics"; 
+			this.page.url = "https://rakib09.github.io/2018/04/18/node-in-windwos/"; 
+			this.page.identifier = "/2018/04/18/node-in-windwos"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -210,7 +241,7 @@
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/study/2016-09-26-Study_topics.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/node/2018-04-18-node-in-windwos.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>
