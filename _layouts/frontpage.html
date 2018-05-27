@@ -19,13 +19,18 @@ layout: default
 	  </div>
       <div class="post-list-body">
         <div class="all-posts" post-cate="All">
-          {% for post in site.posts %}
-            <a class="post-list-item" href="{{ post.url | prepend: site.baseurl }}">
-              <h2>
-              {{ post.title }}
-              </h2>
-              <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
-            </a>
+          {% for category in site.categories %}
+            <h2 class="post-list-header"> {{ category | first | upcase}}</h2>
+            {% for post in site.posts %}
+              {% if post.categories[0] == category[0] %}
+                <a class="post-list-item" href="{{ post.url | prepend: site.baseurl }}">
+                  <h2>
+                  {{ post.title }}
+                  </h2>
+                  <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
+                </a>
+              {% endif %}
+            {% endfor %}
           {% endfor %}
         </div>
         <!-- <div class="posts-in-categories"> -->
