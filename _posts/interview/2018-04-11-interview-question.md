@@ -34,3 +34,19 @@ categories: interview
 2. is Vector thread safe?
 3.    
 
+## Java String
+
+
+## What are the important features of Java 8 release?
+1. Interface changes with default and static methods
+2. Functional interfaces and Lambda Expressions
+3. Java Stream API for collection classes
+4. Java Date Time API
+
+## Extra
+ThreadPool
+What is the benefit of using Optional in Java 8?
+Why are Strings immutable in Java?
+SOLID principles
+N+1 Select problem in Hibernate
+
