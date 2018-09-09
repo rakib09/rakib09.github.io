@@ -70,6 +70,29 @@ Reference-style:
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
+#### Table structure
+
+```
+|Head1 | Head2 |
+| ------ | ------ |
+| test | test |
+```
+
+|Head1 | Head2 |
+| ------ | ------ |
+| test | test |
+
+```
+|Head1 | Head2 | Head3 | Head4 | Head5 | Head6 |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| test | test | test | test | test | test |
+```
+
+|Head1 | Head2 | Head3 | Head4 | Head5 | Head6 |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| test | test | test | test | test | test |
+
+
 
 ### Reference Link
 [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis), 
