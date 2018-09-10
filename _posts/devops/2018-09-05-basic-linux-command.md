@@ -42,6 +42,53 @@ categories: devops
 | mv file1 file2 | Rename or move files |
 | mv dir1 dir2 | Rename or move directories |
 | rm [-irf] file(s)/directory(ies) | Delete files and/or directories. (-i: delete only after confirmation, -r: directories will be recursively deleted, -f: force) |
+| rmdir directory_name | removes any empty directories, but cannot delete a directory if a file is present in it.  |
+| cat file | to view the contents of a file |
+
+
+##### File create, edit, save
+
+###### Create File
+
+```
+touch fileName
+Example:
+touch test.txt
+```
+
+###### Edit file (using Pico & Nano)
+```
+pico hello.txt
+^G Get Help ^O WriteOut ^R Read File ^Y Prev Page ^K Cut Text ^C Cur Pos
+^X Exit ^J Justify ^W Where Is ^V Next Page ^U UnCut Text^T To Spell
+```
+
+‘ctrl+o’:  write the changes to the file
+
+‘ctrl+x’: exit from the editor
+
+‘ctrl+g’: help menu
+
+###### Edit file (using VI editor)
+
+```
+vim file
+```
+Exit vim without saving changes
+
+```
+Press the ESC key
+Type :q!
+Press the ENTER key
+```
+Save a file and exit
+```
+Press the ESC key
+Type :wq
+or 
+Type :x
+Press the ENTER key
+```
 
 
 
@@ -81,6 +128,14 @@ This command gives a one line description about the command. It can be used as a
 whatis date
 date (1) - print or set the system date and time
 ```
+
+##### Clear Screen
+```
+clear
+```
+
+
+
 
 
 
