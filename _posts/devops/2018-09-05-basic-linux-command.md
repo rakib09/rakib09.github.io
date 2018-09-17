@@ -7,6 +7,22 @@ categories: devops
 
 ### Basic Linux Command
 
+### Practice Linux on Windows 10
+we can practice linux command in windows 10 sub system. Proceed the following steps:
+
+Step 1: Install ubuntu from apps  store
+
+![Image](../../../../static/img/ubuntu_sub_system.PNG)
+
+Step 2: Open ubuntu after successful installation
+
+If any error occurred like "sub system is not enabled" then open powershell as administrator & run the bellow command
+
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+``` 
+Then open ubuntu & set user password when it will be ready.
+
 #### Listing files and directories
 
 |COMMAND | Description |
@@ -30,7 +46,6 @@ categories: devops
 | ls -l | long listing format. Displays permissions, user and group, time stamp, size, etc. |
 | ls -r | for directories, all sub-directories will be displayed recursively. |
 | ls directory | displays the file & directory of the corresponding directory. |
-
 
 
 #### File management
@@ -133,6 +148,16 @@ date (1) - print or set the system date and time
 ```
 clear
 ```
+##### Cent OS
+
+###### YUM (YellowDog Updater Modified)
+yum is the primary tool for getting, installing, deleting, querying, and managing Red Hat Enterprise Linux RPM software packages from official Red Hat software repositories, as well as other third-party repositories.
+
+Update Yum
+```
+yum update
+```
+
 
 
 
