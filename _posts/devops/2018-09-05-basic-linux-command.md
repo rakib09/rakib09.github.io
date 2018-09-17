@@ -159,6 +159,33 @@ yum update
 ```
 
 
+##### Install Java
+Go to [Java Download page](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html) & get the linux tar.gz file download url
+![Image](../../../../static/img/java_jdk_download.PNG)
+
+```
+cd /opt/
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "URL_LINK"
+Here URL_LINK will be java download Link. First ensure the link is working or not. If sign in required for old java version, we can download manually.
+tar xzf jdk-8u131-linux-x64.tar.gz
+cd /opt/jdk1.8.0_131/
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_131/bin/java 2
+alternatives --config java
+
+alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_131/bin/jar 2
+alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_131/bin/javac 2
+alternatives --set jar /opt/jdk1.8.0_131/bin/jar
+alternatives --set javac /opt/jdk1.8.0_131/bin/javac
+java -version
+export JAVA_HOME=/opt/jdk1.8.0_131
+export JRE_HOME=/opt/jdk1.8.0_131/jre
+export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
+echo $JAVA_HOME
+echo $JRE_HOME
+source /etc/profile
+```
+
+
 
 
 
