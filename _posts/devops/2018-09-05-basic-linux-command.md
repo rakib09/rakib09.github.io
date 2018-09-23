@@ -148,6 +148,10 @@ date (1) - print or set the system date and time
 ```
 clear
 ```
+##### locate
+```
+locate -i hello
+```
 ##### Cent OS
 
 ###### YUM (YellowDog Updater Modified)
@@ -183,6 +187,51 @@ export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
 echo $JAVA_HOME
 echo $JRE_HOME
 source /etc/profile
+```
+
+
+##### Bahmni Setup
+
+```
+NB: Example: If implementation_name is 'bd-uhc', then app config will be picked up from the /etc/bahmni-installer/deployment-artifacts/bd-uhc_config folde
+
+Step 1:
+#Prerequisite for the fresh installation of Bahmni
+wget https://bitbucket.org/pypa/setuptools/raw/0.7.2/ez_setup.py
+python ez_setup.py
+
+you may run this --- yum upgrade python-setuptools
+
+Step 2:
+# Install the bahmni command line program (Choose the version you want).
+yum install https://dl.bintray.com/bahmni/rpm/rpms/bahmni-installer-0.91-70.noarch.rpm  #version 0.91 
+
+# Confirm that the bahmni command is correctly installed (you should see a help message for the command)
+bahmni --help
+
+# Now setup a configuration file for bahmni command in /etc/bahmni-installer.
+curl -L https://goo.gl/R8ekg5 >> /etc/bahmni-installer/setup.yml
+
+# Confirm the contents of the file. It should look like this file: (https://goo.gl/R8ekg5)
+cat /etc/bahmni-installer/setup.yml
+
+Then amar personaly setup.yml ase seta replace kore dibo…
+
+
+# Set the inventory file name to local in BAHMNI_INVENTORY environment variable. This way you won't need to use the '-i local' switch every time you use the 'bahmni' command
+#You can also configure custom inventory file instead of local.
+echo "export BAHMNI_INVENTORY=local" >> ~/.bashrc
+source ~/.bashrc
+
+# Now fire the installer
+bahmni install
+
+Then error =  deployment-artifact ar vitore bd-uhc_config load kore dibo ..ar ae file ta  ae github theke(359 commit) ase .i have locally store it   
+https://github.com/SharedHealth/bd-uhc-config
+etc/bahmni-installer/deployment-artifacts/bd-uhc_config
+
+then abar bahmni install
+
 ```
 
 
