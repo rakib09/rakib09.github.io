@@ -24,3 +24,10 @@ OCJP
 
 Topics:
 1. 
+
+Links:
+1. [Design pattern with Spring 1](http://www.waitingforcode.com/spring-framework/design-patterns-in-spring-framework-part-1/read)
+1. [Design pattern with Spring 2](http://www.waitingforcode.com/spring-framework/design-patterns-in-spring-Framework-part-2/read)
+1. [Design pattern with Spring 3](http://www.waitingforcode.com/spring-framework/design-patterns-in-spring-framework-part-3/read)
+1. [Design pattern with Spring 4](http://www.waitingforcode.com/spring-framework/design-patterns-in-spring-Framework-part-4/read)
+1. [Design pattern with Spring 5](http://www.waitingforcode.com/spring-framework/design-patterns-in-spring-Framework-part-5/read)
