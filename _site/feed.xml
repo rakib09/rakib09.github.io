@@ -5,9 +5,558 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 May 2018 09:28:49 +0600</pubDate>
-    <lastBuildDate>Mon, 28 May 2018 09:28:49 +0600</lastBuildDate>
+    <pubDate>Thu, 22 Nov 2018 16:56:37 +0600</pubDate>
+    <lastBuildDate>Thu, 22 Nov 2018 16:56:37 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Intelij increase licesnse evaluation</title>
+        <description>&lt;h3 id=&quot;intelij-increase-licesnse-evaluation&quot;&gt;Intelij increase licesnse evaluation&lt;/h3&gt;
+
+&lt;h3 id=&quot;increase-evaluation-in-linux&quot;&gt;Increase Evaluation in Linux&lt;/h3&gt;
+
+&lt;p&gt;Create file reset_trail.sh with content:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+ 
+ &lt;span class=&quot;c&quot;&gt;## declare array of tools&lt;/span&gt;
+ &lt;span class=&quot;nb&quot;&gt;declare&lt;/span&gt; -a &lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;
+     &lt;span class=&quot;s2&quot;&gt;&quot;DataGrip&quot;&lt;/span&gt;
+     &lt;span class=&quot;s2&quot;&gt;&quot;CLion&quot;&lt;/span&gt;
+     &lt;span class=&quot;s2&quot;&gt;&quot;Rider&quot;&lt;/span&gt;
+     &lt;span class=&quot;s2&quot;&gt;&quot;PhpStorm&quot;&lt;/span&gt;
+     &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+ 
+ &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;tool &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;do
+     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;removing evaluation key for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+     rm -rf ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/config/eval
+     rm -rf ~/.java/.userPrefs/jetbrains/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;done
+ 
+ for &lt;/span&gt;tool &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;do
+     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resetting evalsprt in options.xml for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+     sed -i &lt;span class=&quot;s1&quot;&gt;'/evlsprt/d'&lt;/span&gt; ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/config/options/options.xml
+ &lt;span class=&quot;k&quot;&gt;done
+ 
+ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resetting evalsprt in prefs.xml&quot;&lt;/span&gt;
+ sed -i &lt;span class=&quot;s1&quot;&gt;'/evlsprt/d'&lt;/span&gt; ~/.java/.userPrefs/prefs.xml
+ 
+ &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;tool &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;do
+     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;change date file for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+     find ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; -type d -exec touch -t &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date +&lt;span class=&quot;s2&quot;&gt;&quot;%Y%m%d%H%M&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; +;
+     find ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; -type f -exec touch -t &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date +&lt;span class=&quot;s2&quot;&gt;&quot;%Y%m%d%H%M&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; +;
+ &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 22 Nov 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/11/22/intelij-increase-license-evaluation/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/11/22/intelij-increase-license-evaluation/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
+    
+      <item>
+        <title>Basic Linux Command</title>
+        <description>&lt;h3 id=&quot;basic-linux-command&quot;&gt;Basic Linux Command&lt;/h3&gt;
+
+&lt;h3 id=&quot;practice-linux-on-windows-10&quot;&gt;Practice Linux on Windows 10&lt;/h3&gt;
+&lt;p&gt;we can practice linux command in windows 10 sub system. Proceed the following steps:&lt;/p&gt;
+
+&lt;p&gt;Step 1: Install ubuntu from apps  store&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/ubuntu_sub_system.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step 2: Open ubuntu after successful installation&lt;/p&gt;
+
+&lt;p&gt;If any error occurred like “sub system is not enabled” then open powershell as administrator &amp;amp; run the bellow command&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Then open ubuntu &amp;amp; set user password when it will be ready.&lt;/p&gt;
+
+&lt;h4 id=&quot;listing-files-and-directories&quot;&gt;Listing files and directories&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;COMMAND&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd -&lt;/td&gt;
+      &lt;td&gt;Returns you to your previous working directory&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd ~&lt;/td&gt;
+      &lt;td&gt;Returns you to your login directory&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd&lt;/td&gt;
+      &lt;td&gt;Returns you to your login directory&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd $HOME&lt;/td&gt;
+      &lt;td&gt;Returns you to your login directory&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd /&lt;/td&gt;
+      &lt;td&gt;Takes you to the entire system’s root directory.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd /root&lt;/td&gt;
+      &lt;td&gt;Takes you to the home directory of the root user. You must be the root user to access this directory.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd /home&lt;/td&gt;
+      &lt;td&gt;Takes you to the home directory, where user login directories are usually stored&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd ..&lt;/td&gt;
+      &lt;td&gt;Takes you to the directory one level up.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd /dir1/dir2/&lt;/td&gt;
+      &lt;td&gt;Regardless of which directory you are in, this absolute path takes you directly to dir2, a subdirectory of /dir1/.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cd ../../dir2/dir3/&lt;/td&gt;
+      &lt;td&gt;This relative path takes you up two directories, then to dir2/, and finally into its subdirectory dir3/.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;pwd&lt;/td&gt;
+      &lt;td&gt;displays the current directory.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mkdir dirname&lt;/td&gt;
+      &lt;td&gt;make directory&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;chmod -R 777 dirname&lt;/td&gt;
+      &lt;td&gt;Read, write and execute permission to all user group&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mkdir -m 777 dirname&lt;/td&gt;
+      &lt;td&gt;creates an empty directory with permission&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ls&lt;/td&gt;
+      &lt;td&gt;displays the file &amp;amp; directory of the current directory.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ls -a&lt;/td&gt;
+      &lt;td&gt;list also files/directories which begin with a dot (hidden)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ls -l&lt;/td&gt;
+      &lt;td&gt;long listing format. Displays permissions, user and group, time stamp, size, etc.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ls -r&lt;/td&gt;
+      &lt;td&gt;for directories, all sub-directories will be displayed recursively.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ls directory&lt;/td&gt;
+      &lt;td&gt;displays the file &amp;amp; directory of the corresponding directory.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;file-management&quot;&gt;File management&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;COMMAND&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cp file1 file2&lt;/td&gt;
+      &lt;td&gt;copies files or directories. file1 is copied to file2. if file2 already exists, it is overwritten&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cp -r dir1 dir2&lt;/td&gt;
+      &lt;td&gt;recursively with all subdirectories &amp;amp; files&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mv file1 file2&lt;/td&gt;
+      &lt;td&gt;Rename or move files&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mv dir1 dir2&lt;/td&gt;
+      &lt;td&gt;Rename or move directories&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rm [-irf] file(s)/directory(ies)&lt;/td&gt;
+      &lt;td&gt;Delete files and/or directories. (-i: delete only after confirmation, -r: directories will be recursively deleted, -f: force)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;rmdir directory_name&lt;/td&gt;
+      &lt;td&gt;removes any empty directories, but cannot delete a directory if a file is present in it.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cat file&lt;/td&gt;
+      &lt;td&gt;to view the contents of a file&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&quot;file-create-edit-save&quot;&gt;File create, edit, save&lt;/h5&gt;
+
+&lt;h6 id=&quot;create-file&quot;&gt;Create File&lt;/h6&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;touch fileName
+Example:
+touch test.txt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h6 id=&quot;edit-file-using-pico--nano&quot;&gt;Edit file (using Pico &amp;amp; Nano)&lt;/h6&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pico hello.txt
+^G Get Help ^O WriteOut ^R Read File ^Y Prev Page ^K Cut Text ^C Cur Pos
+^X Exit ^J Justify ^W Where Is ^V Next Page ^U UnCut Text^T To Spell
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;‘ctrl+o’:  write the changes to the file&lt;/p&gt;
+
+&lt;p&gt;‘ctrl+x’: exit from the editor&lt;/p&gt;
+
+&lt;p&gt;‘ctrl+g’: help menu&lt;/p&gt;
+
+&lt;h6 id=&quot;edit-file-using-vi-editor&quot;&gt;Edit file (using VI editor)&lt;/h6&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Exit vim without saving changes&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Press the ESC key
+Type :q!
+Press the ENTER key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Save a file and exit&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Press the ESC key
+Type :wq
+or 
+Type :x
+Press the ENTER key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;permission&quot;&gt;Permission&lt;/h5&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/chmod777.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Different combinations:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;0 – No permission&lt;/li&gt;
+  &lt;li&gt;1 – Execute&lt;/li&gt;
+  &lt;li&gt;2 – Write&lt;/li&gt;
+  &lt;li&gt;3 – Write and execute&lt;/li&gt;
+  &lt;li&gt;4 – Read&lt;/li&gt;
+  &lt;li&gt;5 – Read and execute&lt;/li&gt;
+  &lt;li&gt;6 – Read and Write&lt;/li&gt;
+  &lt;li&gt;7 – Read, write and execute&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;echo-command&quot;&gt;echo command&lt;/h5&gt;
+&lt;p&gt;This command will echo whatever you provide it.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;test&quot;
+test
+
+echo $HOME
+/home/rakib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;whoami-command&quot;&gt;whoami command&lt;/h5&gt;
+&lt;p&gt;This command reveals the user who is currently logged in.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;whoami
+root
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h5 id=&quot;whatis-command&quot;&gt;whatis command&lt;/h5&gt;
+&lt;p&gt;This command gives a one line description about the command. It can be used as a quick reference for any command.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;whatis date
+date (1) - print or set the system date and time
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;clear-screen&quot;&gt;Clear Screen&lt;/h5&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;clear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h5 id=&quot;locate&quot;&gt;locate&lt;/h5&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;locate -i hello
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h5 id=&quot;cent-os&quot;&gt;Cent OS&lt;/h5&gt;
+
+&lt;h6 id=&quot;yum-yellowdog-updater-modified&quot;&gt;YUM (YellowDog Updater Modified)&lt;/h6&gt;
+&lt;p&gt;yum is the primary tool for getting, installing, deleting, querying, and managing Red Hat Enterprise Linux RPM software packages from official Red Hat software repositories, as well as other third-party repositories.&lt;/p&gt;
+
+&lt;p&gt;Update Yum&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;install-java&quot;&gt;Install Java&lt;/h5&gt;
+&lt;p&gt;Go to &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html&quot;&gt;Java Download page&lt;/a&gt; &amp;amp; get the linux tar.gz file download url
+&lt;img src=&quot;../../../../static/img/java_jdk_download.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /opt/
+wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;URL_LINK&quot;
+Here URL_LINK will be java download Link. First ensure the link is working or not. If sign in required for old java version, we can download manually.
+tar xzf jdk-8u131-linux-x64.tar.gz
+cd /opt/jdk1.8.0_131/
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_131/bin/java 2
+alternatives --config java
+
+alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_131/bin/jar 2
+alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_131/bin/javac 2
+alternatives --set jar /opt/jdk1.8.0_131/bin/jar
+alternatives --set javac /opt/jdk1.8.0_131/bin/javac
+java -version
+export JAVA_HOME=/opt/jdk1.8.0_131
+export JRE_HOME=/opt/jdk1.8.0_131/jre
+export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
+echo $JAVA_HOME
+echo $JRE_HOME
+source /etc/profile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;bahmni-setup&quot;&gt;Bahmni Setup&lt;/h5&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NB: Example: If implementation_name is 'bd-uhc', then app config will be picked up from the /etc/bahmni-installer/deployment-artifacts/bd-uhc_config folde
+
+Step 1:
+#Prerequisite for the fresh installation of Bahmni
+wget https://bitbucket.org/pypa/setuptools/raw/0.7.2/ez_setup.py
+python ez_setup.py
+
+you may run this --- yum upgrade python-setuptools
+
+Step 2:
+# Install the bahmni command line program (Choose the version you want).
+yum install https://dl.bintray.com/bahmni/rpm/rpms/bahmni-installer-0.91-70.noarch.rpm  #version 0.91 
+
+# Confirm that the bahmni command is correctly installed (you should see a help message for the command)
+bahmni --help
+
+# Now setup a configuration file for bahmni command in /etc/bahmni-installer.
+curl -L https://goo.gl/R8ekg5 &amp;gt;&amp;gt; /etc/bahmni-installer/setup.yml
+
+# Confirm the contents of the file. It should look like this file: (https://goo.gl/R8ekg5)
+cat /etc/bahmni-installer/setup.yml
+
+Then amar personaly setup.yml ase seta replace kore dibo…
+
+
+# Set the inventory file name to local in BAHMNI_INVENTORY environment variable. This way you won't need to use the '-i local' switch every time you use the 'bahmni' command
+#You can also configure custom inventory file instead of local.
+echo &quot;export BAHMNI_INVENTORY=local&quot; &amp;gt;&amp;gt; ~/.bashrc
+source ~/.bashrc
+
+# Now fire the installer
+bahmni install
+
+Then error =  deployment-artifact ar vitore bd-uhc_config load kore dibo ..ar ae file ta  ae github theke(359 commit) ase .i have locally store it   
+https://github.com/SharedHealth/bd-uhc-config
+etc/bahmni-installer/deployment-artifacts/bd-uhc_config
+
+then abar bahmni install
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 05 Sep 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/09/05/basic-linux-command/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/05/basic-linux-command/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
+    
+      <item>
+        <title>OOP</title>
+        <description>&lt;h2 id=&quot;oop&quot;&gt;OOP&lt;/h2&gt;
+&lt;p&gt;Core OOPS concepts are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Abstraction&lt;/li&gt;
+  &lt;li&gt;Encapsulation&lt;/li&gt;
+  &lt;li&gt;Polymorphism&lt;/li&gt;
+  &lt;li&gt;Inheritance&lt;/li&gt;
+  &lt;li&gt;Association&lt;/li&gt;
+  &lt;li&gt;Aggregation&lt;/li&gt;
+  &lt;li&gt;Composition&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;abstraction&quot;&gt;Abstraction&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;hiding the internal details and describing things in simple terms.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;ways-to-achieve-abstraction&quot;&gt;Ways to achieve Abstraction&lt;/h6&gt;
+&lt;p&gt;There are two ways to achieve abstraction in java&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Abstract class (0 to 100%)&lt;/li&gt;
+  &lt;li&gt;Interface (100%)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;real-life-example-of-abstract-class&quot;&gt;Real life Example of Abstract Class&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;abstract class Shape{  
+abstract void draw();  
+}  
+
+  
+class Rectangle extends Shape{  
+void draw(){System.out.println(&quot;drawing rectangle&quot;);}  
+}  
+
+class Circle1 extends Shape{  
+void draw(){System.out.println(&quot;drawing circle&quot;);}  
+}  
+
+  
+class TestAbstraction1{  
+public static void main(String args[]){  
+Shape s=new Circle1();  
+s.draw();  
+s=new Rectangle();  
+s.draw();  
+}  
+}  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;real-life-example-of-inheritance&quot;&gt;Real Life Example of Inheritance&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;interface Animal {
+   public void eat();
+   public void travel();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Man implements Animal {
+
+   public void eat() {
+      System.out.println(&quot;Man eats&quot;);
+   }
+
+   public void travel() {
+      System.out.println(&quot;Man travels&quot;);
+   } 
+
+   public int noOfLegs() {
+      return 0;
+   }
+
+   public static void main(String args[]) {
+      Man m = new Man();
+      m.eat();
+      m.travel();
+   }
+} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Dog implements Animal {
+
+   public void eat() {
+      System.out.println(&quot;Dog eats&quot;);
+   }
+
+   public void travel() {
+      System.out.println(&quot;Dog travels&quot;);
+   } 
+
+   public int noOfLegs() {
+      return 0;
+   }
+
+   public static void main(String args[]) {
+      Dog m = new Dog();
+      m.eat();
+      m.travel();
+   }
+} 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;association-aggregation-and-composition-in-oop&quot;&gt;Association, Aggregation, and Composition in OOP&lt;/h2&gt;
+&lt;h5 id=&quot;association&quot;&gt;Association&lt;/h5&gt;
+&lt;p&gt;is a relationship where all objects have their own lifecycle and there is no owner.&lt;/p&gt;
+
+&lt;p&gt;Let’s take an example of Teacher and Student. Multiple students can associate with single teacher and single student can associate with multiple teachers, but there is no ownership between the objects and both have their own lifecycle. Both can be created and deleted independently.&lt;/p&gt;
+
+&lt;h5 id=&quot;aggregation&quot;&gt;Aggregation&lt;/h5&gt;
+&lt;p&gt;is a specialised form of Association where all objects have their own lifecycle, but there is ownership and child objects can not belong to another parent object.&lt;/p&gt;
+
+&lt;p&gt;Let’s take an example of Department and teacher. A single teacher can not belong to multiple departments, but if we delete the department, the teacher object will not be destroyed. We can think about it as a “has-a” relationship.&lt;/p&gt;
+
+&lt;h5 id=&quot;composition&quot;&gt;Composition&lt;/h5&gt;
+&lt;p&gt;is again specialised form of Aggregation and we can call this as a “death” relationship. It is a strong type of Aggregation. Child object does not have its lifecycle and if parent object is deleted, all child objects will also be deleted.&lt;/p&gt;
+
+&lt;p&gt;Let’s take again an example of relationship between House and Rooms. House can contain multiple rooms - there is no independent life of room and any room can not belong to two different houses. If we delete the house - room will automatically be deleted.&lt;/p&gt;
+
+&lt;p&gt;Let’s take another example relationship between Questions and Options. Single questions can have multiple options and option can not belong to multiple questions. If we delete the questions, options will automatically be deleted.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Aug 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/08/02/oop/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/02/oop/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Grails-Introduction</title>
+        <description>&lt;h2 id=&quot;grails--introduction&quot;&gt;Grails- Introduction&lt;/h2&gt;
+&lt;p&gt;Grails is a web framework based on Groovy and Java which can be deployed into existing Java web servers, e.g., Tomcat or Jetty.&lt;/p&gt;
+
+&lt;p&gt;Grails allows to quickly create web applications; its scaffolding capabilities let you create a new project within few minutes. Grails is based on the convention over configuration idea which allows the application to auto-wire itself based on naming schemes (instead of using configuration files, e.g, XML files).&lt;/p&gt;
+
+&lt;h2 id=&quot;starting-hello-world-in-grails-application&quot;&gt;Starting Hello World in Grails Application&lt;/h2&gt;
+
+&lt;p&gt;Requirements:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;Java jdk 7+&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://grails.org/&quot;&gt;Grails&lt;/a&gt; (&lt;a href=&quot;http://grails.org/download.html&quot;&gt;Latest Version 3.3.5&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/idea/download/#section=windows&quot;&gt;IntellIj IDEA Ultimate Version&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Details step by step tutorial :&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=12RlSfxtO1k&quot;&gt;Youtube Video&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 06 Jun 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/06/06/grails-introduction/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/06/grails-introduction/</guid>
+        
+        
+        <category>grails</category>
+        
+      </item>
     
       <item>
         <title>Important command for windows</title>
@@ -58,9 +607,45 @@ sudo yum update
 This is the latest stable version of Java at time of writing, and the recommended version to install. You can do so using the following command:&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get install oracle-java8-installer
-or
-sudo yum install oracle-java8-installer
+&lt;p&gt;To show packages:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum search java | grep 'java-'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;To install if packages are available:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum install java-1.8.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and then:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alternatives --config java
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;and check:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java -version
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;or can download from &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;oracle site&lt;/a&gt;
+by&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget --no-check-certificate -c --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-i586.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Here you can get the latest url (wget –no-check-certificate -c –header “Cookie: oraclelicense=accept-securebackup-cookie” http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz) from the orcle site.&lt;/p&gt;
+
+&lt;p&gt;Then&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar xzvf jdk.tar.gz
+sudo mkdir /usr/local/java
+sudo mv jdk1.8.0_45 /usr/local/java/
+sudo ln -s /usr/local/java/jdk1.8.0_45 /usr/local/java/jdk
+
+sudo vi /etc/profile.d/java.sh
+export PATH=&quot;$PATH:/usr/local/java/jdk/bin&quot;
+export JAVA_HOME=/usr/local/java/jdk
+
+source /etc/profile.d/java.sh
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -79,6 +664,8 @@ sudo yum remove jdk
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Run the following command to find out process associated with yum command:
 # ps aux | grep -i yum
+For killing process:
+kill 15401
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -230,6 +817,23 @@ npm-windows-upgrade
   &lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
+&lt;h2 id=&quot;java-string&quot;&gt;Java String&lt;/h2&gt;
+
+&lt;h2 id=&quot;what-are-the-important-features-of-java-8-release&quot;&gt;What are the important features of Java 8 release?&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;Interface changes with default and static methods&lt;/li&gt;
+  &lt;li&gt;Functional interfaces and Lambda Expressions&lt;/li&gt;
+  &lt;li&gt;Java Stream API for collection classes&lt;/li&gt;
+  &lt;li&gt;Java Date Time API&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;extra&quot;&gt;Extra&lt;/h2&gt;
+&lt;p&gt;ThreadPool
+What is the benefit of using Optional in Java 8?
+Why are Strings immutable in Java?
+SOLID principles
+N+1 Select problem in Hibernate&lt;/p&gt;
+
 </description>
         <pubDate>Wed, 11 Apr 2018 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2018/04/11/interview-question/</link>
@@ -299,270 +903,6 @@ npm-windows-upgrade
         <pubDate>Fri, 09 Mar 2018 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2018/03/09/design-pattern/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/03/09/design-pattern/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>SDKMAN</title>
-        <description>&lt;h2 id=&quot;sdkman&quot;&gt;SDKMAN&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;GIT&lt;/li&gt;
-  &lt;li&gt;JAVA&lt;/li&gt;
-  &lt;li&gt;http://sdkman.io/&lt;/li&gt;
-  &lt;li&gt;Multi-platform-&amp;gt; Powershell CLI version&lt;/li&gt;
-  &lt;li&gt;Open powershell from windows pc then type
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; [Environment]::GetEnvironmentVariable(&quot;PSModulePath&quot;)
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;Then get the following&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  C:\Users\rakib\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-    &lt;p&gt;Then Type&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; New-Item C:\Users\rakib\OneDrive\Documents\WindowsPowerShell\Modules -ItemType Directory
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Then Type&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   cd C:\Users\rakib\OneDrive\Documents\WindowsPowerShell\Modules
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Then clone by&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   git clone https://github.com/flofreud/posh-gvm.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Then Type&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;New-Item -path $profile -type file -force
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Close power shell &amp;amp; open in administrator mode &amp;amp; Then Type&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Install-Module posh-gvm
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Then type&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set-ExecutionPolicy RemoteSigned
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Wed, 14 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/14/sdkman/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/14/sdkman/</guid>
-        
-        
-        <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>DRY</title>
-        <description>&lt;h2 id=&quot;dry-dont-repeat-yourself&quot;&gt;DRY (Don’t Repeat Yourself)&lt;/h2&gt;
-
-&lt;h5 id=&quot;in-wikipedia&quot;&gt;In Wikipedia&lt;/h5&gt;
-&lt;p&gt;DRY- A Principle of software development, aimed at reducing repetition of information of all kinds.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 14 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/14/dry/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/14/dry/</guid>
-        
-        
-        <category>spring</category>
-        
-      </item>
-    
-      <item>
-        <title>Java-Stream</title>
-        <description>&lt;h2 id=&quot;stream&quot;&gt;Stream&lt;/h2&gt;
-
-&lt;h5 id=&quot;in-wikipedia&quot;&gt;In Wikipedia&lt;/h5&gt;
-&lt;p&gt;DRY- A Principle of software development, aimed at reducing repetition of information of all kinds.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 14 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/14/stream/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/14/stream/</guid>
-        
-        
-        <category>java89</category>
-        
-      </item>
-    
-      <item>
-        <title>Singleton Pattern</title>
-        <description>&lt;h2 id=&quot;singleton-pattern&quot;&gt;Singleton Pattern&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Singleton pattern restricts the instantiation of a class and ensures that only one instance of the class exists in the java virtual machine.&lt;/li&gt;
-  &lt;li&gt;The singleton class must provide a global access point to get the instance of the class.&lt;/li&gt;
-  &lt;li&gt;Singleton pattern is used for logging, drivers objects, caching and thread pool.&lt;/li&gt;
-  &lt;li&gt;Singleton design pattern is also used in other design patterns like Abstract Factory, Builder, Prototype, Facade etc.&lt;/li&gt;
-  &lt;li&gt;Singleton design pattern is used in core java classes also, for example java.lang.Runtime, java.awt.Desktop.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;java-singleton-pattern-implementation&quot;&gt;Java Singleton Pattern Implementation&lt;/h4&gt;
-&lt;p&gt;To implement Singleton pattern, we have different approaches but all of them have following common concepts.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Private constructor to restrict instantiation of the class from other classes.&lt;/li&gt;
-  &lt;li&gt;Private static variable of the same class that is the only instance of the class.&lt;/li&gt;
-  &lt;li&gt;Public static method that returns the instance of the class, this is the global access point for outer world to get the instance of the singleton class.
-    &lt;h5 id=&quot;different-approaches-of-singleton-pattern-implementation&quot;&gt;Different approaches of Singleton pattern implementation&lt;/h5&gt;
-    &lt;ol&gt;
-      &lt;li&gt;Eager initialization&lt;/li&gt;
-      &lt;li&gt;Static block initialization&lt;/li&gt;
-      &lt;li&gt;Lazy Initialization&lt;/li&gt;
-      &lt;li&gt;Thread Safe Singleton&lt;/li&gt;
-      &lt;li&gt;Bill Pugh Singleton Implementation&lt;/li&gt;
-      &lt;li&gt;Using Reflection to destroy Singleton Pattern&lt;/li&gt;
-      &lt;li&gt;Enum Singleton&lt;/li&gt;
-      &lt;li&gt;Serialization and Singleton&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;eager-initialization&quot;&gt;Eager initialization&lt;/h4&gt;
-&lt;p&gt;In eager initialization, the instance of Singleton Class is created at the time of class loading, this is the easiest method to create a singleton class but it has a drawback that instance is created even though client application might not be using it.
-Here is the implementation of static initialization singleton class.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
-
-public class EagerInitializedSingleton {
-    
-    private static final EagerInitializedSingleton instance = new EagerInitializedSingleton();
-    
-    //private constructor to avoid client applications to use constructor
-    private EagerInitializedSingleton(){}
-
-    public static EagerInitializedSingleton getInstance(){
-        return instance;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;If your singleton class is not using a lot of resources, this is the approach to use. But in most of the scenarios, Singleton classes are created for resources such as File System, Database connections etc and we should avoid the instantiation until unless client calls the getInstance method. Also, this method doesn’t provide any options for exception handling.&lt;/p&gt;
-&lt;h4 id=&quot;static-block-initialization&quot;&gt;Static block initialization&lt;/h4&gt;
-&lt;p&gt;Static block initialization implementation is similar to eager initialization, except that instance of class is created in the static block that provides option for exception handling.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
-
-public class StaticBlockSingleton {
-
-    private static StaticBlockSingleton instance;
-    
-    private StaticBlockSingleton(){}
-    
-    //static block initialization for exception handling
-    static{
-        try{
-            instance = new StaticBlockSingleton();
-        }catch(Exception e){
-            throw new RuntimeException(&quot;Exception occured in creating singleton instance&quot;);
-        }
-    }
-    
-    public static StaticBlockSingleton getInstance(){
-        return instance;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Both eager initialization and static block initialization creates the instance even before it’s being used and that is not the best practice to use. So in further sections, we will learn how to create Singleton class that supports lazy initialization.&lt;/p&gt;
-
-&lt;h4 id=&quot;lazy-initialization&quot;&gt;Lazy Initialization&lt;/h4&gt;
-&lt;p&gt;Lazy initialization method to implement Singleton pattern creates the instance in the global access method. Here is the sample code for creating Singleton class with this approach.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
-
-public class LazyInitializedSingleton {
-
-    private static LazyInitializedSingleton instance;
-    
-    private LazyInitializedSingleton(){}
-    
-    public static LazyInitializedSingleton getInstance(){
-        if(instance == null){
-            instance = new LazyInitializedSingleton();
-        }
-        return instance;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The above implementation works fine incase of single threaded environment but when it comes to multithreaded systems, it can cause issues if multiple threads are inside the if loop at the same time. It will destroy the singleton pattern and both threads will get the different instances of singleton class. In next section, we will see different ways to create a thread-safe singleton class.&lt;/p&gt;
-&lt;h4 id=&quot;thread-safe-singleton&quot;&gt;Thread Safe Singleton&lt;/h4&gt;
-&lt;p&gt;The easier way to create a thread-safe singleton class is to make the global access method synchronized, so that only one thread can execute this method at a time. General implementation of this approach is like the below class.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
-
-public class ThreadSafeSingleton {
-
-    private static ThreadSafeSingleton instance;
-    
-    private ThreadSafeSingleton(){}
-    
-    public static synchronized ThreadSafeSingleton getInstance(){
-        if(instance == null){
-            instance = new ThreadSafeSingleton();
-        }
-        return instance;
-    }
-    
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Above implementation works fine and provides thread-safety but it reduces the performance because of cost associated with the synchronized method, although we need it only for the first few threads who might create the separate instances (Read: Java Synchronization). To avoid this extra overhead every time, double checked locking principle is used. In this approach, the synchronized block is used inside the if condition with an additional check to ensure that only one instance of singleton class is created.
-Below code snippet provides the double checked locking implementation.
-public static ThreadSafeSingleton getInstanceUsingDoubleLocking(){
-    if(instance == null){
-        synchronized (ThreadSafeSingleton.class) {
-            if(instance == null){
-                instance = new ThreadSafeSingleton();
-            }
-        }
-    }
-    return instance;
-}&lt;/p&gt;
-
-&lt;h4 id=&quot;bill-pugh-singleton-implementation&quot;&gt;Bill Pugh Singleton Implementation&lt;/h4&gt;
-&lt;p&gt;Prior to Java 5, java memory model had a lot of issues and above approaches used to fail in certain scenarios where too many threads try to get the instance of the Singleton class simultaneously. So Bill Pugh came up with a different approach to create the Singleton class using a inner static helper class. The Bill Pugh Singleton implementation goes like this;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.journaldev.singleton;
-
-public class BillPughSingleton {
-
-    private BillPughSingleton(){}
-    
-    private static class SingletonHelper{
-        private static final BillPughSingleton INSTANCE = new BillPughSingleton();
-    }
-    
-    public static BillPughSingleton getInstance(){
-        return SingletonHelper.INSTANCE;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Notice the private inner static class that contains the instance of the singleton class. When the singleton class is loaded, SingletonHelper class is not loaded into memory and only when someone calls the getInstance method, this class gets loaded and creates the Singleton class instance.
-This is the most widely used approach for Singleton class as it doesn’t require synchronization. I am using this approach in many of my projects and it’s easy to understand and implement also.&lt;/p&gt;
-
-&lt;h4 id=&quot;advantage-of-singleton-design-pattern&quot;&gt;Advantage of Singleton design pattern&lt;/h4&gt;
-&lt;p&gt;Saves memory because object is not created at each request. Only single instance is reused again and again.&lt;/p&gt;
-&lt;h4 id=&quot;usage-of-singleton-design-pattern&quot;&gt;Usage of Singleton design pattern&lt;/h4&gt;
-&lt;p&gt;Singleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.&lt;/p&gt;
-
-&lt;p&gt;Source: &lt;a href=&quot;https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples?utm_source=website&amp;amp;utm_medium=sidebar&amp;amp;utm_campaign=DesignPattern-Sidebar-Widget&quot;&gt;&lt;strong&gt;JournalDev&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Feb 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/02/01/singleton-pattern/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/02/01/singleton-pattern/</guid>
         
         
         <category>Java</category>

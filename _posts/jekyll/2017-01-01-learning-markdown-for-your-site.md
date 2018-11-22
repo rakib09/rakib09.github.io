@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-categories: Markdown
+categories: jekyll
 ---
 
 
