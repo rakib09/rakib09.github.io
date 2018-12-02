@@ -98,3 +98,20 @@ blue color=Red
 This is a tricky question and we need to use recursion to find all the permutations of a String, for example “AAB” permutations will be “AAB”, “ABA” and “BAA”.
 
 We also need to use Set to make sure there are no duplicate values.
+
+4. What is platform independence?
+Java code is compiled to class file & this class file can run to all ooperating system.Hence Java is platform independent.
+
+5. Why java is so popular?
+- Java is platform independent
+- Object Oriented
+- Robust
+- Secure programming Language
+
+6. Diiferent between C++ & java:
+- Pointers: C++ has Pointers But There is no pointers in java
+- Structures & Unions: in C++ ==> Class (Structure + methods) & Object in Java
+- Memory management vs Garbage Collection in C++ ==> Class & Object in Java
+- 
+
+

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Basic Linux Command</title>
+	<meta name="description" content="Basic Linux Command">
+	
+	<link rel="canonical" href="http://localhost:4000/2018/09/05/basic-linux-command/">
+	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
+	
+	<!-- <link rel="stylesheet" href="/css/main.css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap3.3.7.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+	<script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap3.3.7.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
+	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+    -->
+    
+	<script type="text/javascript" src="/static/js/index.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Rakib Hasan's Blog</a>
+      <p class="navbar-text"></p>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        
+          <li>
+        
+        <a href="/">Home</a></li>
+
+        
+          
+            
+              <li>
+            
+            <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
+          
+        
+          
+            
+              <li>
+            
+            <a href="/about-me/"><span class="glyphicon "></span> About Me</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116861127-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116861127-1');
+  </script>
+
+
+</header>
+
+    <div id="main" class="container main">
+      <div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>Basic Linux Command</h1>
+        <p>Sep 5, 2018</p>
+      </header>
+      <hr>
+      <article>
+        <h3 id="basic-linux-command">Basic Linux Command</h3>
+
+<h3 id="practice-linux-on-windows-10">Practice Linux on Windows 10</h3>
+<p>we can practice linux command in windows 10 sub system. Proceed the following steps:</p>
+
+<p>Step 1: Install ubuntu from apps  store</p>
+
+<p><img src="../../../../static/img/ubuntu_sub_system.PNG" alt="Image" /></p>
+
+<p>Step 2: Open ubuntu after successful installation</p>
+
+<p>If any error occurred like “sub system is not enabled” then open powershell as administrator &amp; run the bellow command</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</code></pre>
+</div>
+<p>Then open ubuntu &amp; set user password when it will be ready.</p>
+
+<h4 id="listing-files-and-directories">Listing files and directories</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>COMMAND</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cd -</td>
+      <td>Returns you to your previous working directory</td>
+    </tr>
+    <tr>
+      <td>cd ~</td>
+      <td>Returns you to your login directory</td>
+    </tr>
+    <tr>
+      <td>cd</td>
+      <td>Returns you to your login directory</td>
+    </tr>
+    <tr>
+      <td>cd $HOME</td>
+      <td>Returns you to your login directory</td>
+    </tr>
+    <tr>
+      <td>cd /</td>
+      <td>Takes you to the entire system’s root directory.</td>
+    </tr>
+    <tr>
+      <td>cd /root</td>
+      <td>Takes you to the home directory of the root user. You must be the root user to access this directory.</td>
+    </tr>
+    <tr>
+      <td>cd /home</td>
+      <td>Takes you to the home directory, where user login directories are usually stored</td>
+    </tr>
+    <tr>
+      <td>cd ..</td>
+      <td>Takes you to the directory one level up.</td>
+    </tr>
+    <tr>
+      <td>cd /dir1/dir2/</td>
+      <td>Regardless of which directory you are in, this absolute path takes you directly to dir2, a subdirectory of /dir1/.</td>
+    </tr>
+    <tr>
+      <td>cd ../../dir2/dir3/</td>
+      <td>This relative path takes you up two directories, then to dir2/, and finally into its subdirectory dir3/.</td>
+    </tr>
+    <tr>
+      <td>pwd</td>
+      <td>displays the current directory.</td>
+    </tr>
+    <tr>
+      <td>mkdir dirname</td>
+      <td>make directory</td>
+    </tr>
+    <tr>
+      <td>chmod -R 777 dirname</td>
+      <td>Read, write and execute permission to all user group</td>
+    </tr>
+    <tr>
+      <td>mkdir -m 777 dirname</td>
+      <td>creates an empty directory with permission</td>
+    </tr>
+    <tr>
+      <td>ls</td>
+      <td>displays the file &amp; directory of the current directory.</td>
+    </tr>
+    <tr>
+      <td>ls -a</td>
+      <td>list also files/directories which begin with a dot (hidden)</td>
+    </tr>
+    <tr>
+      <td>ls -l</td>
+      <td>long listing format. Displays permissions, user and group, time stamp, size, etc.</td>
+    </tr>
+    <tr>
+      <td>ls -r</td>
+      <td>for directories, all sub-directories will be displayed recursively.</td>
+    </tr>
+    <tr>
+      <td>ls directory</td>
+      <td>displays the file &amp; directory of the corresponding directory.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="file-management">File management</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>COMMAND</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cp file1 file2</td>
+      <td>copies files or directories. file1 is copied to file2. if file2 already exists, it is overwritten</td>
+    </tr>
+    <tr>
+      <td>cp -r dir1 dir2</td>
+      <td>recursively with all subdirectories &amp; files</td>
+    </tr>
+    <tr>
+      <td>mv file1 file2</td>
+      <td>Rename or move files</td>
+    </tr>
+    <tr>
+      <td>mv dir1 dir2</td>
+      <td>Rename or move directories</td>
+    </tr>
+    <tr>
+      <td>rm [-irf] file(s)/directory(ies)</td>
+      <td>Delete files and/or directories. (-i: delete only after confirmation, -r: directories will be recursively deleted, -f: force)</td>
+    </tr>
+    <tr>
+      <td>rmdir directory_name</td>
+      <td>removes any empty directories, but cannot delete a directory if a file is present in it.</td>
+    </tr>
+    <tr>
+      <td>cat file</td>
+      <td>to view the contents of a file</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="file-create-edit-save">File create, edit, save</h5>
+
+<h6 id="create-file">Create File</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>touch fileName
+Example:
+touch test.txt
+</code></pre>
+</div>
+
+<h6 id="edit-file-using-pico--nano">Edit file (using Pico &amp; Nano)</h6>
+<div class="highlighter-rouge"><pre class="highlight"><code>pico hello.txt
+^G Get Help ^O WriteOut ^R Read File ^Y Prev Page ^K Cut Text ^C Cur Pos
+^X Exit ^J Justify ^W Where Is ^V Next Page ^U UnCut Text^T To Spell
+</code></pre>
+</div>
+
+<p>‘ctrl+o’:  write the changes to the file</p>
+
+<p>‘ctrl+x’: exit from the editor</p>
+
+<p>‘ctrl+g’: help menu</p>
+
+<h6 id="edit-file-using-vi-editor">Edit file (using VI editor)</h6>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>vim file
+</code></pre>
+</div>
+<p>Exit vim without saving changes</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Press the ESC key
+Type :q!
+Press the ENTER key
+</code></pre>
+</div>
+<p>Save a file and exit</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>Press the ESC key
+Type :wq
+or 
+Type :x
+Press the ENTER key
+</code></pre>
+</div>
+
+<h5 id="permission">Permission</h5>
+
+<p><img src="../../../../static/img/chmod777.png" alt="Image" /></p>
+
+<p>Different combinations:</p>
+<ul>
+  <li>0 – No permission</li>
+  <li>1 – Execute</li>
+  <li>2 – Write</li>
+  <li>3 – Write and execute</li>
+  <li>4 – Read</li>
+  <li>5 – Read and execute</li>
+  <li>6 – Read and Write</li>
+  <li>7 – Read, write and execute</li>
+</ul>
+
+<h5 id="echo-command">echo command</h5>
+<p>This command will echo whatever you provide it.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>echo "test"
+test
+
+echo $HOME
+/home/rakib
+</code></pre>
+</div>
+
+<h5 id="whoami-command">whoami command</h5>
+<p>This command reveals the user who is currently logged in.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>whoami
+root
+</code></pre>
+</div>
+<h5 id="whatis-command">whatis command</h5>
+<p>This command gives a one line description about the command. It can be used as a quick reference for any command.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>whatis date
+date (1) - print or set the system date and time
+</code></pre>
+</div>
+
+<h5 id="clear-screen">Clear Screen</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>clear
+</code></pre>
+</div>
+<h5 id="locate">locate</h5>
+<div class="highlighter-rouge"><pre class="highlight"><code>locate -i hello
+</code></pre>
+</div>
+<h5 id="cent-os">Cent OS</h5>
+
+<h6 id="yum-yellowdog-updater-modified">YUM (YellowDog Updater Modified)</h6>
+<p>yum is the primary tool for getting, installing, deleting, querying, and managing Red Hat Enterprise Linux RPM software packages from official Red Hat software repositories, as well as other third-party repositories.</p>
+
+<p>Update Yum</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>yum update
+</code></pre>
+</div>
+
+<h5 id="install-java">Install Java</h5>
+<p>Go to <a href="http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html">Java Download page</a> &amp; get the linux tar.gz file download url
+<img src="../../../../static/img/java_jdk_download.PNG" alt="Image" /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd /opt/
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" "URL_LINK"
+Here URL_LINK will be java download Link. First ensure the link is working or not. If sign in required for old java version, we can download manually.
+tar xzf jdk-8u131-linux-x64.tar.gz
+cd /opt/jdk1.8.0_131/
+alternatives --install /usr/bin/java java /opt/jdk1.8.0_131/bin/java 2
+alternatives --config java
+
+alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_131/bin/jar 2
+alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_131/bin/javac 2
+alternatives --set jar /opt/jdk1.8.0_131/bin/jar
+alternatives --set javac /opt/jdk1.8.0_131/bin/javac
+java -version
+export JAVA_HOME=/opt/jdk1.8.0_131
+export JRE_HOME=/opt/jdk1.8.0_131/jre
+export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
+echo $JAVA_HOME
+echo $JRE_HOME
+source /etc/profile
+</code></pre>
+</div>
+
+<h5 id="bahmni-setup">Bahmni Setup</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>NB: Example: If implementation_name is 'bd-uhc', then app config will be picked up from the /etc/bahmni-installer/deployment-artifacts/bd-uhc_config folde
+
+Step 1:
+#Prerequisite for the fresh installation of Bahmni
+wget https://bitbucket.org/pypa/setuptools/raw/0.7.2/ez_setup.py
+python ez_setup.py
+
+you may run this --- yum upgrade python-setuptools
+
+Step 2:
+# Install the bahmni command line program (Choose the version you want).
+yum install https://dl.bintray.com/bahmni/rpm/rpms/bahmni-installer-0.91-70.noarch.rpm  #version 0.91 
+
+# Confirm that the bahmni command is correctly installed (you should see a help message for the command)
+bahmni --help
+
+# Now setup a configuration file for bahmni command in /etc/bahmni-installer.
+curl -L https://goo.gl/R8ekg5 &gt;&gt; /etc/bahmni-installer/setup.yml
+
+# Confirm the contents of the file. It should look like this file: (https://goo.gl/R8ekg5)
+cat /etc/bahmni-installer/setup.yml
+
+Then amar personaly setup.yml ase seta replace kore dibo…
+
+
+# Set the inventory file name to local in BAHMNI_INVENTORY environment variable. This way you won't need to use the '-i local' switch every time you use the 'bahmni' command
+#You can also configure custom inventory file instead of local.
+echo "export BAHMNI_INVENTORY=local" &gt;&gt; ~/.bashrc
+source ~/.bashrc
+
+# Now fire the installer
+bahmni install
+
+Then error =  deployment-artifact ar vitore bd-uhc_config load kore dibo ..ar ae file ta  ae github theke(359 commit) ase .i have locally store it   
+https://github.com/SharedHealth/bd-uhc-config
+etc/bahmni-installer/deployment-artifacts/bd-uhc_config
+
+then abar bahmni install
+
+</code></pre>
+</div>
+
+
+      </article>
+      <hr>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="Share to Sina Weibo"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="Share to WeChat"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="Share to Douban"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="Copy Share URL"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js'];
+        </script>
+    </div>
+	
+    <!-- duoshuo.com javascript include code. -->    
+    
+    <!-- disqus.com javascript include code. -->
+	
+    <div class="post-area post comment">
+        <div id="disqus_thread"></div>
+    </div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "https://rakib09.github.io/2018/09/05/basic-linux-command/"; 
+			this.page.identifier = "/2018/09/05/basic-linux-command"; 
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//https-rakib09-github-io.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	
+    
+  </div>
+  
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    
+    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
+      <a href="javascript:backToTop();">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
+    </div>
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="mailto:rakib_hasan6@yahoo.com"><span class="glyphicon glyphicon-envelope"></span> rakib_hasan6@yahoo.com</a>
+        <span class="point"> · </span>
+        
+          <a href="https://github.com/rakib09">
+            <span class="icon">
+              <svg viewBox="0 0 16 16">
+                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            Github
+            <!-- <span>rakib09</span> -->
+          </a>
+          
+          <span class="point"> · </span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/devops/2018-09-05-basic-linux-command.md">View source</a></span>
+          <span class="point"> · </span>
+          <span><a class="newpost" href="javascript:;">New post</a></span>
+		  <span class="point"> · </span>
+          <span><a href="/feed.xml">RSS</a></span>
+          <span class="point"> · </span>
+          <span>&copy; 2015 Rakib Hasan</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script type="text/javascript">
+    function OnClickNewPost()
+    {
+        var title = prompt("Please enter title of your post");
+        if (title!=null){
+            title = title.replace(" ", "-");
+            var currentdate = new Date();
+            var urlNewPage = "https://github.com/rakib09/?filename=_posts/" 
+                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
+                
+            var defaultText =  [
+                '---',
+                'layout: post',
+                'comments: true',
+                'categories: diary',
+                '---',
+                '## Title',
+                'text'
+                ].join('\n');
+            urlNewPage += "&value=" + encodeURIComponent(defaultText);
+            window.open(urlNewPage);
+        }
+    }
+    
+    $(function() {
+      // CreateNewPostLinks
+      $('.newpost').each(function(){
+          $(this).click(OnClickNewPost);
+      });
+    });
+</script>
+  
+  </body>
+</html>
