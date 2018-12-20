@@ -5,9 +5,79 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 22 Nov 2018 17:18:27 +0600</pubDate>
-    <lastBuildDate>Thu, 22 Nov 2018 17:18:27 +0600</lastBuildDate>
+    <pubDate>Tue, 18 Dec 2018 10:18:42 +0600</pubDate>
+    <lastBuildDate>Tue, 18 Dec 2018 10:18:42 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Java Servlet</title>
+        <description>&lt;h2 id=&quot;java-servlet&quot;&gt;Java Servlet&lt;/h2&gt;
+&lt;p&gt;Servlet is a technology i.e. used to create web application.Servlet is an API that provides many interfaces and classes including documentations.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/javaServlet.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 18 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/18/java-servlet/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/18/java-servlet/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Always Up Staying Up At All Time</title>
+        <description>&lt;h2 id=&quot;always-up&quot;&gt;Always Up&lt;/h2&gt;
+</description>
+        <pubDate>Mon, 03 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/03/always-up-staying-up-at-all-time/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/03/always-up-staying-up-at-all-time/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
+    
+      <item>
+        <title>Basic Networking</title>
+        <description>&lt;h3 id=&quot;cat-lan-cable-point-addition&quot;&gt;Cat Lan Cable point addition&lt;/h3&gt;
+
+&lt;h4 id=&quot;straight-connection-classb&quot;&gt;Straight Connection (ClassB)&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Orange-White&lt;/li&gt;
+  &lt;li&gt;Orange&lt;/li&gt;
+  &lt;li&gt;Green-White&lt;/li&gt;
+  &lt;li&gt;Blue&lt;/li&gt;
+  &lt;li&gt;Blue-White&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;Brawn-White&lt;/li&gt;
+  &lt;li&gt;Brawn&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;cross-connection-classb&quot;&gt;Cross Connection (ClassB)&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Orange-White&lt;/li&gt;
+  &lt;li&gt;Green&lt;/li&gt;
+  &lt;li&gt;Green-White&lt;/li&gt;
+  &lt;li&gt;Blue&lt;/li&gt;
+  &lt;li&gt;Blue-White&lt;/li&gt;
+  &lt;li&gt;Orange&lt;/li&gt;
+  &lt;li&gt;Brawn-White&lt;/li&gt;
+  &lt;li&gt;Brawn&lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Tue, 27 Nov 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/11/27/basic-networking/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/11/27/basic-networking/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
     
       <item>
         <title>Intelij increase licesnse evaluation</title>
@@ -743,169 +813,6 @@ npm-windows-upgrade
         
         
         <category>node</category>
-        
-      </item>
-    
-      <item>
-        <title>install angular cli</title>
-        <description>&lt;h2 id=&quot;install-angular-cli&quot;&gt;install angular cli&lt;/h2&gt;
-
-&lt;h4 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;Node&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;###Command in cmd (Windows)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g @angular/cli
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;update-ng-in-existing-project&quot;&gt;update ng in existing project&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --save-dev @angular/cli@latest
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 18 Apr 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/04/18/install-angular-cli-windwos/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/18/install-angular-cli-windwos/</guid>
-        
-        
-        <category>node</category>
-        
-      </item>
-    
-      <item>
-        <title>Interview Question</title>
-        <description>&lt;h2 id=&quot;database&quot;&gt;Database&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;get column difference of two table by a single sql?&lt;/li&gt;
-  &lt;li&gt;get total table number of a database by a single sql?&lt;/li&gt;
-  &lt;li&gt;Different between group by &amp;amp; where? is it write at same query? group by having implement? why needed ths?&lt;/li&gt;
-  &lt;li&gt;Store Procedure: insert, update, rollback is on same store procedure. is it possible?&lt;/li&gt;
-  &lt;li&gt;JOIN types &amp;amp; implementation?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;angular&quot;&gt;Angular&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;difference between Angular vs Angular Js, Angular 1 vs angular 2, angular 2 vs angular 4&lt;/li&gt;
-  &lt;li&gt;what is Component in angular 4?&lt;/li&gt;
-  &lt;li&gt;rootscope in angular 1?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;java-collection-framework&quot;&gt;Java Collection Framework&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;How work HashMap?&lt;/li&gt;
-  &lt;li&gt;Vector vs enum?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;oop&quot;&gt;OOP&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;interface vs abstract class&lt;/li&gt;
-  &lt;li&gt;must override in which case?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;spring&quot;&gt;Spring&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;what is Response params &amp;amp; its work?&lt;/li&gt;
-  &lt;li&gt;is Vector thread safe?&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;java-string&quot;&gt;Java String&lt;/h2&gt;
-
-&lt;h2 id=&quot;what-are-the-important-features-of-java-8-release&quot;&gt;What are the important features of Java 8 release?&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Interface changes with default and static methods&lt;/li&gt;
-  &lt;li&gt;Functional interfaces and Lambda Expressions&lt;/li&gt;
-  &lt;li&gt;Java Stream API for collection classes&lt;/li&gt;
-  &lt;li&gt;Java Date Time API&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;extra&quot;&gt;Extra&lt;/h2&gt;
-&lt;p&gt;ThreadPool
-What is the benefit of using Optional in Java 8?
-Why are Strings immutable in Java?
-SOLID principles
-N+1 Select problem in Hibernate&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 11 Apr 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/04/11/interview-question/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/11/interview-question/</guid>
-        
-        
-        <category>interview</category>
-        
-      </item>
-    
-      <item>
-        <title>Design Pattern</title>
-        <description>&lt;h2 id=&quot;design-pattern&quot;&gt;Design Pattern&lt;/h2&gt;
-&lt;p&gt;A design pattern is a well described solution to a common software problem.&lt;/p&gt;
-
-&lt;h5 id=&quot;advantage-of-design-pattern&quot;&gt;Advantage of design pattern:&lt;/h5&gt;
-&lt;ol&gt;
-  &lt;li&gt;They are reusable in multiple projects.&lt;/li&gt;
-  &lt;li&gt;They provide the solutions that help to define the system architecture.&lt;/li&gt;
-  &lt;li&gt;They capture the software engineering experiences.&lt;/li&gt;
-  &lt;li&gt;They provide transparency to the design of an application.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h5 id=&quot;when-should-we-use-the-design-patterns&quot;&gt;When should we use the design patterns?&lt;/h5&gt;
-&lt;p&gt;We must use the design patterns during the analysis and requirement phase of SDLC(Software Development Life Cycle).&lt;/p&gt;
-
-&lt;p&gt;Creational Design Patterns&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Singleton Pattern&lt;/li&gt;
-  &lt;li&gt;Factory Pattern&lt;/li&gt;
-  &lt;li&gt;Abstract Factory Pattern&lt;/li&gt;
-  &lt;li&gt;Builder Pattern
-5.Prototype Pattern&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Structural Design Patterns&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Adapter Pattern&lt;/li&gt;
-  &lt;li&gt;Composite Pattern&lt;/li&gt;
-  &lt;li&gt;Proxy Pattern&lt;/li&gt;
-  &lt;li&gt;Flyweight Pattern&lt;/li&gt;
-  &lt;li&gt;Facade Pattern&lt;/li&gt;
-  &lt;li&gt;Bridge Pattern&lt;/li&gt;
-  &lt;li&gt;Decorator Pattern&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Behavioral Design Patterns&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Template Method Pattern&lt;/li&gt;
-  &lt;li&gt;Mediator Pattern&lt;/li&gt;
-  &lt;li&gt;Chain of Responsibility Pattern&lt;/li&gt;
-  &lt;li&gt;Observer Pattern&lt;/li&gt;
-  &lt;li&gt;Strategy Pattern&lt;/li&gt;
-  &lt;li&gt;Command Pattern&lt;/li&gt;
-  &lt;li&gt;State Pattern&lt;/li&gt;
-  &lt;li&gt;Visitor Pattern&lt;/li&gt;
-  &lt;li&gt;Interpreter Pattern&lt;/li&gt;
-  &lt;li&gt;Iterator Pattern&lt;/li&gt;
-  &lt;li&gt;Memento Pattern&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Source: &lt;a href=&quot;https://www.javatpoint.com/design-patterns-in-java&quot;&gt;Java Point&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 09 Mar 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/03/09/design-pattern/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/03/09/design-pattern/</guid>
-        
-        
-        <category>Java</category>
         
       </item>
     

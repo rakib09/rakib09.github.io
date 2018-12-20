@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>un category : Java Interview Questions</title>
-	<meta name="description" content="  What is difference between Heap and Stack Memory?">
+	<title>Java Servlet</title>
+	<meta name="description" content="Java ServletServlet is a technology i.e. used to create web application.Servlet is an API that provides many interfaces and classes including documentations.">
 	
-	<link rel="canonical" href="http://localhost:4000/2016/12/26/java-interview-question/">
+	<link rel="canonical" href="http://localhost:4000/2018/12/18/java-servlet/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -103,135 +103,15 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>un category : Java Interview Questions</h1>
-        <p>Dec 26, 2016</p>
+        <h1>Java Servlet</h1>
+        <p>Dec 18, 2018</p>
       </header>
       <hr>
       <article>
-        <ol>
-  <li>What is difference between Heap and Stack Memory?</li>
-</ol>
+        <h2 id="java-servlet">Java Servlet</h2>
+<p>Servlet is a technology i.e. used to create web application.Servlet is an API that provides many interfaces and classes including documentations.</p>
 
-<p>Heap memory is used by all the parts of the application whereas stack memory is used only by one thread of execution.
-Whenever an object is created, it’s always stored in the Heap space and stack memory contains the reference to it. Stack memory only contains local primitive variables and reference variables to objects in heap space.
-Memory management in the stack is done in LIFO manner whereas it’s more complex in Heap memory because it’s used globally.</p>
-
-<p>For a detailed explanation with a sample program, read <a href="https://www.journaldev.com/4098/java-heap-space-vs-stack-memory">Java Heap vs Stack Memory</a>.</p>
-
-<ol>
-  <li>Java is Pass by Value or Pass by Reference?</li>
-</ol>
-
-<p>Java is Pass by Value and Not Pass by Reference</p>
-
-<p>First of all we should understand what is meant by pass by value or pass by reference.</p>
-
-<ul>
-  <li>
-    <p>Pass by Value: The method parameter values are copied to another variable and then the copied object is passed, that’s why it’s called pass by value.</p>
-  </li>
-  <li>
-    <p>Pass by Reference: An alias or reference to the actual parameter is passed to the method, that’s why it’s called pass by reference.</p>
-  </li>
-</ul>
-
-<p>Example: Let’s say we have a class Balloon like below.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>package com.journaldev.test;
-
-public class Balloon {
-
-	private String color;
-
-	public Balloon(){}
-	
-	public Balloon(String c){
-		this.color=c;
-	}
-	
-	public String getColor() {
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
-	}
-}
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>package com.journaldev.test;
-
-public class Test {
-
-	public static void main(String[] args) {
-
-		Balloon red = new Balloon("Red"); //memory reference 50
-		Balloon blue = new Balloon("Blue"); //memory reference 100
-		
-		swap(red, blue);
-		System.out.println("red color="+red.getColor());
-		System.out.println("blue color="+blue.getColor());
-		
-		foo(blue);
-		System.out.println("blue color="+blue.getColor());
-		
-	}
-
-	private static void foo(Balloon balloon) { //baloon=100
-		balloon.setColor("Red"); //baloon=100
-		balloon = new Balloon("Green"); //baloon=200
-		balloon.setColor("Blue"); //baloon = 200
-	}
-
-	//Generic swap method
-	public static void swap(Object o1, Object o2){
-		Object temp = o1;
-		o1=o2;
-		o2=temp;
-	}
-}
-</code></pre>
-</div>
-
-<p>Output:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>red color=Red
-blue color=Blue
-blue color=Red
-</code></pre>
-</div>
-
-<ol>
-  <li>Write a program to print all permutations of String?</li>
-</ol>
-
-<p>This is a tricky question and we need to use recursion to find all the permutations of a String, for example “AAB” permutations will be “AAB”, “ABA” and “BAA”.</p>
-
-<p>We also need to use Set to make sure there are no duplicate values.</p>
-
-<ol>
-  <li>
-    <p>What is platform independence?
-Java code is compiled to class file &amp; this class file can run to all ooperating system.Hence Java is platform independent.</p>
-  </li>
-  <li>Why java is so popular?
-    <ul>
-      <li>Java is platform independent</li>
-      <li>Object Oriented</li>
-      <li>Robust</li>
-      <li>Secure programming Language</li>
-    </ul>
-  </li>
-  <li>Diiferent between C++ &amp; java:
-    <ul>
-      <li>Pointers: C++ has Pointers But There is no pointers in java</li>
-      <li>Structures &amp; Unions: in C++ ==&gt; Class (Structure + methods) &amp; Object in Java</li>
-      <li>Memory management vs Garbage Collection in C++ ==&gt; Class &amp; Object in Java</li>
-      <li></li>
-    </ul>
-  </li>
-</ol>
+<p><img src="../../../../static/img/javaServlet.jpg" alt="Image" /></p>
 
 
       </article>
@@ -258,8 +138,8 @@ Java code is compiled to class file &amp; this class file can run to all ooperat
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2016/12/26/java-interview-question/"; 
-			this.page.identifier = "/2016/12/26/java-interview-question"; 
+			this.page.url = "https://rakib09.github.io/2018/12/18/java-servlet/"; 
+			this.page.identifier = "/2018/12/18/java-servlet"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -311,7 +191,7 @@ Java code is compiled to class file &amp; this class file can run to all ooperat
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/java/2016-12-26-java-interview-question.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/java/2018-12-18-java-servlet.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>
