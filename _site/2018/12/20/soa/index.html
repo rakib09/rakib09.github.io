@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Intelij increase licesnse evaluation</title>
-	<meta name="description" content="Intelij increase licesnse evaluation">
+	<title>service oriented architecture</title>
+	<meta name="description" content="SOA (Service Oriented Architecture) Principles">
 	
-	<link rel="canonical" href="http://localhost:4000/2018/11/22/intelij-increase-license-evaluation/">
+	<link rel="canonical" href="http://localhost:4000/2018/12/20/soa/">
 	<link rel="alternate" type="application/rss+xml" title="Rakib Hasan's Blog" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -103,103 +103,56 @@
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
       <header>
-        <h1>Intelij increase licesnse evaluation</h1>
-        <p>Nov 22, 2018</p>
+        <h1>service oriented architecture</h1>
+        <p>Dec 20, 2018</p>
       </header>
       <hr>
       <article>
-        <h3 id="intelij-increase-licesnse-evaluation">Intelij increase licesnse evaluation</h3>
+        <h3 id="soa-service-oriented-architecture-principles">SOA (Service Oriented Architecture) Principles</h3>
 
-<h3 id="increase-evaluation-in-linux">Increase Evaluation in Linux</h3>
+<p>A service-oriented architecture (SOA) is an architectural pattern in computer software design in which application components provide services to other components via a communications protocol, typically over a network. The principles of service-orientation are independent of any product, vendor or technology.</p>
 
-<p>Create file reset_trail.sh with content:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code> <span class="c">#!/bin/bash</span>
- 
- <span class="c">## declare array of tools</span>
- <span class="nb">declare</span> -a <span class="nv">tools</span><span class="o">=(</span>
-     <span class="s2">"DataGrip"</span>
-     <span class="s2">"CLion"</span>
-     <span class="s2">"Rider"</span>
-     <span class="s2">"PhpStorm"</span>
-     <span class="o">)</span>
- 
- <span class="k">for </span>tool <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">tools</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
- <span class="k">do
-     </span><span class="nb">echo</span> <span class="s2">"removing evaluation key for </span><span class="nv">$tool</span><span class="s2">"</span>
-     rm -rf ~/.<span class="nv">$tool</span><span class="k">*</span>/config/eval
-     rm -rf ~/.java/.userPrefs/jetbrains/<span class="k">${</span><span class="nv">tool</span><span class="p">,,</span><span class="k">}</span>
- <span class="k">done
- 
- for </span>tool <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">tools</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
- <span class="k">do
-     </span><span class="nb">echo</span> <span class="s2">"resetting evalsprt in options.xml for </span><span class="nv">$tool</span><span class="s2">"</span>
-     sed -i <span class="s1">'/evlsprt/d'</span> ~/.<span class="nv">$tool</span><span class="k">*</span>/config/options/options.xml
- <span class="k">done
- 
- </span><span class="nb">echo</span> <span class="s2">"resetting evalsprt in prefs.xml"</span>
- sed -i <span class="s1">'/evlsprt/d'</span> ~/.java/.userPrefs/prefs.xml
- 
- <span class="k">for </span>tool <span class="k">in</span> <span class="s2">"</span><span class="k">${</span><span class="nv">tools</span><span class="p">[@]</span><span class="k">}</span><span class="s2">"</span>
- <span class="k">do
-     </span><span class="nb">echo</span> <span class="s2">"change date file for </span><span class="nv">$tool</span><span class="s2">"</span>
-     find ~/.<span class="nv">$tool</span><span class="k">*</span> -type d -exec touch -t <span class="k">$(</span>date +<span class="s2">"%Y%m%d%H%M"</span><span class="k">)</span> <span class="o">{}</span> +;
-     find ~/.<span class="nv">$tool</span><span class="k">*</span> -type f -exec touch -t <span class="k">$(</span>date +<span class="s2">"%Y%m%d%H%M"</span><span class="k">)</span> <span class="o">{}</span> +;
- <span class="k">done</span>
-</code></pre>
-</div>
+<p>SOA just makes it easier for software components over various networks to work with each other.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>echo "removeing evaluation key"
-rm  -rf ~/.IntelliJIdea*/config/eval
-rm  -rf ~/.GoLand*/config/eval
-rm  -rf ~/.WebStorm*/config/eval
+<p>Web services which are built as per the SOA architecture tend to make web service more independent. The web services themselves can exchange data with each other and because of the underlying principles on which they are created, they don’t need any sort of human interaction and also don’t need any code modifications. It ensures that the web services on a network can interact with each other seamlessly.</p>
 
-rm -rf ~/.java/.userPrefs/jetbrains/goland
-rm -rf ~/.java/.userPrefs/jetbrains/idea
-rm -rf ~/.java/.userPrefs/jetbrains/webstorm
+<h5 id="soa-is-based-on-some-key-principles-which-are-mentioned-below">SOA is based on some key principles which are mentioned below</h5>
 
-echo "resetting evalsprt in options.xml"
-sed -i '/evlsprt/d' ~/.IntelliJIdea*/config/options/options.xml
-sed -i '/evlsprt/d' ~/.GoLand*/config/options/options.xml
-sed -i '/evlsprt/d' ~/.WebStorm*/config/options/options.xml
+<h6 id="standardized-service-contract">Standardized Service Contract</h6>
 
-echo "resetting evalsprt in prefs.xml"
-sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
+<p>Services adhere to a service description. A service must have some sort of description which describes what the service is about. This makes it easier for client applications to understand what the service does.</p>
 
+<h6 id="loose-coupling">Loose Coupling</h6>
 
-echo "change date file"
-find ~/.IntelliJIdea* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-find ~/.IntelliJIdea* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
+<p>Less dependency on each other. This is one of the main characteristics of web services which just states that there should be as less dependency as possible between the web services and the client invoking the web service. So if the service functionality changes at any point in time, it should not break the client application or stop it from working.</p>
 
-find ~/.GoLand* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-find ~/.GoLand* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
+<h6 id="service-abstraction">Service Abstraction</h6>
 
-find ~/.WebStorm* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-find ~/.WebStorm* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>rm -rf ~/Library/Preferences/PyCharm2018.1/eval/PyCharm181.evaluation.key
-rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
-</code></pre>
-</div>
+<p>Services hide the logic they encapsulate from the outside world. The service should not expose how it executes its functionality; it should just tell the client application on what it does and not on how it does it.</p>
 
-<h5 id="extends-evaluation-in-windows">Extends Evaluation in Windows</h5>
+<h6 id="service-reusability">Service Reusability</h6>
 
-<h6 id="intellij-evaluation-problem">Intellij Evaluation Problem:</h6>
+<p>Logic is divided into services with the intent of maximizing reuse. In any development company re-usability is a big topic because obviously one wouldn’t want to spend time and effort building the same code again and again across multiple applications which require them. Hence, once the code for a web service is written it should have the ability work with various application types.</p>
 
-<p>If you want to increase evaluation periods to more 30 days you can follow the bellow steps:</p>
+<h6 id="service-autonomy">Service Autonomy</h6>
 
-<ul>
-  <li>Step 1: Exit intellij software.</li>
-  <li>Step 2 : Remove intellij home cash folder (like: C:\Users&lt;Username&gt;/.IntelliJIdea201…..)</li>
-  <li>Step3: W+R  regedit (open registry)</li>
-  <li>
-    <p>Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.
-<img src="../../../../static/img/evaluationProblem.PNG" alt="Image" />
-<img src="../../../../static/img/intelijCashfolder.PNG" alt="Image" />
-<img src="../../../../static/img/registry.PNG" alt="Image" /></p>
-  </li>
-  <li>Open Intelij &amp; evaluate for 30 days &amp; enjoy.</li>
-</ul>
+<p>Services should have control over the logic they encapsulate. The service knows everything on what functionality it offers and hence should also have complete control over the code it contains.</p>
+
+<h6 id="service-statelessness">Service Statelessness</h6>
+
+<p>Ideally, services should be stateless. This means that services should not withhold information from one state to the other. This would need to be done from either the client application. An example can be an order placed on a shopping site. Now you can have a web service which gives you the price of a particular item. But if the items are added to a shopping cart and the web page navigates to the page where you do the payment, the responsibility of the price of the item to be transferred to the payment page should not be done by the web service. Instead, it needs to be done by the web application.</p>
+
+<h6 id="service-discoverability">Service Discoverability</h6>
+
+<p>Services can be discovered (usually in a service registry). We have already seen this in the concept of the UDDI, which performs a registry which can hold information about the web service.</p>
+
+<h6 id="service-composability">Service Composability</h6>
+
+<p>Services break big problems into little problems. One should never embed all functionality of an application into one single service but instead, break the service down into modules each with a separate business functionality.</p>
+
+<h6 id="service-interoperability">Service Interoperability</h6>
+
+<p>Services should use standards that allow diverse subscribers to use the service. In web services, standards as XML and communication over HTTP is used to ensure it conforms to this principle.</p>
 
 
       </article>
@@ -226,8 +179,8 @@ rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "https://rakib09.github.io/2018/11/22/intelij-increase-license-evaluation/"; 
-			this.page.identifier = "/2018/11/22/intelij-increase-license-evaluation"; 
+			this.page.url = "https://rakib09.github.io/2018/12/20/soa/"; 
+			this.page.identifier = "/2018/12/20/soa"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -279,7 +232,7 @@ rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/devops/2018-11-22-intelij-increase-license-evaluation.md">View source</a></span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/_posts/devops/2018-12-20-soa.md">View source</a></span>
           <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span>
 		  <span class="point"> · </span>

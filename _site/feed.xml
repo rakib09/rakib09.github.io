@@ -5,9 +5,67 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Dec 2018 10:18:42 +0600</pubDate>
-    <lastBuildDate>Tue, 18 Dec 2018 10:18:42 +0600</lastBuildDate>
+    <pubDate>Thu, 20 Dec 2018 15:22:59 +0600</pubDate>
+    <lastBuildDate>Thu, 20 Dec 2018 15:22:59 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>service oriented architecture</title>
+        <description>&lt;h3 id=&quot;soa-service-oriented-architecture-principles&quot;&gt;SOA (Service Oriented Architecture) Principles&lt;/h3&gt;
+
+&lt;p&gt;A service-oriented architecture (SOA) is an architectural pattern in computer software design in which application components provide services to other components via a communications protocol, typically over a network. The principles of service-orientation are independent of any product, vendor or technology.&lt;/p&gt;
+
+&lt;p&gt;SOA just makes it easier for software components over various networks to work with each other.&lt;/p&gt;
+
+&lt;p&gt;Web services which are built as per the SOA architecture tend to make web service more independent. The web services themselves can exchange data with each other and because of the underlying principles on which they are created, they don’t need any sort of human interaction and also don’t need any code modifications. It ensures that the web services on a network can interact with each other seamlessly.&lt;/p&gt;
+
+&lt;h5 id=&quot;soa-is-based-on-some-key-principles-which-are-mentioned-below&quot;&gt;SOA is based on some key principles which are mentioned below&lt;/h5&gt;
+
+&lt;h6 id=&quot;standardized-service-contract&quot;&gt;Standardized Service Contract&lt;/h6&gt;
+
+&lt;p&gt;Services adhere to a service description. A service must have some sort of description which describes what the service is about. This makes it easier for client applications to understand what the service does.&lt;/p&gt;
+
+&lt;h6 id=&quot;loose-coupling&quot;&gt;Loose Coupling&lt;/h6&gt;
+
+&lt;p&gt;Less dependency on each other. This is one of the main characteristics of web services which just states that there should be as less dependency as possible between the web services and the client invoking the web service. So if the service functionality changes at any point in time, it should not break the client application or stop it from working.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-abstraction&quot;&gt;Service Abstraction&lt;/h6&gt;
+
+&lt;p&gt;Services hide the logic they encapsulate from the outside world. The service should not expose how it executes its functionality; it should just tell the client application on what it does and not on how it does it.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-reusability&quot;&gt;Service Reusability&lt;/h6&gt;
+
+&lt;p&gt;Logic is divided into services with the intent of maximizing reuse. In any development company re-usability is a big topic because obviously one wouldn’t want to spend time and effort building the same code again and again across multiple applications which require them. Hence, once the code for a web service is written it should have the ability work with various application types.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-autonomy&quot;&gt;Service Autonomy&lt;/h6&gt;
+
+&lt;p&gt;Services should have control over the logic they encapsulate. The service knows everything on what functionality it offers and hence should also have complete control over the code it contains.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-statelessness&quot;&gt;Service Statelessness&lt;/h6&gt;
+
+&lt;p&gt;Ideally, services should be stateless. This means that services should not withhold information from one state to the other. This would need to be done from either the client application. An example can be an order placed on a shopping site. Now you can have a web service which gives you the price of a particular item. But if the items are added to a shopping cart and the web page navigates to the page where you do the payment, the responsibility of the price of the item to be transferred to the payment page should not be done by the web service. Instead, it needs to be done by the web application.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-discoverability&quot;&gt;Service Discoverability&lt;/h6&gt;
+
+&lt;p&gt;Services can be discovered (usually in a service registry). We have already seen this in the concept of the UDDI, which performs a registry which can hold information about the web service.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-composability&quot;&gt;Service Composability&lt;/h6&gt;
+
+&lt;p&gt;Services break big problems into little problems. One should never embed all functionality of an application into one single service but instead, break the service down into modules each with a separate business functionality.&lt;/p&gt;
+
+&lt;h6 id=&quot;service-interoperability&quot;&gt;Service Interoperability&lt;/h6&gt;
+
+&lt;p&gt;Services should use standards that allow diverse subscribers to use the service. In web services, standards as XML and communication over HTTP is used to ensure it conforms to this principle.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 20 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/20/soa/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/20/soa/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
     
       <item>
         <title>Java Servlet</title>
@@ -120,6 +178,59 @@
  &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;removeing evaluation key&quot;
+rm  -rf ~/.IntelliJIdea*/config/eval
+rm  -rf ~/.GoLand*/config/eval
+rm  -rf ~/.WebStorm*/config/eval
+
+rm -rf ~/.java/.userPrefs/jetbrains/goland
+rm -rf ~/.java/.userPrefs/jetbrains/idea
+rm -rf ~/.java/.userPrefs/jetbrains/webstorm
+
+echo &quot;resetting evalsprt in options.xml&quot;
+sed -i '/evlsprt/d' ~/.IntelliJIdea*/config/options/options.xml
+sed -i '/evlsprt/d' ~/.GoLand*/config/options/options.xml
+sed -i '/evlsprt/d' ~/.WebStorm*/config/options/options.xml
+
+echo &quot;resetting evalsprt in prefs.xml&quot;
+sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
+
+
+echo &quot;change date file&quot;
+find ~/.IntelliJIdea* -type d -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
+find ~/.IntelliJIdea* -type f -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
+
+find ~/.GoLand* -type d -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
+find ~/.GoLand* -type f -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
+
+find ~/.WebStorm* -type d -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
+find ~/.WebStorm* -type f -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm -rf ~/Library/Preferences/PyCharm2018.1/eval/PyCharm181.evaluation.key
+rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;extends-evaluation-in-windows&quot;&gt;Extends Evaluation in Windows&lt;/h5&gt;
+
+&lt;h6 id=&quot;intellij-evaluation-problem&quot;&gt;Intellij Evaluation Problem:&lt;/h6&gt;
+
+&lt;p&gt;If you want to increase evaluation periods to more 30 days you can follow the bellow steps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Step 1: Exit intellij software.&lt;/li&gt;
+  &lt;li&gt;Step 2 : Remove intellij home cash folder (like: C:\Users&amp;lt;Username&amp;gt;/.IntelliJIdea201…..)&lt;/li&gt;
+  &lt;li&gt;Step3: W+R  regedit (open registry)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.
+&lt;img src=&quot;../../../../static/img/evaluationProblem.PNG&quot; alt=&quot;Image&quot; /&gt;
+&lt;img src=&quot;../../../../static/img/intelijCashfolder.PNG&quot; alt=&quot;Image&quot; /&gt;
+&lt;img src=&quot;../../../../static/img/registry.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Open Intelij &amp;amp; evaluate for 30 days &amp;amp; enjoy.&lt;/li&gt;
+&lt;/ul&gt;
 
 </description>
         <pubDate>Thu, 22 Nov 2018 00:00:00 +0600</pubDate>
@@ -746,73 +857,6 @@ kill 15401
         
         
         <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Node in Windows operating System</title>
-        <description>&lt;h2 id=&quot;install-node-in-windows&quot;&gt;Install node in windows&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;Download the Windows installer from the &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodes.js® web site&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Run the installer (the .msi file you downloaded in the previous step.)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;../../../../static/img/installer.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Restart your computer. You won’t be able to run Node.js® until you restart your computer.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;test-it&quot;&gt;Test it!&lt;/h2&gt;
-
-&lt;p&gt;Make sure you have Node and NPM installed by running simple commands to see what version of each is installed and to run a simple test program:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Test Node. To see if Node is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type node -v. This should print a version number, so you’ll see something like this v0.10.35.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Test NPM. To see if NPM is installed, type npm -v in Terminal. This should print NPM’s version number so you’ll see something like this 1.4.28&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Create a test file and run it. A simple way to test that node.js works is to create a JavaScript file: name it hello.js, and just add the code console.log(‘Node is installed!’);. To run the code simply open your command line program, navigate to the folder where you save the file and type node hello.js. This will start Node and run the code in the hello.js file. You should see the output Node is installed!.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;../../../../static/img/verify.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;how-to-update-node-and-npm&quot;&gt;How to Update Node and NPM&lt;/h2&gt;
-
-&lt;p&gt;This is the new best way to upgrade npm on Windows.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Run PowerShell as Administrator&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Set-ExecutionPolicy Unrestricted -Scope CurrentUser -Force
-npm install -g npm-windows-upgrade
-npm-windows-upgrade
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Note: Do not run npm i -g npm. Instead use npm-windows-upgrade to update npm going forward. Also if you run the NodeJS installer, it will replace the node version.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Upgrades npm in-place, where node installed it.&lt;/li&gt;
-  &lt;li&gt;Easy updating, update to the latest by running npm-windows-upgrade -p -v latest.&lt;/li&gt;
-  &lt;li&gt;Does not modify the default path.&lt;/li&gt;
-  &lt;li&gt;Does not change the default global package location.&lt;/li&gt;
-  &lt;li&gt;Allows easy upgrades and downgrades.&lt;/li&gt;
-  &lt;li&gt;Officially recommended by the NPM team.&lt;/li&gt;
-  &lt;li&gt;A list of versions matched between NPM and NODE (https://nodejs.org/en/download/releases/) - but you will need to download NODE INSTALLER and run that to update node (https://nodejs.org/en/)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 18 Apr 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/04/18/node-in-windwos/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/04/18/node-in-windwos/</guid>
-        
-        
-        <category>node</category>
         
       </item>
     
