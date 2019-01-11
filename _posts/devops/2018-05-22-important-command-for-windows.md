@@ -2,7 +2,7 @@
 layout: post
 title: "Important command for windows"
 comments: true
-categories: Java
+categories: devops
 ---
 
 ## Important command for windows

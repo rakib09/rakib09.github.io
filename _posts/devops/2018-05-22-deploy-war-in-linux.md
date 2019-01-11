@@ -2,7 +2,7 @@
 layout: post
 title: "Deploy Java War in Linux Server"
 comments: true
-categories: Java
+categories: devops
 ---
 
 ## Deploy Java War in Linux Server

@@ -5,9 +5,427 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Dec 2018 15:48:51 +0600</pubDate>
-    <lastBuildDate>Thu, 20 Dec 2018 15:48:51 +0600</lastBuildDate>
+    <pubDate>Fri, 11 Jan 2019 10:35:39 +0600</pubDate>
+    <lastBuildDate>Fri, 11 Jan 2019 10:35:39 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Java Important Hot Topics</title>
+        <description>&lt;p&gt;#Java Thread Safe&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 08 Jan 2019 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2019/01/08/java-important-hot-topics/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/01/08/java-important-hot-topics/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Bahmni Atom Feed Integration</title>
+        <description>&lt;h2 id=&quot;bahmni-atom-feed-integration&quot;&gt;Bahmni Atom Feed Integration&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/atom-feed-bahmni.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 31 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/31/bahmni-atom-feet-integration/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/31/bahmni-atom-feet-integration/</guid>
+        
+        
+        <category>bahmni</category>
+        
+      </item>
+    
+      <item>
+        <title>Adapter pattern</title>
+        <description>&lt;h2 id=&quot;adapter-design-pattern&quot;&gt;Adapter Design pattern&lt;/h2&gt;
+&lt;p&gt;Adapter Design pattern allows the interface of an existing class to be used as another interface. In summary, an adapter helps two incompatible interfaces to work together.
+&lt;img src=&quot;../../../../static/img/adapter_pattern.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here, we have two incompatible interfaces : MediaPlayer and MediaPackage. MP3 class is an implementation of the MediaPlayer interface and we have VLC and MP4 as implementations of the MediaPackage interface. We want to use MediaPackage implementations as MediaPlayer instances. So, we need to create an adapter to help to work with two incompatible classes.&lt;/p&gt;
+
+&lt;p&gt;The Adapter will be named FormatAdapter and must implement the MediaPlayer interface. Furthermore, the FormatAdapter class must have a reference to MediaPackage, the incompatible interface.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public interface MediaPlayer {
+ void play(String filename);
+}
+
+public interface MediaPackage {
+ void playFile(String filename);
+}
+
+public class MP3 implements MediaPlayer {
+ @Override
+ public void play(String filename) {
+    System.out.println(&quot;Playing MP3 File &quot; + filename);
+ }
+}
+
+public class MP4 implements MediaPackage {
+ @Override
+ public void playFile(String filename) {
+    System.out.println(&quot;Playing MP4 File &quot; + filename);
+ }
+}
+
+public class VLC implements MediaPackage {
+ @Override
+ public void playFile(String filename) {
+    System.out.println(&quot;Playing VLC File &quot; + filename);
+ }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Here, we want to use VLC and MP4 instances as MediaPlayer instances. So, we need and adapter. This is the code of the FormatAdapter :&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class FormatAdapter implements MediaPlayer {
+ private MediaPackage media;
+ public FormatAdapter(MediaPackage m) {
+    media = m;
+ }
+ @Override
+ public void play(String filename) {
+   System.out.print(&quot;Using Adapter --&amp;gt; &quot;);
+   media.playFile(filename);
+ }
+}
+
+public class Main {
+ public static void main(String[] args) {
+    MediaPlayer player = new MP3();
+    player.play(&quot;file.mp3&quot;);
+    player = new FormatAdapter(new MP4());
+    player.play(&quot;file.mp4&quot;);
+    player = new FormatAdapter(new VLC());
+    player.play(&quot;file.avi&quot;);
+ }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Output:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Playing MP3 File file.mp3
+Using Adapter --&amp;gt; Playing MP4 File file.mp4
+Using Adapter --&amp;gt; Playing VLC File file.avi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://medium.com/@ssaurel/implement-the-adapter-design-pattern-in-java-f9adb6a8828f&quot;&gt;&lt;strong&gt;Medium.com&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 29 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/29/adapter-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/29/adapter-pattern/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Template method design pattern</title>
+        <description>&lt;h2 id=&quot;template-method-design-pattern&quot;&gt;Template method design pattern&lt;/h2&gt;
+&lt;p&gt;Template method defines the steps to execute an algorithm and it can provide default implementation that might be common for all or some of the subclasses.&lt;/p&gt;
+
+&lt;p&gt;Let’s understand this pattern with an example, suppose we want to provide an algorithm to build a house. The steps need to be performed to build a house are – building foundation, building pillars, building walls and windows. The important point is that the we can’t change the order of execution because we can’t build windows before building the foundation. So in this case we can create a template method that will use different methods to build the house.&lt;/p&gt;
+
+&lt;p&gt;Now building the foundation for a house is same for all type of houses, whether its a wooden house or a glass house. So we can provide base implementation for this, if subclasses want to override this method, they can but mostly it’s common for all the types of houses.&lt;/p&gt;
+
+&lt;p&gt;To make sure that subclasses don’t override the template method, we should make it final.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+package com.journaldev.design.template;
+
+public abstract class HouseTemplate {
+
+	//template method, final so subclasses can't override
+	public final void buildHouse(){
+		buildFoundation();
+		buildPillars();
+		buildWalls();
+		buildWindows();
+		System.out.println(&quot;House is built.&quot;);
+	}
+
+	//default implementation
+	private void buildWindows() {
+		System.out.println(&quot;Building Glass Windows&quot;);
+	}
+
+	//methods to be implemented by subclasses
+	public abstract void buildWalls();
+	public abstract void buildPillars();
+
+	private void buildFoundation() {
+		System.out.println(&quot;Building foundation with cement,iron rods and sand&quot;);
+	}
+}
+
+package com.journaldev.design.template;
+
+public class WoodenHouse extends HouseTemplate {
+
+	@Override
+	public void buildWalls() {
+		System.out.println(&quot;Building Wooden Walls&quot;);
+	}
+
+	@Override
+	public void buildPillars() {
+		System.out.println(&quot;Building Pillars with Wood coating&quot;);
+	}
+
+}
+
+package com.journaldev.design.template;
+
+public class GlassHouse extends HouseTemplate {
+
+	@Override
+	public void buildWalls() {
+		System.out.println(&quot;Building Glass Walls&quot;);
+	}
+
+	@Override
+	public void buildPillars() {
+		System.out.println(&quot;Building Pillars with glass coating&quot;);
+	}
+
+}
+
+
+package com.journaldev.design.template;
+
+public class HousingClient {
+
+	public static void main(String[] args) {
+		
+		HouseTemplate houseType = new WoodenHouse();
+		
+		//using template method
+		houseType.buildHouse();
+		System.out.println(&quot;************&quot;);
+		
+		houseType = new GlassHouse();
+		
+		houseType.buildHouse();
+	}
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Output of the above program is:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+Building foundation with cement,iron rods and sand
+Building Pillars with Wood coating
+Building Wooden Walls
+Building Glass Windows
+House is built.
+************
+Building foundation with cement,iron rods and sand
+Building Pillars with glass coating
+Building Glass Walls
+Building Glass Windows
+House is built.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h5 id=&quot;template-method-design-pattern-in-jdk&quot;&gt;Template Method Design Pattern in JDK&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.&lt;/li&gt;
+  &lt;li&gt;All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.
+    &lt;h5 id=&quot;template-method-design-pattern-important-points&quot;&gt;Template Method Design Pattern Important Points&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Template method should consists of certain steps whose order is fixed and for some of the methods, implementation differs from base class to subclass. Template method should be final.&lt;/li&gt;
+  &lt;li&gt;Most of the times, subclasses calls methods from super class but in template pattern, superclass template method calls methods from subclasses, this is known as Hollywood Principle – “don’t call us, we’ll call you.”.&lt;/li&gt;
+  &lt;li&gt;Methods in base class with default implementation are referred as Hooks and they are intended to be overridden by subclasses, if you want some of the methods to be not overridden, you can make them final, for example in our case we can make buildFoundation() method final because if we don’t want subclasses to override it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.journaldev.com/1763/template-method-design-pattern-in-java&quot;&gt;&lt;strong&gt;JournalDev&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 28 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/28/template-method-design-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/28/template-method-design-pattern/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Strategy pattern</title>
+        <description>&lt;h2 id=&quot;strategy-design-pattern&quot;&gt;Strategy Design pattern&lt;/h2&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.journaldev.com/1754/strategy-design-pattern-in-java-example-tutorial&quot;&gt;&lt;strong&gt;JournalDev&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 27 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/27/strategy-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/27/strategy-pattern/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Factory pattern</title>
+        <description>&lt;h2 id=&quot;factory-design-pattern&quot;&gt;Factory Design pattern&lt;/h2&gt;
+&lt;p&gt;Factory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class.&lt;/p&gt;
+
+&lt;h5 id=&quot;advantage-of-factory-design-pattern&quot;&gt;Advantage of Factory Design Pattern&lt;/h5&gt;
+&lt;p&gt;Factory Method Pattern allows the sub-classes to choose the type of objects to create.
+It promotes the loose-coupling by eliminating the need to bind application-specific classes into the code.&lt;/p&gt;
+
+&lt;p&gt;Step 1: Create a Plan abstract class.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import java.io.*;      
+abstract class Plan{  
+         protected double rate;  
+         abstract void getRate();  
+   
+         public void calculateBill(int units){  
+              System.out.println(units*rate);  
+          }  
+}//end of Plan class. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Step 2: Create the concrete classes that extends Plan abstract class.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class  DomesticPlan extends Plan{  
+        //@override  
+         public void getRate(){  
+             rate=3.50;              
+        }  
+   }//end of DomesticPlan class.  
+class  CommercialPlan extends Plan{  
+   //@override   
+    public void getRate(){   
+        rate=7.50;  
+   }   
+/end of CommercialPlan class.  
+class  InstitutionalPlan extends Plan{  
+   //@override  
+    public void getRate(){   
+        rate=5.50;  
+   }   
+/end of InstitutionalPlan class.  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Step 3: Create a GetPlanFactory to generate object of concrete classes based on given information..&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class GetPlanFactory{  
+   //use getPlan method to get object of type Plan   
+       public Plan getPlan(String planType){  
+            if(planType == null){  
+             return null;  
+            }  
+          if(planType.equalsIgnoreCase(&quot;DOMESTICPLAN&quot;)) {  
+                 return new DomesticPlan();  
+               }   
+           else if(planType.equalsIgnoreCase(&quot;COMMERCIALPLAN&quot;)){  
+                return new CommercialPlan();  
+            }   
+          else if(planType.equalsIgnoreCase(&quot;INSTITUTIONALPLAN&quot;)) {  
+                return new InstitutionalPlan();  
+          }  
+      return null;  
+   }  
+}//end of GetPlanFactory class.  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Step 4: Generate Bill by using the GetPlanFactory to get the object of concrete classes by passing an information such as type of plan DOMESTICPLAN or COMMERCIALPLAN or INSTITUTIONALPLAN.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import java.io.*;    
+class GenerateBill{  
+    public static void main(String args[])throws IOException{  
+      GetPlanFactory planFactory = new GetPlanFactory();  
+        
+      System.out.print(&quot;Enter the name of plan for which the bill will be generated: &quot;);  
+      BufferedReader br=new BufferedReader(new InputStreamReader(System.in));  
+  
+      String planName=br.readLine();  
+      System.out.print(&quot;Enter the number of units for bill will be calculated: &quot;);  
+      int units=Integer.parseInt(br.readLine());  
+  
+      Plan p = planFactory.getPlan(planName);  
+      //call getRate() method and calculateBill()method of DomesticPaln.  
+  
+       System.out.print(&quot;Bill amount for &quot;+planName+&quot; of  &quot;+units+&quot; units is: &quot;);  
+           p.getRate();  
+           p.calculateBill(units);  
+            }  
+    }//end of GenerateBill class.  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Source: &lt;a href=&quot;https://www.javatpoint.com/factory-method-design-pattern&quot;&gt;&lt;strong&gt;JournalDev&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 27 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/27/factory-pattern/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/27/factory-pattern/</guid>
+        
+        
+        <category>Java</category>
+        
+      </item>
+    
+      <item>
+        <title>Software Development Life Cycle</title>
+        <description>&lt;h2 id=&quot;software-development-life-cycle&quot;&gt;Software Development Life Cycle&lt;/h2&gt;
+
+&lt;p&gt;Software Development Life Cycle (SDLC) is a process used by the software industry to design, develop and test high quality softwares. The SDLC aims to produce a high-quality software that meets or exceeds customer expectations, reaches completion within times and cost estimates.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-sdlc&quot;&gt;What is SDLC?&lt;/h3&gt;
+
+&lt;p&gt;SDLC is a process followed for a software project, within a software organization. It consists of a detailed plan describing how to develop, maintain, replace and alter or enhance specific software. The life cycle defines a methodology for improving the quality of software and the overall development process.&lt;/p&gt;
+
+&lt;p&gt;The following figure is a graphical representation of the various stages of a typical SDLC.&lt;/p&gt;
+
+&lt;p&gt;SDLC Models&lt;/p&gt;
+
+&lt;p&gt;There are various software development life cycle models defined and designed which are followed during the software development process. These models are also referred as Software Development Process Models”. Each process model follows a Series of steps unique to its type to ensure success in the process of software development.&lt;/p&gt;
+
+&lt;p&gt;Following are the most important and popular SDLC models followed in the industry &amp;amp;miuns;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Waterfall Model&lt;/li&gt;
+  &lt;li&gt;Iterative Model&lt;/li&gt;
+  &lt;li&gt;Spiral Model&lt;/li&gt;
+  &lt;li&gt;V-Model&lt;/li&gt;
+  &lt;li&gt;Big Bang Model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other related methodologies are Agile Model, RAD Model, Rapid Application Development and Prototyping Models.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 26 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/26/software-development-life-cycle/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/26/software-development-life-cycle/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
+    
+      <item>
+        <title>Software Development Life Cycle-Model</title>
+        <description>&lt;h2 id=&quot;waterfall-model---design&quot;&gt;Waterfall Model - Design&lt;/h2&gt;
+
+&lt;p&gt;Waterfall approach was first SDLC Model to be used widely in Software Engineering to ensure success of the project. In “The Waterfall” approach, the whole process of software development is divided into separate phases. In this Waterfall model, typically, the outcome of one phase acts as the input for the next phase sequentially.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/sdlc_waterfall_model.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 26 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/26/sdlc-models/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/26/sdlc-models/</guid>
+        
+        
+        <category>devops</category>
+        
+      </item>
     
       <item>
         <title>service oriented architecture</title>
@@ -78,828 +496,6 @@
         <pubDate>Tue, 18 Dec 2018 00:00:00 +0600</pubDate>
         <link>http://localhost:4000/2018/12/18/java-servlet/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/12/18/java-servlet/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Always Up Staying Up At All Time</title>
-        <description>&lt;h2 id=&quot;always-up&quot;&gt;Always Up&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.dropbox.com/sh/jhn7eiumavsifmd/AAD6vr-YE1mmmJCaV7p5ztoDa?dl=0&quot;&gt;Download&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Firstly we have to install always up manually by click next, next…. &amp;amp; in the last step uncheck “Start Always up” check box like:
-&lt;img src=&quot;../../../../static/img/install.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Open Always up software by run as Administration like:&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/runAsAdmin.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Click Register Now like:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/reg.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Copy code number from bellow &amp;amp; pest into crack file.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/copy.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/keygan.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/num.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/past.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;After pesting code number you will get the serial number. Copy serial number &amp;amp; back the always up &amp;amp; then click enter code button
-&lt;img src=&quot;../../../../static/img/back.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/code.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/pastcode.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/next.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/sucess.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 03 Dec 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/12/03/always-up-staying-up-at-all-time/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/12/03/always-up-staying-up-at-all-time/</guid>
-        
-        
-        <category>devops</category>
-        
-      </item>
-    
-      <item>
-        <title>Basic Networking</title>
-        <description>&lt;h3 id=&quot;cat-lan-cable-point-addition&quot;&gt;Cat Lan Cable point addition&lt;/h3&gt;
-
-&lt;h4 id=&quot;straight-connection-classb&quot;&gt;Straight Connection (ClassB)&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Orange-White&lt;/li&gt;
-  &lt;li&gt;Orange&lt;/li&gt;
-  &lt;li&gt;Green-White&lt;/li&gt;
-  &lt;li&gt;Blue&lt;/li&gt;
-  &lt;li&gt;Blue-White&lt;/li&gt;
-  &lt;li&gt;Green&lt;/li&gt;
-  &lt;li&gt;Brawn-White&lt;/li&gt;
-  &lt;li&gt;Brawn&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;cross-connection-classb&quot;&gt;Cross Connection (ClassB)&lt;/h4&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Orange-White&lt;/li&gt;
-  &lt;li&gt;Green&lt;/li&gt;
-  &lt;li&gt;Green-White&lt;/li&gt;
-  &lt;li&gt;Blue&lt;/li&gt;
-  &lt;li&gt;Blue-White&lt;/li&gt;
-  &lt;li&gt;Orange&lt;/li&gt;
-  &lt;li&gt;Brawn-White&lt;/li&gt;
-  &lt;li&gt;Brawn&lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Tue, 27 Nov 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/11/27/basic-networking/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/11/27/basic-networking/</guid>
-        
-        
-        <category>devops</category>
-        
-      </item>
-    
-      <item>
-        <title>Intelij increase licesnse evaluation</title>
-        <description>&lt;h3 id=&quot;intelij-increase-licesnse-evaluation&quot;&gt;Intelij increase licesnse evaluation&lt;/h3&gt;
-
-&lt;h3 id=&quot;increase-evaluation-in-linux&quot;&gt;Increase Evaluation in Linux&lt;/h3&gt;
-
-&lt;p&gt;Create file reset_trail.sh with content:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
- 
- &lt;span class=&quot;c&quot;&gt;## declare array of tools&lt;/span&gt;
- &lt;span class=&quot;nb&quot;&gt;declare&lt;/span&gt; -a &lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;
-     &lt;span class=&quot;s2&quot;&gt;&quot;DataGrip&quot;&lt;/span&gt;
-     &lt;span class=&quot;s2&quot;&gt;&quot;CLion&quot;&lt;/span&gt;
-     &lt;span class=&quot;s2&quot;&gt;&quot;Rider&quot;&lt;/span&gt;
-     &lt;span class=&quot;s2&quot;&gt;&quot;PhpStorm&quot;&lt;/span&gt;
-     &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
- 
- &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;tool &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;do
-     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;removing evaluation key for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-     rm -rf ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/config/eval
-     rm -rf ~/.java/.userPrefs/jetbrains/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,,&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;done
- 
- for &lt;/span&gt;tool &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;do
-     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resetting evalsprt in options.xml for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-     sed -i &lt;span class=&quot;s1&quot;&gt;'/evlsprt/d'&lt;/span&gt; ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/config/options/options.xml
- &lt;span class=&quot;k&quot;&gt;done
- 
- &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;resetting evalsprt in prefs.xml&quot;&lt;/span&gt;
- sed -i &lt;span class=&quot;s1&quot;&gt;'/evlsprt/d'&lt;/span&gt; ~/.java/.userPrefs/prefs.xml
- 
- &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;tool &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;tools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[@]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;do
-     &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;change date file for &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-     find ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; -type d -exec touch -t &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date +&lt;span class=&quot;s2&quot;&gt;&quot;%Y%m%d%H%M&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; +;
-     find ~/.&lt;span class=&quot;nv&quot;&gt;$tool&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; -type f -exec touch -t &lt;span class=&quot;k&quot;&gt;$(&lt;/span&gt;date +&lt;span class=&quot;s2&quot;&gt;&quot;%Y%m%d%H%M&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; +;
- &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;removeing evaluation key&quot;
-rm  -rf ~/.IntelliJIdea*/config/eval
-rm  -rf ~/.GoLand*/config/eval
-rm  -rf ~/.WebStorm*/config/eval
-
-rm -rf ~/.java/.userPrefs/jetbrains/goland
-rm -rf ~/.java/.userPrefs/jetbrains/idea
-rm -rf ~/.java/.userPrefs/jetbrains/webstorm
-
-echo &quot;resetting evalsprt in options.xml&quot;
-sed -i '/evlsprt/d' ~/.IntelliJIdea*/config/options/options.xml
-sed -i '/evlsprt/d' ~/.GoLand*/config/options/options.xml
-sed -i '/evlsprt/d' ~/.WebStorm*/config/options/options.xml
-
-echo &quot;resetting evalsprt in prefs.xml&quot;
-sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
-
-
-echo &quot;change date file&quot;
-find ~/.IntelliJIdea* -type d -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
-find ~/.IntelliJIdea* -type f -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
-
-find ~/.GoLand* -type d -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
-find ~/.GoLand* -type f -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
-
-find ~/.WebStorm* -type d -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
-find ~/.WebStorm* -type f -exec touch -t $(date +&quot;%Y%m%d%H%M&quot;) {} +;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rm -rf ~/Library/Preferences/PyCharm2018.1/eval/PyCharm181.evaluation.key
-rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;extends-evaluation-in-windows&quot;&gt;Extends Evaluation in Windows&lt;/h5&gt;
-
-&lt;h6 id=&quot;intellij-evaluation-problem&quot;&gt;Intellij Evaluation Problem:&lt;/h6&gt;
-
-&lt;p&gt;If you want to increase evaluation periods to more 30 days you can follow the bellow steps:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Step 1: Exit intellij software.&lt;/li&gt;
-  &lt;li&gt;Step 2 : Remove intellij home cash folder (like: C:\Users&amp;lt;Username&amp;gt;/.IntelliJIdea201…..)&lt;/li&gt;
-  &lt;li&gt;Step3: W+R  regedit (open registry)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.
-&lt;img src=&quot;../../../../static/img/evaluationProblem.PNG&quot; alt=&quot;Image&quot; /&gt;
-&lt;img src=&quot;../../../../static/img/intelijCashfolder.PNG&quot; alt=&quot;Image&quot; /&gt;
-&lt;img src=&quot;../../../../static/img/registry.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Open Intelij &amp;amp; evaluate for 30 days &amp;amp; enjoy.&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 22 Nov 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/11/22/intelij-increase-license-evaluation/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/11/22/intelij-increase-license-evaluation/</guid>
-        
-        
-        <category>devops</category>
-        
-      </item>
-    
-      <item>
-        <title>Basic Linux Command</title>
-        <description>&lt;h3 id=&quot;basic-linux-command&quot;&gt;Basic Linux Command&lt;/h3&gt;
-
-&lt;h3 id=&quot;practice-linux-on-windows-10&quot;&gt;Practice Linux on Windows 10&lt;/h3&gt;
-&lt;p&gt;we can practice linux command in windows 10 sub system. Proceed the following steps:&lt;/p&gt;
-
-&lt;p&gt;Step 1: Install ubuntu from apps  store&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/ubuntu_sub_system.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Step 2: Open ubuntu after successful installation&lt;/p&gt;
-
-&lt;p&gt;If any error occurred like “sub system is not enabled” then open powershell as administrator &amp;amp; run the bellow command&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Then open ubuntu &amp;amp; set user password when it will be ready.&lt;/p&gt;
-
-&lt;h4 id=&quot;listing-files-and-directories&quot;&gt;Listing files and directories&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;COMMAND&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd -&lt;/td&gt;
-      &lt;td&gt;Returns you to your previous working directory&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd ~&lt;/td&gt;
-      &lt;td&gt;Returns you to your login directory&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd&lt;/td&gt;
-      &lt;td&gt;Returns you to your login directory&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd $HOME&lt;/td&gt;
-      &lt;td&gt;Returns you to your login directory&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd /&lt;/td&gt;
-      &lt;td&gt;Takes you to the entire system’s root directory.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd /root&lt;/td&gt;
-      &lt;td&gt;Takes you to the home directory of the root user. You must be the root user to access this directory.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd /home&lt;/td&gt;
-      &lt;td&gt;Takes you to the home directory, where user login directories are usually stored&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd ..&lt;/td&gt;
-      &lt;td&gt;Takes you to the directory one level up.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd /dir1/dir2/&lt;/td&gt;
-      &lt;td&gt;Regardless of which directory you are in, this absolute path takes you directly to dir2, a subdirectory of /dir1/.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cd ../../dir2/dir3/&lt;/td&gt;
-      &lt;td&gt;This relative path takes you up two directories, then to dir2/, and finally into its subdirectory dir3/.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;pwd&lt;/td&gt;
-      &lt;td&gt;displays the current directory.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mkdir dirname&lt;/td&gt;
-      &lt;td&gt;make directory&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;chmod -R 777 dirname&lt;/td&gt;
-      &lt;td&gt;Read, write and execute permission to all user group&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mkdir -m 777 dirname&lt;/td&gt;
-      &lt;td&gt;creates an empty directory with permission&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ls&lt;/td&gt;
-      &lt;td&gt;displays the file &amp;amp; directory of the current directory.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ls -a&lt;/td&gt;
-      &lt;td&gt;list also files/directories which begin with a dot (hidden)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ls -l&lt;/td&gt;
-      &lt;td&gt;long listing format. Displays permissions, user and group, time stamp, size, etc.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ls -r&lt;/td&gt;
-      &lt;td&gt;for directories, all sub-directories will be displayed recursively.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ls directory&lt;/td&gt;
-      &lt;td&gt;displays the file &amp;amp; directory of the corresponding directory.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;file-management&quot;&gt;File management&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;COMMAND&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cp file1 file2&lt;/td&gt;
-      &lt;td&gt;copies files or directories. file1 is copied to file2. if file2 already exists, it is overwritten&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cp -r dir1 dir2&lt;/td&gt;
-      &lt;td&gt;recursively with all subdirectories &amp;amp; files&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mv file1 file2&lt;/td&gt;
-      &lt;td&gt;Rename or move files&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;mv dir1 dir2&lt;/td&gt;
-      &lt;td&gt;Rename or move directories&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;rm [-irf] file(s)/directory(ies)&lt;/td&gt;
-      &lt;td&gt;Delete files and/or directories. (-i: delete only after confirmation, -r: directories will be recursively deleted, -f: force)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;rmdir directory_name&lt;/td&gt;
-      &lt;td&gt;removes any empty directories, but cannot delete a directory if a file is present in it.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;cat file&lt;/td&gt;
-      &lt;td&gt;to view the contents of a file&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h5 id=&quot;file-create-edit-save&quot;&gt;File create, edit, save&lt;/h5&gt;
-
-&lt;h6 id=&quot;create-file&quot;&gt;Create File&lt;/h6&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;touch fileName
-Example:
-touch test.txt
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h6 id=&quot;edit-file-using-pico--nano&quot;&gt;Edit file (using Pico &amp;amp; Nano)&lt;/h6&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pico hello.txt
-^G Get Help ^O WriteOut ^R Read File ^Y Prev Page ^K Cut Text ^C Cur Pos
-^X Exit ^J Justify ^W Where Is ^V Next Page ^U UnCut Text^T To Spell
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;‘ctrl+o’:  write the changes to the file&lt;/p&gt;
-
-&lt;p&gt;‘ctrl+x’: exit from the editor&lt;/p&gt;
-
-&lt;p&gt;‘ctrl+g’: help menu&lt;/p&gt;
-
-&lt;h6 id=&quot;edit-file-using-vi-editor&quot;&gt;Edit file (using VI editor)&lt;/h6&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;vim file
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Exit vim without saving changes&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Press the ESC key
-Type :q!
-Press the ENTER key
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Save a file and exit&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Press the ESC key
-Type :wq
-or 
-Type :x
-Press the ENTER key
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;permission&quot;&gt;Permission&lt;/h5&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/chmod777.png&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Different combinations:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;0 – No permission&lt;/li&gt;
-  &lt;li&gt;1 – Execute&lt;/li&gt;
-  &lt;li&gt;2 – Write&lt;/li&gt;
-  &lt;li&gt;3 – Write and execute&lt;/li&gt;
-  &lt;li&gt;4 – Read&lt;/li&gt;
-  &lt;li&gt;5 – Read and execute&lt;/li&gt;
-  &lt;li&gt;6 – Read and Write&lt;/li&gt;
-  &lt;li&gt;7 – Read, write and execute&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;echo-command&quot;&gt;echo command&lt;/h5&gt;
-&lt;p&gt;This command will echo whatever you provide it.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo &quot;test&quot;
-test
-
-echo $HOME
-/home/rakib
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;whoami-command&quot;&gt;whoami command&lt;/h5&gt;
-&lt;p&gt;This command reveals the user who is currently logged in.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;whoami
-root
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h5 id=&quot;whatis-command&quot;&gt;whatis command&lt;/h5&gt;
-&lt;p&gt;This command gives a one line description about the command. It can be used as a quick reference for any command.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;whatis date
-date (1) - print or set the system date and time
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;clear-screen&quot;&gt;Clear Screen&lt;/h5&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;clear
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h5 id=&quot;locate&quot;&gt;locate&lt;/h5&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;locate -i hello
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;h5 id=&quot;cent-os&quot;&gt;Cent OS&lt;/h5&gt;
-
-&lt;h6 id=&quot;yum-yellowdog-updater-modified&quot;&gt;YUM (YellowDog Updater Modified)&lt;/h6&gt;
-&lt;p&gt;yum is the primary tool for getting, installing, deleting, querying, and managing Red Hat Enterprise Linux RPM software packages from official Red Hat software repositories, as well as other third-party repositories.&lt;/p&gt;
-
-&lt;p&gt;Update Yum&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum update
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;install-java&quot;&gt;Install Java&lt;/h5&gt;
-&lt;p&gt;Go to &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html&quot;&gt;Java Download page&lt;/a&gt; &amp;amp; get the linux tar.gz file download url
-&lt;img src=&quot;../../../../static/img/java_jdk_download.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /opt/
-wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie&quot; &quot;URL_LINK&quot;
-Here URL_LINK will be java download Link. First ensure the link is working or not. If sign in required for old java version, we can download manually.
-tar xzf jdk-8u131-linux-x64.tar.gz
-cd /opt/jdk1.8.0_131/
-alternatives --install /usr/bin/java java /opt/jdk1.8.0_131/bin/java 2
-alternatives --config java
-
-alternatives --install /usr/bin/jar jar /opt/jdk1.8.0_131/bin/jar 2
-alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_131/bin/javac 2
-alternatives --set jar /opt/jdk1.8.0_131/bin/jar
-alternatives --set javac /opt/jdk1.8.0_131/bin/javac
-java -version
-export JAVA_HOME=/opt/jdk1.8.0_131
-export JRE_HOME=/opt/jdk1.8.0_131/jre
-export PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/bin
-echo $JAVA_HOME
-echo $JRE_HOME
-source /etc/profile
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;bahmni-setup&quot;&gt;Bahmni Setup&lt;/h5&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;NB: Example: If implementation_name is 'bd-uhc', then app config will be picked up from the /etc/bahmni-installer/deployment-artifacts/bd-uhc_config folde
-
-Step 1:
-#Prerequisite for the fresh installation of Bahmni
-wget https://bitbucket.org/pypa/setuptools/raw/0.7.2/ez_setup.py
-python ez_setup.py
-
-you may run this --- yum upgrade python-setuptools
-
-Step 2:
-# Install the bahmni command line program (Choose the version you want).
-yum install https://dl.bintray.com/bahmni/rpm/rpms/bahmni-installer-0.91-70.noarch.rpm  #version 0.91 
-
-# Confirm that the bahmni command is correctly installed (you should see a help message for the command)
-bahmni --help
-
-# Now setup a configuration file for bahmni command in /etc/bahmni-installer.
-curl -L https://goo.gl/R8ekg5 &amp;gt;&amp;gt; /etc/bahmni-installer/setup.yml
-
-# Confirm the contents of the file. It should look like this file: (https://goo.gl/R8ekg5)
-cat /etc/bahmni-installer/setup.yml
-
-Then amar personaly setup.yml ase seta replace kore dibo…
-
-
-# Set the inventory file name to local in BAHMNI_INVENTORY environment variable. This way you won't need to use the '-i local' switch every time you use the 'bahmni' command
-#You can also configure custom inventory file instead of local.
-echo &quot;export BAHMNI_INVENTORY=local&quot; &amp;gt;&amp;gt; ~/.bashrc
-source ~/.bashrc
-
-# Now fire the installer
-bahmni install
-
-Then error =  deployment-artifact ar vitore bd-uhc_config load kore dibo ..ar ae file ta  ae github theke(359 commit) ase .i have locally store it   
-https://github.com/SharedHealth/bd-uhc-config
-etc/bahmni-installer/deployment-artifacts/bd-uhc_config
-
-then abar bahmni install
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 05 Sep 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/09/05/basic-linux-command/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/09/05/basic-linux-command/</guid>
-        
-        
-        <category>devops</category>
-        
-      </item>
-    
-      <item>
-        <title>OOP</title>
-        <description>&lt;h2 id=&quot;oop&quot;&gt;OOP&lt;/h2&gt;
-&lt;p&gt;Core OOPS concepts are:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Abstraction&lt;/li&gt;
-  &lt;li&gt;Encapsulation&lt;/li&gt;
-  &lt;li&gt;Polymorphism&lt;/li&gt;
-  &lt;li&gt;Inheritance&lt;/li&gt;
-  &lt;li&gt;Association&lt;/li&gt;
-  &lt;li&gt;Aggregation&lt;/li&gt;
-  &lt;li&gt;Composition&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;abstraction&quot;&gt;Abstraction&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;hiding the internal details and describing things in simple terms.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h6 id=&quot;ways-to-achieve-abstraction&quot;&gt;Ways to achieve Abstraction&lt;/h6&gt;
-&lt;p&gt;There are two ways to achieve abstraction in java&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Abstract class (0 to 100%)&lt;/li&gt;
-  &lt;li&gt;Interface (100%)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;real-life-example-of-abstract-class&quot;&gt;Real life Example of Abstract Class&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;abstract class Shape{  
-abstract void draw();  
-}  
-
-  
-class Rectangle extends Shape{  
-void draw(){System.out.println(&quot;drawing rectangle&quot;);}  
-}  
-
-class Circle1 extends Shape{  
-void draw(){System.out.println(&quot;drawing circle&quot;);}  
-}  
-
-  
-class TestAbstraction1{  
-public static void main(String args[]){  
-Shape s=new Circle1();  
-s.draw();  
-s=new Rectangle();  
-s.draw();  
-}  
-}  
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;real-life-example-of-inheritance&quot;&gt;Real Life Example of Inheritance&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;interface Animal {
-   public void eat();
-   public void travel();
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Man implements Animal {
-
-   public void eat() {
-      System.out.println(&quot;Man eats&quot;);
-   }
-
-   public void travel() {
-      System.out.println(&quot;Man travels&quot;);
-   } 
-
-   public int noOfLegs() {
-      return 0;
-   }
-
-   public static void main(String args[]) {
-      Man m = new Man();
-      m.eat();
-      m.travel();
-   }
-} 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class Dog implements Animal {
-
-   public void eat() {
-      System.out.println(&quot;Dog eats&quot;);
-   }
-
-   public void travel() {
-      System.out.println(&quot;Dog travels&quot;);
-   } 
-
-   public int noOfLegs() {
-      return 0;
-   }
-
-   public static void main(String args[]) {
-      Dog m = new Dog();
-      m.eat();
-      m.travel();
-   }
-} 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;association-aggregation-and-composition-in-oop&quot;&gt;Association, Aggregation, and Composition in OOP&lt;/h2&gt;
-&lt;h5 id=&quot;association&quot;&gt;Association&lt;/h5&gt;
-&lt;p&gt;is a relationship where all objects have their own lifecycle and there is no owner.&lt;/p&gt;
-
-&lt;p&gt;Let’s take an example of Teacher and Student. Multiple students can associate with single teacher and single student can associate with multiple teachers, but there is no ownership between the objects and both have their own lifecycle. Both can be created and deleted independently.&lt;/p&gt;
-
-&lt;h5 id=&quot;aggregation&quot;&gt;Aggregation&lt;/h5&gt;
-&lt;p&gt;is a specialised form of Association where all objects have their own lifecycle, but there is ownership and child objects can not belong to another parent object.&lt;/p&gt;
-
-&lt;p&gt;Let’s take an example of Department and teacher. A single teacher can not belong to multiple departments, but if we delete the department, the teacher object will not be destroyed. We can think about it as a “has-a” relationship.&lt;/p&gt;
-
-&lt;h5 id=&quot;composition&quot;&gt;Composition&lt;/h5&gt;
-&lt;p&gt;is again specialised form of Aggregation and we can call this as a “death” relationship. It is a strong type of Aggregation. Child object does not have its lifecycle and if parent object is deleted, all child objects will also be deleted.&lt;/p&gt;
-
-&lt;p&gt;Let’s take again an example of relationship between House and Rooms. House can contain multiple rooms - there is no independent life of room and any room can not belong to two different houses. If we delete the house - room will automatically be deleted.&lt;/p&gt;
-
-&lt;p&gt;Let’s take another example relationship between Questions and Options. Single questions can have multiple options and option can not belong to multiple questions. If we delete the questions, options will automatically be deleted.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 02 Aug 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/08/02/oop/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/08/02/oop/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Grails-Introduction</title>
-        <description>&lt;h2 id=&quot;grails--introduction&quot;&gt;Grails- Introduction&lt;/h2&gt;
-&lt;p&gt;Grails is a web framework based on Groovy and Java which can be deployed into existing Java web servers, e.g., Tomcat or Jetty.&lt;/p&gt;
-
-&lt;p&gt;Grails allows to quickly create web applications; its scaffolding capabilities let you create a new project within few minutes. Grails is based on the convention over configuration idea which allows the application to auto-wire itself based on naming schemes (instead of using configuration files, e.g, XML files).&lt;/p&gt;
-
-&lt;h2 id=&quot;starting-hello-world-in-grails-application&quot;&gt;Starting Hello World in Grails Application&lt;/h2&gt;
-
-&lt;p&gt;Requirements:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot;&gt;Java jdk 7+&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://grails.org/&quot;&gt;Grails&lt;/a&gt; (&lt;a href=&quot;http://grails.org/download.html&quot;&gt;Latest Version 3.3.5&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/idea/download/#section=windows&quot;&gt;IntellIj IDEA Ultimate Version&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Details step by step tutorial :&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=12RlSfxtO1k&quot;&gt;Youtube Video&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 06 Jun 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/06/06/grails-introduction/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/06/06/grails-introduction/</guid>
-        
-        
-        <category>grails</category>
-        
-      </item>
-    
-      <item>
-        <title>Important command for windows</title>
-        <description>&lt;h2 id=&quot;important-command-for-windows&quot;&gt;Important command for windows&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Java Patha variable&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;for %i in (java.exe) do @echo.   %~$PATH:i
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Tomcat run as service&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;service.bat install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 22 May 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/05/22/important-command-for-windows/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/22/important-command-for-windows/</guid>
-        
-        
-        <category>Java</category>
-        
-      </item>
-    
-      <item>
-        <title>Deploy Java War in Linux Server</title>
-        <description>&lt;h2 id=&quot;deploy-java-war-in-linux-server&quot;&gt;Deploy Java War in Linux Server&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;First, update the package index.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-get update
-or
-sudo yum update
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Oracle JDK 8
-This is the latest stable version of Java at time of writing, and the recommended version to install. You can do so using the following command:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;To show packages:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum search java | grep 'java-'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;To install if packages are available:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yum install java-1.8.0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;and then:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;alternatives --config java
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;and check:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java -version
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;or can download from &lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot;&gt;oracle site&lt;/a&gt;
-by&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget --no-check-certificate -c --header &quot;Cookie: oraclelicense=accept-securebackup-cookie&quot; http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-i586.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;Here you can get the latest url (wget –no-check-certificate -c –header “Cookie: oraclelicense=accept-securebackup-cookie” http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz) from the orcle site.&lt;/p&gt;
-
-&lt;p&gt;Then&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;tar xzvf jdk.tar.gz
-sudo mkdir /usr/local/java
-sudo mv jdk1.8.0_45 /usr/local/java/
-sudo ln -s /usr/local/java/jdk1.8.0_45 /usr/local/java/jdk
-
-sudo vi /etc/profile.d/java.sh
-export PATH=&quot;$PATH:/usr/local/java/jdk/bin&quot;
-export JAVA_HOME=/usr/local/java/jdk
-
-source /etc/profile.d/java.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd /usr
-sudo -s (for root access)
-mkdir rakib
-chmod -R 777 rakib/
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Uninstall java
-sudo yum remove jdk
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Run the following command to find out process associated with yum command:
-# ps aux | grep -i yum
-For killing process:
-kill 15401
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Tue, 22 May 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/05/22/deploy-war-in-linux/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/05/22/deploy-war-in-linux/</guid>
         
         
         <category>Java</category>
