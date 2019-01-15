@@ -24,22 +24,26 @@ But it didn't live reload the application/container, and the hot deployment didn
 
 2. Then press ctrl+shift+A and search for the registry. In the registry, make the following configuration enabled.
 
-```
-compiler.automake.allow.when.app.running
-```
+    ```
+    compiler.automake.allow.when.app.running
+    ```
 
 3. Reload Static content (html, css, js)
 
-Add this configuration to your Spring Boot Maven Plugin:
+    Add this configuration to your Spring Boot Maven Plugin:
 
-```
-<configuration>
-    <addResources>true</addResources>
-</configuration>
-```
-
+    ```
+    <configuration>
+        <addResources>true</addResources>
+    </configuration>
+    ```
 
 4. Restart the IDE.
 
 
 That's it! Now the hot deployment works, and you don't have to restart manually after each and every change.
+
+In case of spring boot with thymeleaf there may be problem in reload html, css, js etc.
+In this case, we need to change run configuration in intelij like bellow:
+
+![Image](../../../../static/img/intelijhotswapprojectconfiguration.PNG)

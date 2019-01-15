@@ -108,7 +108,7 @@ Java code is compiled to class file & this class file can run to all ooperating 
 - Robust
 - Secure programming Language
 
-6. Diiferent between C++ & java:
+6. Difference between C++ & java:
 - Pointers: C++ has Pointers But There is no pointers in java
 - Structures & Unions: in C++ ==> Class (Structure + methods) & Object in Java
 - Memory management vs Garbage Collection in C++ ==> Class & Object in Java

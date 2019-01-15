@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Java Important Hot Topics"
+title: "Java SOLID Principal"
 comments: true
 categories: Java
 ---
 
-#Java Thread Safe
+# Java SOLID Principal
 
 

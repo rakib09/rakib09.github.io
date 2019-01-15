@@ -128,30 +128,33 @@
   </li>
   <li>
     <p>Then press ctrl+shift+A and search for the registry. In the registry, make the following configuration enabled.</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> compiler.automake.allow.when.app.running
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Reload Static content (html, css, js)</p>
+
+    <p>Add this configuration to your Spring Boot Maven Plugin:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code> &lt;configuration&gt;
+     &lt;addResources&gt;true&lt;/addResources&gt;
+ &lt;/configuration&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Restart the IDE.</p>
   </li>
 </ol>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>compiler.automake.allow.when.app.running
-</code></pre>
-</div>
-
-<ol>
-  <li>Reload Static content (html, css, js)</li>
-</ol>
-
-<p>Add this configuration to your Spring Boot Maven Plugin:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;configuration&gt;
-    &lt;addResources&gt;true&lt;/addResources&gt;
-&lt;/configuration&gt;
-</code></pre>
-</div>
-
-<ol>
-  <li>Restart the IDE.</li>
-</ol>
-
 <p>That’s it! Now the hot deployment works, and you don’t have to restart manually after each and every change.</p>
+
+<p>In case of spring boot with thymeleaf there may be problem in reload html, css, js etc.
+In this case, we need to change run configuration in intelij like bellow:</p>
+
+<p><img src="../../../../static/img/intelijhotswapprojectconfiguration.PNG" alt="Image" /></p>
 
       </article>
       <hr>
