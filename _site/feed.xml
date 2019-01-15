@@ -5,8 +5,8 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Jan 2019 12:22:11 +0600</pubDate>
-    <lastBuildDate>Tue, 15 Jan 2019 12:22:11 +0600</lastBuildDate>
+    <pubDate>Tue, 15 Jan 2019 16:03:22 +0600</pubDate>
+    <lastBuildDate>Tue, 15 Jan 2019 16:03:22 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
@@ -486,19 +486,61 @@ class GenerateBill{
       </item>
     
       <item>
-        <title>Java Servlet</title>
-        <description>&lt;h2 id=&quot;java-servlet&quot;&gt;Java Servlet&lt;/h2&gt;
-&lt;p&gt;Servlet is a technology i.e. used to create web application.Servlet is an API that provides many interfaces and classes including documentations.&lt;/p&gt;
+        <title>Database Remote Connection</title>
+        <description>&lt;h2 id=&quot;database-remote-connection-postgresql&quot;&gt;Database Remote Connection Postgresql&lt;/h2&gt;
+&lt;p&gt;To enable remote access to PostgreSQL server follow the steps below:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Connect to the PostgreSQL server via SSH .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add the following line to the end of /var/lib/pgsql/data/postgresql.conf file:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; listen_addresses = '*'
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+    &lt;p&gt;If you can’t find the postgresql.conf file you can run the command&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../../../static/img/javaServlet.jpg&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;psql -U postgres -c 'SHOW config_file'&quot;;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Add the following line to the end of /var/lib/pgsql/data/pg_hba.conf file:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; host all all 203.0.113.2/32 md5
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;203.0.113.2/32 is the remote IP from which connection is allowed. If you want to allow connection from any IP specify 0.0.0.0/0 .&lt;/p&gt;
+
+    &lt;p&gt;md5 is the authentication method, which requires the client to supply a double-MD5-hashed password for authentication.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Restart PostgreSQL server to apply the changes:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; service postgresql restart
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;connect-postgresql-with-database-tools&quot;&gt;Connect postgresql with Database tools&lt;/h4&gt;
+
+&lt;p&gt;Here we have shown intellij database tools.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/postgresql.PNG&quot; alt=&quot;Image&quot; /&gt;
+SSH configuration:&lt;/p&gt;
+
+&lt;p&gt;Here user &amp;amp; password is the host machine User &amp;amp; Password&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../../static/img/postgresql.PNG&quot; alt=&quot;Image&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 18 Dec 2018 00:00:00 +0600</pubDate>
-        <link>http://localhost:4000/2018/12/18/java-servlet/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/12/18/java-servlet/</guid>
+        <pubDate>Thu, 20 Dec 2018 00:00:00 +0600</pubDate>
+        <link>http://localhost:4000/2018/12/20/database-remote-connection/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/20/database-remote-connection/</guid>
         
         
-        <category>Java</category>
+        <category>devops</category>
         
       </item>
     
