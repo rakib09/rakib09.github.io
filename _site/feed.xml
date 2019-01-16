@@ -5,13 +5,347 @@
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Jan 2019 11:56:39 +0600</pubDate>
-    <lastBuildDate>Wed, 16 Jan 2019 11:56:39 +0600</lastBuildDate>
+    <pubDate>Wed, 16 Jan 2019 16:29:48 +0600</pubDate>
+    <lastBuildDate>Wed, 16 Jan 2019 16:29:48 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
         <title>Java SOLID Principal</title>
-        <description>&lt;h1 id=&quot;java-solid-principal&quot;&gt;Java SOLID Principal&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;solid-principles&quot;&gt;SOLID Principles:&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Single Responsibility&lt;/li&gt;
+  &lt;li&gt;Open for Extension/Closed for Modification&lt;/li&gt;
+  &lt;li&gt;Liskov Substitution&lt;/li&gt;
+  &lt;li&gt;Interface Segregation&lt;/li&gt;
+  &lt;li&gt;Dependency Inversion&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;single-responsibility&quot;&gt;Single Responsibility&lt;/h3&gt;
+
+&lt;p&gt;A class should do one and only one job.
+Principle violation example (bad):&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Principle violation example (bad):
+
+public class TechnicalStaff {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+    void maintainSystems(){}
+    void performAppraisal(){}
+    void promoteEmployee(){}
+}
+
+Principle adherence example (good):
+
+public abstract class Employee {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+}
+
+public class TechnicalStaff extends Employee {
+    void maintainSystems(){} 
+}
+
+public class Manager extends Employee {
+    void performAppraisalOfDirectReport(TechnicalStaff employee){}
+    void promoteDirectReport(TechnicalStaff employee){}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;open-for-extensionclosed-for-modification&quot;&gt;Open for Extension/Closed for Modification:&lt;/h3&gt;
+&lt;p&gt;Software entities should be Open for extension, but closed for modification.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Principle violation example (bad):
+
+public abstract class Employee {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+}
+
+public class TechnicalStaff extends Employee {
+    void maintainSystems(){}
+}
+
+public class Manager extends Employee {
+    void performAppraisalOfDirectReport(TechnicalStaff employee){}
+    void promoteDirectReport(TechnicalStaff employee){}
+}
+
+Now when your company expands and you start employing Non Technical Accounting Staff, you will need to alter existing Manager class as follows:
+
+public abstract class Employee {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+}
+
+public class TechnicalStaff extends Employee {
+    void maintainSystems(){}
+}
+
+public class Accountant extends Employee {
+    void maintainAccounts(){}
+}
+
+public class Manager extends Employee {
+    void performAppraisalOfTechnicalStaff(TechnicalStaff employee){}
+    void promoteTechnicalStaff(TechnicalStaff employee){}
+    void performAppraisalOfAccountant(Accountant employee){}
+    void promoteAccountant(Accountant employee){}
+}
+
+This is bad since you will need to keep adding new methods to Manager as and when new Employee types are recruited.
+
+Principle adherence example (good):
+
+public abstract class Employee {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+}
+public class TechnicalStaff extends Employee {
+    void maintainSystems(){}
+}
+public class Accountant extends Employee {
+    void maintainAccounts(){}
+}
+public class Manager extends Employee {
+    void performAppraisalOfDirectReport(Employee employee){}
+    void promoteDirectReport(Employee employee){}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;liskov-substitution&quot;&gt;Liskov Substitution:&lt;/h3&gt;
+&lt;p&gt;A child class must be able to completely substitute and act-in for it’s base(parent) class.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Principle violation example (bad):
+
+public abstract class Employee {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+    abstract void sendCommunication();
+}
+public class TechnicalStaff extends Employee {
+    void maintainSystems(){}
+    void sendCommunication(){} //this is a problem
+}
+public class Accountant extends Employee {
+    void maintainAccounts(){}
+    void sendCommunication(){} //this is a problem
+}
+public class Manager extends Employee {
+    void performAppraisalOfDirectReport(Employee employee){}
+    void promoteDirectReport(Employee employee){}
+    void sendCommunication(){} //action allowed
+}
+public class Director extends Employee {
+    void performAppraisalOfDirectReport(Employee employee){}
+    void promoteDirectReport(Employee employee){}
+    void sendCommunication(){} //action allowed
+}
+Principle adherence example (good):
+
+public abstract class Employee {
+    private int id;
+    private String fname, lname, title;
+    private Date dob, dateOfJoining;
+    //Getters &amp;amp; setters
+    ...
+}
+
+public abstract class ManagementStaff extends Employee {
+    void performAppraisalOfDirectReport(Employee employee){}
+    void promoteDirectReport(Employee employee){}    
+    abstract void sendCommunication();
+}
+
+public class TechnicalStaff extends Employee {
+    void maintainSystems(){}
+}
+
+public class Accountant extends Employee {
+    void maintainAccounts(){}
+}
+
+public class Manager extends ManagementStaff {
+    void sendCommunication(){} //action allowed
+}
+
+public class Director extends ManagementStaff {
+    void sendCommunication(){} //action allowed
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;interface-segregation&quot;&gt;Interface Segregation:&lt;/h3&gt;
+&lt;p&gt;A client should never be forced to implement a function that it does not require. Instead of having bloated interfaces, segregate them based on roles.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Principle violation example (bad):
+
+public interface Enemy {
+    void setDamageStrength();
+    void setResilience();
+    void inflictDamage();
+    void walk();
+    void fly();
+    void teleport();
+}
+public class EnemyGuard implements Enemy {
+    void walk(){
+        //some logic 
+}
+    
+    void inflictDamage(){
+        //some logic
+    }
+
+    void fly(){} //empty implementation
+    void teleport(){} //empty implementation
+}
+public class EnemyBird implements Enemy {
+    void inflictDamage(){
+        //damage logic
+   
+    }
+    void fly(){
+        //some logic
+    }
+    void walk(){} // empty implementation
+    void teleport(){} // empty implementation
+}
+public class EnemyWitch implements Enemy {
+    void inflictDamage(){
+        //damage logic 
+   
+    }
+    void teleport(){
+        //lets assume our enemy witch can teleport
+    }
+    void walk(){} // empty implementation
+    void fly(){} // empty implementation
+}
+You can see that we have 3 concrete classes that do not need certain behaviors to be implemented, were forced to do it anyway. This should never happen and the Interface Segregation principle describes how you can clean this up.
+
+Principle adherence example (good):
+
+public interface Enemy {
+    void setDamageStrength();
+    void setResilience();
+    void inflictDamage();
+}
+public interface Walkable {
+    void walk();
+}
+public interface Flyable {
+    void fly();
+}
+public interface Teleportable {
+    void teleport();
+}
+
+public class EnemyGuard implements Enemy, Walkable {
+    void walk(){
+        //some logic
+    }
+    
+    void inflictDamage(){
+        //some logic
+    }
+}
+public class EnemyBird implements Enemy, Flyable {
+    void fly(){
+        //some logic
+    }
+    void inflictDamage(){
+        //damage logic   
+   
+    }
+}
+public class EnemyWitch implements Enemy, Teleportable {
+    void teleport(){
+        //lets assume our enemy witch can teleport
+    }
+    void inflictDamage() {
+        //damage logic
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;dependency-inversion&quot;&gt;Dependency Inversion:&lt;/h3&gt;
+
+&lt;p&gt;Entities must depend on abstractions instead of concretions. Instead of using direct references from a high-level module to a low-level module, use abstractions.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Principle violation example (bad):
+
+public class ApplePhone {
+    void acceptCall(){};
+    void declineCall(){};
+}
+public class CarHandsFree {
+    ApplePhone phone;
+    void pairWithPhone(ApplePhone phone){
+        this.phone = phone;
+    }
+
+    void attendCall(){
+        this.phone.attendCall();    
+    }
+    void declineCall(){
+        this.phone.declineCall();
+    }
+}
+This does not hold good when you want to use a SamsungPhone. So all brands &amp;amp; models of phones that are bluetooth capable needs to confirm to a common abstraction that the hands-free can consume.
+
+Principle adherence example (good):
+
+public interface BluetoothCapabalePhone {
+    void acceptCall();
+    void declineCall();
+}
+public class ApplePhone implements BluetoothCapabalePhone {
+    void acceptCall(){};
+    void declineCall(){};
+}
+public class SamsungPhone implements BluetoothCapabalePhone {
+    void acceptCall(){};
+    void declineCall(){};
+}
+public class HtcPhone implements BluetoothCapabalePhone {
+    void acceptCall(){};
+    void declineCall(){};
+}
+public class CarHandsFree {
+    BluetoothCapabalePhone phone;
+    void pairWithPhone(BluetoothCapabalePhone phone){
+        this.phone = phone;
+    }
+    void attendCall(){
+        this.phone.attendCall();
+    }
+    void declineCall(){
+        this.phone.declineCall();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 </description>
         <pubDate>Tue, 08 Jan 2019 00:00:00 +0600</pubDate>
