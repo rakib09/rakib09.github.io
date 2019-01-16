@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rakib Hasan's Blog</title>
+    <title>Java Tutorial | Rakib Hasan's Blog</title>
     <description>Rakib's Learning &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Jan 2019 16:03:22 +0600</pubDate>
-    <lastBuildDate>Tue, 15 Jan 2019 16:03:22 +0600</lastBuildDate>
+    <pubDate>Wed, 16 Jan 2019 10:00:29 +0600</pubDate>
+    <lastBuildDate>Wed, 16 Jan 2019 10:00:29 +0600</lastBuildDate>
     <generator>Jekyll v3.3.1</generator>
     
       <item>
