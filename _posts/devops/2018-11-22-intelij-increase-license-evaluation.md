@@ -80,19 +80,29 @@ rm -rf ~/Library/Preferences/PyCharm2018.1/eval/PyCharm181.evaluation.key
 rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
 ```
 
-##### Extends Evaluation in Windows
+# Extends Evaluation in Windows
 
 ###### Intellij Evaluation Problem:
 
 If you want to increase evaluation periods to more 30 days you can follow the bellow steps:
 
 - Step 1: Exit intellij software.
-- Step 2 : Remove intellij home cash folder (like: C:\Users\<Username>/.IntelliJIdea201…..)
-- Step3: W+R  regedit (open registry)
+- Step 2 : Remove all intellij/pycharn/webstrom home cash folder (like: C:\Users\<Username>/.IntelliJIdea201…..)
+- Step3: Windows key + R  type regedit & press enter(open registry)
 - Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.
 ![Image](../../../../static/img/evaluationProblem.PNG)
+
+
 ![Image](../../../../static/img/intelijCashfolder.PNG)
+
+
 ![Image](../../../../static/img/registry.PNG)
+
+
+![Image](../../../../static/img/regedit.PNG)
+
+
+![Image](../../../../static/img/regieditDelete.PNG)
 
 
 - Open Intelij & evaluate for 30 days & enjoy.
