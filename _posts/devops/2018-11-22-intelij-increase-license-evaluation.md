@@ -88,18 +88,19 @@ If you want to increase evaluation periods to more 30 days you can follow the be
 
 - Step 1: Exit intellij software.
 - Step 2 : Remove all intellij/pycharn/webstrom home cash folder (like: C:\Users\<Username>/.IntelliJIdea201…..)
-- Step3: Windows key + R  type regedit & press enter(open registry)
-- Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.
 ![Image](../../../../static/img/evaluationProblem.PNG)
 
 
 ![Image](../../../../static/img/intelijCashfolder.PNG)
 
-
-![Image](../../../../static/img/registry.PNG)
-
+- Step3: Windows key + R  type regedit & press enter(open registry)
 
 ![Image](../../../../static/img/regedit.PNG)
+
+- Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.
+
+
+![Image](../../../../static/img/registry.PNG)
 
 
 ![Image](../../../../static/img/regieditDelete.PNG)
