@@ -125,65 +125,24 @@ public class Manager extends Employee {
 A child class must be able to completely substitute and act-in for it’s base(parent) class.
 
 ```
-Principle violation example (bad):
+Bad example
+public class Bird{
+    public void fly(){}
+}
+public class Duck extends Bird{}
+The duck can fly because of it is a bird, But what about this:
 
-public abstract class Employee {
-    private int id;
-    private String fname, lname, title;
-    private Date dob, dateOfJoining;
-    //Getters & setters
-    ...
-    abstract void sendCommunication();
-}
-public class TechnicalStaff extends Employee {
-    void maintainSystems(){}
-    void sendCommunication(){} //this is a problem
-}
-public class Accountant extends Employee {
-    void maintainAccounts(){}
-    void sendCommunication(){} //this is a problem
-}
-public class Manager extends Employee {
-    void performAppraisalOfDirectReport(Employee employee){}
-    void promoteDirectReport(Employee employee){}
-    void sendCommunication(){} //action allowed
-}
-public class Director extends Employee {
-    void performAppraisalOfDirectReport(Employee employee){}
-    void promoteDirectReport(Employee employee){}
-    void sendCommunication(){} //action allowed
-}
-Principle adherence example (good):
+public class Ostrich extends Bird{}
+Ostrich is a bird, But it can't fly, Ostrich class is a subtype of class Bird, But it can't use the fly method, that means that we are breaking LSP principle.
 
-public abstract class Employee {
-    private int id;
-    private String fname, lname, title;
-    private Date dob, dateOfJoining;
-    //Getters & setters
-    ...
+Good example
+public class Bird{
 }
-
-public abstract class ManagementStaff extends Employee {
-    void performAppraisalOfDirectReport(Employee employee){}
-    void promoteDirectReport(Employee employee){}    
-    abstract void sendCommunication();
+public class FlyingBirds extends Bird{
+    public void fly(){}
 }
-
-public class TechnicalStaff extends Employee {
-    void maintainSystems(){}
-}
-
-public class Accountant extends Employee {
-    void maintainAccounts(){}
-}
-
-public class Manager extends ManagementStaff {
-    void sendCommunication(){} //action allowed
-}
-
-public class Director extends ManagementStaff {
-    void sendCommunication(){} //action allowed
-}
+public class Duck extends FlyingBirds{}
+public class Ostrich extends Bird{} 
 ```
 
 ### Interface Segregation:
