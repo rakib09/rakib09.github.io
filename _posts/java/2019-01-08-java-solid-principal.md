@@ -146,96 +146,142 @@ public class Ostrich extends Bird{}
 ```
 
 ### Interface Segregation:
-A client should never be forced to implement a function that it does not require. Instead of having bloated interfaces, segregate them based on roles.
-
+A client should never be forced to implement a function that it does not require. 
 ```
-Principle violation example (bad):
-
-public interface Enemy {
-    void setDamageStrength();
-    void setResilience();
-    void inflictDamage();
-    void walk();
+Example (Bad)
+public interface Toy {
+    void setPrice(double price);
+    void setColor(String color);
+    void move();
     void fly();
-    void teleport();
 }
-public class EnemyGuard implements Enemy {
-    void walk(){
-        //some logic 
-}
-    
-    void inflictDamage(){
-        //some logic
+public class ToyHouse implements Toy {
+    double price;
+    String color;
+    @Override
+    public void setPrice(double price) {
+        this.price = price;
     }
+    @Override
+    public void setColor(String color) {
+        this.color=color;
+    }
+    @Override
+    public void move(){}
+    @Override
+    public void fly(){}    
+}
+Following the Interface Segregation Principle
 
-    void fly(){} //empty implementation
-    void teleport(){} //empty implementation
+public interface Toy {
+     void setPrice(double price);
+     void setColor(String color);
 }
-public class EnemyBird implements Enemy {
-    void inflictDamage(){
-        //damage logic
-   
-    }
-    void fly(){
-        //some logic
-    }
-    void walk(){} // empty implementation
-    void teleport(){} // empty implementation
-}
-public class EnemyWitch implements Enemy {
-    void inflictDamage(){
-        //damage logic 
-   
-    }
-    void teleport(){
-        //lets assume our enemy witch can teleport
-    }
-    void walk(){} // empty implementation
-    void fly(){} // empty implementation
-}
-You can see that we have 3 concrete classes that do not need certain behaviors to be implemented, were forced to do it anyway. This should never happen and the Interface Segregation principle describes how you can clean this up.
-
-Principle adherence example (good):
-
-public interface Enemy {
-    void setDamageStrength();
-    void setResilience();
-    void inflictDamage();
-}
-public interface Walkable {
-    void walk();
+public interface Movable {
+    void move();
 }
 public interface Flyable {
     void fly();
 }
-public interface Teleportable {
-    void teleport();
-}
+package guru.springframework.blog.interfacesegregationprinciple;
 
-public class EnemyGuard implements Enemy, Walkable {
-    void walk(){
-        //some logic
+public class ToyHouse implements Toy {
+    double price;
+    String color;
+
+    @Override
+    public void setPrice(double price) {
+
+        this.price = price;
     }
-    
-    void inflictDamage(){
-        //some logic
+    @Override
+    public void setColor(String color) {
+
+        this.color=color;
+    }
+    @Override
+    public String toString(){
+        return "ToyHouse: Toy house- Price: "+price+" Color: "+color;
     }
 }
-public class EnemyBird implements Enemy, Flyable {
-    void fly(){
-        //some logic
+package guru.springframework.blog.interfacesegregationprinciple;
+
+public class ToyCar implements Toy, Movable {
+    double price;
+    String color;
+
+    @Override
+    public void setPrice(double price) {
+
+        this.price = price;
     }
-    void inflictDamage(){
-        //damage logic   
-   
+
+    @Override
+    public void setColor(String color) {
+     this.color=color;
+    }
+    @Override
+    public void move(){
+        System.out.println("ToyCar: Start moving car.");
+    }
+    @Override
+    public String toString(){
+        return "ToyCar: Moveable Toy car- Price: "+price+" Color: "+color;
     }
 }
-public class EnemyWitch implements Enemy, Teleportable {
-    void teleport(){
-        //lets assume our enemy witch can teleport
+package guru.springframework.blog.interfacesegregationprinciple;
+
+public class ToyPlane implements Toy, Movable, Flyable {
+    double price;
+    String color;
+
+    @Override
+    public void setPrice(double price) {
+        this.price = price;
     }
-    void inflictDamage() {
-        //damage logic
+
+    @Override
+    public void setColor(String color) {
+        this.color=color;
+    }
+    @Override
+    public void move(){
+
+        System.out.println("ToyPlane: Start moving plane.");
+    }
+    @Override
+    public void fly(){
+
+        System.out.println("ToyPlane: Start flying plane.");
+    }
+    @Override
+    public String toString(){
+        return "ToyPlane: Moveable and flyable toy plane- Price: "+price+" Color: "+color;
+    }
+}
+package guru.springframework.blog.interfacesegregationprinciple;
+
+public class ToyBuilder {
+    public static ToyHouse buildToyHouse(){
+        ToyHouse toyHouse=new ToyHouse();
+        toyHouse.setPrice(15.00);
+        toyHouse.setColor("green");
+        return toyHouse;
+        }
+    public static ToyCar buildToyCar(){
+        ToyCar toyCar=new ToyCar();
+        toyCar.setPrice(25.00);
+        toyCar.setColor("red");
+        toyCar.move();
+        return toyCar;
+    }
+    public static ToyPlane buildToyPlane(){
+        ToyPlane toyPlane=new ToyPlane();
+        toyPlane.setPrice(125.00);
+        toyPlane.setColor("white");
+        toyPlane.move();
+        toyPlane.fly();
+        return toyPlane;
     }
 }
 ```
