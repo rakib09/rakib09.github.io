@@ -50,3 +50,15 @@ Why are Strings immutable in Java?
 SOLID principles
 N+1 Select problem in Hibernate
 
+
+
+## OOP
+###### High Cohesion vs Low Cohesion
+High cohesion is when you have a class that does a well defined job. Low cohesion is when a class does a lot of jobs that don't have much in common.
+
+Let's take this example:
+
+You have a class that adds two numbers, but the same class creates a window displaying the result. This is a low cohesive class because the window and the adding operation don't have much in common. The window is the visual part of the program and the adding function is the logic behind it.
+
+To create a high cohesive solution, you would have to create a class Window and a class Sum. The window will call Sum's method to get the result and display it. This way you will develop separately the logic and the GUI of your application.
+
