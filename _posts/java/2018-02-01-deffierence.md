@@ -37,5 +37,47 @@ System.out.println(s1.equals(sf2));     // false
 7. Either parent to child or Child to parent are same type 
 8. r == null && r.equals(null) return false
 
+### Difference between adding WrappedString and String into HashSet
+
+```
+public class WrappedString {
+private String s;
+ public WrappedString(String s) { this.s = s; }
+ public static void main(String[] args) {
+ HashSet<Object> hs = new HashSet<Object>();
+ WrappedString ws1 = new WrappedString("aardvark");
+ WrappedString ws2 = new WrappedString("aardvark");
+ hs.add(ws1); hs.add(ws2);
+ System.out.println(hs.size()); // outputs 2
+
+   }
+
+}
+```
+
+And 
+
+```
+public class WrappedString {
+private String s;
+ public WrappedString(String s) { this.s = s; }
+ public static void main(String[] args) {
+ HashSet<Object> hs = new HashSet<Object>();
+ String s1 = new String("aardvark");
+ String s2 = new String("aardvark");
+ hs.add(s1); hs.add(s2);
+ System.out.println(hs.size()); // outputs 1
+   }
+
+}
+```
+
+The main difference is that String implements equals whereas your WrappedString does not. So from a HashSet perspective, you can add as many new String("aardvark") as you want, they will all be considered the same (because new String("aardvark").equals(new String("aardvark")) is true) and only one will be added.
+
+Whereas two different WrappedString instances will not be equal, even if the strings they contain are equal (because new WrappedString("aardvark").equals(new WrappedString("aardvark")) is false), so the set will not consider them as duplicates.
+
+If you want a behaviour similar to String, you need to implement equals and hashcode in your WrappedString class
+
+
 
 
