@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Java Tutorial | Rakib Hasan's Blog</title>
+	<meta name="description" content="Rakib's Learning & Blogs">
+	
+	<link rel="canonical" href="http://localhost:4000/search/">
+	<link rel="alternate" type="application/rss+xml" title="Java Tutorial" href="http://localhost:4000/feed.xml" />
+	
+	<!-- <link rel="stylesheet" href="/css/main.css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap3.3.7.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+	<script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap3.3.7.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
+	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+    -->
+    
+	<script type="text/javascript" src="/static/js/index.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Java Tutorial</a>
+      <p class="navbar-text"></p>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        
+          <li>
+        
+        <a href="/">Home</a></li>
+
+        
+          
+            
+              <li>
+            
+            <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
+          
+        
+          
+            
+              <li>
+            
+            <a href="/about-me/"><span class="glyphicon "></span> About Me</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116861127-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116861127-1');
+  </script>
+
+
+</header>
+
+    <div id="main" class="container main">
+      <div class="search">
+	<form action="/search" method="get">
+  <label for="search-box">Search</label>
+  <input type="text" id="search-box" name="query">
+  <input type="submit" value="search">
+</form>
+
+<ul id="search-results"></ul>
+
+<script>
+  window.store = {
+    
+      "2019-01-08-java-solid-principal": {
+        "title": "Java SOLID Principal",
+        "author": "",
+        "category": "",
+        "content": "SOLID Principles:  Single Responsibility  Open for Extension/Closed for Modification  Liskov Substitution  Interface Segregation  Dependency InversionSingle ResponsibilityA class should do one and only one job.Principle violation example (bad):Principle violation example (bad):public class TechnicalStaff {    private int id;    private String fname, lname, title;    private Date dob, dateOfJoining;    //Getters &amp; setters    ...    void maintainSystems(){}    void performAppraisal(){}    void promoteEmployee(){}}Principle adherence example (good):public abstract class Employee {    private int id;    private String fname, lname, title;    private Date dob, dateOfJoining;    //Getters &amp; setters    ...}public class TechnicalStaff extends Employee {    void maintainSystems(){} }public class Manager extends Employee {    void performAppraisalOfDirectReport(TechnicalStaff employee){}    void promoteDirectReport(TechnicalStaff employee){}}Open for Extension/Closed for Modification:Software entities should be Open for extension, but closed for modification.Principle violation example (bad):public abstract class Employee {    private int id;    private String fname, lname, title;    private Date dob, dateOfJoining;    //Getters &amp; setters    ...}public class TechnicalStaff extends Employee {    void maintainSystems(){}}public class Manager extends Employee {    void performAppraisalOfDirectReport(TechnicalStaff employee){}    void promoteDirectReport(TechnicalStaff employee){}}Now when your company expands and you start employing Non Technical Accounting Staff, you will need to alter existing Manager class as follows:public abstract class Employee {    private int id;    private String fname, lname, title;    private Date dob, dateOfJoining;    //Getters &amp; setters    ...}public class TechnicalStaff extends Employee {    void maintainSystems(){}}public class Accountant extends Employee {    void maintainAccounts(){}}public class Manager extends Employee {    void performAppraisalOfTechnicalStaff(TechnicalStaff employee){}    void promoteTechnicalStaff(TechnicalStaff employee){}    void performAppraisalOfAccountant(Accountant employee){}    void promoteAccountant(Accountant employee){}}This is bad since you will need to keep adding new methods to Manager as and when new Employee types are recruited.Principle adherence example (good):public abstract class Employee {    private int id;    private String fname, lname, title;    private Date dob, dateOfJoining;    //Getters &amp; setters    ...}public class TechnicalStaff extends Employee {    void maintainSystems(){}}public class Accountant extends Employee {    void maintainAccounts(){}}public class Manager extends Employee {    void performAppraisalOfDirectReport(Employee employee){}    void promoteDirectReport(Employee employee){}}Liskov Substitution:A child class must be able to completely substitute and act-in for it’s base(parent) class.Bad examplepublic class Bird{    public void fly(){}}public class Duck extends Bird{}The duck can fly because of it is a bird, But what about this:public class Ostrich extends Bird{}Ostrich is a bird, But it can't fly, Ostrich class is a subtype of class Bird, But it can't use the fly method, that means that we are breaking LSP principle.Good examplepublic class Bird{}public class FlyingBirds extends Bird{    public void fly(){}}public class Duck extends FlyingBirds{}public class Ostrich extends Bird{} Interface Segregation:A client should never be forced to implement a function that it does not require.Example (Bad)public interface Toy {    void setPrice(double price);    void setColor(String color);    void move();    void fly();}public class ToyHouse implements Toy {    double price;    String color;    @Override    public void setPrice(double price) {        this.price = price;    }    @Override    public void setColor(String color) {        this.color=color;    }    @Override    public void move(){}    @Override    public void fly(){}    }Following the Interface Segregation Principlepublic interface Toy {     void setPrice(double price);     void setColor(String color);}public interface Movable {    void move();}public interface Flyable {    void fly();}package guru.springframework.blog.interfacesegregationprinciple;public class ToyHouse implements Toy {    double price;    String color;    @Override    public void setPrice(double price) {        this.price = price;    }    @Override    public void setColor(String color) {        this.color=color;    }    @Override    public String toString(){        return \"ToyHouse: Toy house- Price: \"+price+\" Color: \"+color;    }}package guru.springframework.blog.interfacesegregationprinciple;public class ToyCar implements Toy, Movable {    double price;    String color;    @Override    public void setPrice(double price) {        this.price = price;    }    @Override    public void setColor(String color) {     this.color=color;    }    @Override    public void move(){        System.out.println(\"ToyCar: Start moving car.\");    }    @Override    public String toString(){        return \"ToyCar: Moveable Toy car- Price: \"+price+\" Color: \"+color;    }}package guru.springframework.blog.interfacesegregationprinciple;public class ToyPlane implements Toy, Movable, Flyable {    double price;    String color;    @Override    public void setPrice(double price) {        this.price = price;    }    @Override    public void setColor(String color) {        this.color=color;    }    @Override    public void move(){        System.out.println(\"ToyPlane: Start moving plane.\");    }    @Override    public void fly(){        System.out.println(\"ToyPlane: Start flying plane.\");    }    @Override    public String toString(){        return \"ToyPlane: Moveable and flyable toy plane- Price: \"+price+\" Color: \"+color;    }}package guru.springframework.blog.interfacesegregationprinciple;public class ToyBuilder {    public static ToyHouse buildToyHouse(){        ToyHouse toyHouse=new ToyHouse();        toyHouse.setPrice(15.00);        toyHouse.setColor(\"green\");        return toyHouse;        }    public static ToyCar buildToyCar(){        ToyCar toyCar=new ToyCar();        toyCar.setPrice(25.00);        toyCar.setColor(\"red\");        toyCar.move();        return toyCar;    }    public static ToyPlane buildToyPlane(){        ToyPlane toyPlane=new ToyPlane();        toyPlane.setPrice(125.00);        toyPlane.setColor(\"white\");        toyPlane.move();        toyPlane.fly();        return toyPlane;    }}Dependency Inversion:Entities must depend on abstractions instead of concretions. Instead of using direct references from a high-level module to a low-level module, use abstractions.Principle violation example (bad):public class ApplePhone {    void acceptCall(){};    void declineCall(){};}public class CarHandsFree {    ApplePhone phone;    void pairWithPhone(ApplePhone phone){        this.phone = phone;    }    void attendCall(){        this.phone.attendCall();        }    void declineCall(){        this.phone.declineCall();    }}This does not hold good when you want to use a SamsungPhone. So all brands &amp; models of phones that are bluetooth capable needs to confirm to a common abstraction that the hands-free can consume.Principle adherence example (good):public interface BluetoothCapabalePhone {    void acceptCall();    void declineCall();}public class ApplePhone implements BluetoothCapabalePhone {    void acceptCall(){};    void declineCall(){};}public class SamsungPhone implements BluetoothCapabalePhone {    void acceptCall(){};    void declineCall(){};}public class HtcPhone implements BluetoothCapabalePhone {    void acceptCall(){};    void declineCall(){};}public class CarHandsFree {    BluetoothCapabalePhone phone;    void pairWithPhone(BluetoothCapabalePhone phone){        this.phone = phone;    }    void attendCall(){        this.phone.attendCall();    }    void declineCall(){        this.phone.declineCall();    }}",
+        "url": "/2019/01/08/java-solid-principal/"
+      }
+      ,
+    
+      "2018-12-31-bahmni-atom-feet-integration": {
+        "title": "Bahmni Atom Feed Integration",
+        "author": "",
+        "category": "",
+        "content": "Bahmni Atom Feed Integration",
+        "url": "/2018/12/31/bahmni-atom-feet-integration/"
+      }
+      ,
+    
+      "2018-12-29-adapter-pattern": {
+        "title": "Adapter pattern",
+        "author": "",
+        "category": "",
+        "content": "Adapter Design patternAdapter Design pattern allows the interface of an existing class to be used as another interface. In summary, an adapter helps two incompatible interfaces to work together.Here, we have two incompatible interfaces : MediaPlayer and MediaPackage. MP3 class is an implementation of the MediaPlayer interface and we have VLC and MP4 as implementations of the MediaPackage interface. We want to use MediaPackage implementations as MediaPlayer instances. So, we need to create an adapter to help to work with two incompatible classes.The Adapter will be named FormatAdapter and must implement the MediaPlayer interface. Furthermore, the FormatAdapter class must have a reference to MediaPackage, the incompatible interface.public interface MediaPlayer { void play(String filename);}public interface MediaPackage { void playFile(String filename);}public class MP3 implements MediaPlayer { @Override public void play(String filename) {    System.out.println(\"Playing MP3 File \" + filename); }}public class MP4 implements MediaPackage { @Override public void playFile(String filename) {    System.out.println(\"Playing MP4 File \" + filename); }}public class VLC implements MediaPackage { @Override public void playFile(String filename) {    System.out.println(\"Playing VLC File \" + filename); }}Here, we want to use VLC and MP4 instances as MediaPlayer instances. So, we need and adapter. This is the code of the FormatAdapter :public class FormatAdapter implements MediaPlayer { private MediaPackage media; public FormatAdapter(MediaPackage m) {    media = m; } @Override public void play(String filename) {   System.out.print(\"Using Adapter --&gt; \");   media.playFile(filename); }}public class Main { public static void main(String[] args) {    MediaPlayer player = new MP3();    player.play(\"file.mp3\");    player = new FormatAdapter(new MP4());    player.play(\"file.mp4\");    player = new FormatAdapter(new VLC());    player.play(\"file.avi\"); }}Output:Playing MP3 File file.mp3Using Adapter --&gt; Playing MP4 File file.mp4Using Adapter --&gt; Playing VLC File file.aviSource: Medium.com",
+        "url": "/2018/12/29/adapter-pattern/"
+      }
+      ,
+    
+      "2018-12-28-template-method-design-pattern": {
+        "title": "Template method design pattern",
+        "author": "",
+        "category": "",
+        "content": "Template method design patternTemplate method defines the steps to execute an algorithm and it can provide default implementation that might be common for all or some of the subclasses.Let’s understand this pattern with an example, suppose we want to provide an algorithm to build a house. The steps need to be performed to build a house are – building foundation, building pillars, building walls and windows. The important point is that the we can’t change the order of execution because we can’t build windows before building the foundation. So in this case we can create a template method that will use different methods to build the house.Now building the foundation for a house is same for all type of houses, whether its a wooden house or a glass house. So we can provide base implementation for this, if subclasses want to override this method, they can but mostly it’s common for all the types of houses.To make sure that subclasses don’t override the template method, we should make it final.package com.journaldev.design.template;public abstract class HouseTemplate {\t//template method, final so subclasses can't override\tpublic final void buildHouse(){\t\tbuildFoundation();\t\tbuildPillars();\t\tbuildWalls();\t\tbuildWindows();\t\tSystem.out.println(\"House is built.\");\t}\t//default implementation\tprivate void buildWindows() {\t\tSystem.out.println(\"Building Glass Windows\");\t}\t//methods to be implemented by subclasses\tpublic abstract void buildWalls();\tpublic abstract void buildPillars();\tprivate void buildFoundation() {\t\tSystem.out.println(\"Building foundation with cement,iron rods and sand\");\t}}package com.journaldev.design.template;public class WoodenHouse extends HouseTemplate {\t@Override\tpublic void buildWalls() {\t\tSystem.out.println(\"Building Wooden Walls\");\t}\t@Override\tpublic void buildPillars() {\t\tSystem.out.println(\"Building Pillars with Wood coating\");\t}}package com.journaldev.design.template;public class GlassHouse extends HouseTemplate {\t@Override\tpublic void buildWalls() {\t\tSystem.out.println(\"Building Glass Walls\");\t}\t@Override\tpublic void buildPillars() {\t\tSystem.out.println(\"Building Pillars with glass coating\");\t}}package com.journaldev.design.template;public class HousingClient {\tpublic static void main(String[] args) {\t\t\t\tHouseTemplate houseType = new WoodenHouse();\t\t\t\t//using template method\t\thouseType.buildHouse();\t\tSystem.out.println(\"************\");\t\t\t\thouseType = new GlassHouse();\t\t\t\thouseType.buildHouse();\t}}Output of the above program is:Building foundation with cement,iron rods and sandBuilding Pillars with Wood coatingBuilding Wooden WallsBuilding Glass WindowsHouse is built.************Building foundation with cement,iron rods and sandBuilding Pillars with glass coatingBuilding Glass WallsBuilding Glass WindowsHouse is built.Template Method Design Pattern in JDK  All non-abstract methods of java.io.InputStream, java.io.OutputStream, java.io.Reader and java.io.Writer.  All non-abstract methods of java.util.AbstractList, java.util.AbstractSet and java.util.AbstractMap.    Template Method Design Pattern Important Points    Template method should consists of certain steps whose order is fixed and for some of the methods, implementation differs from base class to subclass. Template method should be final.  Most of the times, subclasses calls methods from super class but in template pattern, superclass template method calls methods from subclasses, this is known as Hollywood Principle – “don’t call us, we’ll call you.”.  Methods in base class with default implementation are referred as Hooks and they are intended to be overridden by subclasses, if you want some of the methods to be not overridden, you can make them final, for example in our case we can make buildFoundation() method final because if we don’t want subclasses to override it.Source: JournalDev",
+        "url": "/2018/12/28/template-method-design-pattern/"
+      }
+      ,
+    
+      "2018-12-27-strategy-pattern": {
+        "title": "Strategy pattern",
+        "author": "",
+        "category": "",
+        "content": "Strategy Design patternStrategy pattern is used when we have multiple algorithm for a specific task and client decides the actual implementation to be used at runtime.One of the best example of strategy pattern is Collections.sort() method that takes Comparator parameter. Based on the different implementations of Comparator interfaces, the Objects are getting sorted in different ways.public interface PaymentStrategy {\tpublic void pay(int amount);}public class CreditCardStrategy implements PaymentStrategy {\tprivate String name;\tprivate String cardNumber;\tprivate String cvv;\tprivate String dateOfExpiry;\t\tpublic CreditCardStrategy(String nm, String ccNum, String cvv, String expiryDate){\t\tthis.name=nm;\t\tthis.cardNumber=ccNum;\t\tthis.cvv=cvv;\t\tthis.dateOfExpiry=expiryDate;\t}\t@Override\tpublic void pay(int amount) {\t\tSystem.out.println(amount +\" paid with credit/debit card\");\t}}public class PaypalStrategy implements PaymentStrategy {\tprivate String emailId;\tprivate String password;\t\tpublic PaypalStrategy(String email, String pwd){\t\tthis.emailId=email;\t\tthis.password=pwd;\t}\t\t@Override\tpublic void pay(int amount) {\t\tSystem.out.println(amount + \" paid using Paypal.\");\t}}public class Item {\tprivate String upcCode;\tprivate int price;\t\tpublic Item(String upc, int cost){\t\tthis.upcCode=upc;\t\tthis.price=cost;\t}\tpublic String getUpcCode() {\t\treturn upcCode;\t}\tpublic int getPrice() {\t\treturn price;\t}\t}import java.text.DecimalFormat;import java.util.ArrayList;import java.util.List;public class ShoppingCart {\t//List of items\tList&lt;Item&gt; items;\t\tpublic ShoppingCart(){\t\tthis.items=new ArrayList&lt;Item&gt;();\t}\t\tpublic void addItem(Item item){\t\tthis.items.add(item);\t}\t\tpublic void removeItem(Item item){\t\tthis.items.remove(item);\t}\t\tpublic int calculateTotal(){\t\tint sum = 0;\t\tfor(Item item : items){\t\t\tsum += item.getPrice();\t\t}\t\treturn sum;\t}\t\tpublic void pay(PaymentStrategy paymentMethod){\t\tint amount = calculateTotal();\t\tpaymentMethod.pay(amount);\t}}public class ShoppingCartTest {\tpublic static void main(String[] args) {\t\tShoppingCart cart = new ShoppingCart();\t\t\t\tItem item1 = new Item(\"1234\",10);\t\tItem item2 = new Item(\"5678\",40);\t\t\t\tcart.addItem(item1);\t\tcart.addItem(item2);\t\t\t\t//pay by paypal\t\tcart.pay(new PaypalStrategy(\"myemail@example.com\", \"mypwd\"));\t\t\t\t//pay by credit card\t\tcart.pay(new CreditCardStrategy(\"Pankaj Kumar\", \"1234567890123456\", \"786\", \"12/15\"));\t}}Source: JournalDev",
+        "url": "/2018/12/27/strategy-pattern/"
+      }
+      ,
+    
+      "2018-12-27-factory-pattern": {
+        "title": "Factory pattern",
+        "author": "",
+        "category": "",
+        "content": "Factory Design patternFactory design pattern is used when we have a super class with multiple sub-classes and based on input, we need to return one of the sub-class.Advantage of Factory Design PatternFactory Method Pattern allows the sub-classes to choose the type of objects to create.It promotes the loose-coupling by eliminating the need to bind application-specific classes into the code.Step 1: Create a Plan abstract class.import java.io.*;      abstract class Plan{           protected double rate;           abstract void getRate();              public void calculateBill(int units){                System.out.println(units*rate);            }  }//end of Plan class. Step 2: Create the concrete classes that extends Plan abstract class.class  DomesticPlan extends Plan{          //@override           public void getRate(){               rate=3.50;                      }     }//end of DomesticPlan class.  class  CommercialPlan extends Plan{     //@override       public void getRate(){           rate=7.50;     }   /end of CommercialPlan class.  class  InstitutionalPlan extends Plan{     //@override      public void getRate(){           rate=5.50;     }   /end of InstitutionalPlan class.  Step 3: Create a GetPlanFactory to generate object of concrete classes based on given information..class GetPlanFactory{     //use getPlan method to get object of type Plan          public Plan getPlan(String planType){              if(planType == null){               return null;              }            if(planType.equalsIgnoreCase(\"DOMESTICPLAN\")) {                   return new DomesticPlan();                 }              else if(planType.equalsIgnoreCase(\"COMMERCIALPLAN\")){                  return new CommercialPlan();              }             else if(planType.equalsIgnoreCase(\"INSTITUTIONALPLAN\")) {                  return new InstitutionalPlan();            }        return null;     }  }//end of GetPlanFactory class.  Step 4: Generate Bill by using the GetPlanFactory to get the object of concrete classes by passing an information such as type of plan DOMESTICPLAN or COMMERCIALPLAN or INSTITUTIONALPLAN.import java.io.*;    class GenerateBill{      public static void main(String args[])throws IOException{        GetPlanFactory planFactory = new GetPlanFactory();                System.out.print(\"Enter the name of plan for which the bill will be generated: \");        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));          String planName=br.readLine();        System.out.print(\"Enter the number of units for bill will be calculated: \");        int units=Integer.parseInt(br.readLine());          Plan p = planFactory.getPlan(planName);        //call getRate() method and calculateBill()method of DomesticPaln.           System.out.print(\"Bill amount for \"+planName+\" of  \"+units+\" units is: \");             p.getRate();             p.calculateBill(units);              }      }//end of GenerateBill class.  Source: JournalDev",
+        "url": "/2018/12/27/factory-pattern/"
+      }
+      ,
+    
+      "2018-12-26-software-development-life-cycle": {
+        "title": "Software Development Life Cycle",
+        "author": "",
+        "category": "",
+        "content": "Software Development Life CycleSoftware Development Life Cycle (SDLC) is a process used by the software industry to design, develop and test high quality softwares. The SDLC aims to produce a high-quality software that meets or exceeds customer expectations, reaches completion within times and cost estimates.What is SDLC?SDLC is a process followed for a software project, within a software organization. It consists of a detailed plan describing how to develop, maintain, replace and alter or enhance specific software. The life cycle defines a methodology for improving the quality of software and the overall development process.The following figure is a graphical representation of the various stages of a typical SDLC.SDLC ModelsThere are various software development life cycle models defined and designed which are followed during the software development process. These models are also referred as Software Development Process Models”. Each process model follows a Series of steps unique to its type to ensure success in the process of software development.Following are the most important and popular SDLC models followed in the industry &amp;miuns;  Waterfall Model  Iterative Model  Spiral Model  V-Model  Big Bang ModelOther related methodologies are Agile Model, RAD Model, Rapid Application Development and Prototyping Models.",
+        "url": "/2018/12/26/software-development-life-cycle/"
+      }
+      ,
+    
+      "2018-12-26-sdlc-models": {
+        "title": "Software Development Life Cycle-Model",
+        "author": "",
+        "category": "",
+        "content": "Waterfall Model - DesignWaterfall approach was first SDLC Model to be used widely in Software Engineering to ensure success of the project. In “The Waterfall” approach, the whole process of software development is divided into separate phases. In this Waterfall model, typically, the outcome of one phase acts as the input for the next phase sequentially.",
+        "url": "/2018/12/26/sdlc-models/"
+      }
+      ,
+    
+      "2018-12-20-soa": {
+        "title": "service oriented architecture",
+        "author": "",
+        "category": "",
+        "content": "SOA (Service Oriented Architecture) PrinciplesA service-oriented architecture (SOA) is an architectural pattern in computer software design in which application components provide services to other components via a communications protocol, typically over a network. The principles of service-orientation are independent of any product, vendor or technology.SOA just makes it easier for software components over various networks to work with each other.Web services which are built as per the SOA architecture tend to make web service more independent. The web services themselves can exchange data with each other and because of the underlying principles on which they are created, they don’t need any sort of human interaction and also don’t need any code modifications. It ensures that the web services on a network can interact with each other seamlessly.SOA is based on some key principles which are mentioned belowStandardized Service ContractServices adhere to a service description. A service must have some sort of description which describes what the service is about. This makes it easier for client applications to understand what the service does.Loose CouplingLess dependency on each other. This is one of the main characteristics of web services which just states that there should be as less dependency as possible between the web services and the client invoking the web service. So if the service functionality changes at any point in time, it should not break the client application or stop it from working.Service AbstractionServices hide the logic they encapsulate from the outside world. The service should not expose how it executes its functionality; it should just tell the client application on what it does and not on how it does it.Service ReusabilityLogic is divided into services with the intent of maximizing reuse. In any development company re-usability is a big topic because obviously one wouldn’t want to spend time and effort building the same code again and again across multiple applications which require them. Hence, once the code for a web service is written it should have the ability work with various application types.Service AutonomyServices should have control over the logic they encapsulate. The service knows everything on what functionality it offers and hence should also have complete control over the code it contains.Service StatelessnessIdeally, services should be stateless. This means that services should not withhold information from one state to the other. This would need to be done from either the client application. An example can be an order placed on a shopping site. Now you can have a web service which gives you the price of a particular item. But if the items are added to a shopping cart and the web page navigates to the page where you do the payment, the responsibility of the price of the item to be transferred to the payment page should not be done by the web service. Instead, it needs to be done by the web application.Service DiscoverabilityServices can be discovered (usually in a service registry). We have already seen this in the concept of the UDDI, which performs a registry which can hold information about the web service.Service ComposabilityServices break big problems into little problems. One should never embed all functionality of an application into one single service but instead, break the service down into modules each with a separate business functionality.Service InteroperabilityServices should use standards that allow diverse subscribers to use the service. In web services, standards as XML and communication over HTTP is used to ensure it conforms to this principle.",
+        "url": "/2018/12/20/soa/"
+      }
+      ,
+    
+      "2018-12-20-database-remote-connection": {
+        "title": "Database Remote Connection",
+        "author": "",
+        "category": "",
+        "content": "Database Remote Connection PostgresqlTo enable remote access to PostgreSQL server follow the steps below:      Connect to the PostgreSQL server via SSH .    Add the following line to the end of /var/lib/pgsql/data/postgresql.conf file:     listen_addresses = '*'        If you can’t find the postgresql.conf file you can run the command     \"psql -U postgres -c 'SHOW config_file'\";            Add the following line to the end of /var/lib/pgsql/data/pg_hba.conf file:     host all all 203.0.113.2/32 md5        203.0.113.2/32 is the remote IP from which connection is allowed. If you want to allow connection from any IP specify 0.0.0.0/0 .    md5 is the authentication method, which requires the client to supply a double-MD5-hashed password for authentication.        Restart PostgreSQL server to apply the changes:     service postgresql restart      Connect postgresql with Database toolsHere we have shown intellij database tools.SSH configuration:Here user &amp; password is the host machine User &amp; Password",
+        "url": "/2018/12/20/database-remote-connection/"
+      }
+      ,
+    
+      "2018-12-18-java-servlet": {
+        "title": "Java Servlet",
+        "author": "",
+        "category": "",
+        "content": "Java ServletServlet is a technology i.e. used to create web application.Servlet is an API that provides many interfaces and classes including documentations.",
+        "url": "/2018/12/18/java-servlet/"
+      }
+      ,
+    
+      "2018-12-03-always-up-staying-up-at-all-time": {
+        "title": "Always Up Staying Up At All Time",
+        "author": "",
+        "category": "",
+        "content": "Always UpDownload      Firstly we have to install always up manually by click next, next…. &amp; in the last step uncheck “Start Always up” check box like:        Open Always up software by run as Administration like:    Click Register Now like:  Copy code number from bellow &amp; pest into crack file.  After pesting code number you will get the serial number. Copy serial number &amp; back the always up &amp; then click enter code button",
+        "url": "/2018/12/03/always-up-staying-up-at-all-time/"
+      }
+      ,
+    
+      "2018-11-27-basic-networking": {
+        "title": "Basic Networking",
+        "author": "",
+        "category": "",
+        "content": "Cat Lan Cable point additionStraight Connection (ClassB)  Orange-White  Orange  Green-White  Blue  Blue-White  Green  Brawn-White  BrawnCross Connection (ClassB)  Orange-White  Green  Green-White  Blue  Blue-White  Orange  Brawn-White  Brawn",
+        "url": "/2018/11/27/basic-networking/"
+      }
+      ,
+    
+      "2018-11-22-intelij-increase-license-evaluation": {
+        "title": "Intelij increase licesnse evaluation",
+        "author": "",
+        "category": "",
+        "content": "Intelij increase licesnse evaluationIncrease Evaluation in LinuxCreate file reset_trail.sh with content: #!/bin/bash  ## declare array of tools declare -a tools=(     \"DataGrip\"     \"CLion\"     \"Rider\"     \"PhpStorm\"     )  for tool in \"${tools[@]}\" do     echo \"removing evaluation key for $tool\"     rm -rf ~/.$tool*/config/eval     rm -rf ~/.java/.userPrefs/jetbrains/${tool,,} done  for tool in \"${tools[@]}\" do     echo \"resetting evalsprt in options.xml for $tool\"     sed -i '/evlsprt/d' ~/.$tool*/config/options/options.xml done  echo \"resetting evalsprt in prefs.xml\" sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml  for tool in \"${tools[@]}\" do     echo \"change date file for $tool\"     find ~/.$tool* -type d -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;     find ~/.$tool* -type f -exec touch -t $(date +\"%Y%m%d%H%M\") {} +; doneecho \"removeing evaluation key\"rm  -rf ~/.IntelliJIdea*/config/evalrm  -rf ~/.GoLand*/config/evalrm  -rf ~/.WebStorm*/config/evalrm -rf ~/.java/.userPrefs/jetbrains/golandrm -rf ~/.java/.userPrefs/jetbrains/idearm -rf ~/.java/.userPrefs/jetbrains/webstormecho \"resetting evalsprt in options.xml\"sed -i '/evlsprt/d' ~/.IntelliJIdea*/config/options/options.xmlsed -i '/evlsprt/d' ~/.GoLand*/config/options/options.xmlsed -i '/evlsprt/d' ~/.WebStorm*/config/options/options.xmlecho \"resetting evalsprt in prefs.xml\"sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xmlecho \"change date file\"find ~/.IntelliJIdea* -type d -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;find ~/.IntelliJIdea* -type f -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;find ~/.GoLand* -type d -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;find ~/.GoLand* -type f -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;find ~/.WebStorm* -type d -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;find ~/.WebStorm* -type f -exec touch -t $(date +\"%Y%m%d%H%M\") {} +;rm -rf ~/Library/Preferences/PyCharm2018.1/eval/PyCharm181.evaluation.keyrm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xmlExtends Evaluation in WindowsIntellij Evaluation Problem:If you want to increase evaluation periods to more 30 days you can follow the bellow steps:  Step 1: Exit intellij software.  Step 2 : Remove all intellij/pycharn/webstrom home cash folder (like: C:\\Users&lt;Username&gt;/.IntelliJIdea201…..)  Step3: Windows key + R  type regedit &amp; press enter(open registry)  Delete evlsprt, evlsprt 1, evlsprt 2 ……. files from jetbrains software.  Open Intelij &amp; evaluate for 30 days &amp; enjoy.",
+        "url": "/2018/11/22/intelij-increase-license-evaluation/"
+      }
+      ,
+    
+      "2018-09-05-basic-linux-command": {
+        "title": "Basic Linux Command",
+        "author": "",
+        "category": "",
+        "content": "Basic Linux CommandPractice Linux on Windows 10we can practice linux command in windows 10 sub system. Proceed the following steps:Step 1: Install ubuntu from apps  storeStep 2: Open ubuntu after successful installationIf any error occurred like “sub system is not enabled” then open powershell as administrator &amp; run the bellow commandEnable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-LinuxThen open ubuntu &amp; set user password when it will be ready.Listing files and directories            COMMAND      Description                  cd -      Returns you to your previous working directory              cd ~      Returns you to your login directory              cd      Returns you to your login directory              cd $HOME      Returns you to your login directory              cd /      Takes you to the entire system’s root directory.              cd /root      Takes you to the home directory of the root user. You must be the root user to access this directory.              cd /home      Takes you to the home directory, where user login directories are usually stored              cd ..      Takes you to the directory one level up.              cd /dir1/dir2/      Regardless of which directory you are in, this absolute path takes you directly to dir2, a subdirectory of /dir1/.              cd ../../dir2/dir3/      This relative path takes you up two directories, then to dir2/, and finally into its subdirectory dir3/.              pwd      displays the current directory.              mkdir dirname      make directory              chmod -R 777 dirname      Read, write and execute permission to all user group              mkdir -m 777 dirname      creates an empty directory with permission              ls      displays the file &amp; directory of the current directory.              ls -a      list also files/directories which begin with a dot (hidden)              ls -l      long listing format. Displays permissions, user and group, time stamp, size, etc.              ls -r      for directories, all sub-directories will be displayed recursively.              ls directory      displays the file &amp; directory of the corresponding directory.      File management            COMMAND      Description                  cp file1 file2      copies files or directories. file1 is copied to file2. if file2 already exists, it is overwritten              cp -r dir1 dir2      recursively with all subdirectories &amp; files              mv file1 file2      Rename or move files              mv dir1 dir2      Rename or move directories              rm [-irf] file(s)/directory(ies)      Delete files and/or directories. (-i: delete only after confirmation, -r: directories will be recursively deleted, -f: force)              rmdir directory_name      removes any empty directories, but cannot delete a directory if a file is present in it.              cat file      to view the contents of a file      File create, edit, saveCreate Filetouch fileNameExample:touch test.txtEdit file (using Pico &amp; Nano)pico hello.txt^G Get Help ^O WriteOut ^R Read File ^Y Prev Page ^K Cut Text ^C Cur Pos^X Exit ^J Justify ^W Where Is ^V Next Page ^U UnCut Text^T To Spell‘ctrl+o’:  write the changes to the file‘ctrl+x’: exit from the editor‘ctrl+g’: help menuEdit file (using VI editor)vim fileExit vim without saving changesPress the ESC keyType :q!Press the ENTER keySave a file and exitPress the ESC keyType :wqor Type :xPress the ENTER keyPermissionDifferent combinations:  0 – No permission  1 – Execute  2 – Write  3 – Write and execute  4 – Read  5 – Read and execute  6 – Read and Write  7 – Read, write and executeecho commandThis command will echo whatever you provide it.echo \"test\"testecho $HOME/home/rakibwhoami commandThis command reveals the user who is currently logged in.whoamirootwhatis commandThis command gives a one line description about the command. It can be used as a quick reference for any command.whatis datedate (1) - print or set the system date and timeClear Screenclearlocatelocate -i helloCent OSYUM (YellowDog Updater Modified)yum is the primary tool for getting, installing, deleting, querying, and managing Red Hat Enterprise Linux RPM software packages from official Red Hat software repositories, as well as other third-party repositories.Update Yumyum updateInstall JavaGo to Java Download page &amp; get the linux tar.gz file download urlcd /opt/wget --no-cookies --no-check-certificate --header \"Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie\" \"URL_LINK\"Here URL_LINK will be java download Link. First ensure the link is working or not. If sign in required for old java version, we can download manually.tar xzf jdk-8u131-linux-x64.tar.gzcd /opt/jdk1.8.0_131/alternatives --install /usr/bin/java java /opt/jdk1.8.0_131/bin/java 2alternatives --config javaalternatives --install /usr/bin/jar jar /opt/jdk1.8.0_131/bin/jar 2alternatives --install /usr/bin/javac javac /opt/jdk1.8.0_131/bin/javac 2alternatives --set jar /opt/jdk1.8.0_131/bin/jaralternatives --set javac /opt/jdk1.8.0_131/bin/javacjava -versionexport JAVA_HOME=/opt/jdk1.8.0_131export JRE_HOME=/opt/jdk1.8.0_131/jreexport PATH=$PATH:/opt/jdk1.8.0_131/bin:/opt/jdk1.8.0_131/jre/binecho $JAVA_HOMEecho $JRE_HOMEsource /etc/profileBahmni SetupNB: Example: If implementation_name is 'bd-uhc', then app config will be picked up from the /etc/bahmni-installer/deployment-artifacts/bd-uhc_config foldeStep 1:#Prerequisite for the fresh installation of Bahmniwget https://bitbucket.org/pypa/setuptools/raw/0.7.2/ez_setup.pypython ez_setup.pyyou may run this --- yum upgrade python-setuptoolsStep 2:# Install the bahmni command line program (Choose the version you want).yum install https://dl.bintray.com/bahmni/rpm/rpms/bahmni-installer-0.91-70.noarch.rpm  #version 0.91 # Confirm that the bahmni command is correctly installed (you should see a help message for the command)bahmni --help# Now setup a configuration file for bahmni command in /etc/bahmni-installer.curl -L https://goo.gl/R8ekg5 &gt;&gt; /etc/bahmni-installer/setup.yml# Confirm the contents of the file. It should look like this file: (https://goo.gl/R8ekg5)cat /etc/bahmni-installer/setup.ymlThen amar personaly setup.yml ase seta replace kore dibo…# Set the inventory file name to local in BAHMNI_INVENTORY environment variable. This way you won't need to use the '-i local' switch every time you use the 'bahmni' command#You can also configure custom inventory file instead of local.echo \"export BAHMNI_INVENTORY=local\" &gt;&gt; ~/.bashrcsource ~/.bashrc# Now fire the installerbahmni installThen error =  deployment-artifact ar vitore bd-uhc_config load kore dibo ..ar ae file ta  ae github theke(359 commit) ase .i have locally store it   https://github.com/SharedHealth/bd-uhc-configetc/bahmni-installer/deployment-artifacts/bd-uhc_configthen abar bahmni install",
+        "url": "/2018/09/05/basic-linux-command/"
+      }
+      ,
+    
+      "2018-08-02-oop": {
+        "title": "OOP",
+        "author": "",
+        "category": "",
+        "content": "OOPCore OOPS concepts are:  Abstraction  Encapsulation  Polymorphism  Inheritance  Association  Aggregation  CompositionAbstraction  hiding the internal details and describing things in simple terms.Ways to achieve AbstractionThere are two ways to achieve abstraction in java  Abstract class (0 to 100%)  Interface (100%)Real life Example of Abstract Classabstract class Shape{  abstract void draw();  }    class Rectangle extends Shape{  void draw(){System.out.println(\"drawing rectangle\");}  }  class Circle1 extends Shape{  void draw(){System.out.println(\"drawing circle\");}  }    class TestAbstraction1{  public static void main(String args[]){  Shape s=new Circle1();  s.draw();  s=new Rectangle();  s.draw();  }  }  Real Life Example of Inheritanceinterface Animal {   public void eat();   public void travel();}public class Man implements Animal {   public void eat() {      System.out.println(\"Man eats\");   }   public void travel() {      System.out.println(\"Man travels\");   }    public int noOfLegs() {      return 0;   }   public static void main(String args[]) {      Man m = new Man();      m.eat();      m.travel();   }} public class Dog implements Animal {   public void eat() {      System.out.println(\"Dog eats\");   }   public void travel() {      System.out.println(\"Dog travels\");   }    public int noOfLegs() {      return 0;   }   public static void main(String args[]) {      Dog m = new Dog();      m.eat();      m.travel();   }} Association, Aggregation, and Composition in OOPAssociationis a relationship where all objects have their own lifecycle and there is no owner.Let’s take an example of Teacher and Student. Multiple students can associate with single teacher and single student can associate with multiple teachers, but there is no ownership between the objects and both have their own lifecycle. Both can be created and deleted independently.Aggregationis a specialised form of Association where all objects have their own lifecycle, but there is ownership and child objects can not belong to another parent object.Let’s take an example of Department and teacher. A single teacher can not belong to multiple departments, but if we delete the department, the teacher object will not be destroyed. We can think about it as a “has-a” relationship.Compositionis again specialised form of Aggregation and we can call this as a “death” relationship. It is a strong type of Aggregation. Child object does not have its lifecycle and if parent object is deleted, all child objects will also be deleted.Let’s take again an example of relationship between House and Rooms. House can contain multiple rooms - there is no independent life of room and any room can not belong to two different houses. If we delete the house - room will automatically be deleted.Let’s take another example relationship between Questions and Options. Single questions can have multiple options and option can not belong to multiple questions. If we delete the questions, options will automatically be deleted.",
+        "url": "/2018/08/02/oop/"
+      }
+      ,
+    
+      "2018-06-06-grails-introduction": {
+        "title": "Grails-Introduction",
+        "author": "",
+        "category": "",
+        "content": "Grails- IntroductionGrails is a web framework based on Groovy and Java which can be deployed into existing Java web servers, e.g., Tomcat or Jetty.Grails allows to quickly create web applications; its scaffolding capabilities let you create a new project within few minutes. Grails is based on the convention over configuration idea which allows the application to auto-wire itself based on naming schemes (instead of using configuration files, e.g, XML files).Starting Hello World in Grails ApplicationRequirements:  Java jdk 7+  Grails (Latest Version 3.3.5)  IntellIj IDEA Ultimate VersionDetails step by step tutorial :Youtube Video",
+        "url": "/2018/06/06/grails-introduction/"
+      }
+      ,
+    
+      "2018-05-22-important-command-for-windows": {
+        "title": "Important command for windows",
+        "author": "",
+        "category": "",
+        "content": "Important command for windows  Java Patha variablefor %i in (java.exe) do @echo.   %~$PATH:i  Tomcat run as serviceservice.bat install",
+        "url": "/2018/05/22/important-command-for-windows/"
+      }
+      ,
+    
+      "2018-05-22-deploy-war-in-linux": {
+        "title": "Deploy Java War in Linux Server",
+        "author": "",
+        "category": "",
+        "content": "Deploy Java War in Linux Server  First, update the package index.sudo apt-get updateorsudo yum update  Oracle JDK 8This is the latest stable version of Java at time of writing, and the recommended version to install. You can do so using the following command:To show packages:yum search java | grep 'java-'To install if packages are available:yum install java-1.8.0and then:alternatives --config javaand check:java -versionor can download from oracle sitebywget --no-check-certificate -c --header \"Cookie: oraclelicense=accept-securebackup-cookie\" http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-i586.tar.gzHere you can get the latest url (wget –no-check-certificate -c –header “Cookie: oraclelicense=accept-securebackup-cookie” http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz) from the orcle site.Thentar xzvf jdk.tar.gzsudo mkdir /usr/local/javasudo mv jdk1.8.0_45 /usr/local/java/sudo ln -s /usr/local/java/jdk1.8.0_45 /usr/local/java/jdksudo vi /etc/profile.d/java.shexport PATH=\"$PATH:/usr/local/java/jdk/bin\"export JAVA_HOME=/usr/local/java/jdksource /etc/profile.d/java.shcd /usrsudo -s (for root access)mkdir rakibchmod -R 777 rakib/Uninstall javasudo yum remove jdkRun the following command to find out process associated with yum command:# ps aux | grep -i yumFor killing process:kill 15401",
+        "url": "/2018/05/22/deploy-war-in-linux/"
+      }
+      ,
+    
+      "2018-04-18-node-in-windwos": {
+        "title": "Node in Windows operating System",
+        "author": "",
+        "category": "",
+        "content": "Install node in windows  Download the Windows installer from the Nodes.js® web site.  Run the installer (the .msi file you downloaded in the previous step.)      Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).        Restart your computer. You won’t be able to run Node.js® until you restart your computer.Test it!Make sure you have Node and NPM installed by running simple commands to see what version of each is installed and to run a simple test program:      Test Node. To see if Node is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type node -v. This should print a version number, so you’ll see something like this v0.10.35.        Test NPM. To see if NPM is installed, type npm -v in Terminal. This should print NPM’s version number so you’ll see something like this 1.4.28        Create a test file and run it. A simple way to test that node.js works is to create a JavaScript file: name it hello.js, and just add the code console.log(‘Node is installed!’);. To run the code simply open your command line program, navigate to the folder where you save the file and type node hello.js. This will start Node and run the code in the hello.js file. You should see the output Node is installed!.      How to Update Node and NPMThis is the new best way to upgrade npm on Windows.  Run PowerShell as AdministratorSet-ExecutionPolicy Unrestricted -Scope CurrentUser -Forcenpm install -g npm-windows-upgradenpm-windows-upgradeNote: Do not run npm i -g npm. Instead use npm-windows-upgrade to update npm going forward. Also if you run the NodeJS installer, it will replace the node version.  Upgrades npm in-place, where node installed it.  Easy updating, update to the latest by running npm-windows-upgrade -p -v latest.  Does not modify the default path.  Does not change the default global package location.  Allows easy upgrades and downgrades.  Officially recommended by the NPM team.  A list of versions matched between NPM and NODE (https://nodejs.org/en/download/releases/) - but you will need to download NODE INSTALLER and run that to update node (https://nodejs.org/en/)",
+        "url": "/2018/04/18/node-in-windwos/"
+      }
+      ,
+    
+      "2018-04-18-install-angular-cli-windwos": {
+        "title": "install angular cli",
+        "author": "",
+        "category": "",
+        "content": "install angular cliPrerequisite  Node###Command in cmd (Windows)npm install -g @angular/cliupdate ng in existing projectnpm install --save-dev @angular/cli@latest",
+        "url": "/2018/04/18/install-angular-cli-windwos/"
+      }
+      ,
+    
+      "2018-04-11-interview-question": {
+        "title": "Interview Question",
+        "author": "",
+        "category": "",
+        "content": "Database  get column difference of two table by a single sql?  get total table number of a database by a single sql?  Different between group by &amp; where? is it write at same query? group by having implement? why needed ths?  Store Procedure: insert, update, rollback is on same store procedure. is it possible?  JOIN types &amp; implementation?Angular  difference between Angular vs Angular Js, Angular 1 vs angular 2, angular 2 vs angular 4  what is Component in angular 4?  rootscope in angular 1?Java Collection Framework  How work HashMap?  Vector vs enum?OOP  interface vs abstract class  must override in which case?Spring  what is Response params &amp; its work?  is Vector thread safe?  Java StringWhat are the important features of Java 8 release?  Interface changes with default and static methods  Functional interfaces and Lambda Expressions  Java Stream API for collection classes  Java Date Time APIExtraThreadPoolWhat is the benefit of using Optional in Java 8?Why are Strings immutable in Java?SOLID principlesN+1 Select problem in HibernateOOPHigh Cohesion vs Low CohesionHigh cohesion is when you have a class that does a well defined job. Low cohesion is when a class does a lot of jobs that don’t have much in common.Let’s take this example:You have a class that adds two numbers, but the same class creates a window displaying the result. This is a low cohesive class because the window and the adding operation don’t have much in common. The window is the visual part of the program and the adding function is the logic behind it.To create a high cohesive solution, you would have to create a class Window and a class Sum. The window will call Sum’s method to get the result and display it. This way you will develop separately the logic and the GUI of your application.",
+        "url": "/2018/04/11/interview-question/"
+      }
+      ,
+    
+      "2018-03-09-design-pattern": {
+        "title": "Design Pattern",
+        "author": "",
+        "category": "",
+        "content": "Design PatternA design pattern is a well described solution to a common software problem.Advantage of design pattern:  They are reusable in multiple projects.  They provide the solutions that help to define the system architecture.  They capture the software engineering experiences.  They provide transparency to the design of an application.When should we use the design patterns?We must use the design patterns during the analysis and requirement phase of SDLC(Software Development Life Cycle).Creational Design Patterns  Singleton Pattern  Factory Pattern  Abstract Factory Pattern  Builder Pattern5.Prototype PatternStructural Design Patterns  Adapter Pattern  Composite Pattern  Proxy Pattern  Flyweight Pattern  Facade Pattern  Bridge Pattern  Decorator PatternBehavioral Design Patterns  Template Method Pattern  Mediator Pattern  Chain of Responsibility Pattern  Observer Pattern  Strategy Pattern  Command Pattern  State Pattern  Visitor Pattern  Interpreter Pattern  Iterator Pattern  Memento PatternSource: Java Point",
+        "url": "/2018/03/09/design-pattern/"
+      }
+      ,
+    
+      "2018-02-14-sdkman": {
+        "title": "SDKMAN",
+        "author": "",
+        "category": "",
+        "content": "SDKMAN  GIT  JAVA  http://sdkman.io/  Multi-platform-&gt; Powershell CLI version  Open powershell from windows pc then type     [Environment]::GetEnvironmentVariable(\"PSModulePath\")        Then get the following      C:\\Users\\rakib\\OneDrive\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules        Then Type     New-Item C:\\Users\\rakib\\OneDrive\\Documents\\WindowsPowerShell\\Modules -ItemType Directory      Then Type   cd C:\\Users\\rakib\\OneDrive\\Documents\\WindowsPowerShell\\ModulesThen clone by   git clone https://github.com/flofreud/posh-gvm.gitThen TypeNew-Item -path $profile -type file -forceClose power shell &amp; open in administrator mode &amp; Then TypeInstall-Module posh-gvmThen typeSet-ExecutionPolicy RemoteSigned",
+        "url": "/2018/02/14/sdkman/"
+      }
+      ,
+    
+      "2018-02-14-dry": {
+        "title": "DRY",
+        "author": "",
+        "category": "",
+        "content": "DRY (Don’t Repeat Yourself)In WikipediaDRY- A Principle of software development, aimed at reducing repetition of information of all kinds.",
+        "url": "/2018/02/14/dry/"
+      }
+      ,
+    
+      "2018-02-14-stream": {
+        "title": "Java-Stream",
+        "author": "",
+        "category": "",
+        "content": "StreamIn WikipediaDRY- A Principle of software development, aimed at reducing repetition of information of all kinds.",
+        "url": "/2018/02/14/stream/"
+      }
+      ,
+    
+      "2018-02-01-singleton-pattern": {
+        "title": "Singleton Pattern",
+        "author": "",
+        "category": "",
+        "content": "Java Singleton Pattern Implementation  Private constructor to restrict instantiation of the class from other classes.  Private static variable of the same class that is the only instance of the class.  Public static method that returns the instance of the class.    Different approaches of Singleton pattern implementation          Eager initialization      Static block initialization      Lazy Initialization      Thread Safe Singleton      Bill Pugh Singleton Implementation      Using Reflection to destroy Singleton Pattern      Enum Singleton      Serialization and Singleton      Eager initializationIn eager initialization, the instance of Singleton Class is created at the time of class loading,this is the easiest method to create a singleton class but it has a drawback that instance is created even though client application might not be using it.package com.journaldev.singleton;public class EagerInitializedSingleton {        private static final EagerInitializedSingleton instance = new EagerInitializedSingleton();        //to avoid client applications to use constructor    private EagerInitializedSingleton(){}    public static EagerInitializedSingleton getInstance(){        return instance;    }}Static block initializationpackage com.journaldev.singleton;public class StaticBlockSingleton {    private static StaticBlockSingleton instance;        private StaticBlockSingleton(){}        //static block initialization for exception handling    static{        try{            instance = new StaticBlockSingleton();        }catch(Exception e){            throw new RuntimeException(\"Exception occured in creating singleton instance\");        }    }        public static StaticBlockSingleton getInstance(){        return instance;    }}Lazy Initializationpackage com.journaldev.singleton;public class LazyInitializedSingleton {    private static LazyInitializedSingleton instance;        private LazyInitializedSingleton(){}        public static LazyInitializedSingleton getInstance(){        if(instance == null){            instance = new LazyInitializedSingleton();        }        return instance;    }}The above implementation works fine in case of single threaded environment but when it comes to multithreaded systems, it can cause issues if multiple threads are inside the if loop at the same time.Thread Safe Singletonpackage com.journaldev.singleton;public class ThreadSafeSingleton {    private static ThreadSafeSingleton instance;        private ThreadSafeSingleton(){}        public static synchronized ThreadSafeSingleton getInstance(){        if(instance == null){            instance = new ThreadSafeSingleton();        }        return instance;    }    }Above implementation works fine and provides thread-safety but it reduces the performance because of cost associated with the synchronized method.Below code snippet provides the double checked locking implementation.public static ThreadSafeSingleton getInstanceUsingDoubleLocking(){    if(instance == null){        synchronized (ThreadSafeSingleton.class) {            if(instance == null){                instance = new ThreadSafeSingleton();            }        }    }    return instance;}Bill Pugh Singleton ImplementationPrior to Java 5, java memory model had a lot of issues and above approaches used to fail in certain scenarios where too many threads try to get the instance of the Singleton class simultaneously. So Bill Pugh came up with a different approach to create the Singleton class using a inner static helper class.package com.journaldev.singleton;public class BillPughSingleton {    private BillPughSingleton(){}        private static class SingletonHelper{        private static final BillPughSingleton INSTANCE = new BillPughSingleton();    }        public static BillPughSingleton getInstance(){        return SingletonHelper.INSTANCE;    }}When the singleton class is loaded, SingletonHelper class is not loaded into memory and only when someone calls the getInstance method, this class gets loaded and creates the Singleton class instance.This is the most widely used approach for Singleton class as it doesn’t require synchronization. I am using this approach in many of my projects and it’s easy to understand and implement also.Advantage of Singleton design patternSaves memory because object is not created at each request. Only single instance is reused again and again.Usage of Singleton design patternSingleton pattern is mostly used in multi-threaded and database applications. It is used in logging, caching, thread pools, configuration settings etc.Source: JournalDev",
+        "url": "/2018/02/01/singleton-pattern/"
+      }
+      ,
+    
+      "2018-02-01-java-overloading-overriding": {
+        "title": "Java Overloading Overriding",
+        "author": "",
+        "category": "",
+        "content": "Overloading in JavaDifferent ways to overload the methodThere are two ways to overload the method in java  By changing number of arguments```class Adder{static int add(int a,int b){return a+b;}static int add(int a,int b,int c){return a+b+c;}}class TestOverloading1{public static void main(String[] args){System.out.println(Adder.add(11,11));System.out.println(Adder.add(11,11,11));}}Output:2233- By changing the data typeclass Adder{static int add(int a, int b){return a+b;}static double add(double a, double b){return a+b;}}class TestOverloading2{public static void main(String[] args){System.out.println(Adder.add(11,11));System.out.println(Adder.add(12.3,12.6));}}Output:2224.9### Overriding in JavaIf subclass (child class) has the same method as declared in the parent class, it is known as method overriding in Java.##### Rules for Java Method Overriding- The method must have the same name as in the parent class- The method must have the same parameter as in the parent class.- There must be an IS-A relationship (inheritance).class Vehicle{  //defining a method  void run(){System.out.println(“Vehicle is running”);}}//Creating a child classclass Bike2 extends Vehicle{  //defining the same method as in the parent class  void run(){System.out.println(“Bike is running safely”);}public static void main(String args[]){  Bike2 obj = new Bike2();//creating object  obj.run();//calling method  }}Output:Bike is running safely```Understanding all java access modifiers            Access Modifier      within class      within package      outside package by subclass only      outside package                  Private      Y      N      N      N              Default      Y      Y      N      N              Protected      Y      Y      Y      N              Public      Y      Y      Y      Y      ",
+        "url": "/2018/02/01/java-overloading-overriding/"
+      }
+      ,
+    
+      "2018-02-01-java-garbage-collection": {
+        "title": "Java Garbage Collection",
+        "author": "",
+        "category": "",
+        "content": "Java Garbage CollectionThere are many ways:  By nulling the reference    Employee e=new Employee();  e=null;          By assigning a reference to another    Employee e1=new Employee();  Employee e2=new Employee();  e1=e2;//now the first object referred by e1 is available for garbage collection          By anonymous object etc.    new Employee();        finalize() methodThe finalize() method is invoked each time before the object is garbage collected. This method can be used to perform cleanup processing. This method is defined in Object class as:protected void finalize(){}  Note: The Garbage collector of JVM collects only those objects that are created by new keyword. So if you have created any object without new, you can use finalize method to perform cleanup processing (destroying remaining objects).gc() methodThe gc() method is used to invoke the garbage collector to perform cleanup processing. The gc() is found in System and Runtime classes.public static void gc(){}Note: Garbage collection is performed by a daemon thread called Garbage Collector(GC). This thread calls the finalize() method before object is garbage collected.",
+        "url": "/2018/02/01/java-garbage-collection/"
+      }
+      ,
+    
+      "2018-02-01-facade-pattern": {
+        "title": "Facade Pattern",
+        "author": "",
+        "category": "",
+        "content": "Facade PatternFacade pattern hides the complexities of the system and provides an interface to the client using which the client can access the system. This type of design pattern comes under structural pattern as this pattern adds an interface to existing system to hide its complexities.This pattern involves a single class which provides simplified methods required by client and delegates calls to methods of existing system classes.ImplementationWe are going to create a Shape interface and concrete classes implementing the Shape interface. A facade class ShapeMaker is defined as a next step.ShapeMaker class uses the concrete classes to delegate user calls to these classes. FacadePatternDemo, our demo class, will use ShapeMaker class to show the results.Facade Pattern UML DiagramStep 1 Create an interface.Shape.javapublic interface Shape {   void draw();}Step 2 Create concrete classes implementing the same interface.Rectangle.javapublic class Rectangle implements Shape {   @Override   public void draw() {      System.out.println(\"Rectangle::draw()\");   }}Square.javapublic class Square implements Shape {   @Override   public void draw() {      System.out.println(\"Square::draw()\");   }}Circle.javapublic class Circle implements Shape {   @Override   public void draw() {      System.out.println(\"Circle::draw()\");   }}Step 3 Create a facade class.ShapeMaker.javapublic class ShapeMaker {   private Shape circle;   private Shape rectangle;   private Shape square;   public ShapeMaker() {      circle = new Circle();      rectangle = new Rectangle();      square = new Square();   }   public void drawCircle(){      circle.draw();   }   public void drawRectangle(){      rectangle.draw();   }   public void drawSquare(){      square.draw();   }}Step 4 Use the facade to draw various types of shapes.FacadePatternDemo.javapublic class FacadePatternDemo {   public static void main(String[] args) {      ShapeMaker shapeMaker = new ShapeMaker();      shapeMaker.drawCircle();      shapeMaker.drawRectangle();      shapeMaker.drawSquare();\t\t   }}Step 5 Verify the output.Circle::draw()Rectangle::draw()Square::draw()Source: tutorialspoint",
+        "url": "/2018/02/01/facade-pattern/"
+      }
+      ,
+    
+      "2018-02-01-deffierence": {
+        "title": "Difference",
+        "author": "",
+        "category": "",
+        "content": "Differenceequals vs ‘==’In General We use == operator for reference or memory location comparision whereas .equals() method for content comparision.Example:String s1 = new String(\"rakib\");String s2 = new String(\"rakib\");System.out.println(s1==s2);         // falseSystem.out.println(s1.equals(s2));  // trueStringBuffer sf1 = new StringBuffer(\"rakib\");StringBuffer sf2 = new StringBuffer(\"rakib\");System.out.println(sf1 == sf2);     // falseSystem.out.println(s1 == sf2);     // CE: incomparable types: java.lang.String and java.lang.StringBufferSystem.out.println(s1.equals(sf2));     // false  .euals() method present in object class also meant for reference comparision only based on our requirement we can override for content comparision.  In String class, all wrapper class and all collection classes .equals() method is overriden for content comparision.  If r1 == r2 is true then r1.equals(r2) is always true.  If two objects are not equal by == operator then we can’t conclude anything about .equals method. It may return true or false.  ie. if r1 == r2 is false then r1.equals(r2) may return true or false  If r1.equals(r2) is true then r1 == r2 may true or false  if r1.equals(r2) is false then r1 == r2 is always  Either parent to child or Child to parent are same type  r == null &amp;&amp; r.equals(null) return falseDifference between adding WrappedString and String into HashSetpublic class WrappedString {private String s; public WrappedString(String s) { this.s = s; } public static void main(String[] args) { HashSet&lt;Object&gt; hs = new HashSet&lt;Object&gt;(); WrappedString ws1 = new WrappedString(\"aardvark\"); WrappedString ws2 = new WrappedString(\"aardvark\"); hs.add(ws1); hs.add(ws2); System.out.println(hs.size()); // outputs 2   }}Andpublic class WrappedString {private String s; public WrappedString(String s) { this.s = s; } public static void main(String[] args) { HashSet&lt;Object&gt; hs = new HashSet&lt;Object&gt;(); String s1 = new String(\"aardvark\"); String s2 = new String(\"aardvark\"); hs.add(s1); hs.add(s2); System.out.println(hs.size()); // outputs 1   }}The main difference is that String implements equals whereas your WrappedString does not. So from a HashSet perspective, you can add as many new String(“aardvark”) as you want, they will all be considered the same (because new String(“aardvark”).equals(new String(“aardvark”)) is true) and only one will be added.Whereas two different WrappedString instances will not be equal, even if the strings they contain are equal (because new WrappedString(“aardvark”).equals(new WrappedString(“aardvark”)) is false), so the set will not consider them as duplicates.If you want a behaviour similar to String, you need to implement equals and hashcode in your WrappedString class",
+        "url": "/2018/02/01/deffierence/"
+      }
+      ,
+    
+      "2018-02-01-collection-framwork": {
+        "title": "Collection Framework",
+        "author": "",
+        "category": "",
+        "content": "Collection FrameworkList vs ArrayListList is in interface while ArrayList is a class.Why store ArrayList object on List variable?You might have seen something like this:List&lt;Movie&gt; listOfMovies = new ArrayList&lt;Movie&gt;()here we are using a List as a type of variable to store an object of ArrayList class, created using new() operator.The answer is to take advantage of Polymorphism. If you use interface than in future if the new implementation is shipped then you are not required to change your program. For example, any program written using List will work as expected whether you pass a LinkedList, Vector or ArrayList, because they all implements List interface, they obey the contract exposed by List interface.The only difference comes in performance, which is actually on of the driver for change. In short, if you program using interface, tomorrow if a better implementation of your interface is available then you can switch to that without making nay further change on the client side (part of the program which uses that interface).ArrayList vs LinkListPerformance  :  Performance of ArrayList and LinkedList depends on the type of operationa. get(int index) or search operation :  ArrayList get(int index) operation runs in constant time i.e O(1)  while LinkedList get(int index) operation run time is O(n) .b. insert() or add(Object) operation :  Insertions in LinkedList are generally fast as compare to ArrayList.                   ArrayList      LinkedList                  Implementation      Resizable Array      Douby-LinkedList              ReverseIterator      No      Yes , descendingIterator()              Initial Capacity      10      Constructs empty list              get(int) operation      Fast      Slow in comparision              add(int) operation      Slow in comparision      Fast              Memory Overhead      No      Yes      ",
+        "url": "/2018/02/01/collection-framwork/"
+      }
+      ,
+    
+      "2018-02-01-pictures": {
+        "title": "Pictures",
+        "author": "",
+        "category": "",
+        "content": "##HELPFUL ROUNDUP FOR STOCK PHOTO NEEDS  WOCinTech Chat – An amazing collection of beautiful, high-res photos of women of color in tech  Pixabay   – Over 900,000 free images and videos for you to use  Pexels  – All free images, all available for personal and commercial use  Unsplash – Browse and search the latest high-resolution photos  Stocksnap.io  – Hundreds of high-res photos are added weekly!  Gratysography – All images are photographed by Ryan McGuire, and free of copyright restrictions  Foter – 335 million stock photos to choose from and a handy WordPress plugin  FreeimagesRed – Search their inventory of high-quality stock photos across a variety of categories  Cupcake – Free original images by photographer Jonas Nilsson Lee to use however you like  Death to Stock – Sign up to get free, high-res photos sent directly to your inbox  DesignerPics – Free high-res photos for personal and commercial use by photographer, web designer, and developer, Jeshu John  Foodiesfeed – The ultimate hub for beautiful food stock photos  Iso Republic – Specializes in free stock photos for creatives  Magdeleine – Hand picked, high-res photos just for you. The website also highlights a new photographer and photo every day  Moveast – Beautiful photos of João Pacheco’s travel adventures, free to use  Stokpic – High-resolution photos for commercial use  Travel coffee book –  Browse and submit your own beautiful travel photos for personal and commercial use  Stockvault – Over 50,000 photos, vectors, illustrations, and textures  Startup stock photos – Images for startups and businesses  Splitshire – Free photos, images, and videos for commercial use  Splashbase – Discover high-res photos and videos  Snapwire Snaps – Search, submit, and subscribe to receive 7 free beautiful photos every 7 days  RGB Stock – Search over 100,000 photos and all are 100% free  Publicdomainarchive – Look for 100% free stock photos uploaded every single week  Skitterphoto – All photos available to download, edit, and to use however you wish  Re:splashed – 1,100+ free high-res photos for web and design projects  Raumrot – 1,450 free curated stock photos for personal and commercial use  Picography – Free images and collections by the folks at Hidden Depth  Pickupimage  – Register to download, modify, and distribute this huge collection of free photos  Pickjumbo – Super high-quality photos collected by photographer and designer Viktor Hanacek  Morguefile – Free images for creatives, by creatives  MMT – Free photos for commercial use and new photos every week  Kaboompics – Free pictures for personal or business projects  Free Nature Stock – Large collection of free nature photos, with new pictures added every day  Barn images – Original free stock photos by Latvian photographers Igor Trepeshchenok and Roman Drits  Jeshoots – Browse this collection of free photos and mockups  BucketListly Photos  – Common collection of 5,000+ free travel photos  Photo Collections – Discover high-resolution photos in seven collections  Tookapic – Browse over 64,000 free, non-staged stock photos  NegativeSpace – Search by keyword, color, or browse categories and collections  Epicantus– Free, original stock photos for blogs, landing pages, and designs by UX designer Daria  Libresho – More than 1,500 high-quality photos available for personal and commercial use  New Old Stock – Don’t forget the oldies—here’s a collection of vintage photos from public archives  Jay Mantri – Browse and subscribe to receive free stock photos by photographer Jay Mantri  Burst – A collection of free stock photos for entrepreneurs by our friends at Shopifyhttps://www.upwork.com/hiring/design/45-completely-free-photo-resources/",
+        "url": "/2018/02/01/pictures/"
+      }
+      ,
+    
+      "2018-01-31-spring-introduction": {
+        "title": "Spring Introduction",
+        "author": "",
+        "category": "",
+        "content": "Spring IntroductionSpring developer name: Rod Jhonson &amp; initial organization name is spring.org &amp; now is pivotal. Springs initial name is interface 21.",
+        "url": "/2018/01/31/spring-introduction/"
+      }
+      ,
+    
+      "2017-12-26-angularjs-pristine-dirty-valid-invalid": {
+        "title": "AngularJS - $pristine, $dirty, $valid, $invalid",
+        "author": "",
+        "category": "",
+        "content": "Today we will go through the AngularJS Forms validations. Forms are important part of any application. They help us to collect information from user so that it can be processed for corresponding activity. We need to validate form so that only the valid values are put in the form. For that we use JavaScript or any other JavaScript library like jQuery.Angular also provides some help in this context. We can validate a form and see that the required validations work correctly. It provides different objects to the form. They are very helpful while validating forms:$pristine: It will be TRUE, if the user has not interacted with the form yet$dirty: It will be TRUE, if the user has already interacted with the form.$valid: It will be TRUE, if all containing form and controls are valid$invalid: It will be TRUE, if at least one containing form and control is invalid.$error: Is an object hash, containing references to all invalid controls or forms, where:     keys are validation tokens (error names)    values are arrays of controls or forms that are invalid with given error.There are some built in validation tokens, that can help in validating form:emailmaxmaxlengthminminlengthnumberpatternrequiredurlIn accordance with these AngularJS also provides corresponding CSS classes for them. We can use them for validation purpose.ng-pristineng-dirtyng-validng-invalidLets see how we can use them. Usage:In Form: myForm.$dirtyFor Field: myForm.firldName.$dirtyIn CSS:.ng-dirty{ background-color: yellow;}This is little bit information about the AngularJS form validation.Use #ngvinod to discuss on Twitter about this.http://www.ng-vinod.com/2014/07/angularjs-pristine-dirty-valid-invalid.html",
+        "url": "/2017/12/26/AngularJS-$pristine-$dirty-$valid-$invalid/"
+      }
+      ,
+    
+      "2017-06-01-amazon-s3-direct-file-upload-from-client-browser-private-key-disclosure": {
+        "title": "Amazon S3 Direct File Upload From Client Browser Private Key Disclosure",
+        "author": "",
+        "category": "",
+        "content": "Amazon S3 direct file upload from client browser - private key disclosureCreate an Amazon S3 bucket and configure CORSCORS needs to be configured on the Amazon S3 bucket to be accessed directly from JavaScript in the browser.Navigate to the Amazon S3 console.Choose an existing bucket or create a new bucket if desired. Note the bucket name and bucket region for later use in the application.Click the Properties tab, open the Permissions section, and click Edit CORS Configuration.Copy the below XML into the text box and click Save.&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;&lt;CORSConfiguration xmlns=\"http://s3.amazonaws.com/doc/2006-03-01\"&gt;   &lt;CORSRule&gt;      &lt;AllowedOrigin&gt;*&lt;/AllowedOrigin&gt;      &lt;AllowedMethod&gt;GET&lt;/AllowedMethod&gt;      &lt;AllowedMethod&gt;PUT&lt;/AllowedMethod&gt;      &lt;AllowedMethod&gt;POST&lt;/AllowedMethod&gt;      &lt;AllowedMethod&gt;DELETE&lt;/AllowedMethod&gt;      &lt;AllowedHeader&gt;*&lt;/AllowedHeader&gt;   &lt;/CORSRule&gt;&lt;/CORSConfiguration&gt;You can upload files on AWS S3 using a server side solution, but in case of larger files it is advisable to use a client side solution. You can probably use JavaScript file upload feature of AWS S3. This is simple three step feature as described below:Step 1 : In the head section of your page include javascript sdk and specify your keys like this:Step 2 : Now create a simple html form with a file input.&lt;form id=\"fileUploadForm\" method=\"post\" enctype=\"multipart/form-data\"&gt;&lt;input type=\"file\" name=\"file\" id=\"file\" value=\"dataFile\" required=\"\"&gt;&lt;/form&gt;Step 3 : Now upload your input file to S3$(\"#fileUploadForm\").submit(function() {var bucket = new AWS.S3({params: {Bucket: 'BUCKET_NAME'}});var fileChooser = document.getElementById('file');var file = fileChooser.files[0];if (file) {var params = {Key: 'FILE_NAME', ContentType: file.type, Body: file};bucket.upload(params).on('httpUploadProgress', function(evt) {console.log(\"Uploaded :: \" + parseInt((evt.loaded * 100) / evt.total)+'%');}).send(function(err, data) {alert(\"File uploaded successfully.\");});}return false;});To upload the file successfully, you need to enable CORS configuration on S3.Generally, it is not advisable to display your keys directly on page, so you can use Amazon Cognito or web identity federation feature.Using Cognito service&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;    &lt;title&gt;AWS S3 File Upload&lt;/title&gt;    &lt;script src=\"https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js\"&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;input type=\"file\" id=\"file-chooser\" /&gt;    &lt;button id=\"upload-button\"&gt;Upload to S3&lt;/button&gt;    &lt;div id=\"results\"&gt;&lt;/div&gt;    &lt;script type=\"text/javascript\"&gt;    AWS.config.region = 'ap-south-1'; // 1. Enter your region    AWS.config.credentials = new AWS.CognitoIdentityCredentials({        IdentityPoolId: 'ap-south-1:79a1d229-dd96-4c05-a7de-ef9d58976122' // 2. Enter your identity pool    });    AWS.config.credentials.get(function(err) {        if (err) alert(err);        console.log(AWS.config.credentials);    });    var bucketName = 'test-marcom'; // Enter your bucket name    var bucket = new AWS.S3({        params: {            Bucket: bucketName        }    });    var fileChooser = document.getElementById('file-chooser');    var button = document.getElementById('upload-button');    var results = document.getElementById('results');    button.addEventListener('click', function() {        var file = fileChooser.files[0];        if (file) {            results.innerHTML = '';            var objKey = 'testing/' + file.name;            var params = {                Key: objKey,                ContentType: file.type,                Body: file,                ACL: 'public-read'            };            bucket.putObject(params, function(err, data) {                if (err) {                    results.innerHTML = 'ERROR: ' + err;                } else {                    listObjs();                }            });        } else {            results.innerHTML = 'Nothing to upload.';        }    }, false);    function listObjs() {        var prefix = 'testing';        bucket.listObjects({            Prefix: prefix        }, function(err, data) {            if (err) {                results.innerHTML = 'ERROR: ' + err;            } else {                var objKeys = \"\";                data.Contents.forEach(function(obj) {                    objKeys += obj.Key + \"&lt;br&gt;\";                });                results.innerHTML = objKeys;            }        });    }    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;",
+        "url": "/2017/06/01/amazon-s3-direct-file-upload-from-client-browser-private-key-disclosure/"
+      }
+      ,
+    
+      "2017-04-28-some-types-of-request-response-params-in-spring": {
+        "title": "Some Types Of Request Response Params In Spring",
+        "author": "",
+        "category": "",
+        "content": "Request/Response paramters in spring method  HttpSession  @PathVariable annotated parameters for access to URI template variables.    @RequestMapping(value=\"/owners/{ownerId}\", method=RequestMethod.GET)public String findOwner(@PathVariable String ownerId, Model model) {Owner owner = ownerService.findOwner(ownerId);  model.addAttribute(\"owner\", owner);  return \"displayOwner\"; }        @RequestHeader annotated parameters for access to specific Servlet request HTTP headers.  @RequestBody annotated parameters for access to the HTTP request body.    @RequestMapping(value = \"/something\", method = RequestMethod.PUT)public void handle(@RequestBody String body, Writer writer) throws IOException {writer.write(body);}        @RequestPart annotated parameters for access to the content of a “multipart/form-data” request part.```@RequestMapping(value=”/someUrl”, method = RequestMethod.POST)public String onSubmit(@RequestPart(“meta-data”) MetaData metadata,                     @RequestPart(“file-data”) MultipartFile file) {  // …}* **HttpEntity&lt;?&gt;** parameters for access to the Servlet request HTTP headers and contents.@RequestMapping(“/something”)public ResponseEntity handle(HttpEntity&lt;byte[]&gt; requestEntity) throws UnsupportedEncodingException {  String requestHeader = requestEntity.getHeaders().getFirst(\"MyRequestHeader\"));  byte[] requestBody = requestEntity.getBody();  // do something with request header and bodyHttpHeaders responseHeaders = new HttpHeaders();  responseHeaders.set(“MyResponseHeader”, “MyValue”);  return new ResponseEntity(\"Hello World\", responseHeaders, HttpStatus.CREATED);}```",
+        "url": "/2017/04/28/some-types-of-request-response-params-in-spring/"
+      }
+      ,
+    
+      "2017-04-28-spring-boot-application-live-reload-hot-swap-with-intellij-idea": {
+        "title": "Spring Boot Application Live Reload Hot Swap With Intellij Idea",
+        "author": "",
+        "category": "",
+        "content": "Spring Boot Application Live Reload (Hot Swap) With Intellij IDEAWhile developing Spring Boot Applications using Intellij IDEA, it was so annoying to restart the Spring Boot app after each and every change. Spring Boot provides live reload (hot swap) of application out of the box using the following dependency.&lt;dependency&gt;    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;    &lt;optional&gt;true&lt;/optional&gt;&lt;/dependency&gt;But it didn’t live reload the application/container, and the hot deployment didn’t work for changes. Further researching found that following changes needed to be done in order the hot deployment to be worked correctly.      Open the Settings –&gt; Build-Execution-Deployment –&gt; Compiler    and enable the Make Project Automatically.        Then press ctrl+shift+A and search for the registry. In the registry, make the following configuration enabled.     compiler.automake.allow.when.app.running            Reload Static content (html, css, js)    Add this configuration to your Spring Boot Maven Plugin:     &lt;configuration&gt;     &lt;addResources&gt;true&lt;/addResources&gt; &lt;/configuration&gt;            Restart the IDE.  That’s it! Now the hot deployment works, and you don’t have to restart manually after each and every change.In case of spring boot with thymeleaf there may be problem in reload html, css, js etc.In this case, we need to change run configuration in intelij like bellow:",
+        "url": "/2017/04/28/Spring-Boot-Application-Live-Reload-Hot-Swap-With-Intellij-IDEA/"
+      }
+      ,
+    
+      "2017-04-28-sementic-ui-calender-set-date-backend-frontend": {
+        "title": "Sementic Ui Calender Set Date Backend Frontend",
+        "author": "",
+        "category": "",
+        "content": "Sementic UI CalenderCalendar module for Semantic UI. See https://jsbin.com/ruqakehefa/ for example usage.Github LinkInstallationInstall using bower:bower install --save semantic-ui-calendarInstall using npm:npm install --save semantic-ui-calendarInclude javascript and css in html:   &lt;script type=\"text/javascript\" src=\"/bower_components/semantic-ui-calendar/dist/calendar.min.js\"&gt;&lt;/script&gt;   &lt;link rel=\"stylesheet\" href=\"/bower_components/semantic-ui-calendar/dist/calendar.min.css\" /&gt;Basic HTML&lt;div class=\"ui calendar\" id=\"date\"&gt;    &lt;div class=\"ui input left icon\"&gt;        &lt;i class=\"calendar icon\"&gt;&lt;/i&gt;        &lt;input name=\"date\" type=\"text\"&gt;    &lt;/div&gt;&lt;/div&gt;Javascript Calling$(\"#date\").calendar({    type: 'date',    parser: app.dateParser,    parseFormat: 'dd/MM/yyyy',    formatter: app.dateFormatter,    minDate: $(\"#date\").data('min-date') ? kendo.parseDate($(\"#date\").data('min-date'), 'dd/MM/yyyy') : null,    maxDate: $(\"#date\").data('max-date') ? kendo.parseDate($(\"#date\").data('max-date'), 'dd/MM/yyyy') : null,});var app = {    dateParser: {        date: function (txtDate, settings) {            if (!txtDate) return null;            if (settings.parseFormat) {                return kendo.parseDate(txtDate, settings.parseFormat);            } else {                return kendo.parseDate(txtDate, \"dd/MM/yyyy\");            }        }    }};Trigger angular value on change Calender&lt;div class=\"ui calendar\" id=\"date\"&gt;    &lt;div class=\"ui input left icon\"&gt;        &lt;i class=\"calendar icon\"&gt;&lt;/i&gt;        &lt;input name=\"date\" type=\"text\" ng-model=\"angularController.element\"&gt;    &lt;/div&gt;&lt;/div&gt;$(\"#date\").calendar({    type: 'date',    parser: app.dateParser,    parseFormat: 'dd/MM/yyyy',    formatter: app.dateFormatter,    minDate: $(\"#date\").data('min-date') ? kendo.parseDate($(\"#date\").data('min-date'), 'dd/MM/yyyy') : null,    maxDate: $(\"#dateOfCheque\").data('max-date') ? kendo.parseDate($(\"#date\").data('max-date'), 'dd/MM/yyyy') : null,    onChange: function (date, text, mode) {    var $scope = angular.element($(\"#date\")).scope();    $scope.$apply(function() {        $scope.angularController.element = text;    });    }});Changed value from Javascriptcalendar(‘set date’, Javascript native Date object) $('#date').calendar('set date', new Date());Initialized Backend Date to Calender&lt;div class=\"ui calendar\" id=\"date\"&gt;    &lt;div class=\"ui input left icon\"&gt;        &lt;i class=\"calendar icon\"&gt;&lt;/i&gt;        &lt;input name=\"date\" type=\"text\" value=\"${g.formatDate(date: new Date(), format: 'dd/MM/yyyy')}\"&gt;    &lt;/div&gt;&lt;/div&gt;",
+        "url": "/2017/04/28/sementic-ui-calender-set-date-backend-frontend/"
+      }
+      ,
+    
+      "2017-01-01-learning-markdown-for-your-site": {
+        "title": "Learning Markdown For Your Site",
+        "author": "",
+        "category": "",
+        "content": "Markdown is a lightweight and easy-to-use syntax for styling all forms of writing on the GitHub platform.What you will learn:  How the Markdown format makes styled collaborative editing easy  How Markdown differs from traditional formatting approaches  How to use Markdown to format text  How to leverage GitHub’s automatic Markdown rendering  How to apply GitHub’s unique Markdown extensionsWhat is Markdown?Markdown is a way to style text on the web. You control the display of the document; formatting words as bold or italic, adding images, and creating lists are just a few of the things we can do with Markdown. Mostly, Markdown is just regular text with a few non-alphabetic characters thrown in, like # or *.You can use Markdown most places around GitHub:  Gists  Comments in Issues and Pull Requests  Files with the .md or .markdown extensionFor more information, see “Writing on GitHub” in the GitHub Help.Examples            Type      to Get                  *Italic*      Italic              **Bold**      Bold              [Link](http://a.com)      Link              ![Image](http://url/a.png)                    &gt; Blockquote      &gt; Blockquote              * List      * List              Horizontal Rule      Horizontal Rule              ---      —      Headers# H1## H2### H3#### H4##### H5###### H6H1H2H3H4H5H6ImagesHere’s our logo (hover to see the title text):Inline-style:![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")Reference-style: ![alt text][logo]Table structure|Head1 | Head2 || ------ | ------ || test | test |            Head1      Head2                  test      test      |Head1 | Head2 | Head3 | Head4 | Head5 | Head6 || ------ | ------ | ------ | ------ | ------ | ------ || test | test | test | test | test | test |            Head1      Head2      Head3      Head4      Head5      Head6                  test      test      test      test      test      test      Reference LinkMarkdown Cheatsheet, Markdown Guide",
+        "url": "/2017/01/01/learning-markdown-for-your-site/"
+      }
+      ,
+    
+      "2016-12-28-starting-project-with-machine-learning": {
+        "title": "Starting Project With Machine Learning",
+        "author": "",
+        "category": "",
+        "content": "Machine LearingMachine learning is a type of artificial intelligence (AI) that provides computers with the ability to learn without being explicitly programmed. Machine learning focuses on the development of computer programs that can change when exposed to new data.\"A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E.”  -- Tom Mitchell, Carnegie Mellon University So if you want your program to predict, for example, traffic patterns at a busy intersection (task T), you can run it through a machine learning algorithm with data about past traffic patterns (experience E) and, if it has successfully “learned”, it will then do better at predicting future traffic patterns (performance measure P).ML solves problems that cannot be solved by numerical means alone. To break down the definition for easier understanding I should mention some factors that we should know as follows:  Method means technique or way to do  Data means set of information  Existing data means data already we have for any task.  Algorithm - Step by step set of operations/command to be performed  Automatically – Something is done or gained without working again.  Model - Data schema that learn from data iteratively",
+        "url": "/2016/12/28/starting-project-with-machine-learning/"
+      }
+      ,
+    
+      "2016-12-26-welcome-to-jekyll": {
+        "title": "Jekyll",
+        "author": "",
+        "category": "",
+        "content": "JekyllJekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.##Installation via RubyInstallerPermalinkRubyInstaller is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.      Download and Install a package manager version from RubyInstaller Downloads.    If problem to download MSYS2, can download manually from MSYS2 &amp; install it.        Install Jekyll and Bundler via a command prompt window:  gem install jekyll bundler  Check if Jekyll installed properly:jekyll -v      To start a new project named my_blog, just run:    jekyll new my_blog        run jekyll project -    bundle exec jekyll serve        or    jekyll serve      Exceptionif any problem likeCould not find public_suffix-2.0.4 in any of the sources (Bundler::GemNotFound)for version miss matching just update the gem-bundle update",
+        "url": "/2016/12/26/welcome-to-jekyll/"
+      }
+      ,
+    
+      "2016-12-26-java-interview-question": {
+        "title": "un category : Java Interview Questions",
+        "author": "",
+        "category": "",
+        "content": "  What is difference between Heap and Stack Memory?Heap memory is used by all the parts of the application whereas stack memory is used only by one thread of execution.Whenever an object is created, it’s always stored in the Heap space and stack memory contains the reference to it. Stack memory only contains local primitive variables and reference variables to objects in heap space.Memory management in the stack is done in LIFO manner whereas it’s more complex in Heap memory because it’s used globally.For a detailed explanation with a sample program, read Java Heap vs Stack Memory.  Java is Pass by Value or Pass by Reference?Java is Pass by Value and Not Pass by ReferenceFirst of all we should understand what is meant by pass by value or pass by reference.      Pass by Value: The method parameter values are copied to another variable and then the copied object is passed, that’s why it’s called pass by value.        Pass by Reference: An alias or reference to the actual parameter is passed to the method, that’s why it’s called pass by reference.  Example: Let’s say we have a class Balloon like below.package com.journaldev.test;public class Balloon {\tprivate String color;\tpublic Balloon(){}\t\tpublic Balloon(String c){\t\tthis.color=c;\t}\t\tpublic String getColor() {\t\treturn color;\t}\tpublic void setColor(String color) {\t\tthis.color = color;\t}}package com.journaldev.test;public class Test {\tpublic static void main(String[] args) {\t\tBalloon red = new Balloon(\"Red\"); //memory reference 50\t\tBalloon blue = new Balloon(\"Blue\"); //memory reference 100\t\t\t\tswap(red, blue);\t\tSystem.out.println(\"red color=\"+red.getColor());\t\tSystem.out.println(\"blue color=\"+blue.getColor());\t\t\t\tfoo(blue);\t\tSystem.out.println(\"blue color=\"+blue.getColor());\t\t\t}\tprivate static void foo(Balloon balloon) { //baloon=100\t\tballoon.setColor(\"Red\"); //baloon=100\t\tballoon = new Balloon(\"Green\"); //baloon=200\t\tballoon.setColor(\"Blue\"); //baloon = 200\t}\t//Generic swap method\tpublic static void swap(Object o1, Object o2){\t\tObject temp = o1;\t\to1=o2;\t\to2=temp;\t}}Output:red color=Redblue color=Blueblue color=Red  Write a program to print all permutations of String?This is a tricky question and we need to use recursion to find all the permutations of a String, for example “AAB” permutations will be “AAB”, “ABA” and “BAA”.We also need to use Set to make sure there are no duplicate values.      What is platform independence?Java code is compiled to class file &amp; this class file can run to all ooperating system.Hence Java is platform independent.    Why java is so popular?          Java is platform independent      Object Oriented      Robust      Secure programming Language        Difference between C++ &amp; java:          Pointers: C++ has Pointers But There is no pointers in java      Structures &amp; Unions: in C++ ==&gt; Class (Structure + methods) &amp; Object in Java      Memory management vs Garbage Collection in C++ ==&gt; Class &amp; Object in Java            ",
+        "url": "/2016/12/26/java-interview-question/"
+      }
+      ,
+    
+      "2016-12-26-java-exception-handling": {
+        "title": "Exception Handling",
+        "author": "",
+        "category": "",
+        "content": "Exception HandlingHierarchy of Java Exception classes  Throwable          Exception                  IOException          SQLException          ClassNotFoundException          RuntimeException                          ArithmeticException              NullPointerException              NumberFormateException              IndexOutOfBoundException                                  ArrayIndexOutOfBoundException                  StringIndexOutOfBoundException                                                                        Error                  StackOverFlowError          VirtualMachineError          OutOfMemoryError                    Type of Exception  Checked Exception -Those type of exception extends Throwable except RuntimeException &amp; are checked at compile time. Example: IOException, SQLException  Unchecked Exception          Those type of Exception which are not checked at runtime. Example: ArithmeticException, NullPointerException, NumberFormateException        Error          Error is irrecoverable e.g. OutOfMemoryError, VirtualMachineError, AssertionError etc.      Common scenarios where exceptions may occurThere are given some scenarios where unchecked exceptions can occur. They are as follows:1) Scenario where ArithmeticException occursIf we divide any number by zero, there occurs an ArithmeticException.int a=50/0;//ArithmeticException  2) Scenario where NullPointerException occursIf we have null value in any variable, performing any operation by the variable occurs an NullPointerException.String s=null;  System.out.println(s.length());//NullPointerException  3) Scenario where NumberFormatException occursThe wrong formatting of any value, may occur NumberFormatException. Suppose I have a string variable that have characters, converting this variable into digit will occur NumberFormatException.String s=\"abc\";  int i=Integer.parseInt(s);//NumberFormatException  4) Scenario where ArrayIndexOutOfBoundsException occursIf you are inserting any value in the wrong index, it would result ArrayIndexOutOfBoundsException as shown below:int a[]=new int[5];  a[10]=50; //ArrayIndexOutOfBoundsException  Java Exception Handling KeywordsThere are 5 keywords used in java exception handling.trycatchfinallythrowthrowsThe JVM firstly checks whether the exception is handled or not. If exception is not handled, JVM provides a default exception handler that performs the following tasks:  Prints out exception description.  Prints the stack trace (Hierarchy of methods where the exception occurred).  Causes the program to terminate.But if exception is handled by the application programmer, normal flow of the application is maintained i.e. rest of the code is executed.Java finally block  Java finally block is a block that is used to execute important code such as closing connection, stream etc.  Java finally block is always executed whether exception is handled or not.  Java finally block isFor each try block there can be zero or more catch blocks, but only one finally block.Java Exception propagationAn exception is first thrown from the top of the stack and if it is not caught, it drops down the call stack to the previous method,If not caught there, the exception again drops down to the previous method, and so on until they are caught or until they reach the very bottom of the call stack.This is called exception propagation.class TestExceptionPropagation1{           void m(){             int data=50/0;           }           void n(){             m();           }           void p(){            try{             n();            }catch(Exception e){System.out.println(\"exception handled\");}           }           public static void main(String args[]){            TestExceptionPropagation1 obj=new TestExceptionPropagation1();            obj.p();            System.out.println(\"normal flow...\");           }         }                Output:exception handled              normal flow... By default Unchecked Exceptions are forwarded in calling chain (propagated).By default, Checked Exceptions are not forwarded in calling chain (propagated).Program which describes that checked exceptions are not propagated    class TestExceptionPropagation2{        void m(){          throw new java.io.IOException(\"device error\");//checked exception        }        void n(){          m();        }        void p(){         try{          n();         }catch(Exception e){System.out.println(\"exception handeled\");}        }        public static void main(String args[]){         TestExceptionPropagation2 obj=new TestExceptionPropagation2();         obj.p();         System.out.println(\"normal flow\");        }      }          Output:Compile Time Errorava throws keywordThe Java throws keyword is used to declare an exception. It gives an information to the programmer that there may occur an exception so it is better for the programmer to provide the exception handling code so that normal flow can be maintained.Exception Handling is mainly used to handle the checked exceptions. If there occurs any unchecked exception such as NullPointerException, it is programmers fault that he is not performing check up before the code being used.Syntax of java throwsreturn_type method_name() throws exception_class_name{  //method code  }  Which exception should be declaredAns) checked exception only, because:unchecked Exception: under your control so correct your code.error: beyond your control e.g. you are unable to do anything if there occurs VirtualMachineError or StackOverflowError.Difference between throw and throws in Java            No.      throw      throws                  1)      Java throw keyword is used to explicitly throw an exception.      Java throws keyword is used to declare an exception.              2)      Checked exception cannot be propagated using throw only.      Checked exception can be propagated with throws.              3)      Throw is followed by an instance.      Throws is followed by class.              4)      Throw is used within the method.      Throws is used with the method signature.              5)      You cannot throw multiple exceptions.      You can declare multiple exceptions e.g. public void method()throws IOException,SQLException.      Difference between final, finally and finalizeThere are many differences between final, finally and finalize. A list of differences between final, finally and finalize are given below:            No.      final      finally      finalize                  1)      Final is used to apply restrictions on class, method and variable.      Final class can’t be inherited, final method can’t be overridden and final variable value can’t be changed.      Finally is used to place important code, it will be executed whether exception is handled or not.\tFinalize is used to perform clean up processing just before object is garbage collected.              2)      Final is a keyword.      Finally is a block.      Finalize is a method.      Java throw examplevoid m(){  throw new ArithmeticException(\"sorry\");  }  Java throws examplevoid m()throws ArithmeticException{  //method code  }  Java throw and throws examplevoid m()throws ArithmeticException{  throw new ArithmeticException(\"sorry\");  }      }}  ",
+        "url": "/2016/12/26/java-Exception-Handling/"
+      }
+      ,
+    
+      "2016-12-26-hello-world-in-go-language-command-line": {
+        "title": "Hello World in Go Language Command Line",
+        "author": "",
+        "category": "",
+        "content": "Go LanguageGo is an open source programming language that makes it easy to build simple, reliable, and efficient software.Our canonical Git repository is located at Go-Lang. There is a mirror of the repository at GO.",
+        "url": "/2016/12/26/hello-world-in-go-language-command-line/"
+      }
+      ,
+    
+      "2016-12-26-permmissingelem": {
+        "title": "PermMissingElem",
+        "author": "",
+        "category": "",
+        "content": "PermMissingElemAn array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.Your goal is to find that missing element.Write a function:class Solution { public int solution(int[] A); }that, given an array A, returns the value of the missing element.For example, given array A such that:  A[0] = 2  A[1] = 3  A[2] = 1  A[3] = 5the function should return 4, as it is the missing element.Assume that:N is an integer within the range [0..100,000];the elements of A are all distinct;each element of array A is an integer within the range [1..(N + 1)].Complexity:expected worst-case time complexity is O(N);expected worst-case space complexity is O(1) (not counting the storage required for input arguments).Solution:class Solution {    public int solution(int[] A) {        // write your code in Java SE 8        int length = A.length;        long sum = (length+1)*(length+2)/2;        for(int i = 0; i &lt; length; i++) {            sum -= A[i];        }        return (int)sum;    }}",
+        "url": "/2016/12/26/PermMissingElem/"
+      }
+      ,
+    
+      "2016-12-26-oddoccurrencesinarray": {
+        "title": "ddOccurrencesInArray",
+        "author": "",
+        "category": "",
+        "content": "ddOccurrencesInArrayA non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.For example, in array A such that:  A[0] = 9  A[1] = 3  A[2] = 9  A[3] = 3  A[4] = 9  A[5] = 7  A[6] = 9the elements at indexes 0 and 2 have value 9,the elements at indexes 1 and 3 have value 3,the elements at indexes 4 and 6 have value 9,the element at index 5 has value 7 and is unpaired.Write a function:int solution(int A[], int N);that, given an array A consisting of N integers fulfilling the above conditions, returns the value of the unpaired element.For example, given array A such that:  A[0] = 9  A[1] = 3  A[2] = 9  A[3] = 3  A[4] = 9  A[5] = 7  A[6] = 9the function should return 7, as explained in the example above.Assume that:N is an odd integer within the range [1..1,000,000];each element of array A is an integer within the range [1..1,000,000,000];all but one of the values in A occur an even number of times.Complexity:expected worst-case time complexity is O(N);expected worst-case space complexity is O(1) (not counting the storage required for input arguments).Solution:// XORing any 2 similar number will give us zero //Zoring Zero with any number will give us the numberclass Solution { public int solution(int[] A) {  // write your code in Java SE 8  int unPairedNum = A[0];  for (int i = 1; i &lt; A.length; i++) {   unPairedNum = unPairedNum ^ A[i];  }  return unPairedNum; }}",
+        "url": "/2016/12/26/OddOccurrencesInArray/"
+      }
+      ,
+    
+      "2016-12-26-frogjmp": {
+        "title": "FrogJmp",
+        "author": "",
+        "category": "",
+        "content": "FrogJmpA small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.Count the minimal number of jumps that the small frog must perform to reach its target.Write a function:class Solution { public int solution(int X, int Y, int D); }that, given three integers X, Y and D, returns the minimal number of jumps from position X to a position equal to or greater than Y.For example, given:  X = 10  Y = 85  D = 30the function should return 3, because the frog will be positioned as follows:after the first jump, at position 10 + 30 = 40after the second jump, at position 10 + 30 + 30 = 70after the third jump, at position 10 + 30 + 30 + 30 = 100Assume that:X, Y and D are integers within the range [1..1,000,000,000];X ≤ Y.Complexity:expected worst-case time complexity is O(1);expected worst-case space complexity is O(1).Solution:class Solution {    public int solution(int X, int Y, int D) {        if(X==Y)\t\t\treturn 0;        return (int) Math.ceil((double)(Y-X)/D);    }}",
+        "url": "/2016/12/26/FrogJmp/"
+      }
+      ,
+    
+      "2016-12-26-cyclicrotation": {
+        "title": "CyclicRotation",
+        "author": "",
+        "category": "",
+        "content": "CyclicRotationAn array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.Write a function:class Solution { public int[] solution(int[] A, int K); }that, given an array A consisting of N integers and an integer K, returns the array A rotated K times.For example, given A = [3, 8, 9, 7, 6] K = 3the function should return [9, 7, 6, 3, 8]. Three rotations were made:[3, 8, 9, 7, 6] -&gt; [6, 3, 8, 9, 7][6, 3, 8, 9, 7] -&gt; [7, 6, 3, 8, 9][7, 6, 3, 8, 9] -&gt; [9, 7, 6, 3, 8]For another example, given  A = [0, 0, 0]  K = 1the function should return [0, 0, 0]GivenA = [1, 2, 3, 4]K = 4the function should return [1, 2, 3, 4]Assume that:N and K are integers within the range [0..100];each element of array A is an integer within the range [−1,000..1,000].In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.Solution: public class Solution {      public int[] solution(int[] array, int k) {         if (array == null)             return null;          int arrayLength = array.length;          int[] sol = new int[array.length];          for (int i = 0; i &lt; array.length; i++) {             sol[(i + k) % arrayLength] = array[i];         }          return sol;     }  }",
+        "url": "/2016/12/26/CyclicRotation/"
+      }
+      ,
+    
+      "2016-12-26-binary-gap": {
+        "title": "BinaryGap",
+        "author": "",
+        "category": "",
+        "content": "BinaryGapA binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.For example, number 9 has binary representation 1001 and contains a binary gap of length 2. The number 529 has binary representation 1000010001 and contains two binary gaps: one of length 4 and one of length 3. The number 20 has binary representation 10100 and contains one binary gap of length 1. The number 15 has binary representation 1111 and has no binary gaps.Write a function:int solution(int N);that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn’t contain a binary gap.For example, given N = 1041 the function should return 5, because N has binary representation 10000010001 and so its longest binary gap is of length 5.Assume that:N is an integer within the range [1..2,147,483,647].Complexity:expected worst-case time complexity is O(log(N));expected worst-case space complexity is O(1).Solution: int solution(int N) {        String binaryStr = Integer.toBinaryString(N);        int i = binaryStr.length() -1;        while (binaryStr.charAt(i) == '0') {            i--;        }        int gap = 0;        int count = 0;        while ( i &gt;= 0 ) {            if(binaryStr.charAt(i) == '1') {                gap = Math.max(gap, count);                count = 0;            } else {                count++;            }            i--;        }        return gap;    }",
+        "url": "/2016/12/26/Binary-Gap/"
+      }
+      ,
+    
+      "2016-12-26-google-play-service-on-genymotion": {
+        "title": "Google Play Service on Genymotion",
+        "author": "",
+        "category": "",
+        "content": "Google Play Service on GenymotionFor intellectual property reasons, Google Play Services are not included by default in Genymotion virtual devices. However, if you really need them, you can use the packages provided by OpenGapps. Simply follow these steps:  Genymotion 2.10 is out! And it comes with a 1-click installer for Google Apps  Simply download and install Genymotion 2.10 and a new “Open GApps” widget will be available in your toolbar. Click it and it’ll do the rest!  Visit opengapps.org  Select x86 as platform  Choose the Android version corresponding to your virtual device  Select nano as variant  Download the zip file  Drag &amp; Drop the zip installer in new Genymotion virtual device (2.7.2 and above only)  Follow the pop-up instructionsPlease note Genymobile Inc. and Genymotion assume no liability whatsoever resulting from the download, install and use of Google Play Services within your virtual devices. You are solely responsible for the use and assume all liability related thereto. Moreover, we disclaim any warranties of any kind for a particular purpose regarding the compatibility of the OpenGapps packages with any version of Genymotion",
+        "url": "/2016/12/26/google-play-service-on-genymotion/"
+      }
+      ,
+    
+      "2016-09-26-study-topics": {
+        "title": "Study Topics",
+        "author": "",
+        "category": "",
+        "content": "  Git  Java  Composition in Java  Logger in Java  Spring AMQP RabbitMQ  Hibernate  Autoboxing  Java ThreadOCJP  QuizeTopics:  Design Patterns being used in Spring framework :      MVC - The advantage with Spring MVC is that your controllers are POJOs as opposed to being servlets. This makes for easier testing of controllers.        Front controller - Spring provides “DispatcherServlet” to ensure an incoming request gets dispatched to your controllers.        View Helper - Spring has a number of custom JSP tags, and velocity macros, to assist in separating code from presentation in views.        Singleton - Beans defined in spring config files are singletons by default.        Prototype - Instance type can be prototype.        Factory - Used for loading beans through BeanFactory and Application context.        Builder - Spring provides programmatic means of constructing BeanDefinitions using the builder pattern through Class “BeanDefinitionBuilder”.        Template - Used extensively to deal with boilerplate repeated code (such as closing connections cleanly, etc..). For example JdbcTemplate.        Proxy - Used in AOP &amp; Remoting.    DI/IOC - It is central to the whole BeanFactory/ApplicationContext stuff.Links:  Design pattern with Spring 1  Design pattern with Spring 2  Design pattern with Spring 3  Design pattern with Spring 4  Design pattern with Spring 5Technology  Meteor",
+        "url": "/2016/09/26/Study_topics/"
+      }
+      ,
+    
+      "2016-09-26-git-vs-svn": {
+        "title": "Git Vs SVN",
+        "author": "",
+        "category": "",
+        "content": "Git vs SVN  Git is a distributed VCS; SVN is a non-distributed VCS.  Git has a centralized server and repository; SVN does not have a centralized server or repository.  The content in Git is stored as metadata; SVN stores files of content.  Git branches are easier to work with than SVN branches.  Git has better content protection than SVN.  Git is distributed under GNU, and its maintenance overseen by Junio Hamano; Apache Subversion, or SVN, is distributed under the open source license.The key difference is that it is decentralized. Imagine you are a developer on the road, you develop on your laptop and you want to have source control so that you can go back 3 hours.With Subversion, you have a Problem: The SVN Repository may be in a location you can’t reach (in your company, and you don’t have internet at the moment), you cannot commit. If you want to make a copy of your code, you have to literally copy/paste it.With Git, you do not have this problem. Your local copy is a repository, and you can commit to it and get all benefits of source control. When you regain connectivity to the main repository, you can commit against it.",
+        "url": "/2016/09/26/git-vs-svn/"
+      }
+      ,
+    
+      "2016-09-26-interveiw-questions": {
+        "title": "Interview Questions",
+        "author": "",
+        "category": "",
+        "content": "      Give some example of the application of Tree-data structure?    Ans. Application of Tree- data structure:          The manipulation of Arithmetic expression,      Syntax analysis            How many minimum numbers of queues are needed to implement the priority queue?    Ans. Two queues are needed. One queue is used for actual storing of data and another for storing priorities.  ",
+        "url": "/2016/09/26/interveiw-questions/"
+      }
+      ,
+    
+      "2016-09-26-stack-queue": {
+        "title": "Stack Queue",
+        "author": "",
+        "category": "",
+        "content": "Stack QueueStack is a LIFO (last in first out) data structure.Queue is a FIFO (first in first out) data structure.",
+        "url": "/2016/09/26/Stack-Queue/"
+      }
+      ,
+    
+      "2016-04-28-rest-soap": {
+        "title": "Rest Soap",
+        "author": "",
+        "category": "",
+        "content": "REST vs SOAP  SOAP - “Simple Object Access Protocol”. Rest - Representational state transfer  SOAP is a xml-based message protocol. REST is an architectural style protocol.  SOAP usages WSDL for communication between consumer &amp; provider. REST uses XML or JSON to send or receive data,  SOAP invokes services by calling RPC method. REST simply calls services via URL path.  SOAP doesn’t return human readable result. REST’s result is readable which is just plain xml or json.  SOAP: Transfer is over HTTP. Also uses other protocols such as SMTP, FTP etc. REST: Transfer is over HTTP only.  Javascript can call SOAP, but it is difficult to implement. REST is easy to call from javascript.  SOAP: Performance is not great compared to REST.",
+        "url": "/2016/04/28/rest-soap/"
+      }
+      ,
+    
+      "2016-04-28-rest-method": {
+        "title": "Rest Method",
+        "author": "",
+        "category": "",
+        "content": "REST MethodStandard Methods            Method      Scope      Semantics                  GET      collection      Retrieve all resources in a collection              GET      resource      Retrieve a single resource              HEAD      collection      Retrieve all resources in a collection (header only)              HEAD      resource      Retrieve a single resource (header only)              POST      collection      Create a new resource in a collection              PUT      resource      Update a resource              PATCH      resource      Update a resource              DELETE      resource      Delete a resource              OPTIONS      any      Return available HTTP methods and other options      Source Link",
+        "url": "/2016/04/28/rest-method/"
+      }
+      ,
+    
+      "2016-04-28-rest-api": {
+        "title": "Rest Api",
+        "author": "",
+        "category": "",
+        "content": "Use RESTful service URLsUnder REST principles, a URL identifies a resource. The following URL design patterns are considered REST best practices:  URLs should include nouns, not verbs.  Use plural nouns only for consistency (no singular nouns).  Use HTTP methods (HTTP/1.1) to operate on these resources:  Use HTTP response status codes to represent the outcome of operations on resources.VersioningExample of an API URL that contains a version number:GET /v1/path/to/resource HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptShouldIf an API URL does not contain a version number (anonymous version), then it should be understood that it always refers to the latest version.FormatsAllow users to request formats like JSON or XML, for example:http://example.gov/api/v1/magazines.jsonhttp://example.gov/api/v1/magazines.xmlRecommendedAvoid URL designs deeper than resource/identifier/resource.The three patterns of payload format encoding most frequently found in the wild are:HTTP headers (e.g. Content-Type: and Accept:)GET parameters (e.g. &amp;format=json)resource label (e.g. /foo.json)Good RESTful URL examplesList of magazines:GET /api/v1/magazines.json HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptFiltering and sorting are server-side operations on resources:GET /api/v1/magazines.json?year=2011&amp;sort=desc HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptA single magazine in JSON format:GET /api/v1/magazines/1234.json HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptAll articles in (or belonging to) this magazine:GET /api/v1/magazines/1234/articles.json HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptAll articles in this magazine in XML format:GET /api/v1/magazines/1234/articles.xml HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptSpecify query parameters in a comma separated list:GET /api/v1/magazines/1234.json?fields=title,subtitle,date HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptAdd a new article to a particular magazine:POST /api/v1/magazines/1234/articles.json HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptBad RESTful URL examplesNon-plural noun:GET /magazine HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptGET /magazine/1234 HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptVerb in URL:GET /magazine/1234/create HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptFilter outside of query string:GET /magazines/2011/desc HTTP/1.1Host: www.example.gov.auAccept: application/json, text/javascriptUse versionsNever release an API without a version number.Versions should be integers, not decimal numbers, prefixed with ‘v’. For example:Good: v1, v2, v3Bad: v-1.1, v1.2, 1.3Maintain APIs at least one version back.Use HTTP methods and status codesMeaningful status codes helps consumers utilise your API.GET /magazinesList all magazines contained within the /magazines resourceGET /magazines HTTP/1.1Host: example.gov.auAccept: application/json, text/javascriptA response of “200 OK” indicating that the request has succeeded.HTTP/1.1 200 OKVary: AcceptContent-Type: text/javascript{...}Status Codes:200 OK – no error404 Not Found – the “magazines” resource does not existPOST /magazinesCreate new magazine within the /magazines resourcePOST /magazines HTTP/1.1Host: example.gov.auAccept: application/json, text/javascript{...}A response of “201 Created” indicates that the request has been fulfilled.The URI of the new resource is provided in the responseHTTP/1.1 201 CreatedVary: AcceptContent-Type: text/javascript{ \"id\": \"1234\" }Batching resultsIf no limit is specified, return results with a default limit.To get records 51 through 75 do this:GET /magazines?limit=25&amp;offset=50 HTTP/1.1Host: example.gov.auAccept: application/json, text/javascriptoffset=50 means, ‘skip the first 50 records’limit=25 means, ‘return a maximum of 25 records’Information about record limits and total available count should also be included in the response. Example:HTTP/1.1 200 OKVary: AcceptContent-Type: text/javascript{  \"metadata\": {    \"resultset\": {      \"count\": 227,      \"offset\": 25,      \"limit\": 25    }  },  \"results\": [...]Source Link",
+        "url": "/2016/04/28/rest-api/"
+      }
+      ,
+    
+      "2016-04-28-aws-hosting-server-install-mysql": {
+        "title": "Aws Hosting Server Install Mysql",
+        "author": "",
+        "category": "",
+        "content": "How to install MySQL on an Amazon EC2 Server Instance?Being a newbie to server administration especially with Linux, I found myself looking all over the internet on how to install a mysql server instance! Here is what worked for me on the Amazon EC2 instance:To install a MySQL Server  First step is to of course ssh into the EC2 instance  Then, at a command prompt, use the following command to install MySQL Server:sudo yum install mysql-serverWhen you are prompted, type ‘y’.To start the installed MySQL Server  Start mysql, and configure it to start up automatically on reboot.sudo chkconfig mysqld onsudo service mysqld startYou would see a response like the following.Starting mysqldConfiguring newly installed MySQL Server      To update the password of root user do the following:         mysqladmin -u root password [your_new_pwd]            To create a database do the following:         mysqladmin -u root -p create [your_new_db]When you are prompted for a password, type [your_new_pwd]. Well that’s it. There rest of the MySQL functionality is as usual. For more details on other functionalities please use the MySQL website.  mysql -u root -pUsing MySQL Externally  If you need to access MySQL from another server, then you need to execute these following additional steps.First off, create a MySQL user who can connect from any type of host using the following SQL:    GRANT ALL PRIVILEGES ON *.* TO 'theuser'@'localhost'GRANT ALL PRIVILEGES ON *.* TO 'theuser'@'localhost'CREATE USER 'theuser'@'%' IDENTIFIED BY '[your_pwd]'GRANT ALL PRIVILEGES ON *.* TO 'theuser'@'%' WITH GRANT OPTIONGRANT ALL PRIVILEGES ON *.* TO 'root'@'%' identified by “yourpasswordhere”;        Next, from the AWS Management Console find the Security Group that you assigned to your instance during set-up and add ‘MySQL’ to the group. You can also manually add port 3306. Save and whoala ready to go!Source: Link",
+        "url": "/2016/04/28/aws-hosting-server-install-mysql/"
+      }
+      
+    
+  };
+</script>
+<script src="/static/js/lunr.min.js"></script>
+<script src="/static/js/search.js"></script>
+
+</div>
+
+    </div>
+
+    
+    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
+      <a href="javascript:backToTop();">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
+    </div>
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="mailto:rakib_hasan6@yahoo.com"><span class="glyphicon glyphicon-envelope"></span> rakib_hasan6@yahoo.com</a>
+        <span class="point"> · </span>
+        
+          <a href="https://github.com/rakib09">
+            <span class="icon">
+              <svg viewBox="0 0 16 16">
+                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            Github
+            <!-- <span>rakib09</span> -->
+          </a>
+          
+          <span class="point"> · </span>
+          <span><a href="https://github.com/rakib09/rakib09.github.io/search.html">View source</a></span>
+          <span class="point"> · </span>
+          <span><a class="newpost" href="javascript:;">New post</a></span>
+		  <span class="point"> · </span>
+          <span><a href="/feed.xml">RSS</a></span>
+          <span class="point"> · </span>
+          <span>&copy; 2015 Rakib Hasan</span>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Java Tutorial | Rakib’s Learning &amp; Blogs</title>
+<meta name="generator" content="Jekyll v3.3.1" />
+<meta property="og:title" content="Java Tutorial" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Rakib’s Learning &amp; Blogs" />
+<meta property="og:description" content="Rakib’s Learning &amp; Blogs" />
+<link rel="canonical" href="http://localhost:4000/search/" />
+<meta property="og:url" content="http://localhost:4000/search/" />
+<meta property="og:site_name" content="Java Tutorial" />
+<script type="application/ld+json">
+{"description":"Rakib’s Learning &amp; Blogs","@type":"WebPage","headline":"Java Tutorial","url":"http://localhost:4000/search/","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script type="text/javascript">
+    function OnClickNewPost()
+    {
+        var title = prompt("Please enter title of your post");
+        if (title!=null){
+            title = title.replace(" ", "-");
+            var currentdate = new Date();
+            var urlNewPage = "https://github.com/rakib09/?filename=_posts/" 
+                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
+                
+            var defaultText =  [
+                '---',
+                'layout: post',
+                'comments: true',
+                'categories: diary',
+                '---',
+                '## Title',
+                'text'
+                ].join('\n');
+            urlNewPage += "&value=" + encodeURIComponent(defaultText);
+            window.open(urlNewPage);
+        }
+    }
+    
+    $(function() {
+      // CreateNewPostLinks
+      $('.newpost').each(function(){
+          $(this).click(OnClickNewPost);
+      });
+    });
+</script>
+  
+  </body>
+</html>

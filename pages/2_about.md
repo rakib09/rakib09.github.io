@@ -12,21 +12,20 @@ permalink: /about-me/
 
 ![](../static/img/rakib.png){:.rounded-image}
 
-About 3 years of extensive hands on experience of Software development.
+About 5 years of extensive hands on experience of Software development using Java. 
 An experienced team lead and team player with excellent communication and interpersonal skills who has the ability to work independently under pressure.
 
 Basically i love to work with complex ideas and solving them to real world applications. You can call me a good problem solver. In my academic years, I have spent most of the time, solving problems in the online judge like UVA, LightOj, Codeforces.
 
-I am mainly fully focused on Java (Spring, Grails). I generally prefer Ractive.js/ Angularjs for the frontend purpose along with the basic html/ css.
+I am mainly fully focused on Java (Spring). I generally prefer JQuery/ Angularjs for the frontend purpose along with the basic html/ css.
 
 #### Experienced Areas:
 
-- Java (Spring, Grails), Javascript, Ractive.js, jQuery;
-- Android, Libgdx,
+- Java, C/C++, JavaScript, HTML, SQL 
+- Spring, Hibernate, Angular JS, Bootstrap, Semantic UI 
 - CSS(3);
 - HTML(5), Bootstrap;
-- OOP, Scrum, Parse.com;
-- SQL (MYSQL, MSSQL, ORACLE),
+- MySQL, PostgreSQL 
 - AWS (Amazon Web Servic) Machine Learning (Artificial Intelligence),
 - AWS Dig Data Analysis
 
