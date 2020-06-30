@@ -11,73 +11,28 @@ categories: devops
 
 Create file reset_trail.sh with content:
 ```
- #!/bin/bash
- 
- ## declare array of tools
- declare -a tools=(
-     "DataGrip"
-     "CLion"
-     "Rider"
-     "PhpStorm"
-     )
- 
- for tool in "${tools[@]}"
- do
-     echo "removing evaluation key for $tool"
-     rm -rf ~/.$tool*/config/eval
-     rm -rf ~/.java/.userPrefs/jetbrains/${tool,,}
- done
- 
- for tool in "${tools[@]}"
- do
-     echo "resetting evalsprt in options.xml for $tool"
-     sed -i '/evlsprt/d' ~/.$tool*/config/options/options.xml
- done
- 
- echo "resetting evalsprt in prefs.xml"
- sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
- 
- for tool in "${tools[@]}"
- do
-     echo "change date file for $tool"
-     find ~/.$tool* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-     find ~/.$tool* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
- done
-```
+#!/bin/bash
 
+#rm -rf ~/.java/.userPrefs/prefs.xml
+#rm -rf ~/.java/.userPrefs/jetbrains/prefs.xml
 
-```
-echo "removeing evaluation key"
-rm  -rf ~/.IntelliJIdea*/config/eval
-rm  -rf ~/.GoLand*/config/eval
-rm  -rf ~/.WebStorm*/config/eval
+# Reset PyCharm
+rm -rf ~/.config/JetBrains/PyCharm*/eval
+# rm -rf ~/.config/JetBrains/PyCharm*/options/other.xml
+sed -i -E 's/<property name=\"evl.*\".*\/>//' ~/.config/JetBrains/PyCharm*/options/other.xml
+rm -rf ~/.java/.userPrefs/jetbrains/pycharm
 
-rm -rf ~/.java/.userPrefs/jetbrains/goland
+# Reset IntelliJ IDEA
+rm -rf ~/.config/JetBrains/IntelliJIdea*/eval
+# rm -rf ~/.config/JetBrains/IntelliJIdea*/options/other.xml
+sed -i -E 's/<property name=\"evl.*\".*\/>//' ~/.config/JetBrains/IntelliJIdea*/options/other.xml
 rm -rf ~/.java/.userPrefs/jetbrains/idea
+
+# Reset WebStorm
+rm -rf ~/.config/JetBrains/WebStorm*/eval
+# rm -rf ~/.config/JetBrains/WebStorm*/options/other.xml
+sed -i -E 's/<property name=\"evl.*\".*\/>//' ~/.config/JetBrains/WebStorm*/options/other.xml
 rm -rf ~/.java/.userPrefs/jetbrains/webstorm
-
-echo "resetting evalsprt in options.xml"
-sed -i '/evlsprt/d' ~/.IntelliJIdea*/config/options/options.xml
-sed -i '/evlsprt/d' ~/.GoLand*/config/options/options.xml
-sed -i '/evlsprt/d' ~/.WebStorm*/config/options/options.xml
-
-echo "resetting evalsprt in prefs.xml"
-sed -i '/evlsprt/d' ~/.java/.userPrefs/prefs.xml
-
-
-echo "change date file"
-find ~/.IntelliJIdea* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-find ~/.IntelliJIdea* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-
-find ~/.GoLand* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-find ~/.GoLand* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-
-find ~/.WebStorm* -type d -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-find ~/.WebStorm* -type f -exec touch -t $(date +"%Y%m%d%H%M") {} +;
-```
-```
-rm -rf ~/Library/Preferences/PyCharm2018.1/eval/PyCharm181.evaluation.key
-rm -rf ~/Library/Preferences/PyCharm2018.1/options/options.xml
 ```
 
 # Extends Evaluation in Windows
