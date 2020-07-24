@@ -44,6 +44,31 @@ Here user & password is the host machine User & Password
 ![Image](../../../../static/img/postgresql.PNG)
 
 
+#### POSTGRES DATABASE
+Using the SQL administration commands, and connecting with a password over TCP
+```
+$ sudo -u postgres psql postgres
+```
+And, then in the psql shell
+
+```
+CREATE ROLE myuser LOGIN PASSWORD 'mypass';
+CREATE DATABASE mydatabase WITH OWNER = myuser;
+```
+Then you can login,
+```
+$ psql -h localhost -d mydatabase -U myuser -p <port>
+```
+
+Using createuser and createdb, we can be explicit about the database name,
+
+```
+$ sudo -u postgres createuser -s $USER
+$ createdb mydatabase
+$ psql -d mydatabase
+```
+
+
 
 
 
