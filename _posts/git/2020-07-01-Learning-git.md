@@ -14,3 +14,9 @@ Solution
 ```
 git pull origin master --allow-unrelated-histories
 ```
+
+Set Up stream
+```
+git checkout mybranch
+git branch --set-upstream-to=origin/mybranch
+```
