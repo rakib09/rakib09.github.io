@@ -12,7 +12,7 @@ permalink: /about-me/
 
 ![](../static/img/rakib.png){:.rounded-image}
 
-About 5 years of extensive hands on experience of Software development using Java. 
+About 7 years of extensive hands on experience of Software development using Java. 
 An experienced team lead and team player with excellent communication and interpersonal skills who has the ability to work independently under pressure.
 
 Basically i love to work with complex ideas and solving them to real world applications. You can call me a good problem solver. In my academic years, I have spent most of the time, solving problems in the online judge like UVA, LightOj, Codeforces.
